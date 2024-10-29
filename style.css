@@ -171,3 +171,7 @@ ul a:hover {
         margin-top: 40px;
     }
 }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    
+}
