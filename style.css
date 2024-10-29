@@ -35,13 +35,12 @@ ul {
 ul a {
     list-style: none;
     text-decoration: none;
-}
-
-ul a li {
-    font-family: "Sora", sans-serif;
     color: var(--color-white);
+    font-family: "Sora", sans-serif;
+}
+ul a:hover {
+    color: var(--color-blue);
     transition: 0.4s ease-in-out;
-    font-size: 14px;
 }
 
 #my {
@@ -61,7 +60,7 @@ ul a li {
 .color-name {
     color: var(--color-blue);
 }
-#my li {
+#my p {
     list-style: none;
     margin-left: 200px;
     font-family: "Sora", sans-serif;
@@ -94,6 +93,81 @@ ul a li {
 }
 #about {
     width: 100%;
-    height: 40vh;
-    background-color: red;
+    height: 150px;
+    
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+}
+#about p {
+    color: white;
+    font-family: "Sora", sans-serif;
+    width: 50%;
+    height: 130px;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media screen para as demais tecnologias */
+@media screen and (min-width: 321px) and (max-width: 480px) {
+    #menu {
+        gap: 25px;
+        margin-top: 20px;
+        font-family: "Sora", sans-serif;
+    }
+    #menu li a {
+        gap: 25px;
+        margin-top: 20px;
+        font-family: "Sora", sans-serif;
+        color: var(--color-white);
+        font-size: 14px;
+    }
+    #my {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 500px;
+    }
+    #my h1 {
+        margin-left: 20px;
+        margin-top: 40px;
+        font-size: 20px;
+        line-height: 23px;
+        font-family: "Sora", sans-serif;
+    }
+    #my p {
+        margin-left: 20px;
+        font-size: 11px;
+        font-family: "Sora", sans-serif;
+        width: 60%;
+    }
+    .movie {
+        width: 280px;
+        height: 280px;
+        margin: 20px auto; /* Reduz a margem para dispositivos móveis */
+    }
+    #about {
+        width: 100%;
+        height: 150px;
+        margin-top: 10px;
+    }
+    #about p {
+        width: 90%;
+        height: 90%;
+        font-size: 11px;
+        margin-top: 40px;
+    }
 }
