@@ -14,8 +14,8 @@ window.addEventListener("load", () => {
             loadingBar.style.width = `${percentage}%`;
             loadingPercentage.textContent = `${percentage}%`;
 
-            if (percentage === 30 || percentage === 65) {
-                // Pausa em 30% e 65% por 1 segundo
+            if (percentage === 30 || percentage === 65 || percentage === 88) {
+                // Pausa em 30%, 65% e 88% por 1 segundo
                 setTimeout(incrementPercentage, 1000);
             } else {
                 // Carregamento mais lento
