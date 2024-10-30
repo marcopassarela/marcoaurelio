@@ -27,12 +27,12 @@ window.addEventListener("load", () => {
                 loadingMusic.play(); // Toca a música na primeira iteração
             }
 
-            if (percentage === 30 || percentage === 65) {
-                // Pausa em 30% e 65% por 1 segundo
+            if (percentage === 30 || percentage === 65 || percentage == 88) {
+                // Pausa em 30%, 65% e 88% por 1 segundo
                 setTimeout(incrementPercentage, 1000);
             } else {
                 // Carregamento mais lento
-                setTimeout(incrementPercentage, 60);
+                setTimeout(incrementPercentage, 80);
             }
         } else {
             // Para a música e o vídeo quando o carregamento atingir 100%
