@@ -129,6 +129,38 @@ body, html {
     opacity: 1; /* Começa opaco */
     transition: opacity 1s ease; /* Transição suave */
 }
+.loading-text {
+    display: inline-block;
+}
+
+.dots {
+    display: inline-block;
+    opacity: 1; /* Inicialmente visível */
+    animation: dot-blink 2.5s infinite; /* Aumente o tempo total da animação */
+}
+
+.dots:nth-child(1) {
+    animation-delay: 0s; /* Primeiro ponto desaparece primeiro */
+}
+
+.dots:nth-child(2) {
+    animation-delay: 0.75s; /* Segundo ponto desaparece depois do primeiro */
+}
+
+.dots:nth-child(3) {
+    animation-delay: 1.5s; /* Terceiro ponto desaparece depois do segundo */
+}
+
+@keyframes dot-blink {
+    0% { opacity: 1; } /* Começa visível */
+    20% { opacity: 1; } /* Continua visível */
+    40% { opacity: 0; } /* Primeiro ponto desaparece */
+    60% { opacity: 0; } /* Continua invisível */
+    80% { opacity: 1; } /* Retorna visível */
+    100% { opacity: 1; } /* Finaliza visível para reiniciar a animação */
+}
+
+
 
 /* Classe para o efeito de fade-out */
 #loading.fade-out {
