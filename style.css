@@ -191,19 +191,6 @@ body, html {
     margin-top: 20px; /* Espaçamento acima do botão */
 }
 
-/* Efeito ao passar o mouse sobre o botão */
-#start-loading:hover {
-    background-color: #0056b3; /* Cor de fundo mais escura ao passar o mouse */
-}
-.fade-out {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out; /* Transição suave de opacidade */
-}
-
-.fade-out.hidden {
-    opacity: 0; /* Opacidade zero para ocultar */
-}
-
 
 
 
