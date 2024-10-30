@@ -176,9 +176,8 @@ body, html {
     margin-top: 20px;
     object-fit: cover;
     border-radius: 100%;
-    mask-image: radial-gradient(circle, rgb(0, 0, 0) 50%, rgba(0, 0, 0, 0) 75%);
+    mask-image: radial-gradient(circle, rgb(0, 0, 0) 50%, rgba(0, 0, 0, 0) 90%);
 }
-
 
 
 
