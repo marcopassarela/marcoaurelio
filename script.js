@@ -10,29 +10,22 @@ window.addEventListener("load", () => {
     const backgroundVideo = document.getElementById("background-video");
     let percentage = 0;
 
-    // Função para iniciar o carregamento
+    // Inicia o carregamento
     function startLoading() {
         backgroundVideo.play(); // Toca o vídeo ao iniciar o carregamento
-        loadingMusic.play(); // Toca a música ao iniciar o carregamento
         incrementPercentage(); // Inicia o incremento da porcentagem
-
-        const startButton = document.getElementById("start-loading");
-        startButton.classList.add("fade-out"); // Adiciona a classe para iniciar a transição
-
-        // Aguarda a transição de opacidade antes de esconder o botão
-        startButton.addEventListener("transitionend", () => {
-            startButton.style.display = "none"; // Esconde o botão após a transição
-        });
     }
-
-    // Adiciona o evento de clique no botão para iniciar o carregamento
-    document.getElementById("start-loading").addEventListener("click", startLoading);
 
     function incrementPercentage() {
         if (percentage < 100) {
             percentage++;
             loadingBar.style.width = `${percentage}%`;
             loadingPercentage.textContent = `${percentage}%`;
+
+            // Toca a música assim que o carregamento começa
+            if (percentage === 1) {
+                loadingMusic.play(); // Toca a música na primeira iteração
+            }
 
             if (percentage === 30 || percentage === 65) {
                 // Pausa em 30% e 65% por 1 segundo
@@ -57,5 +50,8 @@ window.addEventListener("load", () => {
             }, 1000); // 1000ms corresponde ao tempo da transição CSS
         }
     }
+
+    // Inicia o carregamento assim que a página é carregada
+    startLoading();
 });
 
