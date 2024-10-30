@@ -12,19 +12,23 @@
 </head>
 <body>
     <!-- Página de Loading -->
-    <div id="loading">
-        <div id="loading-text">Loading...</div> <!-- Texto de Loading -->
-        <div class="loading-bar-container">
-            <div class="loading-bar"></div>
-        </div>
-        <div id="loading-percentage">0%</div>
-        
-        <!-- Video de fundo reduzido -->
-        <video autoplay muted loop playsinline id="background-video">
-            <source src="/movie/movie 1.mp4" type="video/mp4">
-            Seu navegador não suporta vídeos.
-        </video>
+<div id="loading">
+    <div id="loading-text">Loading...</div> <!-- Texto de Loading -->
+    <div class="loading-bar-container">
+        <div class="loading-bar"></div>
     </div>
+    <div id="loading-percentage">0%</div>
+
+    <!-- Música de introdução -->
+    <audio id="loading-music" src="/audio/music-loading.m4a" preload="auto" autoplay></audio>
+
+    <!-- Vídeo de fundo reduzido -->
+    <video autoplay muted loop playsinline id="background-video">
+        <source src="/movie/movie 1.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos.
+    </video>
+</div>
+
     
     
 
