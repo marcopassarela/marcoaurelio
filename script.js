@@ -6,7 +6,11 @@ window.addEventListener("load", () => {
     const mainContent = document.getElementById("conteudo-principal");
     const loadingBar = document.querySelector(".loading-bar");
     const loadingPercentage = document.getElementById("loading-percentage");
+    const loadingMusic = document.getElementById("loading-music"); // Adicionando o elemento de áudio
     let percentage = 0;
+
+    // Inicia a música ao começar o carregamento
+    loadingMusic.play();
 
     function incrementPercentage() {
         if (percentage < 100) {
@@ -22,6 +26,10 @@ window.addEventListener("load", () => {
                 setTimeout(incrementPercentage, 60);
             }
         } else {
+            // Para a música quando o carregamento atingir 100%
+            loadingMusic.pause(); // Para a música
+            loadingMusic.currentTime = 0; // Reinicia a música para o início
+
             // Aplica o efeito de fade-out ao completar 100%
             loadingScreen.classList.add("fade-out");
 
