@@ -349,6 +349,11 @@ body, html {
 
 /* media screen para as demais tecnologias */
 @media screen and (min-width: 321px) and (max-width: 480px) {
+    body, html {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    
     #menu {
         gap: 25px;
         margin-top: 20px;
