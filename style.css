@@ -414,6 +414,7 @@ body, html {
         border-radius: 15px;
         flex-direction: column;
         margin-bottom: 10px;
+        display: none;
     }
     .box {
         margin: auto;
