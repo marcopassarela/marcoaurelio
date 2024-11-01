@@ -421,9 +421,6 @@ body, html {
         height: 200px;
         margin-top: 15px;
     }
-    .box img {
-        
-    }
     .container2 {
         width: 90%;
         height: 100%;
@@ -432,6 +429,7 @@ body, html {
         
     }
     .container2 h1 {
+        width: 100%;
         font-size: 20px;
         display: flex;
         justify-content: center;
