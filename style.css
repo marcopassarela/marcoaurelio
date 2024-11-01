@@ -349,11 +349,11 @@ body, html {
 
 /* media screen para as demais tecnologias */
 @media screen and (min-width: 321px) and (max-width: 480px) {
-    body, html {
-        max-width: 100vw;
+    /* Evita scroll lateral */
+    body {
         overflow-x: hidden;
     }
-    
+
     #menu {
         gap: 25px;
         margin-top: 20px;
@@ -431,7 +431,6 @@ body, html {
         height: 100%;
         margin: auto;
         border-radius: 15px;
-        
     }
     .container2 h1 {
         width: 100%;
@@ -454,7 +453,6 @@ body, html {
         height: 30%;
         display: flex;
         border-radius: 15px;
-        display: flex;
         gap: 0px;
     }
     .cards1, .cards2, .cards3, .cards4, .cards5 {
