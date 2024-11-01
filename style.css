@@ -384,7 +384,7 @@ body, html {
         margin-left: 20px;
         font-size: 12px;
         font-family: "Sora", sans-serif;
-        width: 90%; /* ajuste para evitar largura excessiva */
+        width: 60%; 
         margin-bottom: 30px;
     }
     .movie {
@@ -446,6 +446,7 @@ body, html {
         display: flex;
         text-align: center;
         margin: 10px 0 30px;
+        margin-left: 20px;
     }
     .cards {
         width: 100%;
@@ -453,13 +454,14 @@ body, html {
         display: flex;
         border-radius: 15px;
         gap: 0;
-        flex-wrap: wrap; /* para evitar overflow em telas menores */
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
     }
     .cards1, .cards2, .cards3, .cards4, .cards5 {
         width: 50px;
         height: 50px;
         display: flex;
-        margin: auto;
         margin-bottom: 20px;
     }
 }
