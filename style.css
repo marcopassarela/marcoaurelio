@@ -185,7 +185,7 @@ body, html {
 .loading-bar {
     height: 100%;
     width: 0;
-    background-color: #76c7c0;
+    background-color: #2bff00;
     animation: loadAnimation 3s ease-in-out forwards;
 }
 
