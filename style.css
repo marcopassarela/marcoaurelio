@@ -504,7 +504,10 @@ ul a:hover {
         display: flex;
         flex-direction: column;
         transform: rotateX(0deg);
+        border: 0px solid;
     }
+    .back {
         
+    }
 }
 
