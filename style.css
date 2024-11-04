@@ -2,11 +2,12 @@
     padding: 0;
     margin: 0;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: var(--color-black);
-    
+    -moz-osx-font-smoothing: grayscale;  
 }
 
+body {
+    background-color: var(--color-black);
+}
 html {
     scroll-behavior: smooth;
 }
@@ -366,6 +367,7 @@ ul a:hover {
     align-items: center;
     display: flex;
     justify-content: center;
+    background-color: var(--color-black);
 }
 
 .cards1:hover {
@@ -548,6 +550,14 @@ ul a:hover {
         height: 50px;
         display: flex;
         margin-bottom: 20px;
+    }
+    .front {
+        width: 200px;
+        height: 250px;
+    }
+    .card {
+        width: 200px;
+        height: 250px;
     }
 }
 
