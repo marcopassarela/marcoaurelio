@@ -467,6 +467,11 @@ ul a:hover {
         display: flex;
         margin-bottom: 20px;
     }
+    .back p {
+        width: 95%;
+        height: 95%;
+        font-size: 8.5px;
+    }
         
 }
 
