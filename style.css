@@ -235,6 +235,7 @@ ul a:hover {
     font-family: "Sora", sans-serif;
     display: flex;
     flex-direction: column;
+    transform: rotateY(45deg);
 }
 
 .front p {
@@ -494,6 +495,13 @@ ul a:hover {
         width: 95%;
         height: 95%;
         font-size: 10px;
+    }
+    .front {
+        background-color: #303030;
+        font-family: "Sora", sans-serif;
+        display: flex;
+        flex-direction: column;
+        transform: rotateX(0deg);
     }
         
 }
