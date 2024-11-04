@@ -111,13 +111,6 @@ ul a:hover {
     font-size: 14px;
 }
 
-body, html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    height: 100%;
-}
-
 /* Estilo inicial para a tela de carregamento */
 #loading {
     position: fixed; /* Garante que a tela de carregamento cubra toda a página */
