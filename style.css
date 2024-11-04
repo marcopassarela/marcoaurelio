@@ -377,8 +377,8 @@ ul a:hover {
         margin: auto;
     }
     .card {
-        width: 180px;
-        height: 180px;
+        width: 200px;
+        height: 240px;
     }
 
     .container-skills {
@@ -470,7 +470,7 @@ ul a:hover {
     .back p {
         width: 95%;
         height: 95%;
-        font-size: 8.5px;
+        font-size: 10px;
     }
         
 }
