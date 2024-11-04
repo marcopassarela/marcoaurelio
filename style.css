@@ -236,6 +236,7 @@ ul a:hover {
     display: flex;
     flex-direction: column;
     transform: rotateY(45deg);
+    border: 2px solid rgb(0, 255, 64);
 }
 
 .front p {
@@ -250,6 +251,7 @@ ul a:hover {
     font-family: "Sora", sans-serif;
     font-size: 12px;
     text-align: center;
+    border: 2px solid rgb(0, 255, 64);
 }
 
 .back p {
