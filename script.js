@@ -38,4 +38,16 @@ window.addEventListener("load", () => {
     incrementPercentage();
 });
 
+// Selecione todos os cards
+const cards = document.querySelectorAll('.card');
 
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        // Adiciona a classe flipped ao card clicado
+        card.classList.add('flipped');
+        // Remove a classe flipped após 7 segundos
+        setTimeout(() => {
+            card.classList.remove('flipped');
+        }, 7000); // 7000ms = 7s
+    });
+});
