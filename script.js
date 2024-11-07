@@ -51,3 +51,26 @@ cards.forEach(card => {
         }, 7000); // 7000ms = 7s
     });
 });
+
+document.addEventListener('click', function(event) {
+    const cards = document.querySelectorAll('.card');
+    const checkboxes = document.querySelectorAll('.toggle-card');
+    
+    let clickedInsideCard = false;
+    for (let card of cards) {
+        if (card.contains(event.target)) {
+            clickedInsideCard = true;
+            break;
+        }
+    }
+
+    if (!clickedInsideCard) {
+        checkboxes.forEach(checkbox => checkbox.checked = false);
+    }
+});
+
+document.querySelectorAll('.toggle-card').forEach(checkbox => {
+    checkbox.addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
+});

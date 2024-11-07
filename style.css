@@ -194,9 +194,12 @@ ul a:hover {
 }
 
 .container-skills {
-    perspective: 1000px;
     display: inline-block;
     margin: 10px;
+}
+
+.toggle-card {
+    display: none;
 }
 
 .card {
@@ -205,11 +208,33 @@ ul a:hover {
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.6s;
+    cursor: pointer;   
+    perspective: 1000px;
 }
 
 .container-skills:hover .card {
     transform: rotateY(180deg);
 }
+
+@media (min-width: 768px) {
+    .container-skills:hover .card {
+        transform: rotateY(180deg);
+    }
+}
+
+@media (max-width: 767px) {
+    .toggle-card:not(:checked) + .content .card {
+        transform: rotateY(0deg);
+    }
+    
+    .toggle-card:checked + .content .card {
+        transform: rotateY(180deg);
+    }
+}
+
+.card:not(:focus-within) input[type="checkbox"] {
+    background-color: white;
+  }
 
 .front, .back {
     position: absolute;
@@ -353,6 +378,11 @@ ul a:hover {
     justify-content: center;
     border-radius: 15px;
 }
+
+
+
+
+
 
 
 @media screen and (min-width: 321px) and (max-width: 480px) {
@@ -502,4 +532,3 @@ ul a:hover {
         border: 0px solid;
     }
 }
-
