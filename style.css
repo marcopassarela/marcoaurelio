@@ -435,6 +435,9 @@ ul a:hover {
     .container-skills {
         width: 100%;
         margin: 0;
+        margin: auto;
+        display: flex;
+        justify-content: center;
     }
 
     #about {
