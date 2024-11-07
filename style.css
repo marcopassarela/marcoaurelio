@@ -389,7 +389,13 @@ ul a:hover {
 @media screen and (min-width: 321px) and (max-width: 480px) {
     body { overflow-x: hidden; }
 
-    #menu { gap: 25px; margin-top: 20px; }
+    #menu { 
+        gap: 25px; 
+        margin-top: 20px; 
+    }
+    ul a:hover {
+        color: var(--color-white);
+    }
 
     #my {
         display: flex;
