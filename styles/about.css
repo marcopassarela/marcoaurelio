@@ -6,9 +6,69 @@
 }
 
 body {
-    
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;
+    margin: 0; 
+    background-color: #f0f0f0; 
 }
 
 html {
     scroll-behavior: smooth;
+}
+
+#form {
+    width: 400px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: aqua;
+    border-radius: 10px;
+    font-family: "Sora", sans-serif;
+}
+h2 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-family: "Sora", sans-serif;
+}
+
+.form-row {
+    padding: 10px;
+    display: grid;
+}
+
+#input {
+    font-family: "Sora", sans-serif;
+    height: 20px;
+    border: 0px solid;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+#label {
+    font-size: 12px;
+    margin-bottom: 2px;
+    
+}
+#mensagem {
+    float: right;
+    font-family: "Sora", sans-serif;
+    font-size: 12px;
+    outline: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+#enviar {
+    height: 30px;
+    width: 250px;
+    margin: auto;
+    background-color: rgb(51, 173, 51);
+    border: 0px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
 }
