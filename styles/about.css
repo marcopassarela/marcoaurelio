@@ -48,11 +48,24 @@ h2 {
     padding: 5px;
     border-radius: 5px;
 }
-#label {
-    font-size: 12px;
-    margin-bottom: 2px;
-    
+#opcoes {
+    height: 30px;
+    border-radius: 5px;
+    border: 0px solid;
+    cursor: pointer;
 }
+select {
+    border: 0px solid;
+    outline: none;
+    cursor: pointer;
+}
+option {
+    border: 0px solid;
+    outline: none;
+    cursor: pointer;
+}
+
+
 #mensagem {
     float: right;
     font-family: "Sora", sans-serif;
@@ -60,7 +73,9 @@ h2 {
     outline: none;
     border-radius: 5px;
     padding: 5px;
+    border: 0px solid;
 }
+
 #enviar {
     height: 30px;
     width: 250px;

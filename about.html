@@ -15,20 +15,26 @@
     <form action="/enviar" method="post">
     
     <div class="form-row">
-        <label for="nome" id="label">Nome completo:</label>
-        <input for="text" id="input" nome="nome" required>
+        <div class="form-row">
+            <input type="text" id="input" name="nome" placeholder="Nome completo" maxlength="35" required oninput="validarTexto(this)">
     </div>
     <div class="form-row">
-        <label for="nome" id="label">Telefone</label>
-        <input for="text" id="input" nome="nome" required>
+        <input type="email" id="input" name="email" placeholder="E-mail" maxlength="30" required>
     </div>
     <div class="form-row">
-        <label for="nome" id="label">E-mail</label>
-        <input for="text" id="input" nome="nome" required>
+        <input type="text" id="input" name="telefone" placeholder="Telefone" maxlength="15" required oninput="aplicarMascara(this)">
     </div>
     <div class="form-row">
-        <label for="mensagem" id="label">Mensagem:</label>
-        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+        <select name="opcoes" id="opcoes">
+        <option value="opcao">Criação de sites</option>
+        <option value="opcao">Criação de landing page</option>
+        <option value="opcao">Opção 3</option>
+        <option value="opcao">Opção 4</option>
+        <option value="opcao">Outros assuntos</option>
+    </select>
+    </div>
+    <div class="form-row">
+        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte-me mais sobre..." required></textarea>
     </div>
     <div class="form-row">
         <input type="submit" value="Enviar" id="enviar">
@@ -36,6 +42,6 @@
 
 </div>
 
-<script src="scripts/about.js"></script> <!-- Link para o arquivo JavaScript -->
+<script src="scripts/about.js"></script>
 </body>
 </html>
