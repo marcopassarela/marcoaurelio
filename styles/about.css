@@ -23,7 +23,7 @@ html {
     height: 500px;
     margin: 0 auto;
     padding: 20px;
-    background-color: aqua;
+    background-color: rgba(63, 63, 63, 0.137);
     border-radius: 10px;
     font-family: "Sora", sans-serif;
 }
