@@ -522,6 +522,26 @@ ul a:hover {
         height: 50px;
         margin-bottom: 20px;
     }
+    .cards1:hover { 
+        border-color: var(--color-black);
+        border: 2px solid transparent;
+    }
+    .cards2:hover { 
+        border-color: var(--color-black);
+        border: 2px solid transparent;
+    }
+    .cards3:hover { 
+        border-color: var(--color-black);
+        border: 2px solid transparent;
+    }
+    .cards4:hover {
+        border-color: var(--color-black);
+        border: 2px solid transparent;
+    }
+    .cards5:hover { 
+        border-color: var(--color-black);
+        border: 2px solid transparent;
+    }
     .back p {
         width: 95%;
         height: 95%;
