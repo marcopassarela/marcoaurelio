@@ -522,6 +522,18 @@ ul a:hover {
         height: 50px;
         margin-bottom: 20px;
     }
+    .cards1 {
+        border: 2px solid #C43093;
+    }
+    .cards2 {
+        border: 2px solid #0C73B8;
+    }
+    .cards3 {
+        border: 2px solid #F0DB4F;
+    }
+    .cards4 {
+        border: 2px solid #015186;
+    }
     .cards1:hover { 
         border-color: var(--color-black);
         border: 2px solid transparent;
