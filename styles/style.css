@@ -535,4 +535,20 @@ ul a:hover {
         transform: rotateX(0deg);
         border: 0px solid;
     }
+    .instagram {
+        width: 40px;
+        height: 40px;
+    }
+    .linkedin {
+        width: 40px;
+        height: 40px;
+    }
+    .gmail {
+        width: 40px;
+        height: 40px;
+    }
+    .github {
+        width: 40px;
+        height: 40px;
+    }
 }
