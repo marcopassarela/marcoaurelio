@@ -266,9 +266,9 @@ ul a:hover {
 }
 
 .front p {
-    margin-top: 10px;
     font-size: 14px;
     text-align: center;
+    margin-top: 10px;
 }
 
 .back {
@@ -319,8 +319,9 @@ ul a:hover {
     margin-top: 20px;
     margin-left: 20px;
 }
-#animation {
-    border-radius: 15px;
+#myLottiePlayer {
+    width: 100%;
+    height: 100%;
 }
 .container1 {
     width: 50%;
