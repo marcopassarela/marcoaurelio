@@ -414,6 +414,7 @@ ul a:hover {
         font-size: 12px;
         line-height: 15px;
         font-weight: lighter;
+        margin-bottom: 20px;
     }
 
     .movie {
