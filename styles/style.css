@@ -115,6 +115,7 @@ ul a:hover {
     position: relative;
     z-index: 0;
     border-radius: 10px;
+    
 }
 
 .glow-on-hover:before {
@@ -130,7 +131,7 @@ ul a:hover {
     height: calc(100% + 4px);
     animation: glowing 20s linear infinite;
     opacity: 1;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 .glow-on-hover:active {
@@ -150,7 +151,7 @@ ul a:hover {
     background: #111;
     left: 0;
     top: 0;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 @keyframes glowing {
