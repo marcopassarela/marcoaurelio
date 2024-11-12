@@ -652,7 +652,7 @@ ul a:hover {
     }
     .glow-on-hover {
         width: 180px;
-        height: 35px;
+        height: 30px;
     }
     .glow-on-hover:before {
         top: -3px;
