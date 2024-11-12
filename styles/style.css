@@ -140,7 +140,6 @@ ul a:hover {
 #about a:hover {
     color: rgb(255, 255, 255);
 }
-
 #about p {
     color: white;
     font-family: "Sora", sans-serif;
@@ -630,5 +629,8 @@ ul a:hover {
     .github {
         width: 40px;
         height: 40px;
+    }
+    #about a:hover:after {
+        width: 0%;
     }
 }
