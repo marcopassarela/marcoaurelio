@@ -114,7 +114,7 @@ ul a:hover {
     cursor: pointer;
     position: relative;
     z-index: 0;
-    border-radius: 10px;
+    border-radius: 10px; /* Borda arredondada para desktop */
 }
 
 .glow-on-hover:before {
@@ -129,8 +129,8 @@ ul a:hover {
     width: calc(100% + 4px);
     height: calc(100% + 4px);
     animation: glowing 20s linear infinite;
-    opacity: 1; /* Faz a animação sempre visível */
-    border-radius: 10px;
+    opacity: 1;
+    border-radius: 10px; /* Borda arredondada no efeito */
 }
 
 .glow-on-hover:active {
@@ -146,7 +146,7 @@ ul a:hover {
     background: #111;
     left: 0;
     top: 0;
-    border-radius: 10px;
+    border-radius: 10px; /* Borda arredondada no botão */
 }
 
 @keyframes glowing {
@@ -649,10 +649,8 @@ ul a:hover {
         height: 40px;
     }
     .glow-on-hover {
-        width: 180px;
-        height: 40px;
-        font-size: 14px;
-        font-family: "Sora", sans-serif;
+        width: 180px; /* Ajuste o tamanho do botão no celular, se necessário */
+        height: 45px;
     }
     .glow-on-hover:hover {
         top: -3px;
@@ -660,15 +658,5 @@ ul a:hover {
         filter: blur(2px);
         width: calc(100% + 6px);
         height: calc(100% + 6px);
-        border-radius: 15px;
-    }
-    .glow-on-hover::before {
-        border-radius: 15px;
-    }
-    .glow-on-hover:active {
-        border-radius: 15px;
-    }
-    .glow-on-hover::after {
-        border-radius: 15px;
     }
 }
