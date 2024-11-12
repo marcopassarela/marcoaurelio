@@ -75,3 +75,8 @@ document.querySelectorAll('.toggle-card').forEach(checkbox => {
     });
 });
 
+document.getElementById('requestServiceLink').addEventListener('click', function(event) {
+    event.preventDefault();  // Impede o comportamento padrão do link
+    // Redireciona para a página 404
+    window.location.href = '404.html';  // Caminho para sua página de erro 404
+});
