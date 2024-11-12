@@ -356,14 +356,60 @@ ul a:hover {
     font-size: 14px;
 }
 .box {
+    display: flex; /* Ativa o flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
     width: 90%;
     height: 90%;
     margin-top: 20px;
     margin-left: 20px;
+    flex-direction: column; /* Garante que os itens sejam empilhados na coluna, não ao lado */
 }
+
+.box a {
+    display: block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: var(--color-white);
+    border: 1px solid #333;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+}
+
+.box a span {
+    position: relative;
+    z-index: 2;
+}
+
+.box a:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #1e9600;
+    transition: all .35s;
+}
+
+.box a:hover:after {
+    width: 100%;
+}
+
+.box a:hover {
+    color: rgb(255, 255, 255);
+}
+
+
 #myLottiePlayer {
     width: 100%;
-    height: 100%;
+    height: 90%;
 }
 .container1 {
     width: 50%;
@@ -631,6 +677,12 @@ ul a:hover {
         height: 40px;
     }
     #about a:hover:after {
+        width: 0%;
+    }
+    .box a {
+        border: 1px solid #4e4e4e;
+    }
+    .box a:hover:after {
         width: 0%;
     }
 }
