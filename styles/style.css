@@ -655,6 +655,7 @@ ul a:hover {
     .glow-on-hover {
         width: 180px;
         height: 30px;
+        border-radius: 10px;
     }
     .glow-on-hover:before {
         top: -3px;
@@ -662,5 +663,6 @@ ul a:hover {
         filter: blur(3px);
         width: calc(100% + 6px);
         height: calc(100% + 6px);
+        border-radius: 10px;
     }
 }
