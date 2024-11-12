@@ -375,7 +375,7 @@ ul a:hover {
     font-family: sans-serif;
     text-decoration: none;
     color: var(--color-white);
-    border: 1px solid #333;
+    border: 1px solid #4d4d4d;
     letter-spacing: 2px;
     text-align: center;
     position: relative;
@@ -628,6 +628,9 @@ ul a:hover {
     }
     .cards4 {
         border: 2px solid #015186;
+    }
+    .cards5 {
+        border: 2px solid #5865F2;
     }
     .cards1:hover { 
         border-color: var(--color-black);
