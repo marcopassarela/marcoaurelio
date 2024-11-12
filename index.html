@@ -229,7 +229,7 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <script>
-        const ws = new WebSocket('https://marcoaurelio.vercel.app/');
+        const ws = new WebSocket('ws://192.168.25.19:8080');
         ws.onmessage = function(event) {
             if (event.data === 'reload') {
                 location.reload();
