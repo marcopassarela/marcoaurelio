@@ -135,10 +135,12 @@ ul a:hover {
 
 .glow-on-hover:active {
     color: #000;
+    border-radius: 10px;
 }
 
 .glow-on-hover:active:after {
     background: transparent;
+    border-radius: 10px;
 }
 
 .glow-on-hover:after {
