@@ -75,23 +75,3 @@ document.querySelectorAll('.toggle-card').forEach(checkbox => {
     });
 });
 
-const WebSocket = require('ws');
-const wss = new WebSocket.Server({ port: 8080 });
-
-wss.on('connection', (ws) => {
-    console.log('Client connected');
-    // Enviar mensagem para todos os clientes quando ocorrer uma mudança
-    ws.on('message', (message) => {
-        wss.clients.forEach((client) => {
-            if (client.readyState === WebSocket.OPEN) {
-                client.send('reload');
-            }
-        });
-    });
-});
-
-wss.clients.forEach((client) => {
-    if (client.readyState === WebSocket.OPEN) {
-        client.send('reload');
-    }
-});
