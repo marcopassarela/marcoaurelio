@@ -120,7 +120,7 @@ ul a:hover {
 
 .glow-on-hover:before {
     content: '';
-    background: linear-gradient(45deg, #ff7f7f, #ffb74d, #ffeb3b, #4caf50, #03a9f4, #9c27b0, #f50057, #ff9800); /* Cores mais suaves */
+    background: linear-gradient(45deg, #ff7f7f, #ffb74d, #ffeb3b, #4caf50, #03a9f4, #9c27b0, #f50057, #ff9800);
     position: absolute;
     top: -2px;
     left: -2px;
@@ -155,6 +155,10 @@ ul a:hover {
     top: 0;
     border-radius: 15px; /* Bordas arredondadas no efeito */
     box-sizing: border-box; /* Garantindo que a borda seja aplicada corretamente */
+}
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    100% { background-position: 400% 0; }
 }
 
 
