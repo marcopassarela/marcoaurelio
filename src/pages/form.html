@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <title>Marco Aurélio</title>
+</head>
+<body>
+<div id="form-container">
+    <h2>Formulário para Contato</h2>
+    <form action="php/processa_formulario.php" method="post">
+    
+    <div class="form-row">
+        <input type="text" id="input-name" class="input-field" name="nome" placeholder="Nome completo" maxlength="35" required oninput="validarTexto(this)" autocomplete="name">
+        <span>Digite seu nome completo.</span>
+    </div>
+
+    <div class="form-row">
+        <input type="email" id="input-email" class="input-field" name="email" placeholder="E-mail" maxlength="30" autocomplete="email">
+        <span>Endereço de e-mail para contato</span>
+    </div>
+
+    <div class="form-row">
+        <input type="text" id="input-telefone" class="input-field" name="telefone" placeholder="Telefone" maxlength="15" required oninput="aplicarMascara(this)" autocomplete="tel">
+        <span>Favor digitar o DDD.</span>
+    </div>
+
+    <div class="form-row">
+        <select name="opcoes" id="options-select">
+            <option value="opcao">Estou em busca de um orçamento.</option>
+            <option value="opcao">Minha empresa possui uma demanda.</option>
+            <option value="opcao">Estou planejando um projeto.</option>
+            <option value="opcao">Visibilidade na internet.</option>
+            <option value="opcao">Outros assuntos</option>
+        </select>
+        <span>Qual dessas opções você se indentifica?</span>
+    </div>
+
+    <div class="form-row">
+        <input type="text" id="input-rede-social" class="input-field" name="rede_social" placeholder="Rede sociais" maxlength="15">
+        <span>Sua empresa possui alguma rede social?</span>
+    </div>
+
+    <div class="form-row">
+        <p>Onde nos conheceu?</p>
+        <div class="checkbox-container">
+            <input type="checkbox" id="checkbox1" class="checkbox" name="rede_social_facebook">
+            <label for="checkbox1">Facebook</label>
+        </div>
+        
+        <div class="checkbox-container">
+            <input type="checkbox" id="checkbox2" class="checkbox" name="rede_social_instagram">
+            <label for="checkbox2">Instagram</label>
+        </div>
+        
+        <div class="checkbox-container">
+            <input type="checkbox" id="checkbox3" class="checkbox" name="rede_social_twitter">
+            <label for="checkbox3">Twitter</label>
+        </div>
+        
+        <div class="checkbox-container">
+            <input type="checkbox" id="checkbox4" class="checkbox" name="rede_social_linkedin">
+            <label for="checkbox4">LinkedIn</label>
+        </div>
+        
+        <div class="checkbox-container">
+            <input type="checkbox" id="checkbox5" class="checkbox" name="rede_social_whatsapp">
+            <label for="checkbox5">WhatsApp</label>
+        </div>
+        
+        <div class="checkbox-container">
+            <input type="checkbox" id="checkbox6" class="checkbox" name="rede_social_telegram">
+            <label for="checkbox6">Telegram</label>
+        </div>
+        
+        <div class="checkbox-container">
+            <input type="checkbox" id="checkbox7" class="checkbox" name="rede_social_youtube">
+            <label for="checkbox7">YouTube</label>
+        </div>
+    </div>
+    
+    <div class="form-row">
+        <textarea id="message-field" name="mensagem" rows="4" placeholder="Conte-me mais sobre..."></textarea>
+    </div>
+
+    <div class="form-row">
+        <input type="submit" value="Enviar" id="submit-button">
+    </div>
+</div>
+
+<script src="scripts/form.js"></script>
+</body>
+</html>
