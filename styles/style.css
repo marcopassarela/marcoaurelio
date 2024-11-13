@@ -471,7 +471,7 @@ ul a:hover {
 
 
 
-@media screen and (min-width: 321px) and (max-width: 429px) {
+@media screen and (min-width: 321px) and (max-width: 430px) {
     body { overflow-x: hidden; }
 
     #menu { 
@@ -696,7 +696,7 @@ ul a:hover {
     }
 }
 
-@media screen and (min-width: 430px) and (max-width: 768px) {
+@media screen and (min-width: 431px) and (max-width: 768px) {
     body { overflow-x: hidden; }
 
     #menu { 
@@ -731,8 +731,8 @@ ul a:hover {
     }
 
     .movie {
-        width: 90%;
-        height: 68%;
+        width: 50%;
+        height: 70%;
         margin-right: 5px;
         margin-top: 40px;
         margin: auto;
@@ -742,7 +742,7 @@ ul a:hover {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
-        width: 90%;
+        width: 50%;
         height: 100%;
         margin: auto;
         margin-top: 100px;
