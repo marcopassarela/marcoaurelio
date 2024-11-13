@@ -967,7 +967,7 @@ ul a:hover {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
-        width: 90%;
+        width: 50%;
         height: 100%;
         margin: auto;
         margin-top: 100px;
