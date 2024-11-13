@@ -471,7 +471,7 @@ ul a:hover {
 
 
 
-@media screen and (min-width: 321px) and (max-width: 430px) {
+@media screen and (min-width: 321px) and (max-width: 429px) {
     body { overflow-x: hidden; }
 
     #menu { 
@@ -696,7 +696,7 @@ ul a:hover {
     }
 }
 
-@media screen and (min-width: 431px) and (max-width: 768px) {
+@media screen and (min-width: 430px) and (max-width: 768px) {
     body { overflow-x: hidden; }
 
     #menu { 
@@ -732,7 +732,7 @@ ul a:hover {
 
     .movie {
         width: 90%;
-        height: 70%;
+        height: 68%;
         margin-right: 5px;
         margin-top: 40px;
         margin: auto;
