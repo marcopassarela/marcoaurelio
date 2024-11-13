@@ -956,8 +956,9 @@ ul a:hover {
     }
 
     .movie {
-        width: 90%;
-        height: 60%;
+        width: 50%;
+        height: 80%;
+        margin-top: 20px;
         margin-right: 5px;
         margin-top: 40px;
         margin: auto;
