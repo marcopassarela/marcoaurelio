@@ -61,3 +61,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
   });
+
+  document.getElementById("form-contato").addEventListener("submit", function(event){
+    event.preventDefault(); // Impede o envio normal do formulário
+
+    var formData = new FormData(this); // Captura os dados do formulário
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "php/processa_formulario.php", true); // Define o método e o destino do envio
+
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            // Sucesso: Mostra mensagem de sucesso ou redireciona
+            alert("Mensagem enviada com sucesso!");
+        } else {
+            // Erro: Mostra mensagem de erro
+            alert("Ocorreu um erro ao enviar a mensagem.");
+        }
+    };
+
+    xhr.send(formData); // Envia os dados do formulário
+});
