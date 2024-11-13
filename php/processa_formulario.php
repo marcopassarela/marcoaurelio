@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Enviando e-mail
-    $para = "marcopassarela@hotmail.com"; // Substitua pelo seu e-mail
+    $para = "#@hotmail.com"; // Meu e-mail
     $assunto = "Novo contato de $nome";
     $corpo = "
         Nome: $nome\n
