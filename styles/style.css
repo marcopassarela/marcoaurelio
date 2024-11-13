@@ -956,7 +956,7 @@ ul a:hover {
     }
 
     .movie {
-        width: 50%;
+        width: 40%;
         height: 80%;
         margin-top: 20px;
         margin-right: 5px;
@@ -968,7 +968,7 @@ ul a:hover {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
-        width: 50%;
+        width: 40%;
         height: 100%;
         margin: auto;
         margin-top: 100px;
@@ -1146,7 +1146,7 @@ ul a:hover {
         width: 0%;
     }
 }
-
+/* Garante que os itens sejam empilhados na coluna, não ao lado 
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
     body { overflow-x: hidden; }
 
