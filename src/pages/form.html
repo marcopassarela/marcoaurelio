@@ -20,7 +20,7 @@
     </div>
 
     <div class="form-row">
-        <input type="email" id="input-email" class="input-field" name="email" placeholder="E-mail" maxlength="30" autocomplete="email">
+        <input type="email" id="input-email" class="input-field" name="email" placeholder="E-mail" maxlength="30" autocomplete="email" required>
         <span>Endereço de e-mail para contato</span>
     </div>
 
@@ -30,7 +30,7 @@
     </div>
 
     <div class="form-row">
-        <select name="opcoes" id="options-select">
+        <select name="opcoes" id="options-select" required>
             <option value="opcao">Estou em busca de um orçamento.</option>
             <option value="opcao">Minha empresa possui uma demanda.</option>
             <option value="opcao">Estou planejando um projeto.</option>
@@ -44,42 +44,41 @@
         <input type="text" id="input-rede-social" class="input-field" name="rede_social" placeholder="Rede sociais" maxlength="15">
         <span>Sua empresa possui alguma rede social?</span>
     </div>
+    <div class="form-row">
+        <input type="text" id="input-orcamento" class="input-field" name="input_orcamento" placeholder="Investimento" maxlength="15" required>
+        <span>Quanto você pretende investir?</span>
+    </div>
 
     <div class="form-row">
         <p>Onde nos conheceu?</p>
         <div class="checkbox-container">
-            <input type="checkbox" id="checkbox1" class="checkbox" name="rede_social_facebook">
+            <input type="checkbox" id="checkbox1" class="checkbox" name="rede_social_facebook" required>
             <label for="checkbox1">Facebook</label>
         </div>
         
         <div class="checkbox-container">
-            <input type="checkbox" id="checkbox2" class="checkbox" name="rede_social_instagram">
+            <input type="checkbox" id="checkbox2" class="checkbox" name="rede_social_instagram" required>
             <label for="checkbox2">Instagram</label>
         </div>
         
         <div class="checkbox-container">
-            <input type="checkbox" id="checkbox3" class="checkbox" name="rede_social_twitter">
-            <label for="checkbox3">Twitter</label>
+            <input type="checkbox" id="checkbox3" class="checkbox" name="rede_social_linkedin" required>
+            <label for="checkbox3">LinkedIn</label>
         </div>
         
         <div class="checkbox-container">
-            <input type="checkbox" id="checkbox4" class="checkbox" name="rede_social_linkedin">
-            <label for="checkbox4">LinkedIn</label>
+            <input type="checkbox" id="checkbox4" class="checkbox" name="rede_social_whatsapp" required>
+            <label for="checkbox4">WhatsApp</label>
         </div>
         
         <div class="checkbox-container">
-            <input type="checkbox" id="checkbox5" class="checkbox" name="rede_social_whatsapp">
-            <label for="checkbox5">WhatsApp</label>
+            <input type="checkbox" id="checkbox5" class="checkbox" name="rede_social_youtube" required>
+            <label for="checkbox5">YouTube</label>
         </div>
         
         <div class="checkbox-container">
-            <input type="checkbox" id="checkbox6" class="checkbox" name="rede_social_telegram">
-            <label for="checkbox6">Telegram</label>
-        </div>
-        
-        <div class="checkbox-container">
-            <input type="checkbox" id="checkbox7" class="checkbox" name="rede_social_youtube">
-            <label for="checkbox7">YouTube</label>
+            <input type="checkbox" id="checkbox6" class="checkbox" name="rede_social_github" required>
+            <label for="checkbox6">GitHub</label>
         </div>
     </div>
     
