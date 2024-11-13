@@ -67,7 +67,9 @@ h2 {
 }
 #options-select:hover {
     border: 2px solid #3b5998; 
+    border-radius: 5px;
 }
+
 
 select {
     border: 0px solid;
@@ -119,6 +121,10 @@ p {
     padding: 7px;
     border-radius: 5px;
 }
+.input-field-ddd:hover {
+    border: 2px solid #3b5998; 
+    border-radius: 5px;
+}
 .input-field-number{
     font-family: "Sora", sans-serif;
     height: 20px;
@@ -128,7 +134,10 @@ p {
     padding: 7px;
     border-radius: 5px;
 }
-
+.input-field-number:hover {
+    border: 2px solid #3b5998; 
+    border-radius: 5px;
+}
 
 .checkbox-container label {
     font-size: 12px;
