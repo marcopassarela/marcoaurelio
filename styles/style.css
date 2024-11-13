@@ -1146,7 +1146,7 @@ ul a:hover {
         width: 0%;
     }
 }
-/* Garante que os itens sejam empilhados na coluna, não ao lado 
+
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
     body { overflow-x: hidden; }
 
@@ -1190,7 +1190,7 @@ ul a:hover {
     }
 
     #skills {
-        display: grid;
+        
         grid-template-columns: 1fr 1fr;
         gap: 10px;
         width: 90%;
