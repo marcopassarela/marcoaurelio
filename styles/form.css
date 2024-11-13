@@ -106,6 +106,28 @@ p {
     transform: scale(1.2);
     cursor: pointer;
 }
+.input-container {
+    width: 100%;
+}
+
+.input-field-ddd {
+    font-family: "Sora", sans-serif;
+    height: 20px;
+    width: 14%;
+    border: 2px solid transparent;
+    outline: none;
+    padding: 7px;
+    border-radius: 5px;
+}
+.input-field-number{
+    font-family: "Sora", sans-serif;
+    height: 20px;
+    width: 75%;
+    border: 2px solid transparent;
+    outline: none;
+    padding: 7px;
+    border-radius: 5px;
+}
 
 
 .checkbox-container label {
