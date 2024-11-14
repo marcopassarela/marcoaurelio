@@ -122,6 +122,7 @@ body {
     }
     #menu-container {
         display: flex; 
+        height: 6dvh;
     }
     #themeToggleContainer {
         margin-right: 0px;
