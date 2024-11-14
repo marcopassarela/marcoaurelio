@@ -121,11 +121,11 @@ body {
         color: var(--color-white);
     }
     #menu-container {
-        height: 6dvh;
+        display: flex; 
     }
     #themeToggleContainer {
         margin-right: 0px;
-        margin-top: 20px;
+        margin-top: 18px;
         margin-right: 20px;
     }
 }
