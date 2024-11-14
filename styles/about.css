@@ -117,7 +117,7 @@ body {
         margin-top: 20px; 
         display: flex;
     }
-    ul a:hover {
+    #menu li a:hover {
         color: var(--color-white);
     }
     #menu-container {
