@@ -18,3 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Seleciona todos os links com a classe 'requestLink'
+const links = document.querySelectorAll('.requestLink');
+
+links.forEach(function(link) {
+    link.addEventListener('click', function(event) {
+        event.preventDefault(); // Impede o comportamento padrão do link
+        window.location.href = '/src/pages/404.html'; // Redireciona para a página 404
+    });
+});
