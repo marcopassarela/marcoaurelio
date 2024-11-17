@@ -129,7 +129,50 @@ html:lang(pt) ul li a {
     height: 250px;
     background-color: red;
     margin-top: 10px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
 }
+#options {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.options-card {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.options-card a {
+    width: 150px;
+    height: 30px;
+    background-color: rgb(3, 161, 3);
+    margin-top: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-family: "Sora", sans-serif;
+    font-size: 12px;
+    transition: 0.4s ease;
+    color: white;
+}
+
+.options-card a:hover {
+    text-decoration: underline;
+    background-color: green;
+}
+
+.img-menu {
+    width: 150px;
+    height: 150px;
+    background-color: black;
+    border-radius: 5px;
+}
+
 #container-options h1 {
     text-align: center;
     font-family: "Sora", sans-serif;
