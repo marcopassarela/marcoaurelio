@@ -1,0 +1,22 @@
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    
+}
+
+:root {
+    --color-blue: #007bff;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-background: black;
+    --color-text: white;
+}
+
+html:lang(pt) ul li a {
+    font-size: 12px; /* tamanho reduzido para traduções */
+}

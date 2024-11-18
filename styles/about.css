@@ -113,17 +113,61 @@ html:lang(pt) ul li a {
     display: block;
 }
 
-#container-movie{
-    width: 100%;
-    height: 400px;
-    background-color: red;
-    margin-top: 10px;
-}
-#container-movie h1 {
-    text-align: center;
+#container h1 {
+    margin-top: 30px;
     font-family: "Sora", sans-serif;
-    font-size: 17px;
+    font-size: 20px;
+    text-align: center;
 }
+
+.content {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+    width: 100%;
+    height: 370px;
+    align-items: center;
+}
+
+.content img {
+    align-self: center;
+    max-width: 100%;
+    height: auto;
+}
+.content span {
+    margin-top: 20px;
+    font-family: "Sora", sans-serif;
+    font-size: 14px;
+    width: 50%;
+}
+
+#container img {
+    width: 350px;
+    height: 350px;
+    margin-left: 200px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 50px 10px black;
+    animation: pulsar 5s infinite;
+}
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+#container span {
+    display: block;
+    margin-left: 60px;
+}
+
 #container-options {
     width: 100%;
     height: 250px;
@@ -140,10 +184,13 @@ html:lang(pt) ul li a {
 }
 .options-card {
     display: grid;
-    justify-content: center;
+    justify-items: center;
     align-items: center;
     text-align: center;
+    width: 200px;
+    height: 200px;
 }
+
 .options-card a {
     width: 150px;
     height: 30px;
@@ -164,15 +211,10 @@ html:lang(pt) ul li a {
     text-decoration: underline;
     background-color: green;
 }
-
-#options img {
-    width: 150px;
-    height: 150px;
-    background-color: rgb(0, 48, 70);
-    border-radius: 5px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+.options-card span {
+    font-size: 11px;
+    padding: 10px;
+    font-family: "Sora", sans-serif;
 }
 
 #container-options h1 {
@@ -234,5 +276,32 @@ html:lang(pt) ul li a {
     .options-card a:hover {
         text-decoration: none;
         background-color: rgb(3, 161, 3);
+    }
+    #container {
+        width: 100%;
+    }
+    #container img {
+        width: 150px;
+        height: 150px;
+        box-shadow: 0px 0px 40px 0px black;
+        animation: pulsar 5s infinite;
+        float: left;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    #container span {
+        margin-left: 0px;
+        text-align: justify;
+        font-size: 12px;
+        margin-top: 40px;
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+    .content span {
+        width: 90%;
     }
 }
