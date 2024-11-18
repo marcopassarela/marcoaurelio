@@ -467,6 +467,120 @@ ul a:hover {
 }
 
 
+#privacy {
+    width: 100%;
+    height: 200px;
+    justify-content: center;
+    display: flex;
+}
+
+#privacy img {
+    width: 100px;
+    height: 100px;
+    margin-left: 150px;
+    margin-top: 20px;
+}
+.map-page {
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.map-page h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-family: "Sora", sans-serif;
+    color: var(--color-text);
+}
+.map-page a {
+    color: var(--color-text);
+    font-family: "Sora", sans-serif;
+    font-size: 11px;
+    display: flex;
+    margin-bottom: 10px;
+    text-decoration: none;
+    width: 45px;
+}
+.map-page a:hover {
+    text-decoration: underline;
+}
+.support {
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.support h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-family: "Sora", sans-serif;
+    color: var(--color-text);
+}
+.support a {
+    color: var(--color-text);
+    font-family: "Sora", sans-serif;
+    font-size: 11px;
+    display: flex;
+    margin-bottom: 10px;
+    text-decoration: none;
+    width: 90px;
+}
+.support a:hover {
+    text-decoration: underline;
+}
+.redes-sociais {
+    margin-top: 20px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.redes-sociais h3 {
+    font-size: 14px;
+    font-family: "Sora", sans-serif;
+    color: var(--color-text);
+}
+.redes-sociais a {
+    color: var(--color-text);
+    font-family: "Sora", sans-serif;
+    font-size: 11px;
+    display: flex;
+    text-decoration: none;
+    width: 45px;
+}
+.privacy-terms {
+    margin-top: 20px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.privacy-terms h3 {
+    font-size: 14px;
+    font-family: "Sora", sans-serif;
+    color: var(--color-text);
+}
+.privacy-terms a {
+    color: var(--color-text);
+    font-family: "Sora", sans-serif;
+    font-size: 11px;
+    display: flex;
+    text-decoration: none;
+    width: 90px;
+}
+.privacy-terms a:hover {
+    text-decoration: underline;
+}
+.redes-sociais a:hover {
+    text-decoration: underline;
+}
+
+/* Ícones SVG */
+.icon-theme path {
+    fill: var(--color-text); /* A cor do ícone será a cor do texto do tema */
+}
+
+/* Outros estilos para o SVG, caso necessário */
+.icon-theme svg {
+    transition: fill 0.3s ease; /* Adiciona uma transição suave para a mudança de cor */
+}
+
 
 
 
@@ -694,6 +808,44 @@ ul a:hover {
     .box a:hover:after {
         width: 0%;
     }
+    #privacy {
+        width: 100%;
+        height: auto;
+        gap: 20px;
+    }
+    #privacy img {
+        width: 50px;
+        height: 50px;
+        margin-left: 0px;
+        display: flex;
+        justify-content: center;
+        display: none;
+    }
+    .my-logo {
+        margin-left: 0px;
+    }
+    .map-page {
+        margin-left: 0px;
+        display: none;
+    }
+    .support {
+        margin-left: 0;
+    }
+    .support h3 {
+        font-size: 12px;
+    }
+    .redes-sociais {
+        margin-left: 0;
+    }
+    .redes-sociais h3 {
+        font-size: 12px;
+    }
+    .privacy-terms {
+        margin-left: 0;
+    }
+    .privacy-terms h3 {
+        font-size: 12px;
+    }
 }
 
 @media screen and (min-width: 431px) and (max-width: 768px) {
@@ -918,6 +1070,44 @@ ul a:hover {
     }
     .box a:hover:after {
         width: 0%;
+    }
+    #privacy {
+        width: 100%;
+        height: auto;
+        gap: 20px;
+    }
+    #privacy img {
+        width: 50px;
+        height: 50px;
+        margin-left: 0px;
+        display: flex;
+        justify-content: center;
+        display: none;
+    }
+    .my-logo {
+        margin-left: 0px;
+    }
+    .map-page {
+        margin-left: 0px;
+        display: none;
+    }
+    .support {
+        margin-left: 0;
+    }
+    .support h3 {
+        font-size: 12px;
+    }
+    .redes-sociais {
+        margin-left: 0;
+    }
+    .redes-sociais h3 {
+        font-size: 12px;
+    }
+    .privacy-terms {
+        margin-left: 0;
+    }
+    .privacy-terms h3 {
+        font-size: 12px;
     }
 }
 
@@ -1144,5 +1334,41 @@ ul a:hover {
     }
     .box a:hover:after {
         width: 0%;
+    }
+    #privacy {
+        width: 100%;
+        height: auto;
+        gap: 20px;
+    }
+    #privacy img {
+        width: 50px;
+        height: 50px;
+        margin-left: 0px;
+        display: flex;
+        justify-content: center;
+    }
+    .my-logo {
+        margin-left: 0px;
+    }
+    .map-page {
+        margin-left: 0px;
+    }
+    .support {
+        margin-left: 0;
+    }
+    .support h3 {
+        font-size: 12px;
+    }
+    .redes-sociais {
+        margin-left: 0;
+    }
+    .redes-sociais h3 {
+        font-size: 12px;
+    }
+    .privacy-terms {
+        margin-left: 0;
+    }
+    .privacy-terms h3 {
+        font-size: 12px;
     }
 }
