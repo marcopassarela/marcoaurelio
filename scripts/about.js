@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggleContainer = document.getElementById('themeToggleContainer');
     const body = document.body;
 
+    // Adicione a classe `light-theme` ao carregar a página
+    body.classList.add('light-theme');
+
     themeToggleContainer.addEventListener('click', () => {
         // Alterna entre temas claro e escuro
         body.classList.toggle('light-theme');
@@ -18,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
 
 // Seleciona todos os links com a classe 'requestLink'
 const links = document.querySelectorAll('.requestLink');

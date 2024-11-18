@@ -1,6 +1,7 @@
-window.onload = function() {
+window.onload = function () {
     window.scrollTo(0, 0);
 };
+
 window.addEventListener("load", () => {
     const loadingScreen = document.getElementById("loading");
     const mainContent = document.getElementById("conteudo-principal");
@@ -8,35 +9,50 @@ window.addEventListener("load", () => {
     const loadingPercentage = document.getElementById("loading-percentage");
     let percentage = 0;
 
-    function incrementPercentage() {
-        if (percentage < 100) {
-            percentage++;
-            loadingBar.style.width = `${percentage}%`;
-            loadingPercentage.textContent = `${percentage}%`;
+    // Verifica se o carregamento já foi exibido nesta sessão
+    const hasLoadedInSession = sessionStorage.getItem("hasLoaded");
 
-            if (percentage === 25 || percentage === 33 || percentage === 54 || percentage == 88) {
-                // Pausa em 25%, 65% e 88% por 1 segundo
-                setTimeout(incrementPercentage, 1000);
+    if (hasLoadedInSession) {
+        // Se já foi exibido na sessão, pula a animação de carregamento
+        loadingScreen.style.display = "none";
+        mainContent.style.display = "block";
+        document.body.style.overflow = "auto";
+    } else {
+        // Caso contrário, executa o carregamento
+        function incrementPercentage() {
+            if (percentage < 100) {
+                percentage++;
+                loadingBar.style.width = `${percentage}%`;
+                loadingPercentage.textContent = `${percentage}%`;
+
+                if (percentage === 25 || percentage === 33 || percentage === 54 || percentage === 88) {
+                    // Pausa em porcentagens específicas
+                    setTimeout(incrementPercentage, 1000);
+                } else {
+                    // Carregamento mais lento
+                    setTimeout(incrementPercentage, 60);
+                }
             } else {
-                // Carregamento mais lento
-                setTimeout(incrementPercentage, 60);
+                // Aplica o efeito de fade-out ao completar 100%
+                loadingScreen.classList.add("fade-out");
+
+                // Aguarda o tempo da transição para ocultar a tela de carregamento
+                setTimeout(() => {
+                    loadingScreen.style.display = "none"; // Remove a tela de carregamento
+                    mainContent.style.display = "block"; // Exibe o conteúdo principal
+                    document.body.style.overflow = "auto"; // Habilita a rolagem novamente
+
+                    // Salva no Session Storage que o carregamento foi exibido
+                    sessionStorage.setItem("hasLoaded", "true");
+                }, 1000); // 1000ms corresponde ao tempo da transição CSS
             }
-        } else {
-            // Aplica o efeito de fade-out ao completar 100%
-            loadingScreen.classList.add("fade-out");
-
-            // Aguarda o tempo da transição para ocultar a tela de carregamento
-            setTimeout(() => {
-                loadingScreen.style.display = "none"; // Garante que a tela de carregamento seja removida
-                mainContent.style.display = "block"; // Exibe o conteúdo principal
-                document.body.style.overflow = "auto"; // Habilita a rolagem novamente
-            }, 1000); // 1000ms corresponde ao tempo da transição CSS
         }
-    }
 
-    // Inicia o carregamento
-    incrementPercentage();
+        // Inicia o carregamento
+        incrementPercentage();
+    }
 });
+
 
 // Selecione todos os cards
 const cards = document.querySelectorAll('.card');

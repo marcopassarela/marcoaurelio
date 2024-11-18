@@ -70,7 +70,7 @@ html:lang(pt) ul li a {
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-left: auto; /* Este é o truque para posicionar o botão à direita */
+    margin-left: auto;
     margin-right: 150px;
 }
 .light-them {
@@ -98,7 +98,7 @@ html:lang(pt) ul li a {
 }
 
 #themeToggleContainer.light-theme {
-    background-color: rgba(100, 100, 100, 0.534);
+    background-color: white;
 }
 
 #themeToggleContainer.light-theme #themeToggle {
@@ -179,6 +179,15 @@ html:lang(pt) ul li a {
     text-align: center;
     font-family: "Sora", sans-serif;
     font-size: 17px;
+}
+.grid2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 15px;
+
 }
 @media screen and (min-width: 321px) and (max-width: 430px) {
     body { overflow-x: hidden; }
