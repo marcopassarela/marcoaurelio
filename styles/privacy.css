@@ -24,7 +24,7 @@ html {
     width: 100%;
     margin-left: 20px;
     margin-top: 40px;
-    margin-left: 300px;
+    margin-left: 340px;
     z-index: 1;
 }
 #content p {
@@ -37,6 +37,7 @@ html {
 #content h3 {
     font-family: "Sora", sans-serif;
     font-size: 15px;
+    text-decoration: underline;
 }
 #content ul {
     padding-left: 3em;
@@ -56,7 +57,7 @@ html {
     display: flex;
     flex-direction: column;
     border-right: 1px solid rgba(0, 0, 0, 0.151);
-    font-size: 14px;
+    font-size: 12px;
     position: fixed;
     z-index: 10;
 }
@@ -76,27 +77,18 @@ html {
     text-decoration: none;
     color: var(--color-black);
     background-color: white;
-    line-height: 25px;
-    padding: 5px;
+    line-height: 15px;
     width: fit-content;
     transition: padding 0.3s ease;
-    margin: 5px 0;
+    margin: 15px 0;
     font-family: "Sora", sans-serif;
     border-radius: 5px;
     font-weight: normal;
+    padding: 7px;
 }
-.menu ul.desktop a:hover {
-    text-decoration: underline;
-    background-color: rgba(0, 0, 0, 0.151);
-    width: 200px;
-    height: 25px;
-}
-.menu ul.desktop a:focus {
+
+#menu-items .tag-a:focus {
     font-weight: 600; 
-    background-color: rgba(0, 0, 0, 0.151);
-    width: 200px;
-    height: 25px;
-    list-style-type: disc;
 }
 
 /* Menu mobile escondido por padrão */

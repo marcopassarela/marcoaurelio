@@ -69,3 +69,12 @@ menuItems.forEach(item => {
         document.getElementById('hamburger-btn').style.display = 'block';
     });
 });
+
+document.querySelectorAll('#menu-items .tag-a').forEach(link => {
+    link.addEventListener('click', event => {
+        // Aguarda a navegação para a âncora
+        setTimeout(() => {
+            link.focus(); // Foca novamente no link
+        }, 0);
+    });
+});
