@@ -127,6 +127,7 @@ html {
     right: 20px; /* Ajusta para o canto direito */
 }
 
+
 /* Exibir o botão de hambúrguer no mobile */
 @media (max-width: 768px) {
     .menu {
