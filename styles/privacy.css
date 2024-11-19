@@ -4,7 +4,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 :root {
     --color-blue: #007bff;
     --color-black: #000000;
@@ -22,21 +24,41 @@
     width: 100%;
     margin-left: 20px;
     margin-top: 40px;
+    margin-left: 300px;
+    z-index: 1;
 }
 #content p {
     font-family: "Sora", sans-serif;
     font-size: 12px;
-    width: 60%;
+    width: 65%;
     display: flex;
-    justify-content: center;
+    text-align: justify;
 }
+#content h3 {
+    font-family: "Sora", sans-serif;
+    font-size: 15px;
+}
+#content ul {
+    padding-left: 3em;
+    font-size: 12px;
+    font-family: "Sora", sans-serif;
+}
+#content li {
+    font-family: "Sora", sans-serif;
+    font-size: 12px;
+    width: 64%;
+    text-align: justify;
+}
+
 .menu {
-    width: 20%;
+    width: 15%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     border-right: 1px solid rgba(0, 0, 0, 0.151);
     font-size: 14px;
+    position: fixed;
+    z-index: 10;
 }
 
 /* Estilo do menu padrão (desktop) */
@@ -46,21 +68,35 @@
     list-style: none;
     font-family: "Sora", sans-serif;
     margin-left: 30px;
+    height: 100vh;
 }
 
 .menu ul.desktop a {
     display: block;
     text-decoration: none;
     color: var(--color-black);
-    background-color: var(--color-white);
+    background-color: white;
+    line-height: 25px;
+    padding: 5px;
     width: fit-content;
     transition: padding 0.3s ease;
-    margin: 20px 0;
+    margin: 5px 0;
     font-family: "Sora", sans-serif;
+    border-radius: 5px;
+    font-weight: normal;
 }
 .menu ul.desktop a:hover {
     text-decoration: underline;
-    font-weight: 400;
+    background-color: rgba(0, 0, 0, 0.151);
+    width: 200px;
+    height: 25px;
+}
+.menu ul.desktop a:focus {
+    font-weight: 600; 
+    background-color: rgba(0, 0, 0, 0.151);
+    width: 200px;
+    height: 25px;
+    list-style-type: disc;
 }
 
 /* Menu mobile escondido por padrão */
@@ -69,7 +105,7 @@
     position: fixed;
     top: 0;
     left: -100%; /* Fora da tela à esquerda */
-    width: 80%; /* Ocupa 80% da largura */
+    width: 50%; /* Ocupa 80% da largura */
     height: 100vh; /* Para cobrir toda a altura da tela */
     background-color: var(--color-white);
     padding: 20px;
@@ -103,7 +139,7 @@
 @media (max-width: 768px) {
     .menu {
         border-right: 0px solid transparent;
-        width: 20%;
+        
     }
 
     #hamburger-btn {
@@ -117,6 +153,7 @@
         position: absolute; /* Absoluto para o menu hambúrguer */
         top: 20px;
         left: 20px; /* Ajusta para o canto esquerdo */
+        position: fixed;
     }
 
     /* Esconde o menu desktop no mobile */
@@ -154,12 +191,26 @@
     }
     #content {
         margin-top: 25px;
+        margin-left: 70px;
     }
     #content p {
         width: 90%;
         text-align: justify;
+        hyphens: auto;
+        font-size: 12px;
+        font-family: "Sora", sans-serif;
+    }
+    #content li {
+        text-align: justify;
+        width: 90%;
+        hyphens: auto;
+        font-size: 12px;
+        font-family: "Sora", sans-serif;
     }
 }
+
+
+
 
 /* Esconder o botão de hambúrguer no desktop */
 @media (min-width: 769px) {

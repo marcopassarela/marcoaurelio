@@ -50,3 +50,22 @@ document.addEventListener('click', function(event) {
         hamburgerBtn.style.display = 'block';
     }
 });
+
+// Fechar o menu automaticamente quando uma opção for clicada no menu mobile
+const menuItems = document.querySelectorAll('.menu ul.mobile li a'); // Seleciona todos os links dentro do menu mobile
+
+menuItems.forEach(item => {
+    item.addEventListener('click', function() {
+        // Remove a classe 'show' do menu (fechando o menu)
+        document.querySelector('.menu ul.mobile').classList.remove('show');
+
+        // Esconde o ícone de fechar (X)
+        document.getElementById('close-btn').style.display = 'none';
+
+        // Esconde o overlay
+        document.getElementById('overlay').style.display = 'none';
+
+        // Exibe o ícone do hambúrguer
+        document.getElementById('hamburger-btn').style.display = 'block';
+    });
+});
