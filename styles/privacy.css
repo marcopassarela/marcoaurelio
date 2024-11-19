@@ -126,7 +126,11 @@ html {
     top: 20px;
     right: 20px; /* Ajusta para o canto direito */
 }
-
+.test {
+    background-color: red;
+    width: 100%;
+    height: 100px;
+}
 
 /* Exibir o botão de hambúrguer no mobile */
 @media (max-width: 768px) {
