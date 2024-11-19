@@ -97,7 +97,7 @@ html {
     position: fixed;
     top: 0;
     left: -100%; /* Fora da tela à esquerda */
-    width: 80%; /* Ocupa 80% da largura */
+    width: 75%; /* Ocupa 75% da largura */
     height: 100vh; /* Para cobrir toda a altura da tela */
     background-color: var(--color-white);
     padding: 20px;
