@@ -11,11 +11,13 @@ body {
     align-items: center; 
     height: 100vh;
     margin: 0; 
-    background-color: #f0f0f0; 
+    background-color: #f0f0f0;
+    text-rendering: optimizeLegibility; /* Melhora a legibilidade e suaviza as fontes */
 }
 
 html {
     scroll-behavior: smooth;
+    font-smoothing: antialiased; /* Para navegadores como o Safari */
 }
 
 #form-container {

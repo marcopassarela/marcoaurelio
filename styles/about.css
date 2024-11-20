@@ -9,6 +9,12 @@ body {
     background-color: var(--color-background);
     color: var(--color-text);
     transition: background-color 0.3s ease, color 0.3s ease;
+    text-rendering: optimizeLegibility; /* Melhora a legibilidade e suaviza as fontes */
+}
+
+html {
+    scroll-behavior: smooth;
+    font-smoothing: antialiased; /* Para navegadores como o Safari */
 }
 
 :root {

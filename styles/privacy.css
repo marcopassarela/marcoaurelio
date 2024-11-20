@@ -4,8 +4,12 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+body {
+    text-rendering: optimizeLegibility; /* Melhora a legibilidade e suaviza as fontes */
+}
 html {
     scroll-behavior: smooth;
+    font-smoothing: antialiased; /* Para navegadores como o Safari */
 }
 :root {
     --color-blue: #007bff;

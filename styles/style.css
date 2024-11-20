@@ -14,7 +14,6 @@ body {
 html {
     scroll-behavior: smooth;
     font-smoothing: antialiased; /* Para navegadores como o Safari */
-
 }
 
 :root {
