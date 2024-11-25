@@ -590,7 +590,7 @@ ul a:hover {
     bottom: 0;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .create-by p {
     font-size: 10px;
