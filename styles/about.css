@@ -56,6 +56,7 @@ html:lang(pt) ul li a {
     background-color: var(--color-background);
     height: 5vh;
     justify-content: space-between; /* Distribui o espaço entre o menu e o botão */
+    justify-content: center;
 }
 
 #menu {
@@ -67,6 +68,7 @@ html:lang(pt) ul li a {
     margin: 0;
     height: 5dvh;
     align-items: center;
+    position: absolute;
 }
 
 #menu li a {
