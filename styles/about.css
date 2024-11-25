@@ -267,6 +267,7 @@ html:lang(pt) ul li a {
     height: 100px;
     margin-left: 150px;
     margin-top: 20px;
+    display: none;
 }
 .map-page {
     margin-top: 20px;
@@ -364,7 +365,7 @@ html:lang(pt) ul li a {
     bottom: 0;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .create-by p {
     font-size: 10px;
