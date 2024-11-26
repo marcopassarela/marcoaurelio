@@ -40,19 +40,26 @@ function atualizarTempo() {
     
     const diff = agora - dataPublicacao; // Diferença em milissegundos
 
-    const minutos = Math.floor(diff / (1000 * 60));
-    const horas = Math.floor(minutos / 60);
-    const dias = Math.floor(horas / 24);
+    const minutos = Math.floor(diff / (1000 * 60)); // Converte milissegundos para minutos
+    const horas = Math.floor(minutos / 60); // Converte minutos para horas
+    const dias = Math.floor(horas / 24); // Converte horas para dias
 
     let tempoTexto = "";
 
+    // Verifica se já passou algum dia
     if (dias > 0) {
         tempoTexto = `Há ${dias} dia${dias > 1 ? "s" : ""}`;
-    } else if (horas > 0) {
+    } 
+    // Se não, verifica se já passou alguma hora
+    else if (horas > 0) {
         tempoTexto = `Há ${horas} hora${horas > 1 ? "s" : ""}`;
-    } else if (minutos > 0) {
+    } 
+    // Se não, verifica se passou algum minuto
+    else if (minutos > 0) {
         tempoTexto = `Há ${minutos} minuto${minutos > 1 ? "s" : ""}`;
-    } else {
+    } 
+    // Caso contrário, é menos de um minuto
+    else {
         tempoTexto = "Há menos de um minuto";
     }
 
@@ -65,4 +72,3 @@ atualizarTempo();
 
 // Opcional: Atualiza o tempo a cada 30 segundos para manter a precisão
 setInterval(atualizarTempo, 30000);
-
