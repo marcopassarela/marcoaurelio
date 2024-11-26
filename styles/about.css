@@ -577,5 +577,15 @@ html:lang(pt) ul li a {
     .privacy-terms h3 {
         font-size: 12px;
     }
-    
+    #technology {
+        flex-wrap: wrap;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        gap: 30px;
+    }
+    .box-noticias {
+        width: 85%;
+        height: auto;
+    }
 }
