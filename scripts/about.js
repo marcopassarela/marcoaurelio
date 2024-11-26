@@ -34,15 +34,16 @@ links.forEach(function(link) {
 });
 
 async function atualizarNoticias() {
-    // Endpoint da API de notícias (substitua com a URL da sua API e a chave de API)
-    const url = 'https://newsapi.org/v2/top-headlines?category=technology&country=br&apiKey=de86bf1b85a34c55878e4e660d4b7b74';
+    // Sua chave de API
+    const apiKey = "d5HvrGBPzmeDvByXHfun9KiXbAzAGKlx";
+    const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=technology&api-key=${apiKey}`;
 
     try {
         const response = await fetch(url);
         const data = await response.json();
 
         // Filtra as notícias de tecnologia
-        const noticias = data.articles;
+        const noticias = data.response.docs;
 
         // Seleciona os elementos .box-noticias na página
         const noticiasElements = document.querySelectorAll('.box-noticias');
@@ -52,17 +53,20 @@ async function atualizarNoticias() {
             if (noticiasElements[index]) {
                 const noticiaElement = noticiasElements[index];
 
-                // Atualiza a imagem
+                // Atualiza a imagem (utiliza multimedia[0] se disponível)
                 const imgElement = noticiaElement.querySelector('img');
-                imgElement.src = noticia.urlToImage || '/img/img 1.jpg';  // Fallback se não houver imagem
+                const imagem = noticia.multimedia && noticia.multimedia.length > 0
+                    ? `https://www.nytimes.com/${noticia.multimedia[0].url}`
+                    : '/img/img1.jpg'; // Fallback se não houver imagem
+                imgElement.src = imagem;
 
                 // Atualiza o conteúdo da notícia
                 const pElement = noticiaElement.querySelector('p');
-                pElement.innerHTML = `${noticia.description} <a href="${noticia.url}" class="link-noticia">Find out more...</a>`;
+                pElement.innerHTML = `${noticia.abstract} <a href="${noticia.web_url}" class="link-noticia" target="_blank">Find out more...</a>`;
 
                 // Atualiza a data de publicação
                 const tempoElement = noticiaElement.querySelector('.tempo-noticia');
-                tempoElement.setAttribute('data-time', noticia.publishedAt);
+                tempoElement.setAttribute('data-time', noticia.pub_date);
             }
         });
     } catch (error) {
