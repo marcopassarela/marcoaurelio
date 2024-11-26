@@ -37,38 +37,35 @@ function atualizarTempo() {
     const elemento = document.getElementById("tempo-noticia");
     const dataPublicacao = new Date(elemento.getAttribute("data-time"));
     const agora = new Date();
+    
+    const diff = agora - dataPublicacao; // Diferença em milissegundos
 
-    // Calcula a diferença em milissegundos
-    const diferenca = agora - dataPublicacao;
+    const minutos = Math.floor(diff / (1000 * 60));
+    const horas = Math.floor(minutos / 60);
+    const dias = Math.floor(horas / 24);
 
-    // Se a diferença for muito grande (por exemplo, mais de 1 dia), defina como a hora atual
-    if (diferenca < 1000 * 60) {  // Se for menor que 1 minuto
-        elemento.textContent = "Há menos de 1 minuto --- Marco Aurélio";
+    let tempoTexto = "";
+
+    if (dias > 0) {
+        tempoTexto = `Há ${dias} dia${dias > 1 ? "s" : ""}`;
+    } else if (horas > 0) {
+        tempoTexto = `Há ${horas} hora${horas > 1 ? "s" : ""}`;
+    } else if (minutos > 0) {
+        tempoTexto = `Há ${minutos} minuto${minutos > 1 ? "s" : ""}`;
     } else {
-        // Calcula os minutos, horas, e dias
-        const minutosAtras = Math.floor(diferenca / (1000 * 60)); // em minutos
-        const horasAtras = Math.floor(diferenca / (1000 * 60 * 60)); // em horas
-        const diasAtras = Math.floor(diferenca / (1000 * 60 * 60 * 24)); // em dias
-
-        let tempoTexto = '';
-
-        // Verifica se passou menos de 1 hora
-        if (minutosAtras < 60) {
-            tempoTexto = minutosAtras + " minuto" + (minutosAtras === 1 ? '' : 's');
-        } 
-        // Verifica se passou menos de 24 horas
-        else if (horasAtras < 24) {
-            tempoTexto = horasAtras + " hora" + (horasAtras === 1 ? '' : 's');
-        } 
-        // Se passou mais de 1 dia
-        else {
-            tempoTexto = diasAtras + " dia" + (diasAtras === 1 ? '' : 's');
-        }
-
-        // Atualiza o conteúdo do span com o tempo calculado
-        elemento.textContent = "Há " + tempoTexto + " — Por Marco Aurélio";
+        tempoTexto = "Há menos de um minuto";
     }
+
+    // Atualiza o conteúdo da página sem duplicação
+    elemento.textContent = tempoTexto + " --- Por Marco Aurélio";
+
+    // Define a cor azul
+    elemento.style.color = "blue";
 }
 
-// Chama a função ao carregar a página
-window.onload = atualizarTempo;
+// Atualiza o tempo imediatamente
+atualizarTempo();
+
+// Opcional: Atualiza o tempo a cada 30 segundos para manter a precisão
+setInterval(atualizarTempo, 30000);
+
