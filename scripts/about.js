@@ -36,7 +36,7 @@ links.forEach(function(link) {
 async function atualizarNoticias() {
     // Sua chave de API
     const apiKey = "d5HvrGBPzmeDvByXHfun9KiXbAzAGKlx";
-    const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=technology&api-key=${apiKey}`;
+    const url = `ttps://api.nytimes.com/svc/search/v2/articlesearch.json?q=technology&api-key=${apiKey}`;
 
     try {
         const response = await fetch(url);
