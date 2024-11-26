@@ -39,6 +39,10 @@ function atualizarTempo() {
     const agora = new Date();
     
     const diff = agora - dataPublicacao; // Diferença em milissegundos
+    
+    console.log("Data de publicação: " + dataPublicacao);
+    console.log("Agora: " + agora);
+    console.log("Diferença em milissegundos: " + diff);
 
     const minutos = Math.floor(diff / (1000 * 60)); // Converte milissegundos para minutos
     const horas = Math.floor(minutos / 60); // Converte minutos para horas
