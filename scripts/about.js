@@ -58,9 +58,6 @@ function atualizarTempo() {
 
     // Atualiza o conteúdo da página sem duplicação
     elemento.textContent = tempoTexto + " --- Por Marco Aurélio";
-
-    // Define a cor azul
-    elemento.style.color = "blue";
 }
 
 // Atualiza o tempo imediatamente
