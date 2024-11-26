@@ -34,41 +34,41 @@ links.forEach(function(link) {
 });
 
 function atualizarTempo() {
-    const elemento = document.getElementById("tempo-noticia");
-    const dataPublicacao = new Date(elemento.getAttribute("data-time"));
-    const agora = new Date();
-    
-    const diff = agora - dataPublicacao; // Diferença em milissegundos
-    
-    console.log("Data de publicação: " + dataPublicacao);
-    console.log("Agora: " + agora);
-    console.log("Diferença em milissegundos: " + diff);
+    // Seleciona todos os elementos com a classe 'tempo-noticia'
+    const elementos = document.querySelectorAll(".tempo-noticia");
 
-    const minutos = Math.floor(diff / (1000 * 60)); // Converte milissegundos para minutos
-    const horas = Math.floor(minutos / 60); // Converte minutos para horas
-    const dias = Math.floor(horas / 24); // Converte horas para dias
+    elementos.forEach(elemento => {
+        const dataPublicacao = new Date(elemento.getAttribute("data-time"));
+        const agora = new Date();
+        
+        const diff = agora - dataPublicacao; // Diferença em milissegundos
+        
+        const minutos = Math.floor(diff / (1000 * 60)); // Converte milissegundos para minutos
+        const horas = Math.floor(minutos / 60); // Converte minutos para horas
+        const dias = Math.floor(horas / 24); // Converte horas para dias
 
-    let tempoTexto = "";
+        let tempoTexto = "";
 
-    // Verifica se já passou algum dia
-    if (dias > 0) {
-        tempoTexto = `Há ${dias} dia${dias > 1 ? "s" : ""}`;
-    } 
-    // Se não, verifica se já passou alguma hora
-    else if (horas > 0) {
-        tempoTexto = `Há ${horas} hora${horas > 1 ? "s" : ""}`;
-    } 
-    // Se não, verifica se passou algum minuto
-    else if (minutos > 0) {
-        tempoTexto = `Há ${minutos} minuto${minutos > 1 ? "s" : ""}`;
-    } 
-    // Caso contrário, é menos de um minuto
-    else {
-        tempoTexto = "Há menos de um minuto";
-    }
+        // Verifica se já passou algum dia
+        if (dias > 0) {
+            tempoTexto = `Há ${dias} dia${dias > 1 ? "s" : ""}`;
+        } 
+        // Se não, verifica se já passou alguma hora
+        else if (horas > 0) {
+            tempoTexto = `Há ${horas} hora${horas > 1 ? "s" : ""}`;
+        } 
+        // Se não, verifica se passou algum minuto
+        else if (minutos > 0) {
+            tempoTexto = `Há ${minutos} minuto${minutos > 1 ? "s" : ""}`;
+        } 
+        // Caso contrário, é menos de um minuto
+        else {
+            tempoTexto = "Há menos de um minuto";
+        }
 
-    // Atualiza o conteúdo da página sem duplicação
-    elemento.textContent = tempoTexto + " --- Por Marco Aurélio";
+        // Atualiza o conteúdo da página sem duplicação
+        elemento.textContent = tempoTexto + " --- Por Marco Aurélio";
+    });
 }
 
 // Atualiza o tempo imediatamente
