@@ -33,90 +33,104 @@ links.forEach(function(link) {
     });
 });
 
-async function atualizarNoticias() {
-    // Sua chave de API
-    const apiKey = "d5HvrGBPzmeDvByXHfun9KiXbAzAGKlx";
-    const url = `ttps://api.nytimes.com/svc/search/v2/articlesearch.json?q=technology&api-key=${apiKey}`;
+async function buscarNoticiasIBGE() {
+    const url = '://servicodados.ibge.gov.br/api/v3/noticias/';
 
     try {
         const response = await fetch(url);
         const data = await response.json();
 
-        // Filtra as notícias de tecnologia
-        const noticias = data.response.docs;
+        console.log("Dados da API:", data);
 
-        // Seleciona os elementos .box-noticias na página
+        const noticias = data.items;
         const noticiasElements = document.querySelectorAll('.box-noticias');
 
-        // Preenche as caixas com as notícias
         noticias.forEach((noticia, index) => {
             if (noticiasElements[index]) {
                 const noticiaElement = noticiasElements[index];
 
-                // Atualiza a imagem (utiliza multimedia[0] se disponível)
+                // Obter URL da imagem
+                let imagemUrl = noticia.imagens && noticia.imagens.image_intro
+                    ? noticia.imagens.image_intro
+                    : './img/fallback.jpg'; // Atualize o caminho aqui, se necessário
+
+                if (imagemUrl.startsWith('images/')) {
+                    imagemUrl = `https://www.ibge.gov.br/${imagemUrl}`;
+                }
+
+                console.log(`Imagem URL [${index}]:`, imagemUrl);
+
+                // Atualizar a imagem
                 const imgElement = noticiaElement.querySelector('img');
-                const imagem = noticia.multimedia && noticia.multimedia.length > 0
-                    ? `https://www.nytimes.com/${noticia.multimedia[0].url}`
-                    : '/img/img1.jpg'; // Fallback se não houver imagem
-                imgElement.src = imagem;
+                imgElement.src = imagemUrl;
 
-                // Atualiza o conteúdo da notícia
+                // Configurar fallback no erro
+                imgElement.onerror = () => {
+                    imgElement.src = './img/fallback.jpg'; // Atualize conforme o caminho correto
+                    console.warn(`Imagem não encontrada. Aplicando fallback: ${imgElement.src}`);
+                };
+
+                // Atualizar conteúdo da notícia
                 const pElement = noticiaElement.querySelector('p');
-                pElement.innerHTML = `${noticia.abstract} <a href="${noticia.web_url}" class="link-noticia" target="_blank">Find out more...</a>`;
+                pElement.innerHTML = `${noticia.introducao} <a href="${noticia.link}" target="_blank">Leia mais...</a>`;
 
-                // Atualiza a data de publicação
+                // Atualizar data de publicação
                 const tempoElement = noticiaElement.querySelector('.tempo-noticia');
-                tempoElement.setAttribute('data-time', noticia.pub_date);
+                tempoElement.textContent = new Date(noticia.data_publicacao).toLocaleString('pt-BR');
             }
         });
+
+        localStorage.setItem("ultimaAtualizacao", new Date().toISOString());
     } catch (error) {
         console.error('Erro ao buscar notícias:', error);
     }
 }
 
+
 function atualizarTempo() {
-    // Seleciona todos os elementos com a classe 'tempo-noticia'
     const elementos = document.querySelectorAll(".tempo-noticia");
 
     elementos.forEach(elemento => {
         const dataPublicacao = new Date(elemento.getAttribute("data-time"));
         const agora = new Date();
+        const diff = agora - dataPublicacao;
         
-        const diff = agora - dataPublicacao; // Diferença em milissegundos
-        
-        const minutos = Math.floor(diff / (1000 * 60)); // Converte milissegundos para minutos
-        const horas = Math.floor(minutos / 60); // Converte minutos para horas
-        const dias = Math.floor(horas / 24); // Converte horas para dias
+        const minutos = Math.floor(diff / (1000 * 60));
+        const horas = Math.floor(minutos / 60);
+        const dias = Math.floor(horas / 24);
 
         let tempoTexto = "";
 
-        // Verifica se já passou algum dia
         if (dias > 0) {
             tempoTexto = `Há ${dias} dia${dias > 1 ? "s" : ""}`;
-        } 
-        // Se não, verifica se já passou alguma hora
-        else if (horas > 0) {
+        } else if (horas > 0) {
             tempoTexto = `Há ${horas} hora${horas > 1 ? "s" : ""}`;
-        } 
-        // Se não, verifica se passou algum minuto
-        else if (minutos > 0) {
+        } else if (minutos > 0) {
             tempoTexto = `Há ${minutos} minuto${minutos > 1 ? "s" : ""}`;
-        } 
-        // Caso contrário, é menos de um minuto
-        else {
+        } else {
             tempoTexto = "Há menos de um minuto";
         }
 
-        // Atualiza o conteúdo da página sem duplicação
         elemento.textContent = tempoTexto + " --- Por Marco Aurélio";
     });
 }
 
-// Atualiza o tempo imediatamente
+function verificarAtualizacao() {
+    const ultimaAtualizacao = localStorage.getItem("ultimaAtualizacao");
+    if (ultimaAtualizacao) {
+        const agora = new Date();
+        const ultimaData = new Date(ultimaAtualizacao);
+        const diffHoras = (agora - ultimaData) / (1000 * 60 * 60);
+
+        if (diffHoras >= 24) {
+            buscarNoticiasIBGE();
+        }
+    } else {
+        buscarNoticiasIBGE();
+    }
+}
+
+verificarAtualizacao();
 atualizarTempo();
+buscarNoticiasIBGE();
 
-// Opcional: Atualiza o tempo a cada 30 segundos para manter a precisão
-setInterval(atualizarTempo, 30000);
-
-// Chama a função para carregar as notícias
-atualizarNoticias();
