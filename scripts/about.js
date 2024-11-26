@@ -35,7 +35,7 @@ links.forEach(function(link) {
 
 async function atualizarNoticias() {
     // Endpoint da API de notícias (substitua com a URL da sua API e a chave de API)
-    const url = 'https://newsapi.org/v2/top-headlines?category=technology&country=br&apiKey=YOUR_API_KEY';
+    const url = 'https://newsapi.org/v2/top-headlines?category=technology&country=br&apiKey=de86bf1b85a34c55878e4e660d4b7b74';
 
     try {
         const response = await fetch(url);
@@ -63,9 +63,6 @@ async function atualizarNoticias() {
                 // Atualiza a data de publicação
                 const tempoElement = noticiaElement.querySelector('.tempo-noticia');
                 tempoElement.setAttribute('data-time', noticia.publishedAt);
-                
-                // Atualiza o tempo de publicação
-                atualizarTempo();
             }
         });
     } catch (error) {
