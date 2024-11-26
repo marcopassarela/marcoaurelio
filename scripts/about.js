@@ -33,6 +33,46 @@ links.forEach(function(link) {
     });
 });
 
+async function atualizarNoticias() {
+    // Endpoint da API de notícias (substitua com a URL da sua API e a chave de API)
+    const url = 'https://newsapi.org/v2/top-headlines?category=technology&country=br&apiKey=YOUR_API_KEY';
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        // Filtra as notícias de tecnologia
+        const noticias = data.articles;
+
+        // Seleciona os elementos .box-noticias na página
+        const noticiasElements = document.querySelectorAll('.box-noticias');
+
+        // Preenche as caixas com as notícias
+        noticias.forEach((noticia, index) => {
+            if (noticiasElements[index]) {
+                const noticiaElement = noticiasElements[index];
+
+                // Atualiza a imagem
+                const imgElement = noticiaElement.querySelector('img');
+                imgElement.src = noticia.urlToImage || '/img/img 1.jpg';  // Fallback se não houver imagem
+
+                // Atualiza o conteúdo da notícia
+                const pElement = noticiaElement.querySelector('p');
+                pElement.innerHTML = `${noticia.description} <a href="${noticia.url}" class="link-noticia">Find out more...</a>`;
+
+                // Atualiza a data de publicação
+                const tempoElement = noticiaElement.querySelector('.tempo-noticia');
+                tempoElement.setAttribute('data-time', noticia.publishedAt);
+                
+                // Atualiza o tempo de publicação
+                atualizarTempo();
+            }
+        });
+    } catch (error) {
+        console.error('Erro ao buscar notícias:', error);
+    }
+}
+
 function atualizarTempo() {
     // Seleciona todos os elementos com a classe 'tempo-noticia'
     const elementos = document.querySelectorAll(".tempo-noticia");
@@ -76,3 +116,6 @@ atualizarTempo();
 
 // Opcional: Atualiza o tempo a cada 30 segundos para manter a precisão
 setInterval(atualizarTempo, 30000);
+
+// Chama a função para carregar as notícias
+atualizarNoticias();
