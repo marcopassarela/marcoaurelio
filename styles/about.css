@@ -256,6 +256,92 @@ html:lang(pt) ul li a {
     margin-bottom: 15px;
 }
 
+#technology {
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.box-noticias {
+    width: 400px;
+    height: 250px;
+    background-color: yellow;
+    box-shadow: 0px 2px 8px 0px rgba(60, 64, 67, 0.25);
+    background: #fff;
+    border-radius: 5px;
+}
+.noticia1 {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-noticia1 {
+    object-fit: cover;
+    object-position: center;
+    width: 95%;
+    height: 95%;
+    border-radius: 10px;
+}
+
+.box-noticias p {
+    font-family: "Sora", sans-serif;
+    font-size: 11px;
+    width: 90%;
+    height: auto;
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.box-noticias a {
+    font-size: 11px;
+    font-family: "Sora", sans-serif;
+}
+
+.noticia2 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+}
+
+.info-noticia {
+    font-size: 10px;
+    font-family: "Sora", sans-serif;
+    color: #888;
+    margin-top: 5px;
+    font-style: italic;
+    margin-left: 15px;
+}
+
+.categoria {
+    color: #007BFF;
+    text-transform: capitalize;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #privacy {
     width: 100%;
     justify-content: center;
