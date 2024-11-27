@@ -1571,7 +1571,6 @@ ul a:hover {
         flex-direction: column;
         border: 0px solid;
         transform: rotateY(0deg);
-        border: 2px solid rgb(0, 255, 64);
     }
     .instagram {
         width: 40px;
