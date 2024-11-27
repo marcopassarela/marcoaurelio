@@ -3,7 +3,7 @@ function setCookie(name, value, days) {
     const date = new Date();
     date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
     const expires = "expires=" + date.toUTCString();
-    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    document.cookie = `${name}=${value}; ${expires}; path=/`;
 }
 
 // Função para ler um cookie
@@ -22,22 +22,25 @@ function getCookie(name) {
 function applyCookiePreferences() {
     const cookieChoice = getCookie("cookieChoice");
 
-    if (cookieChoice === "acceptAll") {
-        console.log("Aceitar todos os cookies. Carregando scripts adicionais.");
-        loadAdditionalScripts(); // Função para carregar scripts adicionais
-    } else if (cookieChoice === "acceptNecessary") {
-        console.log("Carregar apenas cookies essenciais.");
-        // Aqui só carregamos o essencial
-    } else if (cookieChoice === "denyAll") {
-        console.log("Nenhum cookie será carregado.");
-        // Nenhum script adicional será carregado
+    switch (cookieChoice) {
+        case "acceptAll":
+            console.log("Aceitar todos os cookies. Carregando scripts adicionais.");
+            loadAdditionalScripts();
+            break;
+        case "acceptNecessary":
+            console.log("Carregar apenas cookies essenciais.");
+            break;
+        case "denyAll":
+            console.log("Nenhum cookie será carregado.");
+            break;
+        default:
+            console.log("Nenhuma ação de cookie configurada.");
     }
 }
 
 // Função para carregar scripts adicionais
 function loadAdditionalScripts() {
     if (!document.getElementById("ga-script")) {
-        // Adiciona o script apenas se ainda não estiver carregado
         const gaScript = document.createElement("script");
         gaScript.id = "ga-script";
         gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-C4L3SX788S";
@@ -55,17 +58,16 @@ function loadAdditionalScripts() {
     }
 }
 
-
-// Exibe o popup apenas se o cookie ainda não existir
+// Evento de inicialização do DOM
 document.addEventListener("DOMContentLoaded", () => {
     const cookieChoice = getCookie("cookieChoice");
     const popup = document.getElementById("popup");
 
     if (!cookieChoice) {
         console.log("Aguardando consentimento de cookies.");
-        popup.style.display = "flex"; // Mostra o popup
+        popup.style.display = "flex"; // Exibe o popup
     } else {
-        applyCookiePreferences(); // Aplica as preferências se o cookie já existir
+        applyCookiePreferences(); // Aplica as preferências do cookie
     }
 });
 
