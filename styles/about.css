@@ -370,6 +370,7 @@ html:lang(pt) ul li a {
     margin-bottom: 10px;
     font-family: "Sora", sans-serif;
     color: var(--color-text);
+    font-weight: 500;
 }
 .map-page a {
     color: var(--color-text);
@@ -379,6 +380,7 @@ html:lang(pt) ul li a {
     margin-bottom: 10px;
     text-decoration: none;
     width: 45px;
+    font-weight: 200;
 }
 .map-page a:hover {
     text-decoration: underline;
@@ -392,6 +394,7 @@ html:lang(pt) ul li a {
     margin-bottom: 10px;
     font-family: "Sora", sans-serif;
     color: var(--color-text);
+    font-weight: 500;
 }
 .support a {
     color: var(--color-text);
@@ -401,6 +404,7 @@ html:lang(pt) ul li a {
     margin-bottom: 10px;
     text-decoration: none;
     width: 90px;
+    font-weight: 200;
 }
 .support a:hover {
     text-decoration: underline;
@@ -416,6 +420,7 @@ html:lang(pt) ul li a {
     font-size: 14px;
     font-family: "Sora", sans-serif;
     color: var(--color-text);
+    font-weight: 500;
 }
 .redes-sociais a {
     color: var(--color-text);
@@ -424,6 +429,7 @@ html:lang(pt) ul li a {
     display: flex;
     text-decoration: none;
     width: 45px;
+    font-weight: 200;
 }
 .privacy-terms {
     margin-top: 20px;
@@ -436,6 +442,7 @@ html:lang(pt) ul li a {
     font-size: 14px;
     font-family: "Sora", sans-serif;
     color: var(--color-text);
+    font-weight: 500;
 }
 .privacy-terms a {
     color: var(--color-text);
@@ -444,6 +451,7 @@ html:lang(pt) ul li a {
     display: flex;
     text-decoration: none;
     width: 90px;
+    font-weight: 200;
 }
 .privacy-terms a:hover {
     text-decoration: underline;
