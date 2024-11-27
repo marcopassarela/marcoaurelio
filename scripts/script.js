@@ -103,10 +103,9 @@ window.addEventListener("load", () => {
     // Função para criar um cookie
 function setCookie(name, value, days) {
     const date = new Date();
-    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000); // Configura o tempo de expiração
     const expires = "expires=" + date.toUTCString();
-    document.cookie = name + "=" + value + ";" + expires + ";path=/";
-    console.log(`Cookie Set: ${name}=${value}`); // Log para verificar se o cookie foi configurado corretamente
+    document.cookie = name + "=" + value + ";" + expires + ";path=/"; // Define o cookie com o caminho
 }
 
 // Função para ler um cookie
@@ -115,15 +114,22 @@ function getCookie(name) {
     for (let cookie of cookies) {
         const [key, value] = cookie.split("=");
         if (key === name) {
-            console.log(`Cookie Found: ${name}=${value}`); // Log para verificar se o cookie foi lido corretamente
             return value;
         }
     }
     return null;
 }
 
-// Função para carregar Google Analytics (se necessário)
-function loadGoogleAnalytics() {
+// Função para carregar scripts essenciais (necessários)
+function loadEssentialScripts() {
+    console.log("Carregando scripts essenciais...");
+    // Carregar scripts essenciais aqui, sem rastreamento
+}
+
+// Função para carregar Google Analytics e outros cookies opcionais
+function loadOptionalCookies() {
+    console.log("Carregando cookies opcionais (Analytics e GTM)...");
+    // Carregar Google Analytics
     const gaScript = document.createElement("script");
     gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-C4L3SX788S";
     gaScript.async = true;
@@ -137,74 +143,58 @@ function loadGoogleAnalytics() {
         gtag("js", new Date());
         gtag("config", "G-C4L3SX788S");
     };
-}
 
-// Função para carregar Google Tag Manager (se necessário)
-function loadGoogleTagManager() {
+    // Carregar Google Tag Manager
     const gtmScript = document.createElement("script");
     gtmScript.src = "https://www.googletagmanager.com/gtm.js?id=GTM-TX48535W";
     gtmScript.async = true;
     document.head.appendChild(gtmScript);
-
-    // Adicionar o iframe do GTM (fallback para usuários com noscript)
-    const noscript = document.createElement("noscript");
-    noscript.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TX48535W" height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
-    document.body.appendChild(noscript);
 }
 
-// Função para carregar scripts essenciais
-function loadEssentialScripts() {
-    console.log("Carregando scripts essenciais...");
-    const essentialScript = document.createElement("script");
-    essentialScript.src = "/scripts/script.js"; // Substitua com o caminho do seu script essencial
-    document.head.appendChild(essentialScript);
-}
-
-// Função para aplicar a escolha de cookies
+// Função para aplicar as preferências de cookies
 function applyCookiePreferences() {
     const cookieChoice = getCookie("cookieChoice");
 
+    // Se o usuário aceitou todos os cookies
     if (cookieChoice === "acceptAll") {
-        console.log("Carregar todos os cookies, incluindo de terceiros.");
-        loadEssentialScripts(); // Sempre carrega scripts essenciais
-        loadGoogleAnalytics();  // Carrega Google Analytics
-        loadGoogleTagManager(); // Carrega Google Tag Manager
-    } else if (cookieChoice === "acceptNecessary") {
-        console.log("Carregar apenas cookies necessários.");
-        loadEssentialScripts(); // Carrega apenas scripts essenciais (sem rastreamento)
-    } else if (cookieChoice === "denyAll") {
-        console.log("Nenhum cookie será carregado.");
+        loadEssentialScripts();  // Carregar apenas os essenciais
+        loadOptionalCookies();  // Carregar cookies opcionais (Google Analytics, etc.)
+    } 
+    // Se o usuário aceitou apenas os cookies necessários
+    else if (cookieChoice === "acceptNecessary") {
+        loadEssentialScripts();  // Carregar apenas os essenciais
     }
 }
 
-// Mostrar popup apenas se o cookieChoice ainda não foi definido ou se o cookieChoice for "denyAll"
+// Mostrar popup se o usuário ainda não escolheu ou se negou todos os cookies
 document.addEventListener("DOMContentLoaded", () => {
     const cookieChoice = getCookie("cookieChoice");
-    console.log(`cookieChoice na DOMContentLoaded: ${cookieChoice}`); // Log para verificar o valor do cookie ao carregar a página
     if (!cookieChoice || cookieChoice === "denyAll") {
-        document.getElementById("popup").style.display = "flex"; // Exibe o popup
+        // Mostrar o popup apenas se não houver escolha ou se o usuário negou todos os cookies
+        document.getElementById("popup").style.display = "flex"; 
     } else {
-        applyCookiePreferences(); // Aplica as preferências salvas
+        // Aplicar as preferências do usuário
+        applyCookiePreferences();
     }
 });
 
-// Configurar os botões do popup
+// Configurar os botões de aceitação de cookies
 document.getElementById("acceptAll").addEventListener("click", () => {
-    setCookie("cookieChoice", "acceptAll", 15); // Aceitar todos os cookies por 15 dias
-    applyCookiePreferences();
-    document.getElementById("popup").style.display = "none";
+    setCookie("cookieChoice", "acceptAll", 15); // Salvar escolha de aceitar todos os cookies por 15 dias
+    applyCookiePreferences(); // Aplicar preferências imediatamente
+    document.getElementById("popup").style.display = "none"; // Fechar o popup
 });
 
 document.getElementById("acceptNecessary").addEventListener("click", () => {
-    setCookie("cookieChoice", "acceptNecessary", 15); // Aceitar apenas os necessários
-    applyCookiePreferences();
-    document.getElementById("popup").style.display = "none";
+    setCookie("cookieChoice", "acceptNecessary", 15); // Salvar escolha de aceitar apenas os necessários por 15 dias
+    applyCookiePreferences(); // Aplicar preferências imediatamente
+    document.getElementById("popup").style.display = "none"; // Fechar o popup
 });
 
 document.getElementById("denyAll").addEventListener("click", () => {
-    setCookie("cookieChoice", "denyAll", 15); // Negar todos os cookies
-    applyCookiePreferences();
-    document.getElementById("popup").style.display = "none";
+    setCookie("cookieChoice", "denyAll", 15); // Salvar escolha de negar todos os cookies por 15 dias
+    applyCookiePreferences(); // Aplicar preferências imediatamente
+    document.getElementById("popup").style.display = "none"; // Fechar o popup
 });
 
 });
