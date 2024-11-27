@@ -331,22 +331,6 @@ html:lang(pt) ul li a {
     text-transform: capitalize;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #privacy {
     width: 100%;
     justify-content: center;
@@ -591,6 +575,391 @@ html:lang(pt) ul li a {
     }
     .box-noticias {
         width: 85%;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 431px) and (max-width: 768px) {
+    body { overflow-x: hidden; }
+
+    #menu { 
+        width: 100vw;
+        gap: 10px; 
+        display: flex;
+        position: relative;
+        text-align: center;
+    }
+    #menu li a:hover {
+        color: var(--color-white);
+    }
+    #menu-container {
+        display: flex; 
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        margin-top: 15px;
+    }
+    #themeToggleContainer {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+    #container-options {
+        display: flex;
+        width: 100%;
+        height: auto;
+    }
+    #options {
+        display: flex;
+        width: 90%;
+        gap: 10px;
+        margin-top: 15px;
+    }
+    .options-card {
+        margin-bottom: 20px;
+    }
+    .grid2 {
+        flex-basis: 100%;
+    }
+    .options-card a:hover {
+        text-decoration: none;
+        background-color: rgb(3, 161, 3);
+    }
+    #container {
+        width: 100%;
+    }
+    #container img {
+        width: 150px;
+        height: 150px;
+        box-shadow: 0px 0px 40px 0px black;
+        animation: pulsar 5s infinite;
+        float: left;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    #container span {
+        margin-left: 0px;
+        text-align: justify;
+        font-size: 12px;
+        margin-top: 40px;
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .content span {
+        width: 90%;
+    }
+    #privacy {
+        width: 100%;
+        height: auto;
+        gap: 20px;
+    }
+    #privacy img {
+        width: 50px;
+        height: 50px;
+        margin-left: 0px;
+        display: flex;
+        justify-content: center;
+        display: none;
+    }
+    .my-logo {
+        margin-left: 0px;
+    }
+    .map-page {
+        margin-left: 0px;
+        display: none;
+    }
+    .support {
+        margin-left: 0;
+    }
+    .support h3 {
+        font-size: 12px;
+    }
+    .redes-sociais {
+        margin-left: 0;
+    }
+    .redes-sociais h3 {
+        font-size: 12px;
+    }
+    .privacy-terms {
+        margin-left: 0;
+    }
+    .privacy-terms h3 {
+        font-size: 12px;
+    }
+    #technology {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        gap: 10px;
+        display: flex;
+    }
+    .box-noticias {
+        width: 30%;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    body { overflow-x: hidden; }
+
+    #menu { 
+        width: 100vw;
+        gap: 10px; 
+        display: flex;
+        position: relative;
+        text-align: center;
+    }
+    #menu li a:hover {
+        color: var(--color-white);
+    }
+    #menu-container {
+        display: flex; 
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        margin-top: 15px;
+    }
+    #themeToggleContainer {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+    #container-options {
+        display: flex;
+        width: 100%;
+        height: auto;
+    }
+    #options {
+        display: flex;
+        width: 90%;
+        gap: 10px;
+        margin-top: 15px;
+    }
+    .options-card {
+        margin-bottom: 20px;
+    }
+    .grid2 {
+        flex-basis: 100%;
+    }
+    .options-card a:hover {
+        text-decoration: none;
+        background-color: rgb(3, 161, 3);
+    }
+    #container {
+        width: 100%;
+    }
+    #container img {
+        width: 250px;
+        height: 250px;
+        box-shadow: 0px 0px 40px 0px black;
+        animation: pulsar 5s infinite;
+        float: left;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    #container span {
+        margin-left: 0px;
+        text-align: justify;
+        font-size: 14px;
+        margin-top: 40px;
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .content span {
+        width: 90%;
+    }
+    #privacy {
+        width: 100%;
+        height: auto;
+        gap: 20px;
+    }
+    #privacy img {
+        width: 50px;
+        height: 50px;
+        margin-left: 0px;
+        display: flex;
+        justify-content: center;
+        display: none;
+    }
+    .my-logo {
+        margin-left: 0px;
+    }
+    .map-page {
+        margin-left: 0px;
+        display: none;
+    }
+    .support {
+        margin-left: 0;
+    }
+    .support h3 {
+        font-size: 12px;
+    }
+    .redes-sociais {
+        margin-left: 0;
+    }
+    .redes-sociais h3 {
+        font-size: 12px;
+    }
+    .privacy-terms {
+        margin-left: 0;
+    }
+    .privacy-terms h3 {
+        font-size: 12px;
+    }
+    #technology {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        gap: 10px;
+        display: flex;
+    }
+    .box-noticias {
+        width: 30%;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+    body { overflow-x: hidden; }
+
+    #menu { 
+        width: 100vw;
+        gap: 10px; 
+        display: flex;
+        position: relative;
+        text-align: center;
+    }
+    #menu li a:hover {
+        color: var(--color-white);
+    }
+    #menu-container {
+        display: flex; 
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        margin-top: 15px;
+    }
+    #themeToggleContainer {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+    #container-options {
+        display: flex;
+        width: 100%;
+        height: auto;
+    }
+    #options {
+        display: flex;
+        width: 90%;
+        gap: 10px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+    .options-card {
+        margin-bottom: 20px;
+    }
+    .grid2 {
+        flex-basis: 100%;
+    }
+    .options-card a:hover {
+        text-decoration: none;
+        background-color: rgb(3, 161, 3);
+    }
+    #container {
+        width: 100%;
+    }
+    #container img {
+        width: 250px;
+        height: 250px;
+        box-shadow: 0px 0px 40px 0px black;
+        animation: pulsar 5s infinite;
+        float: left;
+        
+        margin-top: 20px;
+    }
+    #container span {
+        margin-left: 0px;
+        text-align: justify;
+        font-size: 14px;
+        margin-top: 40px;
+        width: 80%;
+    }
+    .content {
+        display: flex;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .content span {
+        width: 90%;
+    }
+    #privacy {
+        width: 100%;
+        height: auto;
+        gap: 20px;
+    }
+    #privacy img {
+        width: 50px;
+        height: 50px;
+        margin-left: 0px;
+        display: flex;
+        justify-content: center;
+        display: none;
+    }
+    .my-logo {
+        margin-left: 0px;
+    }
+    .map-page {
+        margin-left: 0px;
+        display: none;
+    }
+    .support {
+        margin-left: 0;
+    }
+    .support h3 {
+        font-size: 12px;
+    }
+    .redes-sociais {
+        margin-left: 0;
+    }
+    .redes-sociais h3 {
+        font-size: 12px;
+    }
+    .privacy-terms {
+        margin-left: 0;
+    }
+    .privacy-terms h3 {
+        font-size: 12px;
+    }
+    #technology {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        gap: 10px;
+        display: flex;
+    }
+    .box-noticias {
+        width: 30%;
         height: auto;
     }
 }
