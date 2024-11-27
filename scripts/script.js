@@ -177,31 +177,37 @@ window.addEventListener("load", () => {
     }
 
     // Mostrar popup apenas se o cookieChoice ainda não foi definido
-    document.addEventListener("DOMContentLoaded", () => {
-        const cookieChoice = getCookie("cookieChoice");
-        if (!cookieChoice) {
-            document.getElementById("popup").style.display = "flex";
-        } else {
-            applyCookiePreferences();
-        }
-    });
-
-    // Configurar os botões do popup
-    document.getElementById("acceptAll").addEventListener("click", () => {
-        setCookie("cookieChoice", "acceptAll", 15); // Aceitar todos os cookies por 15 dias
+document.addEventListener("DOMContentLoaded", () => {
+    const cookieChoice = getCookie("cookieChoice");
+    const popup = document.getElementById("popup");
+    
+    if (!cookieChoice) {
+        // Exibe o popup
+        popup.style.display = "flex";
+    } else {
         applyCookiePreferences();
-        document.getElementById("popup").style.display = "none";
-    });
+    }
+});
 
-    document.getElementById("acceptNecessary").addEventListener("click", () => {
-        setCookie("cookieChoice", "acceptNecessary", 15); // Aceitar apenas os necessários
-        applyCookiePreferences();
-        document.getElementById("popup").style.display = "none";
-    });
+// Configurar os botões do popup
+document.getElementById("acceptAll").addEventListener("click", () => {
+    setCookie("cookieChoice", "acceptAll", 15); // Aceitar todos os cookies por 15 dias
+    applyCookiePreferences();
+    // Oculta o popup ao clicar no botão
+    document.getElementById("popup").style.display = "none";
+});
 
-    document.getElementById("denyAll").addEventListener("click", () => {
-        setCookie("cookieChoice", "denyAll", 15); // Negar todos os cookies
-        applyCookiePreferences();
-        document.getElementById("popup").style.display = "none";
-    });
+document.getElementById("acceptNecessary").addEventListener("click", () => {
+    setCookie("cookieChoice", "acceptNecessary", 15); // Aceitar apenas os necessários
+    applyCookiePreferences();
+    // Oculta o popup ao clicar no botão
+    document.getElementById("popup").style.display = "none";
+});
+
+document.getElementById("denyAll").addEventListener("click", () => {
+    setCookie("cookieChoice", "denyAll", 15); // Negar todos os cookies
+    applyCookiePreferences();
+    // Oculta o popup ao clicar no botão
+    document.getElementById("popup").style.display = "none";
+});
 });
