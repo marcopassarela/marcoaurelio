@@ -106,6 +106,7 @@ function setCookie(name, value, days) {
     date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
     const expires = "expires=" + date.toUTCString();
     document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    console.log(`Cookie Set: ${name}=${value}`); // Log para verificar se o cookie foi configurado corretamente
 }
 
 // Função para ler um cookie
@@ -114,6 +115,7 @@ function getCookie(name) {
     for (let cookie of cookies) {
         const [key, value] = cookie.split("=");
         if (key === name) {
+            console.log(`Cookie Found: ${name}=${value}`); // Log para verificar se o cookie foi lido corretamente
             return value;
         }
     }
@@ -178,6 +180,7 @@ function applyCookiePreferences() {
 // Mostrar popup apenas se o cookieChoice ainda não foi definido ou se o cookieChoice for "denyAll"
 document.addEventListener("DOMContentLoaded", () => {
     const cookieChoice = getCookie("cookieChoice");
+    console.log(`cookieChoice na DOMContentLoaded: ${cookieChoice}`); // Log para verificar o valor do cookie ao carregar a página
     if (!cookieChoice || cookieChoice === "denyAll") {
         document.getElementById("popup").style.display = "flex"; // Exibe o popup
     } else {
