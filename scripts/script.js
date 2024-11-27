@@ -100,12 +100,12 @@ window.addEventListener("load", () => {
         });
     });
 
-    // Função para criar um cookie
+// Função para criar um cookie
 function setCookie(name, value, days) {
     const date = new Date();
-    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000); // Configura o tempo de expiração
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000); // Define a data de expiração
     const expires = "expires=" + date.toUTCString();
-    document.cookie = name + "=" + value + ";" + expires + ";path=/"; // Define o cookie
+    document.cookie = name + "=" + value + ";" + expires + ";path=/"; // Configura o cookie
     console.log(`Cookie set: ${name}=${value}`);
 }
 
