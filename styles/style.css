@@ -1427,7 +1427,7 @@ ul a:hover {
 
     #skills {
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 10px;
+        gap: 5px;
         width: 60%;
         height: auto;
         margin: auto;
