@@ -179,15 +179,17 @@ function applyCookiePreferences() {
 // Mostrar o popup apenas se o cookieChoice ainda não foi definido
 document.addEventListener("DOMContentLoaded", () => {
     const cookieChoice = getCookie("cookieChoice");
+    console.log('Cookie encontrado: ', cookieChoice); // Adicione isso para debugar
     const popup = document.getElementById("popup");
 
     if (!cookieChoice) {
-        // Exibe o popup se o cookie não foi definido
+        // Exibe o popup
         popup.style.display = "flex";
     } else {
-        applyCookiePreferences(); // Aplica as preferências de cookie já configuradas
+        applyCookiePreferences();
     }
 });
+
 
 // Configurar os botões do popup
 document.getElementById("acceptAll").addEventListener("click", () => {
