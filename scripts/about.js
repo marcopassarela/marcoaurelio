@@ -33,8 +33,9 @@ links.forEach(function(link) {
     });
 });
 
-async function buscarNoticiasIBGE() {
-    const url = '://servicodados.ibge.gov.br/api/v3/noticias/';
+async function buscarNoticias() {
+    // URL da API SerpApi para Google News
+    const url = 'https://serpapi.com/search.json?engine=google_news&gl=us&hl=en&topic_token=CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pWVXlnQVAB';
 
     try {
         const response = await fetch(url);
@@ -42,7 +43,8 @@ async function buscarNoticiasIBGE() {
 
         console.log("Dados da API:", data);
 
-        const noticias = data.items;
+        // A resposta vem com um array de notícias dentro de 'news_results'
+        const noticias = data.news_results;
         const noticiasElements = document.querySelectorAll('.box-noticias');
 
         noticias.forEach((noticia, index) => {
@@ -50,13 +52,9 @@ async function buscarNoticiasIBGE() {
                 const noticiaElement = noticiasElements[index];
 
                 // Obter URL da imagem
-                let imagemUrl = noticia.imagens && noticia.imagens.image_intro
-                    ? noticia.imagens.image_intro
-                    : './img/fallback.jpg'; // Atualize o caminho aqui, se necessário
-
-                if (imagemUrl.startsWith('images/')) {
-                    imagemUrl = `https://www.ibge.gov.br/${imagemUrl}`;
-                }
+                let imagemUrl = noticia.image_url
+                    ? noticia.image_url
+                    : './img/fallback.jpg'; // Caminho do fallback
 
                 console.log(`Imagem URL [${index}]:`, imagemUrl);
 
@@ -66,26 +64,26 @@ async function buscarNoticiasIBGE() {
 
                 // Configurar fallback no erro
                 imgElement.onerror = () => {
-                    imgElement.src = './img/fallback.jpg'; // Atualize conforme o caminho correto
+                    imgElement.src = './img/fallback.jpg'; // Caminho do fallback
                     console.warn(`Imagem não encontrada. Aplicando fallback: ${imgElement.src}`);
                 };
 
                 // Atualizar conteúdo da notícia
                 const pElement = noticiaElement.querySelector('p');
-                pElement.innerHTML = `${noticia.introducao} <a href="${noticia.link}" target="_blank">Leia mais...</a>`;
+                pElement.innerHTML = `${noticia.title} <a href="${noticia.link}" target="_blank">Leia mais...</a>`;
 
                 // Atualizar data de publicação
                 const tempoElement = noticiaElement.querySelector('.tempo-noticia');
-                tempoElement.textContent = new Date(noticia.data_publicacao).toLocaleString('pt-BR');
+                tempoElement.textContent = new Date(noticia.published).toLocaleString('pt-BR');
             }
         });
 
+        // Salvar a última atualização no localStorage
         localStorage.setItem("ultimaAtualizacao", new Date().toISOString());
     } catch (error) {
         console.error('Erro ao buscar notícias:', error);
     }
 }
-
 
 function atualizarTempo() {
     const elementos = document.querySelectorAll(".tempo-noticia");
@@ -123,14 +121,13 @@ function verificarAtualizacao() {
         const diffHoras = (agora - ultimaData) / (1000 * 60 * 60);
 
         if (diffHoras >= 24) {
-            buscarNoticiasIBGE();
+            buscarNoticias();
         }
     } else {
-        buscarNoticiasIBGE();
+        buscarNoticias();
     }
 }
 
 verificarAtualizacao();
 atualizarTempo();
-buscarNoticiasIBGE();
-
+buscarNoticias();
