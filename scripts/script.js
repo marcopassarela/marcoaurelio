@@ -157,7 +157,7 @@ function loadEssentialScripts() {
     console.log("Carregando scripts essenciais...");
     // Exemplo de script essencial:
     const essentialScript = document.createElement("script");
-    essentialScript.src = "/script/script.js"; // Substitua com o caminho do seu script essencial
+    essentialScript.src = "/scripts/script.js"; // Substitua com o caminho do seu script essencial
     document.head.appendChild(essentialScript);
 }
 
