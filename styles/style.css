@@ -129,13 +129,13 @@ ul a:hover {
   
 #about a:after {
     position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: #1e9600;
-  transition: all .35s
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #1e9600;
+    transition: all .35s
 }
 #about a:hover:after{
     width: 100%;
@@ -1569,8 +1569,9 @@ ul a:hover {
         font-family: "Sora", sans-serif;
         display: flex;
         flex-direction: column;
-        transform: rotateX(0deg);
         border: 0px solid;
+        transform: rotateY(45deg);
+        border: 2px solid rgb(0, 255, 64);
     }
     .instagram {
         width: 40px;
