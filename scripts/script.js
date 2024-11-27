@@ -175,13 +175,13 @@ function applyCookiePreferences() {
     }
 }
 
-// Mostrar popup apenas se o cookieChoice ainda não foi definido
+// Mostrar popup apenas se o cookieChoice ainda não foi definido ou se o cookieChoice for "denyAll"
 document.addEventListener("DOMContentLoaded", () => {
     const cookieChoice = getCookie("cookieChoice");
-    if (!cookieChoice) {
-        document.getElementById("popup").style.display = "flex"; // Exibe o popup se não houver escolha salva
+    if (!cookieChoice || cookieChoice === "denyAll") {
+        document.getElementById("popup").style.display = "flex"; // Exibe o popup
     } else {
-        applyCookiePreferences(); // Se já tiver escolha salva, aplica as preferências
+        applyCookiePreferences(); // Aplica as preferências salvas
     }
 });
 
@@ -189,19 +189,19 @@ document.addEventListener("DOMContentLoaded", () => {
 document.getElementById("acceptAll").addEventListener("click", () => {
     setCookie("cookieChoice", "acceptAll", 15); // Aceitar todos os cookies por 15 dias
     applyCookiePreferences();
-    document.getElementById("popup").style.display = "none"; // Esconde o popup
+    document.getElementById("popup").style.display = "none";
 });
 
 document.getElementById("acceptNecessary").addEventListener("click", () => {
-    setCookie("cookieChoice", "acceptNecessary", 15); // Aceitar apenas os necessários por 15 dias
+    setCookie("cookieChoice", "acceptNecessary", 15); // Aceitar apenas os necessários
     applyCookiePreferences();
-    document.getElementById("popup").style.display = "none"; // Esconde o popup
+    document.getElementById("popup").style.display = "none";
 });
 
 document.getElementById("denyAll").addEventListener("click", () => {
-    setCookie("cookieChoice", "denyAll", 15); // Negar todos os cookies por 15 dias
+    setCookie("cookieChoice", "denyAll", 15); // Negar todos os cookies
     applyCookiePreferences();
-    document.getElementById("popup").style.display = "none"; // Esconde o popup
+    document.getElementById("popup").style.display = "none";
 });
 
 });
