@@ -121,7 +121,7 @@ function getCookie(name) {
     return null;
 }
 
-// Função para carregar Google Analytics
+// Função para carregar Google Analytics (se necessário)
 function loadGoogleAnalytics() {
     const gaScript = document.createElement("script");
     gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-C4L3SX788S";
@@ -138,7 +138,7 @@ function loadGoogleAnalytics() {
     };
 }
 
-// Função para carregar Google Tag Manager
+// Função para carregar Google Tag Manager (se necessário)
 function loadGoogleTagManager() {
     const gtmScript = document.createElement("script");
     gtmScript.src = "https://www.googletagmanager.com/gtm.js?id=GTM-TX48535W";
@@ -151,20 +151,31 @@ function loadGoogleTagManager() {
     document.body.appendChild(noscript);
 }
 
-// Função para verificar e aplicar preferências de cookies
+// Função para carregar scripts essenciais
+function loadEssentialScripts() {
+    // Aqui você pode adicionar scripts essenciais para o funcionamento do site, como navegação e formulários.
+    console.log("Carregando scripts essenciais...");
+    // Exemplo de script essencial:
+    const essentialScript = document.createElement("script");
+    essentialScript.src = "/js/essential.js"; // Substitua com o caminho do seu script essencial
+    document.head.appendChild(essentialScript);
+}
+
+// Função para aplicar a escolha de cookies
 function applyCookiePreferences() {
     const cookieChoice = getCookie("cookieChoice");
 
     if (cookieChoice === "acceptAll") {
-        console.log("Carregar Google Analytics e Tag Manager.");
-        loadGoogleAnalytics();
-        loadGoogleTagManager();
+        console.log("Carregar todos os cookies, incluindo de terceiros.");
+        loadEssentialScripts(); // Sempre carrega scripts essenciais
+        loadGoogleAnalytics();  // Carrega Google Analytics
+        loadGoogleTagManager(); // Carrega Google Tag Manager
     } else if (cookieChoice === "acceptNecessary") {
         console.log("Carregar apenas cookies necessários.");
-        // Não carrega scripts adicionais, apenas os essenciais.
+        loadEssentialScripts(); // Carrega apenas scripts essenciais (sem rastreamento)
     } else if (cookieChoice === "denyAll") {
-        console.log("Nenhum cookie ou script de rastreamento será carregado.");
-        // Nenhum script é carregado.
+        console.log("Nenhum cookie será carregado.");
+        // Não carrega nenhum script adicional, apenas os essenciais.
     }
 }
 
