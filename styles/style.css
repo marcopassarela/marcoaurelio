@@ -692,7 +692,6 @@ ul a:hover {
 
     .container { 
         width: 100%; 
-        
         flex-direction: column; 
         display: flex;
         margin: auto;
