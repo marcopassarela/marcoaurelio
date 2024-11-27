@@ -143,6 +143,7 @@ html:lang(pt) ul li a {
     font-family: "Sora", sans-serif;
     font-size: 20px;
     text-align: center;
+    font-weight: 500;
 }
 
 .content {
@@ -165,6 +166,7 @@ html:lang(pt) ul li a {
     font-family: "Sora", sans-serif;
     font-size: 14px;
     width: 50%;
+    font-weight: 200;
 }
 
 #container img {
