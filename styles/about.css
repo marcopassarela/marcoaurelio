@@ -258,13 +258,30 @@ html:lang(pt) ul li a {
 .box-grid {
     display: flex;
 }
+.title-noticiais {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-family: "Sora", sans-serif;
+    font-size: 12px;
+    text-decoration: underline;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: var(--color-text);
+}
+.title-noticiais h1 {
+    font-weight: 500;
+}
 #technology {
     width: 100%;
-    height: 40vh;
+    height: auto;
     display: flex;
     gap: 20px;
     justify-content: center;
     align-items: center;
+    margin-bottom: 25px;
 }
 .box-noticias {
     width: 400px;
