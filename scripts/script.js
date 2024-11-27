@@ -105,7 +105,8 @@ function setCookie(name, value, days) {
     const date = new Date();
     date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000); // Configura o tempo de expiração
     const expires = "expires=" + date.toUTCString();
-    document.cookie = name + "=" + value + ";" + expires + ";path=/"; // Define o cookie com o caminho
+    document.cookie = name + "=" + value + ";" + expires + ";path=/"; // Define o cookie
+    console.log(`Cookie set: ${name}=${value}`);
 }
 
 // Função para ler um cookie
@@ -114,10 +115,28 @@ function getCookie(name) {
     for (let cookie of cookies) {
         const [key, value] = cookie.split("=");
         if (key === name) {
+            console.log(`Cookie read: ${key}=${value}`);
             return value;
         }
     }
+    console.log(`Cookie not found: ${name}`);
     return null;
+}
+
+// Função para aplicar as preferências de cookies
+function applyCookiePreferences() {
+    const cookieChoice = getCookie("cookieChoice");
+    console.log(`Cookie choice: ${cookieChoice}`);
+
+    // Se o usuário aceitou todos os cookies
+    if (cookieChoice === "acceptAll") {
+        loadEssentialScripts();  // Carregar apenas os essenciais
+        loadOptionalCookies();  // Carregar cookies opcionais (Google Analytics, etc.)
+    } 
+    // Se o usuário aceitou apenas os cookies necessários
+    else if (cookieChoice === "acceptNecessary") {
+        loadEssentialScripts();  // Carregar apenas os essenciais
+    }
 }
 
 // Função para carregar scripts essenciais (necessários)
@@ -151,24 +170,11 @@ function loadOptionalCookies() {
     document.head.appendChild(gtmScript);
 }
 
-// Função para aplicar as preferências de cookies
-function applyCookiePreferences() {
-    const cookieChoice = getCookie("cookieChoice");
-
-    // Se o usuário aceitou todos os cookies
-    if (cookieChoice === "acceptAll") {
-        loadEssentialScripts();  // Carregar apenas os essenciais
-        loadOptionalCookies();  // Carregar cookies opcionais (Google Analytics, etc.)
-    } 
-    // Se o usuário aceitou apenas os cookies necessários
-    else if (cookieChoice === "acceptNecessary") {
-        loadEssentialScripts();  // Carregar apenas os essenciais
-    }
-}
-
 // Mostrar popup se o usuário ainda não escolheu ou se negou todos os cookies
 document.addEventListener("DOMContentLoaded", () => {
     const cookieChoice = getCookie("cookieChoice");
+    console.log(`cookieChoice on page load: ${cookieChoice}`);
+
     if (!cookieChoice || cookieChoice === "denyAll") {
         // Mostrar o popup apenas se não houver escolha ou se o usuário negou todos os cookies
         document.getElementById("popup").style.display = "flex"; 
