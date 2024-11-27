@@ -36,23 +36,25 @@ function applyCookiePreferences() {
 
 // Função para carregar scripts adicionais
 function loadAdditionalScripts() {
-    // Exemplo: Google Analytics
-    const gaScript = document.createElement("script");
-    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-C4L3SX788S";
-    gaScript.async = true;
-    document.head.appendChild(gaScript);
+    if (!document.getElementById("ga-script")) {
+        // Adiciona o script apenas se ainda não estiver carregado
+        const gaScript = document.createElement("script");
+        gaScript.id = "ga-script";
+        gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-C4L3SX788S";
+        gaScript.async = true;
+        document.head.appendChild(gaScript);
 
-    gaScript.onload = () => {
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
-        gtag("config", "G-C4L3SX788S");
-    };
-
-    // Exemplo: Outros scripts podem ser adicionados aqui
+        gaScript.onload = () => {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "G-C4L3SX788S");
+        };
+    }
 }
+
 
 // Exibe o popup apenas se o cookie ainda não existir
 document.addEventListener("DOMContentLoaded", () => {
@@ -60,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const popup = document.getElementById("popup");
 
     if (!cookieChoice) {
+        console.log("Aguardando consentimento de cookies.");
         popup.style.display = "flex"; // Mostra o popup
     } else {
         applyCookiePreferences(); // Aplica as preferências se o cookie já existir
