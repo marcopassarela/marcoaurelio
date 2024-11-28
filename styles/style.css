@@ -1125,10 +1125,15 @@ ul a:hover {
     }
     .modal-content li {
         font-size: 13px;
+        text-align: left;
+        width: 95%;
     }
     .modal-content p {
         font-size: 11px;
-        text-align: left;
+        text-align: justify;
+        hyphens: auto;
+        width: 95%;
+        word-spacing: -0.1em; 
     }
     .modal {
         position: fixed; /* Fixa o modal em relação à viewport */
