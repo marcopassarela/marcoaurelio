@@ -44,7 +44,7 @@ function loadGoogleTagManager() {
 
     // Adicionar o iframe do GTM (fallback para usuários com noscript)
     const noscript = document.createElement("noscript");
-    noscript.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TX48535W" height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
+    noscript.innerHTML = <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TX48535W" height="0" width="0" style="display:none;visibility:hidden"></iframe>;
     document.body.appendChild(noscript);
 }
 
@@ -93,8 +93,6 @@ function applyCookiePreferences() {
             break;
         case "denyAll":
         case "denyAll-cookies":
-            console.log("Nenhum cookie será carregado.");
-            case "denyAll-cookies":
             console.log("Nenhum cookie será carregado.");
             closeModal();
             break;
