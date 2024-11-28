@@ -1081,14 +1081,12 @@ ul a:hover {
         height: auto;
         margin-bottom: 10px;
         text-align: justify;
-        text-justify: inter-word;
         word-spacing: -0.1em; 
         font-family: "Sora", sans-serif;
     }
     .buttons {
         display: flex;
         position: relative;
-        
         justify-content: center; /* Centraliza horizontalmente */
         align-items: center; /* Centraliza verticalmente */
         width: 100%;
@@ -1098,14 +1096,14 @@ ul a:hover {
         width: 250px;
         height: 40px;
         padding: 5px;
-        font-size: 11px;
+        font-size: 12px;
         font-family: "Sora", sans-serif;
     }
     .btn-deny {
         width: 250px;
         height: 40px;
         padding: 5px;
-        font-size: 11px;
+        font-size: 12px;
         font-family: "Sora", sans-serif;
     }
     .btn-opt {
@@ -1119,6 +1117,27 @@ ul a:hover {
         border: 0px solid black;
         text-decoration: underline;
     }
+    .modal-content {
+        width: 100%;
+    }
+    .modal-content h2 {
+        font-size: 13px;
+    }
+    .modal-content li {
+        font-size: 13px;
+    }
+    .modal-content p {
+        font-size: 11px;
+        text-align: left;
+    }
+    .modal {
+        position: fixed; /* Fixa o modal em relação à viewport */
+        bottom: 0; /* Posiciona o modal na parte inferior */
+        left: 0; /* Garante que comece no canto esquerdo */
+        width: 100%; /* Faz o modal ocupar toda a largura da tela */
+        z-index: 9999; /* Garante que o modal esteja acima de outros elementos */
+    }
+    
 }
 
 @media screen and (min-width: 431px) and (max-width: 768px) {
