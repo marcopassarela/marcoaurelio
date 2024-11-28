@@ -1069,7 +1069,7 @@ ul a:hover {
     .popup-content {
         width: 100%;
         height: 180px;
-        padding: 5px;
+        padding: 10px;
     }
     
     #popupTitle {
@@ -1078,6 +1078,7 @@ ul a:hover {
     #popupDesc {
         font-size: 11px;
         width: 97%;
+        height: auto;
         margin-bottom: 10px;
         text-align: justify;
         text-justify: inter-word;
