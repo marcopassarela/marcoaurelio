@@ -1095,24 +1095,25 @@ ul a:hover {
         margin-bottom: 15px;
     }
     .btn-accept {
-        width: 100px;
+        width: 110px;
         height: auto;
-        padding: 3px;
-        font-size: 10px;
+        padding: 5px;
+        font-size: 11px;
         font-family: "Sora", sans-serif;
     }
     .btn-deny {
-        width: 100px;
+        width: 110px;
         height: auto;
-        padding: 3px;
-        font-size: 10px;
+        padding: 5px;
+        font-size: 11px;
         font-family: "Sora", sans-serif;
     }
     .btn-opt {
-        width: 100px;
-        padding: 3px;
-        font-size: 10px;
+        width: 110px;
+        padding: 5px;
+        font-size: 11px;
         font-family: "Sora", sans-serif;
+        display: none;
     }
 }
 
