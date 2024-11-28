@@ -72,13 +72,14 @@ function applyCookiePreferences() {
         console.log("Nenhum cookie será carregado.");
         // Não carrega nenhum script adicional, apenas os essenciais.
     } else if (cookieChoice === "acceptAll-cookies") {
-        console.log("Carregar todos os cookies até o de terceiros.");
+        console.log("Carregar todos os cookies até o de terceiros.")
         loadEssentialScripts();
         loadGoogleAnalytics();
         loadGoogleTagManager();
         // Carregara os cookies todos
     } else if (cookieChoice === "denyAll-cookies") {
-        console.log("Nenhum cookie será carregado");
+        console.log("Nenhum cookie será carregado.");
+        // Não carrega nenhum script adicional, apenas os essenciais.
     }
 }
 
