@@ -1061,6 +1061,57 @@ ul a:hover {
     .privacy-terms h3 {
         font-size: 12px;
     }
+    .popup {
+        width: 100%;
+        height: auto;
+    }
+    
+    .popup-content {
+        width: 100%;
+        height: 180px;
+        padding: 5px;
+    }
+    
+    #popupTitle {
+        width: 80%;
+    }
+    #popupDesc {
+        font-size: 11px;
+        width: 97%;
+        margin-bottom: 10px;
+        text-align: justify;
+        text-justify: inter-word;
+        word-spacing: -0.1em; 
+        font-family: "Sora", sans-serif;
+    }
+    .buttons {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; /* Centraliza verticalmente */
+        width: 100%;
+    }
+    .btn-accept {
+        width: 100px;
+        height: auto;
+        padding: 3px;
+        font-size: 10px;
+        font-family: "Sora", sans-serif;
+    }
+    .btn-deny {
+        width: 100px;
+        height: auto;
+        padding: 3px;
+        font-size: 10px;
+        font-family: "Sora", sans-serif;
+    }
+    .btn-opt {
+        width: 100px;
+        padding: 3px;
+        font-size: 10px;
+        font-family: "Sora", sans-serif;
+    }
 }
 
 @media screen and (min-width: 431px) and (max-width: 768px) {
