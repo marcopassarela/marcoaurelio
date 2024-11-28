@@ -56,6 +56,14 @@ function loadEssentialScripts() {
     document.head.appendChild(essentialScript);
 }
 
+// Modal
+function closeModal() {
+    const popup = document.getElementById("popup");
+    if (popup) {
+        popup.style.display = "none";
+    }
+}
+
 // Função para aplicar a escolha de cookies
 function applyCookiePreferences() {
     const cookieChoice = getCookie("cookieChoice");
@@ -68,6 +76,8 @@ function applyCookiePreferences() {
         loadGoogleAnalytics();
         loadGoogleTagManager();
     };
+
+    
 
     switch (cookieChoice) {
         case "acceptAll":
@@ -84,6 +94,9 @@ function applyCookiePreferences() {
         case "denyAll":
         case "denyAll-cookies":
             console.log("Nenhum cookie será carregado.");
+            case "denyAll-cookies":
+            console.log("Nenhum cookie será carregado.");
+            closeModal();
             break;
         default:
             console.log("Nenhuma ação configurada.");
