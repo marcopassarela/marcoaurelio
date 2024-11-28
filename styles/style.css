@@ -606,7 +606,7 @@ ul a:hover {
     bottom: 0; /* Mantém na parte inferior */
     left: 0;
     width: 100%;
-    height: 150px;
+    height: 180px;
     background-color: rgba(0, 0, 0, 0.7);
     display: none; /* Oculto por padrão */
     z-index: 1000;
@@ -629,6 +629,11 @@ ul a:hover {
     display: flex; /* Alinha a descrição e os botões em linha */
     justify-content: space-between; /* Espaço entre a descrição e os botões */
     align-items: center; /* Alinha verticalmente ao centro */
+}
+
+.cookie {
+    width: 30px;
+    height: 25px;
 }
 
 /* Título */
@@ -667,32 +672,126 @@ ul a:hover {
     cursor: pointer;
     transition: background 0.3s ease;
     position: relative;
+    transition: 0.4s ease;
+    box-shadow: 0px 2px 8px 0px rgba(60, 64, 67, 0.25);
+    border: 1px solid #dfe1e5;
 }
 
 .btn-accept {
-    background: #28a745;
-    color: #fff;
+    color: black;
+    font-size: 12px;
+    background-color: white;
 }
 
 .btn-necessary {
-    background: #007bff;
-    color: #fff;
+    color: black;
+    font-size: 12px;
+    background-color: white;
 }
 
 .btn-deny {
-    background: #dc3545;
-    color: #fff;
+    color: black;
+    font-size: 12px;
+    background-color: white;
+}
+.btn-opt {
+    color: black;
+    font-size: 12px;
+    background-color: white;
 }
 
 /* Efeitos de hover */
 .btn:hover {
     opacity: 0.9;
+    box-shadow: 0px 4px 8px 0px rgba(60, 64, 67, 0.25);
+}
+.buttons a:hover {
+    opacity: 0.9;
+    box-shadow: 0px 4px 8px 0px rgba(60, 64, 67, 0.25);
 }
 
+/* Estilo da janela modal */
+.modal {
+    display: none; /* Inicialmente escondida */
+    position: fixed; /* Fixa na tela */
+    z-index: 1; /* Fica acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    justify-content: center; /* Alinha a janela no centro */
+    align-items: center;
+}
 
+/* Conteúdo da modal */
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    height: 500px;
+    text-align: center;
+}
+.modal-content li {
+    list-style: none;
+    font-family: "Sora", sans-serif;
+    font-size: 14px;
+    float: left;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.modal-content p {
+    list-style: none;
+    font-family: "Sora", sans-serif;
+    font-size: 12px;
+    float: left;
+    width: 100%;
+    text-align: justify;
+    text-justify: inter-word;
+    word-spacing: -0.1em; 
+    margin-bottom: 10px;
+}
 
+/* Estilo do botão de fechar */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
 
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
 
+.modal-content button {
+    flex-direction: column;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 10px;
+}
+.btn-accept2 {
+    background-color: red;
+    color: white;
+}
+.btn-deny2 {
+    background-color: red;
+    color: white;
+}
+.btn-accept2:hover {
+    opacity: none;
+    box-shadow: none;
+}
+.btn-deny2:hover {
+    opacity: none;
+    box-shadow: none;
+}
 
 
 

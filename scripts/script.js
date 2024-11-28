@@ -101,3 +101,20 @@ window.addEventListener("load", () => {
         });
     });
 });
+
+// Função para abrir a janela modal
+function showModal() {
+    document.getElementById("cookieModal").style.display = "flex"; // Exibe a modal
+}
+
+// Função para fechar a janela modal
+function closeModal() {
+    document.getElementById("cookieModal").style.display = "none"; // Esconde a modal
+}
+
+// Fechar a modal se o usuário clicar fora dela
+window.onclick = function(event) {
+    if (event.target == document.getElementById("cookieModal")) {
+        closeModal();
+    }
+}
