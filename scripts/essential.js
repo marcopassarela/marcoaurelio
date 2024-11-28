@@ -75,6 +75,7 @@ function applyCookiePreferences() {
             console.log("Carregar todos os cookies.");
             isEssential();
             isAnalytics();
+            isTagManager();
             break;
         case "acceptNecessary":
             console.log("Carregar apenas cookies necessários.");
