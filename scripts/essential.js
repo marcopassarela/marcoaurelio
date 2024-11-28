@@ -44,7 +44,7 @@ function loadGoogleTagManager() {
 
     // Adicionar o iframe do GTM (fallback para usuários com noscript)
     const noscript = document.createElement("noscript");
-    noscript.innerHTML = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TX48535W" height="0" width="0" style="display:none;visibility:hidden"></iframe>';
+    noscript.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TX48535W" height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
     document.body.appendChild(noscript);
 }
 
@@ -52,55 +52,49 @@ function loadGoogleTagManager() {
 function loadEssentialScripts() {
     console.log("Carregando scripts essenciais...");
     const essentialScript = document.createElement("script");
-    essentialScript.src = "/scripts/essential.js"; // Substitua com o caminho do seu script essencial
+    essentialScript.src = "/scripts/script.js"; // Substitua com o caminho do seu script essencial
     document.head.appendChild(essentialScript);
 }
 
-// Função para fechar o modal
-function closeModal() {
+
+
+// Função para aplicar a escolha de cookies
+function applyCookiePreferences() {
+    const cookieChoice = getCookie("cookieChoice");
+
+    if (cookieChoice === "acceptAll") {
+        console.log("Carregar todos os cookies, incluindo de terceiros.");
+        loadEssentialScripts();
+        loadGoogleAnalytics();
+        loadGoogleTagManager();
+
+    } else if (cookieChoice === "acceptAll-cookies") {
+        console.log("Carregar todos os cookies até os de terceiros.");
+        loadEssentialScripts();
+        loadGoogleAnalytics();
+        loadGoogleTagManager();
+
+    } else if (cookieChoice === "denyAll") {
+        console.log("Nenhum cookie será carregado.");
+        loadEssentialScripts(); // Carrega apenas os scripts essenciais
+    
+    } else if (cookieChoice === "denyAll-cookies") {
+        console.log("Nenhum cookie será carregado.");
+        loadEssentialScripts(); // Carrega apenas os scripts essenciais
+
+    } else if (cookieChoice === "acceptNecessary") {
+        console.log("Carregar apenas cookies necessários.");
+        loadEssentialScripts();
+    }
+
+    // Fechar o popup independentemente da escolha
     const popup = document.getElementById("popup");
     if (popup) {
         popup.style.display = "none";
     }
 }
 
-// Função para aplicar a escolha de cookies
-function applyCookiePreferences() {
-    const cookieChoice = getCookie("cookieChoice");
-    const isEssential = () => {
-        console.log("Carregar scripts essenciais.");
-        loadEssentialScripts(); // Sempre carrega os scripts essenciais
-    };
-    const isAnalytics = () => {
-        console.log("Carregar Google Analytics e Tag Manager.");
-        loadGoogleAnalytics();
-        loadGoogleTagManager();
-    };
 
-    switch (cookieChoice) {
-        case "acceptAll":
-        case "acceptAll-cookies":
-            console.log("Carregar todos os cookies.");
-            isEssential();
-            isAnalytics();
-            break;
-        case "acceptNecessary":
-            console.log("Carregar apenas cookies necessários.");
-            isEssential();
-            break;
-        case "denyAll":
-        case "denyAll-cookies":
-            console.log("Nenhum cookie será carregado.");
-            closeModal();
-            break;
-        default:
-            console.log("Nenhuma ação configurada.");
-            break;
-    }
-
-    // Fechar o modal após aplicar as preferências, se não tiver sido fechado anteriormente
-    closeModal();
-}
 
 // Mostrar popup apenas se o cookieChoice ainda não foi definido
 document.addEventListener("DOMContentLoaded", () => {
@@ -114,19 +108,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Configurar os botões do popup
 document.getElementById("acceptAll").addEventListener("click", () => {
-    console.log("Botão 'Aceitar Todos' clicado.");
     setCookie("cookieChoice", "acceptAll", 15); // Aceitar todos os cookies por 15 dias
     applyCookiePreferences(); // Aplica preferências
+    document.getElementById("popup").style.display = "none";
+});
+
+document.getElementById("acceptAll-cookies").addEventListener("click", () => {
+    setCookie("cookieChoice", "acceptAll-cookies", 15); // Aceitar todos os cookies por 15 dias
+    applyCookiePreferences(); // Aplica preferências
+    document.getElementById("popup").style.display = "none";
 });
 
 document.getElementById("acceptNecessary").addEventListener("click", () => {
-    console.log("Botão 'Aceitar Necessários' clicado.");
     setCookie("cookieChoice", "acceptNecessary", 15); // Aceitar apenas os necessários
     applyCookiePreferences(); // Aplica preferências
+    document.getElementById("popup").style.display = "none";
 });
 
 document.getElementById("denyAll").addEventListener("click", () => {
-    console.log("Botão 'Recusar Todos' clicado.");
-    setCookie("cookieChoice", "denyAll", 15); // Negar todos os cookies
+    setCookie("cookieChoice", "denyAll", 1); // Negar todos os cookies
     applyCookiePreferences(); // Aplica preferências
+    document.getElementById("popup").style.display = "none";
+});
+
+document.getElementById("denyAll-cookies").addEventListener("click", () => {
+    setCookie("cookieChoice", "denyAll-cookies", 1); // Negar todos os cookies
+    applyCookiePreferences(); // Aplica preferências
+    document.getElementById("popup").style.display = "none";
 });
