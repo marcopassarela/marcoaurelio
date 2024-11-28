@@ -1091,6 +1091,7 @@ ul a:hover {
         justify-content: center; /* Centraliza horizontalmente */
         align-items: center; /* Centraliza verticalmente */
         width: 100%;
+        margin-bottom: 15px;
     }
     .btn-accept {
         width: 100px;
