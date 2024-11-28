@@ -44,7 +44,7 @@ function loadGoogleTagManager() {
 
     // Adicionar o iframe do GTM (fallback para usuários com noscript)
     const noscript = document.createElement("noscript");
-    noscript.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TX48535W" height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
+    noscript.innerHTML = <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TX48535W" height="0" width="0" style="display:none;visibility:hidden"></iframe>;
     document.body.appendChild(noscript);
 }
 
@@ -54,6 +54,14 @@ function loadEssentialScripts() {
     const essentialScript = document.createElement("script");
     essentialScript.src = "/scripts/essential.js"; // Substitua com o caminho do seu script essencial
     document.head.appendChild(essentialScript);
+}
+
+// Função para fechar o modal
+function closeModal() {
+    const popup = document.getElementById("popup");
+    if (popup) {
+        popup.style.display = "none";
+    }
 }
 
 // Função para aplicar a escolha de cookies
@@ -79,6 +87,7 @@ function applyCookiePreferences() {
         // Carregara os cookies todos
     } else if (cookieChoice === "denyAll-cookies") {
         console.log("Nenhum cookie será carregado.");
+        closeModal();
         // Não carrega nenhum script adicional, apenas os essenciais.
     }
 }
