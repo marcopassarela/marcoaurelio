@@ -1117,6 +1117,10 @@ ul a:hover {
         border: 0px solid black;
         text-decoration: underline;
     }
+    .btn-opt:hover {
+        opacity: none;
+        box-shadow: none;
+    }
     .modal-content {
         width: 100%;
     }
