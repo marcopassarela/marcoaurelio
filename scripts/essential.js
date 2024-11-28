@@ -59,27 +59,34 @@ function loadEssentialScripts() {
 // Função para aplicar a escolha de cookies
 function applyCookiePreferences() {
     const cookieChoice = getCookie("cookieChoice");
-
-    if (cookieChoice === "acceptAll") {
-        console.log("Carregar todos os cookies, incluindo de terceiros.");
-        loadEssentialScripts(); // Sempre carrega scripts essenciais
-        loadGoogleAnalytics();  // Carrega Google Analytics
-        loadGoogleTagManager(); // Carrega Google Tag Manager
-    } else if (cookieChoice === "acceptNecessary") {
-        console.log("Carregar apenas cookies necessários.");
-        loadEssentialScripts(); // Carrega apenas scripts essenciais (sem rastreamento)
-    } else if (cookieChoice === "denyAll") {
-        console.log("Nenhum cookie será carregado.");
-        // Não carrega nenhum script adicional, apenas os essenciais.
-    } else if (cookieChoice === "acceptAll-cookies") {
-        console.log("Carregar todos os cookies até o de terceiros.")
-        loadEssentialScripts();
+    const isEssential = () => {
+        console.log("Carregar scripts essenciais.");
+        loadEssentialScripts(); // Sempre carrega os scripts essenciais
+    };
+    const isAnalytics = () => {
+        console.log("Carregar Google Analytics e Tag Manager.");
         loadGoogleAnalytics();
         loadGoogleTagManager();
-        // Carregara os cookies todos
-    } else if (cookieChoice === "denyAll-cookies") {
-        console.log("Nenhum cookie será carregado.");
-        // Não carrega nenhum script adicional, apenas os essenciais.
+    };
+
+    switch (cookieChoice) {
+        case "acceptAll":
+        case "acceptAll-cookies":
+            console.log("Carregar todos os cookies.");
+            isEssential();
+            isAnalytics();
+            break;
+        case "acceptNecessary":
+            console.log("Carregar apenas cookies necessários.");
+            isEssential();
+            break;
+        case "denyAll":
+        case "denyAll-cookies":
+            console.log("Nenhum cookie será carregado.");
+            break;
+        default:
+            console.log("Nenhuma ação configurada.");
+            break;
     }
 }
 
