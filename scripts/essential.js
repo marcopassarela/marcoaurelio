@@ -62,21 +62,23 @@ function applyCookiePreferences() {
 
     if (cookieChoice === "acceptAll") {
         console.log("Carregar todos os cookies, incluindo de terceiros.");
-        loadEssentialScripts();
-        loadGoogleAnalytics();
-        loadGoogleTagManager();
+        loadEssentialScripts(); // Sempre carrega scripts essenciais
+        loadGoogleAnalytics();  // Carrega Google Analytics
+        loadGoogleTagManager(); // Carrega Google Tag Manager
     } else if (cookieChoice === "acceptNecessary") {
         console.log("Carregar apenas cookies necessários.");
-        loadEssentialScripts();
+        loadEssentialScripts(); // Carrega apenas scripts essenciais (sem rastreamento)
     } else if (cookieChoice === "denyAll") {
         console.log("Nenhum cookie será carregado.");
+        // Não carrega nenhum script adicional, apenas os essenciais.
     } else if (cookieChoice === "acceptAll-cookies") {
         console.log("Carregar todos os cookies até o de terceiros.");
         loadEssentialScripts();
         loadGoogleAnalytics();
         loadGoogleTagManager();
+        // Carregara os cookies todos
     } else if (cookieChoice === "denyAll-cookies") {
-        console.log("Nenhum cookie será carregado.");
+        console.log("Nenhum cookie será carregado");
     }
 }
 
@@ -86,38 +88,25 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!cookieChoice) {
         document.getElementById("popup").style.display = "flex";
     } else {
-        applyCookiePreferences();
+        applyCookiePreferences(); // Aplica preferências de cookies
     }
 });
 
 // Configurar os botões do popup
 document.getElementById("acceptAll").addEventListener("click", () => {
     setCookie("cookieChoice", "acceptAll", 15); // Aceitar todos os cookies por 15 dias
-    applyCookiePreferences();
+    applyCookiePreferences(); // Aplica preferências
     document.getElementById("popup").style.display = "none";
 });
 
 document.getElementById("acceptNecessary").addEventListener("click", () => {
     setCookie("cookieChoice", "acceptNecessary", 15); // Aceitar apenas os necessários
-    applyCookiePreferences();
+    applyCookiePreferences(); // Aplica preferências
     document.getElementById("popup").style.display = "none";
 });
 
 document.getElementById("denyAll").addEventListener("click", () => {
     setCookie("cookieChoice", "denyAll", 15); // Negar todos os cookies
-    applyCookiePreferences();
-    document.getElementById("popup").style.display = "none";
-});
-
-// Configurar os novos botões
-document.getElementById("acceptAll-cookies").addEventListener("click", () => {
-    setCookie("cookieChoice", "acceptAll-cookies", 15); // Aceitar todos os cookies por 15 dias
-    applyCookiePreferences(); // Aplica preferências
-    document.getElementById("popup").style.display = "none";
-});
-
-document.getElementById("denyAll-cookies").addEventListener("click", () => {
-    setCookie("cookieChoice", "denyAll-cookies", 15); // Recusar cookies opcionais
     applyCookiePreferences(); // Aplica preferências
     document.getElementById("popup").style.display = "none";
 });
