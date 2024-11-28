@@ -603,44 +603,60 @@ ul a:hover {
 /* Estilo para o popup */
 .popup {
     position: fixed;
-    bottom: 0; /* Altera de top para bottom */
+    bottom: 0; /* Mantém na parte inferior */
     left: 0;
     width: 100%;
+    height: 150px;
     background-color: rgba(0, 0, 0, 0.7);
     display: none; /* Oculto por padrão */
-    justify-content: center;
     z-index: 1000;
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo no popup */
 }
 
 /* Estilo do conteúdo */
 .popup-content {
     background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 400px;
+    width: 100%;
+    padding: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    display: flex;
+    flex-direction: column; /* Alinha os itens em coluna */
+}
+
+/* Wrapper para a descrição e botões */
+.content-wrapper {
+    display: flex; /* Alinha a descrição e os botões em linha */
+    justify-content: space-between; /* Espaço entre a descrição e os botões */
+    align-items: center; /* Alinha verticalmente ao centro */
 }
 
 /* Título */
 .popup-content h2 {
+    font-size: 16px;
+    font-family: "Sora", sans-serif;
     margin-bottom: 10px;
-    font-size: 1.5em;
 }
 
 /* Texto */
 .popup-content p {
-    font-size: 1em;
-    margin-bottom: 20px;
+    font-size: 14px;
+    margin: 0; /* Remove margem */
     color: #555;
+    font-family: "Sora", sans-serif;
+    flex: 1; /* Faz o parágrafo ocupar o espaço disponível */
+    width: 50%;
 }
 
 /* Botões */
 .buttons {
     display: flex;
-    justify-content: space-around;
-    gap: 10px;
+    flex-direction: column; /* Alinha os botões em coluna */
+    gap: 5px; /* Espaçamento entre os botões */
+    margin-left: auto; /* Empurra os botões para a direita */
+    position: absolute;
+    right: 0;
+    margin-right: 50px;
 }
 
 .btn {
@@ -650,6 +666,7 @@ ul a:hover {
     font-size: 1em;
     cursor: pointer;
     transition: background 0.3s ease;
+    position: relative;
 }
 
 .btn-accept {
@@ -671,6 +688,7 @@ ul a:hover {
 .btn:hover {
     opacity: 0.9;
 }
+
 
 
 
