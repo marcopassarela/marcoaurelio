@@ -6,6 +6,7 @@
 }
 body {
     text-rendering: optimizeLegibility; /* Melhora a legibilidade e suaviza as fontes */
+    font-family: "Sora", sans-serif;
 }
 html {
     scroll-behavior: smooth;
@@ -115,6 +116,21 @@ html {
 .menu ul.mobile.show {
     left: 0; /* O menu vai deslizar para a direita */
 }
+
+.date {
+    font-style: italic;
+}
+.pag-inicial-desktop {
+    position: fixed;
+    bottom: 0;
+}
+
+.pag-inicial-mobile {
+    position: absolute;
+    margin-top: 450px;
+}
+
+
 
 /* Ícone de fechar (X) */
 #close-btn {
