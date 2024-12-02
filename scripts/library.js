@@ -8,6 +8,10 @@ const books = [
         title: "O Poder do Subconsciente",
         description: "Um guia para usar o poder do subconsciente para alcançar objetivos e superar desafios.",
     },
+    {
+        title: "Test",
+        description: "Um guia para usar o poder do subconsciente para alcançar objetivos e superar desafios.",
+    }
     // Adicione mais livros aqui
 ];
 
