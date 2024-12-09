@@ -118,3 +118,32 @@ window.onclick = function(event) {
         closeModal();
     }
 }
+
+
+// Array com os IDs dos elementos que você deseja observar
+const elementsToObserve = [
+    '#my', '#skills', '#about', '#contact', '#privacy'
+];
+
+// Criando o IntersectionObserver para adicionar/remover a classe 'myShow' quando os elementos entrarem ou saírem da tela
+const myObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        console.log(`Elemento ${entry.target.id} - Visível: ${entry.isIntersecting}`); // Verifique se o elemento está sendo observado
+        if (entry.isIntersecting) {
+            entry.target.classList.add('myShow');
+        } else {
+            entry.target.classList.remove('myShow');
+        }
+    });
+});
+
+// Observando cada elemento do array
+elementsToObserve.forEach(id => {
+    const element = document.querySelector(id);
+    if (element) {
+        console.log(`Elemento ${id} encontrado`); // Verifique se o elemento está sendo encontrado
+        myObserver.observe(element); // Adiciona o elemento ao observador
+    } else {
+        console.error(`Elemento ${id} não encontrado.`);
+    }
+});

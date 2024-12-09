@@ -61,6 +61,16 @@ ul a:hover {
     height: 750px;
     margin: 0;
     border-top: 1px solid transparent;
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateX(-100%);
+    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+}
+#my.myShow {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
 }
 
 #my h1 {
@@ -106,7 +116,18 @@ ul a:hover {
     flex-direction: column;
     align-items: center;
     margin-bottom: 40px;
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateX(0%);
+    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
 }
+#about.myShow {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
 #about a {
     display: block;
     width: 200px;
@@ -237,6 +258,16 @@ ul a:hover {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    opacity: 0;
+    filter: blur(15px); 
+    transform: translateX(+100%);
+    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+#skills.myShow {
+    opacity: 1; 
+    filter: blur(0); 
+    transform: translateX(0);
 }
 
 .container-skills {
@@ -340,6 +371,16 @@ ul a:hover {
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateX(-100%);
+    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+}
+#contact.myShow {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
 }
 
 .container {
@@ -476,6 +517,16 @@ ul a:hover {
     justify-content: center;
     display: flex;
     border-top: 1px solid rgba(0, 0, 0, 0.151);
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateX(0%);
+    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+}
+#privacy.myShow {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
 }
 
 #privacy img {
