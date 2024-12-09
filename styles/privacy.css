@@ -147,6 +147,7 @@ html {
     height: 100px;
     margin-left: 150px;
     margin-top: 20px;
+    display: none;
 }
 .map-page {
     margin-top: 20px;
