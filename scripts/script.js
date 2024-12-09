@@ -120,15 +120,14 @@ window.onclick = function(event) {
 }
 
 
-// Array com os IDs dos elementos que você deseja observar
+// Array com os IDs dos elementos.
 const elementsToObserve = [
     '#my', '#skills', '#about', '#contact', '#privacy'
 ];
 
-// Criando o IntersectionObserver para adicionar/remover a classe 'myShow' quando os elementos entrarem ou saírem da tela
 const myObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        console.log(`Elemento ${entry.target.id} - Visível: ${entry.isIntersecting}`); // Verifique se o elemento está sendo observado
+        console.log(`Elemento ${entry.target.id} - Visível: ${entry.isIntersecting}`);
         if (entry.isIntersecting) {
             entry.target.classList.add('myShow');
         } else {
@@ -137,12 +136,11 @@ const myObserver = new IntersectionObserver((entries) => {
     });
 });
 
-// Observando cada elemento do array
 elementsToObserve.forEach(id => {
     const element = document.querySelector(id);
     if (element) {
-        console.log(`Elemento ${id} encontrado`); // Verifique se o elemento está sendo encontrado
-        myObserver.observe(element); // Adiciona o elemento ao observador
+        console.log(`Elemento ${id} encontrado`);
+        myObserver.observe(element);
     } else {
         console.error(`Elemento ${id} não encontrado.`);
     }
