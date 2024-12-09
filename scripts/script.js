@@ -136,3 +136,11 @@ elementsToObserve.forEach(id => {
     const element = document.querySelector(id);
     if (element) myObserver.observe(element);
 });
+
+// Time de 5 segundos para exibir o popup!
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const popup = document.querySelector('#popup');
+        popup.classList.add('show');
+    }, 4000); // Tempo de 4 segundos
+});
