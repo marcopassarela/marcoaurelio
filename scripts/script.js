@@ -121,27 +121,18 @@ window.onclick = function(event) {
 
 
 // Array com os IDs dos elementos.
-const elementsToObserve = [
-    '#my', '#skills', '#about', '#contact', '#privacy'
-];
+const elementsToObserve = ['#my', '#skills', '#about', '#contact', '#privacy'];
 
 const myObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        console.log(`Elemento ${entry.target.id} - Visível: ${entry.isIntersecting}`);
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !entry.target.classList.contains('myShow')) {
             entry.target.classList.add('myShow');
-        } else {
-            entry.target.classList.remove('myShow');
+            myObserver.unobserve(entry.target);
         }
     });
 });
 
 elementsToObserve.forEach(id => {
     const element = document.querySelector(id);
-    if (element) {
-        console.log(`Elemento ${id} encontrado`);
-        myObserver.observe(element);
-    } else {
-        console.error(`Elemento ${id} não encontrado.`);
-    }
+    if (element) myObserver.observe(element);
 });
