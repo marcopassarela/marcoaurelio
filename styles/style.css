@@ -674,7 +674,7 @@ ul a:hover {
     display: flex;
     justify-content: center;
     opacity: 0;
-    transition: opacity 2s ease;
+    transition: opacity 1s ease;
 }
 .popup.show {
     display: flex;
