@@ -564,13 +564,27 @@ ul a:hover {
     margin-bottom: 10px;
     text-decoration: none;
     width: 45px;
+    position: relative;
+    width: fit-content;
 }
-.map-page a:hover {
-    text-decoration: underline;
+.map-page a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background-color: var(--color-text); 
+    width: 0;
+    transition: width 0.5s ease;
+}
+.map-page a:hover::after {
+    width: 100%;
 }
 .support {
     margin-top: 20px;
     margin-left: 50px;
+    display: flex;
+    flex-direction: column;
 }
 .support h3 {
     font-size: 14px;
@@ -582,14 +596,28 @@ ul a:hover {
     color: var(--color-text);
     font-family: "Sora", sans-serif;
     font-size: 11px;
-    display: flex;
+    display: inline-block; 
     margin-bottom: 10px;
     text-decoration: none;
-    width: 90px;
+    position: relative;
+    width: fit-content;
 }
-.support a:hover {
-    text-decoration: underline;
+
+.support a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background-color: var(--color-text); 
+    width: 0;
+    transition: width 0.5s ease;
 }
+
+.support a:hover::after {
+    width: 100%;
+}
+
 .redes-sociais {
     margin-top: 20px;
     margin-left: 50px;
@@ -606,10 +634,30 @@ ul a:hover {
     color: var(--color-text);
     font-family: "Sora", sans-serif;
     font-size: 11px;
-    display: flex;
-    text-decoration: none;
-    width: 45px;
+    text-decoration: none !important; 
+    position: relative;
+    display: inline-block;
 }
+
+.redes-sociais a:hover {
+    text-decoration: none !important;
+}
+
+.redes-sociais a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background-color: var(--color-text); 
+    width: 0;
+    transition: width 0.5s ease;
+}
+
+.redes-sociais a:hover::after {
+    width: 100%;
+}
+
 .privacy-terms {
     margin-top: 20px;
     margin-left: 50px;
@@ -626,16 +674,28 @@ ul a:hover {
     color: var(--color-text);
     font-family: "Sora", sans-serif;
     font-size: 11px;
-    display: flex;
+    display: inline-block;
     text-decoration: none;
     width: 90px;
+    position: relative;
+    width: fit-content;
 }
-.privacy-terms a:hover {
-    text-decoration: underline;
+
+.privacy-terms a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background-color: var(--color-text); 
+    width: 0;
+    transition: width 0.5s ease;
 }
-.redes-sociais a:hover {
-    text-decoration: underline;
+
+.privacy-terms a:hover::after {
+    width: 100%;
 }
+
 /* Ícones SVG */
 .icon-theme path {
     fill: var(--color-text); /* A cor do ícone será a cor do texto do tema */
