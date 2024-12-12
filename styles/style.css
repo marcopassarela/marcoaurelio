@@ -535,12 +535,13 @@ ul a:hover {
 }
 
 .modal-content {
-    background: white;
+    background: rgb(24, 0, 0);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     width: 300px;
 }
+
 
 #update-btn {
     margin-top: 20px;

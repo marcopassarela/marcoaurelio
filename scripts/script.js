@@ -182,57 +182,13 @@ function showUpdateModal(version) {
         return; // Se já foi mostrado, não exibe novamente
     }
 
-    const modal = document.createElement('div');
-    modal.classList.add('update-modal');
-    modal.innerHTML = `
-        <div class="modal-content">
-            <h2>Nova Atualização!</h2>
-            <p>Uma nova versão do site está disponível: v${version}</p>
-            <button id="update-btn">Atualizar Agora</button>
-        </div>
-    `;
-
-    document.body.appendChild(modal);
-
-    const style = document.createElement('style');
-    style.textContent = `
-        .update-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-        .modal-content {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            width: 300px;
-        }
-        #update-btn {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        #update-btn:hover {
-            background-color: #45a049;
-        }
-    `;
-    document.head.appendChild(style);
+    const modal = document.getElementById("update-modal");  // Seleciona o modal existente
+    modal.style.display = "flex"; // Exibe o modal
 
     document.getElementById('update-btn').addEventListener('click', () => {
         localStorage.setItem("siteVersion", version); // Atualizar a versão no localStorage
         localStorage.setItem("updateModalShown", "true"); // Marcar que o modal foi exibido
+        modal.style.display = "none"; // Esconde o modal após o clique
         location.reload(); // Atualizar a página
     });
 }
