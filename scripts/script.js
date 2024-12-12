@@ -148,7 +148,7 @@ window.addEventListener('load', () => {
 document.addEventListener("DOMContentLoaded", () => {
     // Definir a versão do site no localStorage (caso ainda não exista)
     if (!localStorage.getItem("siteVersion")) {
-        localStorage.setItem("siteVersion", "1.0.0");
+        localStorage.setItem("siteVersion", "1.0.1");
         console.log("Versão definida como 1.0.0");
     }
 
