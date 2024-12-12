@@ -147,51 +147,38 @@ window.addEventListener('load', () => {
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const versionUrl = '/public/version.json';
+// Usando o caminho correto para o version.json
+const versionUrl = '/version.json';
 
-    // Buscar a versão do arquivo version.json
-    fetch(versionUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Erro ao buscar a versão");
-            }
-            return response.json();
-        })
-        .then(data => {
-            const currentVersion = data.version;
-            console.log("Versão atual:", currentVersion);
+// Função para buscar e exibir a versão
+function checkForUpdate() {
+  fetch(versionUrl)
+    .then(response => response.json())
+    .then(data => {
+      const latestVersion = data.version;
+      const currentVersion = '1.0.3'; // Versão atual que você quer comparar
 
-            // Recuperar a versão armazenada no localStorage
-            let storedVersion = localStorage.getItem("siteVersion");
-
-            // Comparar a versão atual com a armazenada
-            if (storedVersion !== currentVersion) {
-                showUpdateModal(currentVersion);
-            } else {
-                console.log("A página já está atualizada.");
-            }
-        })
-        .catch(error => {
-            console.error("Erro:", error);
-        });
-});
-
-// Função para exibir o modal de atualização
-function showUpdateModal(version) {
-    const modal = document.getElementById('update-modal');
-    const updateButton = document.getElementById('update-btn');
-
-    // Exibir o modal
-    modal.style.display = 'flex';
-
-    // Alterar o texto do modal para mostrar a versão
-    const modalText = modal.querySelector('p');
-    modalText.textContent = `Uma nova versão do site está disponível: v${version}. Deseja atualizar?`;
-
-    // Ação do botão para atualizar o site
-    updateButton.addEventListener('click', () => {
-        localStorage.setItem("siteVersion", version);
-        location.reload();  // Recarregar a página para aplicar a nova versão
+      if (latestVersion !== currentVersion) {
+        showUpdateModal(latestVersion);
+      }
+    })
+    .catch(error => {
+      console.error('Erro ao carregar o JSON:', error);
     });
 }
+
+// Função para mostrar o modal de atualização
+function showUpdateModal(latestVersion) {
+  const modal = document.getElementById('update-modal');
+  const modalContent = document.querySelector('.content');
+  modalContent.innerHTML = `
+    <p>Uma nova versão (${latestVersion}) está disponível. Deseja atualizar?</p>
+    <button id="update-now" onclick="window.location.reload();">Atualizar Agora</button>
+  `;
+  modal.style.display = 'block';
+}
+
+// Espera o DOM carregar para iniciar o script
+document.addEventListener("DOMContentLoaded", () => {
+  checkForUpdate();
+});
