@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Se a versão armazenada for diferente da versão atual, exibe o modal
             if (storedVersion !== currentVersion) {
-                showUpdateModal(currentVersion); // Exibe o modal para a nova versão
+                showUpdateModal(currentVersion); // Nova versão
             } else {
                 console.log("A página já está atualizada.");
             }
@@ -177,22 +177,22 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function showUpdateModal(version) {
-    // Verificar se o modal já foi mostrado antes
+    // Verificar se o modal já foi mostrado
     if (localStorage.getItem("updateModalShown") === "true") {
         console.log("Modal já foi mostrado, não exibindo novamente.");
-        return; // Se já foi mostrado, não exibe novamente
+        return;
     }
 
-    const modal = document.getElementById("modalupgrade");  // Seleciona o modal existente
-    const versionDisplay = document.getElementById("current-version"); // Seleciona o lugar para exibir a versão
-    versionDisplay.innerHTML = `O site foi atualizado para a versão: <strong>${version}</strong>`; // Exibe a versão
+    const modal = document.getElementById("modalupgrade");
+    const versionDisplay = document.getElementById("current-version");
+    versionDisplay.innerHTML = `O site foi atualizado para a versão: <strong>${version}</strong>`;
 
-    modal.style.display = "flex"; // Exibe o modal
+    modal.style.display = "flex";
 
     document.getElementById('update-btn').addEventListener('click', () => {
-        localStorage.setItem("siteVersion", version); // Atualizar a versão no localStorage
-        localStorage.setItem("updateModalShown", "true"); // Marcar que o modal foi exibido
-        modal.style.display = "none"; // Esconde o modal após o clique
-        location.reload(); // Atualizar a página
+        localStorage.setItem("siteVersion", version);
+        localStorage.setItem("updateModalShown", "true"); 
+        modal.style.display = "none";
+        location.reload();
     });
 }

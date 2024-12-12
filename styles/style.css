@@ -554,6 +554,7 @@ ul a:hover {
     text-align: justify;
     word-spacing: normal;
     letter-spacing: normal;
+    margin-bottom: 15px;
 }
 
 #update-btn {
