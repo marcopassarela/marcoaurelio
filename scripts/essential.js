@@ -82,10 +82,10 @@ function applyCookiePreferences() {
         console.log("Nenhum cookie será carregado, mas executara o script de animação.");
         loadEssentialScripts(); // Carrega apenas os scripts essenciais, como o de animações.
 
-    } else if (cookieChoice === "acceptNecessary") {
-        console.log("Carregar apenas cookies necessários.");
-        loadEssentialScripts();
-    }
+    } //else if (cookieChoice === "acceptNecessary") {
+       // console.log("Carregar apenas cookies necessários.");
+       // loadEssentialScripts();
+    // }
 
     // Fechar o popup independentemente da escolha
     const popup = document.getElementById("popup");
@@ -131,8 +131,8 @@ document.getElementById("denyAll-cookies").addEventListener("click", () => {
     document.getElementById("popup").style.display = "none";
 });
 
-document.getElementById("acceptNecessary").addEventListener("click", () => {
-    setCookie("cookieChoice", "acceptNecessary", 15); // Aceitar apenas os necessários
-    applyCookiePreferences(); // Aplica preferências
-    document.getElementById("popup").style.display = "none";
-});
+// document.getElementById("acceptNecessary").addEventListener("click", () => {
+   // setCookie("cookieChoice", "acceptNecessary", 15); // Aceitar apenas os necessários
+   // applyCookiePreferences(); // Aplica preferências
+   // document.getElementById("popup").style.display = "none";
+// });
