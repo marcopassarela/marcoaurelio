@@ -174,7 +174,7 @@ function checkForUpdates() {
                 console.log('Versão diferente encontrada. Exibindo modal...');
                 if (!localStorage.getItem("updateModalShown")) {
                     showUpdateModal(currentVersion); // Exibe o modal se ainda não tiver sido mostrado
-                    localStorage.setItem("updateModalShown", true);  // Marca que o modal foi mostrado
+                    localStorage.setItem("updateModalShown", "true");  // Marca que o modal foi mostrado
                 } else {
                     console.log("Modal já foi mostrado, não exibindo novamente.");
                 }
@@ -190,12 +190,12 @@ function checkForUpdates() {
 // Função para exibir o modal de atualização
 function showUpdateModal(version) {
     // Verificar se o modal já foi mostrado
-    if (localStorage.getItem("updateModalShown") === "true") {
+    const modal = document.getElementById("modalupgrade");
+    if (modal && localStorage.getItem("updateModalShown") === "true") {
         console.log("Modal já foi mostrado, não exibindo novamente.");
         return;
     }
 
-    const modal = document.getElementById("modalupgrade");
     const versionDisplay = document.getElementById("current-version");
     versionDisplay.innerHTML = `O site foi atualizado para a versão: <strong>${version}</strong>`;
 
@@ -211,9 +211,10 @@ function showUpdateModal(version) {
 }
 
 // Iniciar a verificação a cada intervalo
-setInterval(checkForUpdates, 3 * 1000); // Verifica a cada 5 minutos (ajuste conforme necessário)
+setInterval(checkForUpdates, 3 * 1000); // Verifica a cada 3 segundos (ajuste conforme necessário)
 
 // Verificar a versão assim que a página for carregada
 document.addEventListener("DOMContentLoaded", () => {
     checkForUpdates(); // Verifica a versão quando a página for carregada
 });
+
