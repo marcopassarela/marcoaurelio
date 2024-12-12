@@ -148,7 +148,8 @@ window.addEventListener('load', () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const versionUrl = '/version.json'; // Caminho correto para o arquivo version.json
+    const versionUrl = '/version.json';
+
 
     fetch(versionUrl)
         .then(response => {
