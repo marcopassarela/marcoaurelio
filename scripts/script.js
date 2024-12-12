@@ -181,12 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function showUpdateModal(version) {
-    // Verificar se o modal já foi mostrado
-    if (localStorage.getItem("updateModalShown") === "true") {
-        console.log("Modal já foi mostrado, não exibindo novamente.");
-        return;
-    }
-
+    // Exibe o modal de atualização
     const modal = document.getElementById("modalupgrade");
     const versionDisplay = document.getElementById("current-version");
     versionDisplay.innerHTML = `O site foi atualizado para a versão: <strong>${version}</strong>`;
@@ -194,7 +189,6 @@ function showUpdateModal(version) {
     modal.style.display = "flex"; // Exibe o modal de forma imediata
 
     document.getElementById('update-btn').addEventListener('click', () => {
-        localStorage.setItem("updateModalShown", "true"); // Marca que o modal foi mostrado
         modal.style.display = "none"; // Fecha o modal
         location.reload(); // Recarga a página para garantir que a versão mais recente seja carregada
     });
