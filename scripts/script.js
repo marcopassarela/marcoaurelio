@@ -146,20 +146,34 @@ window.addEventListener('load', () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Definir a versão do site no localStorage (caso ainda não exista)
-    if (!localStorage.getItem("siteVersion")) {
-        localStorage.setItem("siteVersion", "1.0.0");
-        console.log("Versão definida como 1.0.1");
+    // Obter a versão armazenada no localStorage
+    let storedVersion = localStorage.getItem("siteVersion");
+    let currentVersion = "1.0.1"; // A versão atual do código (atualize conforme necessário)
+
+    console.log("Versão armazenada no localStorage:", storedVersion);
+
+    // Comparar a versão armazenada com a versão atual
+    if (storedVersion !== currentVersion) {
+        // Se as versões não coincidirem, exibir o modal
+        showUpdateModal();
+
+        // Atualizar a versão no localStorage
+        localStorage.setItem("siteVersion", currentVersion);
     }
-
-    // Verificar se o item existe
-    let currentVersion = localStorage.getItem("siteVersion");
-    console.log("Versão antes de remover:", currentVersion);
-
-    // Remover o item
-    localStorage.removeItem("siteVersion");
-
-    // Verificar se foi removido
-    let removedVersion = localStorage.getItem("siteVersion");
-    console.log("Versão após remoção:", removedVersion); // Deve retornar null
 });
+
+function showUpdateModal() {
+    // Exibir o modal de atualização (o código do modal que você já criou)
+    const modal = document.createElement('div');
+    modal.innerHTML = `
+        <div class="modal">
+            <p>Há uma atualização disponível! Clique para atualizar.</p>
+            <button id="updateButton">Atualizar</button>
+        </div>
+    `;
+    document.body.appendChild(modal);
+
+    document.getElementById('updateButton').addEventListener('click', () => {
+        location.reload(); // Atualizar a página
+    });
+}
