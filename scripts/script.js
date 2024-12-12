@@ -145,26 +145,15 @@ window.addEventListener('load', () => {
     }, 4000); // Tempo de 4 segundos
 });
 
-// Versão atual da página
-const currentVersion = "1.0.1";
+document.addEventListener("DOMContentLoaded", () => {
+    // Verificar se o item existe
+    let currentVersion = localStorage.getItem("siteVersion");
+    console.log("Versão antes de remover:", currentVersion);
 
-// Checar versão salva no localStorage
-const savedVersion = localStorage.getItem("siteVersion");
+    // Remover o item
+    localStorage.removeItem("siteVersion");
 
-// Elementos do modal
-const modal = document.getElementById("updateModal");
-const updateButton = document.getElementById("updateButton");
-
-// Mostrar modal se a versão não estiver atualizada
-if (savedVersion !== currentVersion) {
-  modal.classList.remove("hidden");
-}
-
-// Atualizar a página ao clicar no botão
-updateButton.addEventListener("click", () => {
-  // Salvar a versão atual no localStorage
-  localStorage.setItem("siteVersion", currentVersion);
-
-  // Atualizar a página
-  location.reload();
+    // Verificar se foi removido
+    let removedVersion = localStorage.getItem("siteVersion");
+    console.log("Versão após remoção:", removedVersion); // Deve retornar null
 });
