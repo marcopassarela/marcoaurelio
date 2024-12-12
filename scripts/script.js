@@ -167,9 +167,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Se a versão armazenada for diferente da versão atual, exibe o modal
             if (storedVersion !== currentVersion) {
-                showUpdateModal(currentVersion); // Nova versão
+                showUpdateModal(currentVersion); // Exibe o modal para a nova versão
             } else {
-                console.log("A página esta atualizada!.");
+                console.log("A página já está atualizada.");
             }
         })
         .catch(error => {
@@ -178,22 +178,22 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function showUpdateModal(version) {
-    // Verificar se o modal já foi mostrado
+    // Verificar se o modal já foi mostrado antes
     if (localStorage.getItem("updateModalShown") === "true") {
         console.log("Modal já foi mostrado, não exibindo novamente.");
-        return;
+        return; // Se já foi mostrado, não exibe novamente
     }
 
-    const modal = document.getElementById("modalupgrade");
-    const versionDisplay = document.getElementById("current-version");
-    versionDisplay.innerHTML = "O site foi atualizado para a versão: <strong>${version}</strong>";
+    const modal = document.getElementById("modalupgrade");  // Seleciona o modal existente
+    const versionDisplay = document.getElementById("current-version"); // Seleciona o lugar para exibir a versão
+    versionDisplay.innerHTML = `O site foi atualizado para a versão: <strong>${version}</strong>`; // Exibe a versão
 
-    modal.style.display = "flex";
+    modal.style.display = "flex"; // Exibe o modal
 
     document.getElementById('update-btn').addEventListener('click', () => {
-        localStorage.setItem("siteVersion", version);
-        localStorage.setItem("updateModalShown", "true"); 
-        modal.style.display = "none";
-        location.reload();
+        localStorage.setItem("siteVersion", version); // Atualizar a versão no localStorage
+        localStorage.setItem("updateModalShown", "true"); // Marcar que o modal foi exibido
+        modal.style.display = "none"; // Esconde o modal após o clique
+        location.reload(); // Atualizar a página
     });
 }
