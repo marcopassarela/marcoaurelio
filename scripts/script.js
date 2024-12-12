@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Se a versão armazenada for diferente da versão atual, exibe o modal
             if (storedVersion !== currentVersion) {
-                showUpdateModal(currentVersion);
+                showUpdateModal(currentVersion); // Exibe o modal para a nova versão
             } else {
                 console.log("A página já está atualizada.");
             }
@@ -179,6 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function showUpdateModal(version) {
     // Verificar se o modal já foi mostrado antes
     if (localStorage.getItem("updateModalShown") === "true") {
+        console.log("Modal já foi mostrado, não exibindo novamente.");
         return; // Se já foi mostrado, não exibe novamente
     }
 
