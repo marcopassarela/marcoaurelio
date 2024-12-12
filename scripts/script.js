@@ -148,7 +148,7 @@ window.addEventListener('load', () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const versionUrl = '/version.json'; // Caminho correto para o arquivo JSON
+    const versionUrl = '/version.json'; // Acesso direto na raiz
     
     // Recuperar a versão armazenada localmente
     let currentVersion = localStorage.getItem("siteVersion");
