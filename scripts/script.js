@@ -148,7 +148,7 @@ window.addEventListener('load', () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const versionUrl = '/version.json';
+    const versionUrl = '/version.json'; 
 
     // Verificar a versão do site
     fetch(versionUrl)
