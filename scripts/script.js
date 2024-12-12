@@ -172,7 +172,12 @@ function checkForUpdates() {
             // Se a versão armazenada for diferente da versão atual, exibe o modal
             if (storedVersion !== currentVersion) {
                 console.log('Versão diferente encontrada. Exibindo modal...');
-                showUpdateModal(currentVersion); // Nova versão
+                if (!localStorage.getItem("updateModalShown")) {
+                    showUpdateModal(currentVersion); // Exibe o modal se ainda não tiver sido mostrado
+                    localStorage.setItem("updateModalShown", true);  // Marca que o modal foi mostrado
+                } else {
+                    console.log("Modal já foi mostrado, não exibindo novamente.");
+                }
             } else {
                 console.log("A página está atualizada.");
             }
