@@ -207,7 +207,7 @@ function showUpdateModal(version) {
 }
 
 // Iniciar a verificação a cada intervalo
-setInterval(checkForUpdates, 5 * 60 * 1000); // Verifica a cada 5 minutos (ajuste conforme necessário)
+setInterval(checkForUpdates, 3 * 1000); // Verifica a cada 3s
 
 // Verificar a versão assim que a página for carregada
 document.addEventListener("DOMContentLoaded", () => {
