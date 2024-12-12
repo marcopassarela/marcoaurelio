@@ -150,7 +150,7 @@ window.addEventListener('load', () => {
 document.addEventListener("DOMContentLoaded", () => {
     const versionUrl = '/version.json';
 
-
+    // Verificar a versão do site
     fetch(versionUrl)
         .then(response => {
             if (!response.ok) {
@@ -164,6 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let storedVersion = localStorage.getItem("siteVersion");
 
+            // Se a versão armazenada for diferente da versão atual, exibe o modal
             if (storedVersion !== currentVersion) {
                 showUpdateModal(currentVersion);
             } else {
@@ -176,6 +177,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function showUpdateModal(version) {
+    // Verificar se o modal já foi mostrado antes
+    if (localStorage.getItem("updateModalShown") === "true") {
+        return; // Se já foi mostrado, não exibe novamente
+    }
+
     const modal = document.createElement('div');
     modal.classList.add('update-modal');
     modal.innerHTML = `
@@ -225,7 +231,8 @@ function showUpdateModal(version) {
     document.head.appendChild(style);
 
     document.getElementById('update-btn').addEventListener('click', () => {
-        localStorage.setItem("siteVersion", version);
-        location.reload();
+        localStorage.setItem("siteVersion", version); // Atualizar a versão no localStorage
+        localStorage.setItem("updateModalShown", "true"); // Marcar que o modal foi exibido
+        location.reload(); // Atualizar a página
     });
 }
