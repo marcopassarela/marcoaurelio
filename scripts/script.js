@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (storedVersion !== currentVersion) {
                 showUpdateModal(currentVersion); // Nova versão
             } else {
-                console.log("A página já está atualizada.");
+                console.log("A página esta atualizada!.");
             }
         })
         .catch(error => {
