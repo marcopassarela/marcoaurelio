@@ -168,12 +168,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Se a versão armazenada for diferente da versão atual, exibe o modal
             if (storedVersion !== currentVersion) {
-                showUpdateModal(currentVersion); // Nova versão
+                showUpdateModal(currentVersion);
             } else {
                 console.log("A página está atualizada.");
             }
-
-            // Atualizar a versão no localStorage, para garantir que a versão seja mantida
             localStorage.setItem("siteVersion", currentVersion);
         })
         .catch(error => {
