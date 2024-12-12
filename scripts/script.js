@@ -146,6 +146,12 @@ window.addEventListener('load', () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Definir a versão do site no localStorage (caso ainda não exista)
+    if (!localStorage.getItem("siteVersion")) {
+        localStorage.setItem("siteVersion", "1.0.0");
+        console.log("Versão definida como 1.0.0");
+    }
+
     // Verificar se o item existe
     let currentVersion = localStorage.getItem("siteVersion");
     console.log("Versão antes de remover:", currentVersion);
