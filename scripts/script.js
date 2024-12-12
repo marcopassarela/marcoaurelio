@@ -148,45 +148,42 @@ window.addEventListener('load', () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const versionUrl = '/version.json'; // Acesso direto na raiz
-    
-    // Recuperar a versão armazenada localmente
-    let currentVersion = localStorage.getItem("siteVersion");
-    console.log("Versão armazenada localmente:", currentVersion);
+    const versionUrl = '/version.json';  // Caminho relativo correto para o arquivo dentro da pasta public
+    const modal = document.getElementById('updateModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const updateBtn = document.getElementById('updateBtn');
 
-    // Verificar se existe uma versão armazenada
-    if (currentVersion) {
-        // Se já houver versão, não faz nada
-        return;
-    }
+    // Passo 1: Verificar a versão armazenada localmente
+    let currentVersion = localStorage.getItem('siteVersion');
+    console.log("Versão local armazenada:", currentVersion);
 
-    // Buscar a versão atual no arquivo JSON
+    // Passo 2: Buscar a versão mais recente
     fetch(versionUrl)
         .then(response => response.json())
         .then(data => {
             const latestVersion = data.version;
             console.log("Versão mais recente:", latestVersion);
 
-            // Verificar se a versão no localStorage é diferente da versão mais recente
-            if (currentVersion !== latestVersion) {
-                // Exibir o modal de atualização se a versão for diferente
-                showUpdateModal(latestVersion);
+            // Passo 3: Comparar as versões
+            if (!currentVersion || currentVersion !== latestVersion) {
+                // Se a versão armazenada for diferente ou não existir
+                console.log("Versão atualizada. Exibindo o modal...");
+                modal.style.display = "block";  // Exibir o modal
             }
+
+            // Passo 4: Armazenar a versão mais recente
+            localStorage.setItem('siteVersion', latestVersion);
         })
         .catch(error => {
             console.error("Erro ao buscar a versão:", error);
         });
+
+    // Passo 5: Fechar o modal
+    closeModalBtn.addEventListener('click', () => {
+        modal.style.display = "none";  // Fechar o modal
+    });
+
+    updateBtn.addEventListener('click', () => {
+        window.location.reload();  // Atualizar a página
+    });
 });
-
-function showUpdateModal(version) {
-    const modal = document.createElement('div');
-    modal.classList.add('update-modal');
-    modal.innerHTML = `
-        <div class="modal-content">
-            <p>Uma nova versão (${version}) está disponível. Clique no botão para atualizar.</p>
-            <button onclick="location.reload();">Atualizar</button>
-        </div>
-    `;
-    document.body.appendChild(modal);
-}
-
