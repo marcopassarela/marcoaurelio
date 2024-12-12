@@ -149,7 +149,7 @@ window.addEventListener('load', () => {
 
 // Função para verificar se a versão do site foi atualizada
 function checkForUpdates() {
-    const versionUrl = '/version.json?' + new Date().getTime(); // Cache busting para garantir a versão mais recente
+    const versionUrl = '/version.json?' + new Date().getTime(); // Cache busting
 
     // Verificar a versão do site
     fetch(versionUrl)
@@ -161,25 +161,24 @@ function checkForUpdates() {
         })
         .then(data => {
             const currentVersion = data.version;
-            console.log("Versão atual do site:", currentVersion);
+            console.log('Versão atual:', currentVersion);  // Log da versão atual
 
             let storedVersion = localStorage.getItem("siteVersion");
+            console.log('Versão armazenada no localStorage:', storedVersion); // Log da versão armazenada
 
-            // Mostrar o valor da versão armazenada no console para verificação
-            console.log("Versão armazenada no localStorage:", storedVersion);
+            // Atualizar a versão no localStorage, mesmo que seja a mesma
+            localStorage.setItem("siteVersion", currentVersion);
 
             // Se a versão armazenada for diferente da versão atual, exibe o modal
             if (storedVersion !== currentVersion) {
-                showUpdateModal(currentVersion); // Exibe o modal de atualização
+                console.log('Versão diferente encontrada. Exibindo modal...');
+                showUpdateModal(currentVersion); // Nova versão
             } else {
                 console.log("A página está atualizada.");
             }
-
-            // Atualizar a versão no localStorage
-            localStorage.setItem("siteVersion", currentVersion);
         })
         .catch(error => {
-            console.error("Erro ao verificar a versão:", error);
+            console.error("Erro:", error);
         });
 }
 
@@ -207,7 +206,7 @@ function showUpdateModal(version) {
 }
 
 // Iniciar a verificação a cada intervalo
-setInterval(checkForUpdates, 5 * 60 * 1000); // Verifica a cada 5 minutos (ajuste conforme necessário)
+setInterval(checkForUpdates, 3 * 1000); // Verifica a cada 5 minutos (ajuste conforme necessário)
 
 // Verificar a versão assim que a página for carregada
 document.addEventListener("DOMContentLoaded", () => {
