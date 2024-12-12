@@ -182,7 +182,7 @@ function showUpdateModal(version) {
         return; // Se já foi mostrado, não exibe novamente
     }
 
-    const modal = document.getElementById("update-modal");  // Seleciona o modal existente
+    const modal = document.getElementById("modalupgrade");  // Seleciona o modal existente
     modal.style.display = "flex"; // Exibe o modal
 
     document.getElementById('update-btn').addEventListener('click', () => {

@@ -521,7 +521,7 @@ ul a:hover {
 }
 
 /* Estilo para o modal */
-.update-modal {
+.modalupgrade {
     position: fixed;
     top: 0;
     left: 0;
@@ -534,14 +534,27 @@ ul a:hover {
     z-index: 9999;
 }
 
-.modal-content {
-    background: rgb(24, 0, 0);
+.modalupgradebox {
+    background: white;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    width: 300px;
+    width: 400px;
+    height: 450px;
 }
-
+.modalupgradebox h2 {
+    font-family: "Sora", sans-serif;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+.modalupgradebox p {
+    font-family: "Sora", sans-serif;
+    font-size: 13px;
+    hyphens: auto;
+    text-align: justify;
+    word-spacing: normal;
+    letter-spacing: normal;
+}
 
 #update-btn {
     margin-top: 20px;
