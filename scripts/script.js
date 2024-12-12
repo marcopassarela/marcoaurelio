@@ -121,21 +121,23 @@ window.onclick = function(event) {
 
 
 // Array com os IDs dos elementos.
-const elementsToObserve = ['#my', '#skills', '#about', '#contact', '#privacy', '#menu'];
+if (typeof elementsToObserve === 'undefined') {
+    const elementsToObserve = ['#my', '#skills', '#about', '#contact', '#privacy', '#menu'];
 
-const myObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting && !entry.target.classList.contains('myShow')) {
-            entry.target.classList.add('myShow');
-            myObserver.unobserve(entry.target);
-        }
+    const myObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('myShow')) {
+                entry.target.classList.add('myShow');
+                myObserver.unobserve(entry.target);
+            }
+        });
     });
-});
 
-elementsToObserve.forEach(id => {
-    const element = document.querySelector(id);
-    if (element) myObserver.observe(element);
-});
+    elementsToObserve.forEach(id => {
+        const element = document.querySelector(id);
+        if (element) myObserver.observe(element);
+    });
+}
 
 // Time de 5 segundos para exibir o popup!
 window.addEventListener('load', () => {
@@ -144,7 +146,6 @@ window.addEventListener('load', () => {
         popup.classList.add('show');
     }, 4000); // Tempo de 4 segundos
 });
-
 
 
 // Função para verificar o site.
