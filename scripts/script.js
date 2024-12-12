@@ -183,6 +183,9 @@ function showUpdateModal(version) {
     }
 
     const modal = document.getElementById("modalupgrade");  // Seleciona o modal existente
+    const versionDisplay = document.getElementById("current-version"); // Seleciona o lugar para exibir a versão
+    versionDisplay.innerHTML = `O site foi atualizado para a versão: <strong>${version}</strong>`; // Exibe a versão
+
     modal.style.display = "flex"; // Exibe o modal
 
     document.getElementById('update-btn').addEventListener('click', () => {
