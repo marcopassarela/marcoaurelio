@@ -148,10 +148,8 @@ window.addEventListener('load', () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Defina a URL do arquivo JSON
-    const versionUrl = "https://www.marcoaurelio.vercel.app/version.json"; // Caminho completo para o arquivo JSON
+    const versionUrl = "/version.json"; // Caminho correto para o arquivo version.json
 
-    // Função para buscar a versão do arquivo JSON
     fetch(versionUrl)
         .then(response => {
             if (!response.ok) {
@@ -163,11 +161,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const currentVersion = data.version;
             console.log("Versão atual:", currentVersion);
 
-            // Verificar a versão no localStorage
             let storedVersion = localStorage.getItem("siteVersion");
 
             if (storedVersion !== currentVersion) {
-                // Exibe o modal
                 showUpdateModal(currentVersion);
             } else {
                 console.log("A página já está atualizada.");
@@ -178,7 +174,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 });
 
-// Função para mostrar o modal
 function showUpdateModal(version) {
     const modal = document.createElement('div');
     modal.classList.add('update-modal');
@@ -192,7 +187,6 @@ function showUpdateModal(version) {
 
     document.body.appendChild(modal);
 
-    // Estilo simples para o modal
     const style = document.createElement('style');
     style.textContent = `
         .update-modal {
@@ -229,9 +223,8 @@ function showUpdateModal(version) {
     `;
     document.head.appendChild(style);
 
-    // Ação do botão de atualizar
     document.getElementById('update-btn').addEventListener('click', () => {
         localStorage.setItem("siteVersion", version);
-        location.reload(); // Recarregar a página
+        location.reload();
     });
 }
