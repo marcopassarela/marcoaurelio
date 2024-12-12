@@ -164,21 +164,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let storedVersion = localStorage.getItem("siteVersion");
 
-            // Atualizar a versão no localStorage, mesmo que seja a mesma
-            localStorage.setItem("siteVersion", currentVersion);
-
             // Se a versão armazenada for diferente da versão atual, exibe o modal
             if (storedVersion !== currentVersion) {
                 showUpdateModal(currentVersion); // Nova versão
             } else {
                 console.log("A página está atualizada.");
             }
+
+            // Atualizar a versão no localStorage, mesmo que seja a mesma
+            localStorage.setItem("siteVersion", currentVersion);
         })
         .catch(error => {
             console.error("Erro:", error);
         });
 });
-
 
 function showUpdateModal(version) {
     // Verificar se o modal já foi mostrado
@@ -193,6 +192,7 @@ function showUpdateModal(version) {
 
     modal.style.display = "flex"; // Exibe o modal de forma imediata
 
+    // Ao clicar no botão, marca o modal como exibido e recarrega a página
     document.getElementById('update-btn').addEventListener('click', () => {
         localStorage.setItem("updateModalShown", "true"); // Marca que o modal foi mostrado
         modal.style.display = "none"; // Fecha o modal
