@@ -15,6 +15,7 @@
     <title>Marco Aurélio</title>
 </head>
 <body>
+<form action="https://formsubmit.co/marcopassarela@hotmail.com" method="POST">
 <div id="form-container">
     <h2>Formulário para Contato</h2>
     <form action="php/processa_formulario.php" method="post">
@@ -95,10 +96,11 @@
     </div>
 
     <div class="form-row">
+        <input type="hidden" name="_next" value="src/pages/thanks.html">
         <input type="submit" value="Enviar" id="submit-button">
     </div>
 </div>
-
+</form>
 <script src="/scripts/form.js"></script>
 </body>
 </html>
