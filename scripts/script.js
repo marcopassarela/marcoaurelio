@@ -147,8 +147,9 @@ window.addEventListener('load', () => {
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const versionUrl = '/version.json?' + new Date().getTime(); // Cache busting
+// Função para verificar se a versão do site foi atualizada
+function checkForUpdates() {
+    const versionUrl = '/version.json?' + new Date().getTime(); // Cache busting para garantir a versão mais recente
 
     // Verificar a versão do site
     fetch(versionUrl)
@@ -160,25 +161,29 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .then(data => {
             const currentVersion = data.version;
-            console.log("Versão atual:", currentVersion);
+            console.log("Versão atual do site:", currentVersion);
 
             let storedVersion = localStorage.getItem("siteVersion");
 
+            // Mostrar o valor da versão armazenada no console para verificação
+            console.log("Versão armazenada no localStorage:", storedVersion);
+
             // Se a versão armazenada for diferente da versão atual, exibe o modal
             if (storedVersion !== currentVersion) {
-                showUpdateModal(currentVersion); // Nova versão
+                showUpdateModal(currentVersion); // Exibe o modal de atualização
             } else {
                 console.log("A página está atualizada.");
             }
 
-            // Atualizar a versão no localStorage, mesmo que seja a mesma
+            // Atualizar a versão no localStorage
             localStorage.setItem("siteVersion", currentVersion);
         })
         .catch(error => {
-            console.error("Erro:", error);
+            console.error("Erro ao verificar a versão:", error);
         });
-});
+}
 
+// Função para exibir o modal de atualização
 function showUpdateModal(version) {
     // Verificar se o modal já foi mostrado
     if (localStorage.getItem("updateModalShown") === "true") {
@@ -191,11 +196,20 @@ function showUpdateModal(version) {
     versionDisplay.innerHTML = `O site foi atualizado para a versão: <strong>${version}</strong>`;
 
     modal.style.display = "flex"; // Exibe o modal de forma imediata
+    console.log("Modal exibido.");
 
-    // Ao clicar no botão, marca o modal como exibido e recarrega a página
+    // Ao clicar no botão, marca o modal como exibido e fecha o modal
     document.getElementById('update-btn').addEventListener('click', () => {
         localStorage.setItem("updateModalShown", "true"); // Marca que o modal foi mostrado
         modal.style.display = "none"; // Fecha o modal
-        location.reload(); // Recarga a página para garantir que a versão mais recente seja carregada
+        location.reload(); // Recarrega a página para garantir que a versão mais recente seja carregada
     });
 }
+
+// Iniciar a verificação a cada intervalo
+setInterval(checkForUpdates, 5 * 60 * 1000); // Verifica a cada 5 minutos (ajuste conforme necessário)
+
+// Verificar a versão assim que a página for carregada
+document.addEventListener("DOMContentLoaded", () => {
+    checkForUpdates(); // Verifica a versão quando a página for carregada
+});
