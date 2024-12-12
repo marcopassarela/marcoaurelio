@@ -145,35 +145,50 @@ window.addEventListener('load', () => {
     }, 4000); // Tempo de 4 segundos
 });
 
+
+
 document.addEventListener("DOMContentLoaded", () => {
-    // Obter a versão armazenada no localStorage
-    let storedVersion = localStorage.getItem("siteVersion");
-    let currentVersion = "1.0.1"; // A versão atual do código (atualize conforme necessário)
+    // A URL do seu arquivo version.json
+    const versionUrl = '/path/to/version.json'; // Altere para o caminho correto onde o version.json está hospedado
+    
+    // Buscar a versão do site
+    fetch(versionUrl)
+        .then(response => response.json())
+        .then(data => {
+            const currentVersion = data.version;  // A versão mais recente do site
+            let storedVersion = localStorage.getItem("siteVersion");  // Versão armazenada no localStorage
 
-    console.log("Versão armazenada no localStorage:", storedVersion);
+            // Comparar as versões
+            if (storedVersion !== currentVersion) {
+                // Se a versão armazenada for diferente da versão atual, mostra o modal
+                showUpdateModal();
 
-    // Comparar a versão armazenada com a versão atual
-    if (storedVersion !== currentVersion) {
-        // Se as versões não coincidirem, exibir o modal
-        showUpdateModal();
-
-        // Atualizar a versão no localStorage
-        localStorage.setItem("siteVersion", currentVersion);
-    }
+                // Atualizar a versão no localStorage
+                localStorage.setItem("siteVersion", currentVersion);
+            }
+        })
+        .catch(error => {
+            console.error("Erro ao buscar a versão:", error);
+        });
 });
 
 function showUpdateModal() {
-    // Exibir o modal de atualização (o código do modal que você já criou)
+    // Criar o modal dinamicamente
     const modal = document.createElement('div');
+    modal.classList.add('modal'); // Adicionar a classe modal para estilizar
+
     modal.innerHTML = `
-        <div class="modal">
-            <p>Há uma atualização disponível! Clique para atualizar.</p>
-            <button id="updateButton">Atualizar</button>
+        <div class="modal-content">
+            <p>Uma nova versão do site está disponível!</p>
+            <button id="updateButton">Atualizar agora</button>
         </div>
     `;
     document.body.appendChild(modal);
 
+    // Exibir o modal
     document.getElementById('updateButton').addEventListener('click', () => {
-        location.reload(); // Atualizar a página
+        // Atualizar a página quando o botão for clicado
+        location.reload();
     });
 }
+
