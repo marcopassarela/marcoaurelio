@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;  
+}
+
+body {
+    background-color: var(--color-black);
+    text-rendering: optimizeLegibility; /* Melhora a legibilidade e suaviza as fontes */
+}
+html {
+    scroll-behavior: smooth;
+    font-smoothing: antialiased; /* Para navegadores como o Safari */
+}
+.retangulo {
+    width: 500px;
+    height: 500px;
+    background-color: #460096;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+.thanks {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    line-height: 30px;
+    flex-wrap: wrap;
+}
+
+.svg {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    background-color: transparent;
+}
+.thanks h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    font-family: "Sora", sans-serif;
+    margin-bottom: 20px;
+}
+.thanks p {
+    display: flex;
+    font-family: "Sora", sans-serif;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    line-height: 25px;
+}
+.circle-container {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    font-family: "Sora", sans-serif;
+    margin-top: 15px;
+    margin: auto;
+}
+
+.circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #4caf50 0deg, 
+        #4caf50 var(--progress, 0deg), 
+        #ddd var(--progress, 0deg) 360deg
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle span {
+    position: absolute;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+
+@media screen and (min-width: 321px) and (max-width: 430px) {
+    body { overflow-x: hidden; }
+
+    .retangulo {
+        width: 250px;
+        height: 250px;
+        background-color: #460096;
+        clip-path: polygon(0 0, 100% 0, 0 100%);
+    }
+    
+    .thanks {
+        width: 95%;
+        height: auto;
+    }
+
+    .thanks h1 {
+        display: flex;
+        justify-content: center;
+        font-size: 22px;
+        font-family: "Sora", sans-serif;
+        margin-bottom: 20px;
+        line-height: 20px;
+    }
+    .thanks p {
+        display: flex;
+        font-family: "Sora", sans-serif;
+        justify-content: center;
+        text-align: center;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .circle-container {
+        position: relative;
+        width: 70px;
+        height: 70px;
+        font-family: "Sora", sans-serif;
+        margin-top: 10px;
+    }
+}
