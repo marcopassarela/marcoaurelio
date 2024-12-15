@@ -172,3 +172,204 @@ p {
 #submit-button:hover {
     background-color: rgb(45, 146, 45)
 }
+
+
+
+
+
+
+@media screen and (min-width: 321px) and (max-width: 430px) {
+    body { overflow-x: hidden;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #form-container {
+        width: 80%;
+        height: auto;
+        margin-top: 20px;
+    }
+    .input-field {
+        height: 15px;
+    }
+    .input-field {
+        height: 15px;
+    }
+    .input-field-ddd {
+        height: 15px;
+        width: 20%;
+    }
+    .input-field-number {
+        height: 15px;
+        width: 65%;
+    }
+    #options-select {
+        height: 30px;
+    }
+
+    #privacy {
+        width: 100%;
+        height: auto;
+        gap: 20px;
+        border-top: 1px solid rgba(0, 0, 0, 0.151);
+    }
+    #privacy img {
+        width: 50px;
+        height: 50px;
+        margin-left: 0px;
+        display: flex;
+        justify-content: center;
+        display: none;
+    }
+    .my-logo {
+        margin-left: 0px;
+    }
+    .map-page {
+        margin-left: 0px;
+        display: none;
+    }
+    .support {
+        margin-left: 0;
+    }
+    .support h3 {
+        font-size: 12px;
+    }
+    .redes-sociais {
+        margin-left: 0;
+    }
+    .redes-sociais h3 {
+        font-size: 12px;
+    }
+    .privacy-terms {
+        margin-left: 0;
+    }
+    .privacy-terms h3 {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 431px) and (max-width: 768px) {
+    body { overflow-x: hidden; }
+
+    #privacy {
+        width: 100%;
+        height: auto;
+        gap: 20px;
+    }
+    #privacy img {
+        width: 50px;
+        height: 50px;
+        margin-left: 0px;
+        display: flex;
+        justify-content: center;
+        display: none;
+    }
+    .my-logo {
+        margin-left: 0px;
+    }
+    .map-page {
+        margin-left: 0px;
+        display: none;
+    }
+    .support {
+        margin-left: 0;
+    }
+    .support h3 {
+        font-size: 12px;
+    }
+    .redes-sociais {
+        margin-left: 0;
+    }
+    .redes-sociais h3 {
+        font-size: 12px;
+    }
+    .privacy-terms {
+        margin-left: 0;
+    }
+    .privacy-terms h3 {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    body { overflow-x: hidden; }
+
+    #privacy {
+        width: 100%;
+        height: auto;
+        gap: 20px;
+    }
+    #privacy img {
+        width: 50px;
+        height: 50px;
+        margin-left: 0px;
+        display: flex;
+        justify-content: center;
+    }
+    .my-logo {
+        margin-left: 0px;
+    }
+    .map-page {
+        margin-left: 0px;
+    }
+    .support {
+        margin-left: 0;
+    }
+    .support h3 {
+        font-size: 12px;
+    }
+    .redes-sociais {
+        margin-left: 0;
+    }
+    .redes-sociais h3 {
+        font-size: 12px;
+    }
+    .privacy-terms {
+        margin-left: 0;
+    }
+    .privacy-terms h3 {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+    body { overflow-x: hidden; }
+
+    #privacy {
+        width: 100%;
+        height: auto;
+        gap: 20px;
+    }
+    #privacy img {
+        width: 50px;
+        height: 50px;
+        margin-left: 0px;
+        display: flex;
+        justify-content: center;
+    }
+    .my-logo {
+        margin-left: 0px;
+    }
+    .map-page {
+        margin-left: 0px;
+    }
+    .support {
+        margin-left: 0;
+    }
+    .support h3 {
+        font-size: 12px;
+    }
+    .redes-sociais {
+        margin-left: 0;
+    }
+    .redes-sociais h3 {
+        font-size: 12px;
+    }
+    .privacy-terms {
+        margin-left: 0;
+    }
+    .privacy-terms h3 {
+        font-size: 12px;
+    }
+}
