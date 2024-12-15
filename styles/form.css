@@ -198,7 +198,7 @@ p {
     #options-select,
     #submit-button {
         box-sizing: border-box;
-        font-size: 16px; /* Previne o zoom no iOS */
+        font-size: 16px;
     }
 
     .input-field {
@@ -221,11 +221,15 @@ p {
 
     #submit-button {
         height: 35px;
-        font-size: 16px; /* Certifique-se de que seja 16px */
+        font-size: 16px;
+    }
+
+    #message-field {
+        font-size: 16px;
     }
 
     .form-row label {
-        font-size: 16px; /* Adiciona consistência no zoom */
+        font-size: 16px;
     }
 
     #privacy {
