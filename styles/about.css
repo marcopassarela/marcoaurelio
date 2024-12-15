@@ -534,7 +534,11 @@ html:lang(pt) ul li a {
         text-align: justify;
         font-size: 12px;
         margin-top: 40px;
+        letter-spacing: 1px;
+        hyphens: auto;
+        word-break: break-word;
     }
+    
     .content {
         display: flex;
         flex-direction: column;
