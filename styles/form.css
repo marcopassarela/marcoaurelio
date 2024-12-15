@@ -179,7 +179,8 @@ p {
 
 
 @media screen and (min-width: 321px) and (max-width: 430px) {
-    body { overflow-x: hidden;
+    body {
+        overflow-x: hidden;
         height: 100%;
         margin: 0;
         padding: 0;
@@ -190,23 +191,34 @@ p {
         height: auto;
         margin-top: 20px;
     }
-    .input-field {
-        height: 15px;
+
+    .input-field,
+    .input-field-ddd,
+    .input-field-number,
+    #options-select {
+        font-size: 16px;
+        box-sizing: border-box;
     }
+
     .input-field {
-        height: 15px;
+        height: 35px;
     }
+
     .input-field-ddd {
-        height: 15px;
-        width: 15%;
+        height: 35px;
+        width: 20%;
     }
+
     .input-field-number {
-        height: 15px;
+        height: 35px;
         width: 70%;
     }
+
     #options-select {
         height: 30px;
     }
+}
+
 
     #privacy {
         width: 100%;
@@ -247,7 +259,6 @@ p {
     .privacy-terms h3 {
         font-size: 12px;
     }
-}
 
 @media screen and (min-width: 431px) and (max-width: 768px) {
     body { overflow-x: hidden; }
