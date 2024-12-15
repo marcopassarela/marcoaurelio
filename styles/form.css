@@ -196,17 +196,14 @@ p {
     .input-field-ddd,
     .input-field-number,
     #options-select {
-        font-size: 14px;
         box-sizing: border-box;
     }
 
     .input-field {
         height: 35px;
-        font-size: 14px;
     }
 
     .input-field-ddd {
-        font-size: 14px;
         height: 35px;
         width: 25%;
     }
