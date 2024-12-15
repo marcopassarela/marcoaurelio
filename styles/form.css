@@ -217,8 +217,10 @@ p {
     #options-select {
         height: 30px;
     }
-}
 
+    #submit-button {
+        height: 35px;
+    }
 
     #privacy {
         width: 100%;
