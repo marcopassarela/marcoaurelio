@@ -391,6 +391,58 @@ html:lang(pt) ul li a {
     box-shadow: 0px 7px 7px 0px rgba(192, 192, 192, 0.603);
 }
 
+/* Estilo para o modal */
+.modalupgrade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; /* O modal ficará escondido inicialmente */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modalupgradebox {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    height: 380px;
+}
+.modalupgradebox h2 {
+    font-family: "Sora", sans-serif;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+.modalupgradebox p {
+    font-family: "Sora", sans-serif;
+    font-size: 13px;
+    hyphens: auto;
+    text-align: justify;
+    word-spacing: normal;
+    letter-spacing: normal;
+    margin-bottom: 15px;
+}
+
+#update-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#update-btn:hover {
+    background-color: #45a049;
+}
+
+
 #privacy {
     width: 100%;
     justify-content: center;
