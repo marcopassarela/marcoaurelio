@@ -192,3 +192,56 @@ function showUpdateModal(version) {
         location.reload(); // Recarga a página para garantir que a versão mais recente seja carregada
     });
 }
+
+
+
+// Verifica se o usuário aceitou os cookies
+if (localStorage.getItem('cookiesAccepted') === 'true') {
+
+    // Aguarda 5 minutos (300000 ms)
+    setTimeout(function () {
+
+        // Verifica se o usuário já avaliou nas últimas 24 horas
+        if (!hasRatedRecently()) {
+            // Exibe o modal de avaliação
+            document.getElementById('ratingModal').style.display = 'block';
+        }
+
+    }, 200000); // 5 minutos
+
+}
+
+// Função que verifica se o usuário avaliou nas últimas 24 horas
+function hasRatedRecently() {
+    const ratingTime = localStorage.getItem('ratingTime');
+    if (!ratingTime) return false; // Nunca avaliou
+    const currentTime = new Date().getTime();
+    return currentTime - ratingTime < 86400000; // Verifica se se passaram menos de 24 horas
+}
+
+// Funcionalidade para selecionar estrelas
+const stars = document.querySelectorAll('.star');
+let selectedRating = 0;
+
+stars.forEach(star => {
+    star.addEventListener('click', function () {
+        selectedRating = parseInt(star.getAttribute('data-value'));
+        stars.forEach(s => s.classList.remove('selected'));
+        for (let i = 0; i < selectedRating; i++) {
+            stars[i].classList.add('selected');
+        }
+        document.getElementById('submitRating').disabled = false; // Habilita o botão de envio
+    });
+});
+
+// Enviar a avaliação
+document.getElementById('submitRating').addEventListener('click', function () {
+    if (selectedRating > 0) {
+        // Armazenar a avaliação e o tempo no localStorage
+        localStorage.setItem('userRating', selectedRating);
+        localStorage.setItem('ratingTime', new Date().getTime()); // Armazenar o tempo da avaliação
+        alert(`Obrigado pela sua avaliação de ${selectedRating} estrelas!`);
+        // Fechar o modal
+        document.getElementById('ratingModal').style.display = 'none';
+    }
+});

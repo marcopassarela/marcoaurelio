@@ -581,7 +581,7 @@ html:lang(pt) ul li a {
         transition: none;
     }
     a, #menu li a {
-        color: var(--color-text); /* Cor do texto no link */
+        color: var(--color-text);
     }
 
     #menu { 
