@@ -577,9 +577,11 @@ html:lang(pt) ul li a {
 @media screen and (min-width: 321px) and (max-width: 430px) {
     body { 
         overflow-x: hidden;
-        background-color: var(--color-background);
-        color: var(--color-text); /* Texto sempre preto no celular */
-        transition: none; /* Remover transição no celular */
+        color: var(--color-text);
+        transition: none;
+    }
+    a, #menu li a {
+        color: var(--color-text); /* Cor do texto no link */
     }
 
     #menu { 
@@ -589,9 +591,9 @@ html:lang(pt) ul li a {
         position: relative;
         text-align: center;
     }
-    #menu li a:hover {
-        color: black;
-        transition: none;
+    #menu li a:hover, #menu li a:active {
+        color: var(--color-text);
+        background-color: transparent;
     }
     #menu-container {
         display: flex; 
