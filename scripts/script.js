@@ -195,60 +195,52 @@ function showUpdateModal(version) {
 
 
 
-function showUpdateModal(version) {
-    const modal = document.getElementById("modalupgrade");
-    const versionDisplay = document.getElementById("current-version");
-    versionDisplay.innerHTML = `O site foi atualizado para a versão: <strong>${version}</strong>`;
 
+
+document.getElementById("update-btn").addEventListener("click", () => {
+    // Exibe o modal de loading
+    const modal = document.getElementById("loading-container");
     modal.style.display = "flex";
 
-    document.getElementById('update-btn').addEventListener('click', () => {
-        modal.style.display = "none"; // Fecha o modal
-        startLoadingAnimation(); // Inicia a animação de loading
-    });
-}
-
-function startLoadingAnimation() {
-    const loadingContainer = document.getElementById("loading-container");
-    const loadingSteps = document.getElementById("loading-steps");
     const progressPercentage = document.getElementById("progress-percentage");
-    const steps = [
-        "Verificando arquivos...",
-        "Baixando atualizações...",
-        "Instalando pacotes...",
-        "Atualização aplicada com sucesso!"
-    ];
+    const stepVerifying = document.getElementById("verifying-progress");
+    const stepDownloading = document.getElementById("downloading-progress");
+    const stepInstalling = document.getElementById("installing-progress");
+    const stepSuccess = document.getElementById("step-success");
 
-    let currentStep = 0;
-    let progress = 0;
+    let totalProgress = 0;
 
-    loadingContainer.style.display = "flex"; // Exibe o contêiner de loading
-    loadingSteps.innerHTML = ""; // Limpa os passos anteriores
-    progressPercentage.textContent = progress; // Reinicia o progresso
+    // Atualizar progresso gradualmente
+    const updateProgress = (stepElement, percentages, callback) => {
+        let index = 0;
 
-    const interval = setInterval(() => {
-        if (currentStep < steps.length) {
-            const step = document.createElement("p");
-            step.textContent = steps[currentStep];
-            step.className = "loading-step";
-
-            if (currentStep === steps.length - 1) {
-                // Último passo com ícone verde
-                const checkmark = document.createElement("span");
-                checkmark.textContent = "✔️";
-                checkmark.className = "success";
-                step.appendChild(checkmark);
+        const interval = setInterval(() => {
+            if (index < percentages.length) {
+                stepElement.innerText = `${percentages[index]}%`;
+                totalProgress += percentages[index] - (index > 0 ? percentages[index - 1] : 0);
+                progressPercentage.innerText = totalProgress;
+                index++;
+            } else {
+                clearInterval(interval);
+                if (callback) callback(); // Passa para a próxima etapa
             }
-            loadingSteps.appendChild(step);
-            currentStep++;
-            progress += 100 / steps.length; // Atualiza o progresso
-            progressPercentage.textContent = Math.round(progress);
-        } else {
-            clearInterval(interval); // Para a animação
-            setTimeout(() => {
-                loadingContainer.style.display = "none"; // Oculta o loading
-                location.reload(); // Recarrega a página
-            }, 1000); // Espera um segundo antes de recarregar
-        }
-    }, 1000); // Tempo entre passos
-}
+        }, 1000); // Tempo entre cada incremento
+    };
+
+    // Inicia a sequência
+    updateProgress(stepVerifying, [0, 35, 67, 89, 100], () => {
+        updateProgress(stepDownloading, [0, 25, 50, 75, 100], () => {
+            updateProgress(stepInstalling, [0, 30, 60, 90, 100], () => {
+                // Finaliza com sucesso
+                stepSuccess.style.display = "inline"; // Mostra o "✔️"
+                progressPercentage.innerText = 100; // Progresso completo
+
+                // Aguarda antes de fechar o modal
+                setTimeout(() => {
+                    modal.style.display = "none";
+                    location.reload(); // Recarrega a página
+                }, 2000);
+            });
+        });
+    });
+});

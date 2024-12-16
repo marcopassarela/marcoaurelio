@@ -449,7 +449,7 @@ html:lang(pt) ul li a {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     color: white;
@@ -459,15 +459,24 @@ html:lang(pt) ul li a {
 .loading-box {
     text-align: center;
     padding: 20px;
-    background-color: #222;
+    background-color: white;
     border-radius: 10px;
     width: 80%;
     max-width: 400px;
+    color: black;
+    font-family: "Sora", sans-serif;
+}
+.loading-box h2 {
+    font-size: 20px;
 }
 
-.loading-steps p {
+#loading-steps p {
     margin: 10px 0;
-    font-size: 16px;
+    font-size: 14px;
+    line-height: 10px;
+}
+#loading-progress {
+    font-size: 15px;
 }
 
 .success {
@@ -478,6 +487,8 @@ html:lang(pt) ul li a {
 #progress-percentage {
     font-weight: bold;
 }
+
+
 
 
 
