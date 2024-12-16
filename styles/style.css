@@ -891,18 +891,20 @@ ul a:hover {
 
 /* Estilo do Modal de Avaliação */
 .modalrating {
-    display: none; /* Inicialmente escondido */
+    display: flex; /* Inicialmente escondido */
     position: fixed;
-    bottom: 20px; /* Fica no canto inferior */
-    right: 20px;  /* Fica no canto direito */
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
+    bottom: 350px; /* Move o modal 100px para cima da borda inferior */
+    right: 30px;  /* Continua no canto direito */
+    background-color: white;
+    color: black;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     z-index: 9999;
-    width: 300px;
+    width: 350px;
+    font-family: "Sora", sans-serif;
 }
+
 
 .modalratingbox {
     text-align: center;

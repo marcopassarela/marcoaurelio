@@ -195,20 +195,27 @@ function showUpdateModal(version) {
 
 
 
-// Verifica se o usuário aceitou os cookies
-if (localStorage.getItem('cookiesAccepted') === 'true') {
-
-    // Aguarda 5 minutos (300000 ms)
-    setTimeout(function () {
-
-        // Verifica se o usuário já avaliou nas últimas 24 horas
-        if (!hasRatedRecently()) {
-            // Exibe o modal de avaliação
-            document.getElementById('ratingModal').style.display = 'block';
-        }
-
-    }, 200000); // 5 minutos
-
+// Função para obter a localização (cidade e estado) usando a API ip-api
+function getLocation(callback) {
+    fetch('http://ip-api.com/json/') // Faz a chamada para a API pública
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success") {
+                const location = {
+                    city: data.city,
+                    state: data.regionName,
+                    country: data.country
+                };
+                callback(location);
+            } else {
+                console.error("Erro ao obter localização:", data.message);
+                callback(null); // Retorna nulo em caso de erro
+            }
+        })
+        .catch(error => {
+            console.error("Erro na requisição de localização:", error);
+            callback(null); // Retorna nulo se houver falha na API
+        });
 }
 
 // Função que verifica se o usuário avaliou nas últimas 24 horas
@@ -217,6 +224,17 @@ function hasRatedRecently() {
     if (!ratingTime) return false; // Nunca avaliou
     const currentTime = new Date().getTime();
     return currentTime - ratingTime < 86400000; // Verifica se se passaram menos de 24 horas
+}
+
+// Verifica se o usuário aceitou os cookies
+if (localStorage.getItem('cookiesAccepted') === 'true') {
+    // Aguarda 5 minutos (300000 ms)
+    setTimeout(function () {
+        if (!hasRatedRecently()) {
+            // Exibe o modal de avaliação
+            document.getElementById('ratingModal').style.display = 'block';
+        }
+    }, 300000); // 5 minutos
 }
 
 // Funcionalidade para selecionar estrelas
@@ -237,11 +255,46 @@ stars.forEach(star => {
 // Enviar a avaliação
 document.getElementById('submitRating').addEventListener('click', function () {
     if (selectedRating > 0) {
-        // Armazenar a avaliação e o tempo no localStorage
-        localStorage.setItem('userRating', selectedRating);
-        localStorage.setItem('ratingTime', new Date().getTime()); // Armazenar o tempo da avaliação
-        alert(`Obrigado pela sua avaliação de ${selectedRating} estrelas!`);
-        // Fechar o modal
-        document.getElementById('ratingModal').style.display = 'none';
+        // Capturar o horário da avaliação
+        const ratingTime = new Date().toISOString();
+
+        // Obter localização do usuário
+        getLocation(location => {
+            // Estrutura JSON para armazenar a avaliação
+            const userRating = {
+                stars: selectedRating,
+                time: ratingTime,
+                location: location || { city: "Desconhecido", state: "Desconhecido", country: "Desconhecido" }
+            };
+
+            // Armazenar no localStorage
+            localStorage.setItem('userRating', JSON.stringify(userRating));
+            localStorage.setItem('ratingTime', new Date().getTime()); // Armazenar o timestamp para controle
+
+            // Exibir mensagem de agradecimento
+            alert(`Obrigado pela sua avaliação de ${selectedRating} estrelas!`);
+
+            // Fechar o modal
+            document.getElementById('ratingModal').style.display = 'none';
+
+            // Enviar para o arquivo JSON (simulado abaixo)
+            saveToJSON(userRating);
+        });
     }
 });
+
+// Função para salvar os dados em um "arquivo JSON" (simulação)
+function saveToJSON(data) {
+    const jsonData = JSON.stringify(data, null, 2);
+
+    // Simulação para exibir no console (ou enviar ao backend)
+    console.log("Dados armazenados no JSON:", jsonData);
+
+    // Aqui, você enviaria os dados para o backend (caso tenha um servidor):
+    // fetch('/save-rating', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: jsonData
+    // });
+}
+
