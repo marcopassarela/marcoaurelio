@@ -260,6 +260,112 @@ html:lang(pt) ul li a {
 .box-grid {
     display: flex;
 }
+
+/* Modal */
+.modal {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    position: relative; /* Necessário para posicionar o botão de fechar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    letter-spacing: normal;
+    hyphens: auto;
+  }
+  .modal-content img {
+    width: 150px;
+    height: 250px;
+    margin-right: 15px;
+  }
+  
+  .modal-content h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-family: "Sora", sans-serif;
+    color: black;
+  }
+  .modal-content p {
+    font-family: "Sora", sans-serif;
+    font-size: 14px;
+    color: black;
+  }
+  .btnModal {
+    width: 60%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: absolute;
+    bottom: 20px;
+  }
+  .btnCancel {
+    background-color: white;
+    color: black;
+    font-size: 12px;
+    border: 1px solid black;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-family: "Sora", sans-serif;
+  }
+  .btn {
+    width: 100px;
+    height: 30px;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 1px;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-family: "Sora", sans-serif;
+    font-size: 12px;
+    transition: 0.3s ease-in-out;
+  }
+  .btn:hover {
+    box-shadow: 0px 2px 8px 0px rgba(60, 64, 67, 0.25);
+    background-color: rgb(1, 104, 1);
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    color: #000000;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .close-btn:hover {
+    color: red;
+  }
+
 .titleMaps {
     width: 100%;
     height: auto;
@@ -479,7 +585,7 @@ html:lang(pt) ul li a {
         text-align: center;
     }
     #menu li a:hover {
-        color: var(--color-white);
+        color: black;
     }
     #menu-container {
         display: flex; 
@@ -512,6 +618,18 @@ html:lang(pt) ul li a {
     }
     .grid2 {
         flex-basis: 100%;
+    }
+    .modal-content {
+        width: 85%;
+    }
+    .btnModal {
+        width: 50%;
+    }
+    .text-container {
+        hyphens: auto;
+        letter-spacing: normal;
+        word-spacing: normal;
+        word-wrap: break-word;
     }
     .options-card a:hover {
         text-decoration: none;

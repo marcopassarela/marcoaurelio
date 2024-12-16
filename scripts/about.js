@@ -131,3 +131,33 @@ function verificarAtualizacao() {
 verificarAtualizacao();
 atualizarTempo();
 buscarNoticias();
+
+
+// Seleção dos elementos
+const openModalBtn = document.getElementById('openModal');  // Botão para abrir o modal (exemplo)
+const closeModalBtn = document.getElementById('closeModal');  // Botão de fechar o modal
+const cancelModalBtn = document.getElementById('cancelModal');  // Botão "Cancelar"
+const modal = document.getElementById('myModal');  // O modal em si
+
+// Abrir o modal (adicionar o código que abre o modal aqui)
+openModalBtn.addEventListener('click', function (e) {
+  e.preventDefault(); // Prevenir comportamento padrão do link
+  modal.style.display = 'flex'; // Exibir o modal
+});
+
+// Fechar o modal com o botão "X"
+closeModalBtn.addEventListener('click', function () {
+  modal.style.display = 'none'; // Esconder o modal
+});
+
+// Fechar o modal com o botão "Cancelar"
+cancelModalBtn.addEventListener('click', function () {
+  modal.style.display = 'none'; // Esconder o modal
+});
+
+// Fechar o modal clicando fora do conteúdo
+window.addEventListener('click', function (e) {
+  if (e.target === modal) {
+    modal.style.display = 'none'; // Fechar o modal se clicar fora do conteúdo
+  }
+});
