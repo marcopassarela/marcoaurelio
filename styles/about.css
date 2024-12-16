@@ -577,10 +577,6 @@ html:lang(pt) ul li a {
 @media screen and (min-width: 321px) and (max-width: 430px) {
     body { overflow-x: hidden; }
 
-    .icon-theme path {
-        color: black;
-    }
-
     #menu { 
         width: 100vw;
         gap: 10px; 
@@ -591,6 +587,7 @@ html:lang(pt) ul li a {
     #menu li a:hover {
         color: black;
     }
+    .icon-theme
     #menu-container {
         display: flex; 
         width: 100%;
@@ -724,6 +721,12 @@ html:lang(pt) ul li a {
 @media screen and (min-width: 431px) and (max-width: 768px) {
     body { overflow-x: hidden; }
 
+    .light-theme {
+        color: black;
+    }
+    .dark-theme {
+        color: white;
+    }
     #menu { 
         width: 100vw;
         gap: 10px; 
