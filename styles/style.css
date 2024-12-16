@@ -888,60 +888,6 @@ ul a:hover {
     box-shadow: 0px 4px 8px 0px rgba(60, 64, 67, 0.25);
 }
 
-
-/* Estilo do Modal de Avaliação */
-.modalrating {
-    display: flex; /* Inicialmente escondido */
-    position: fixed;
-    bottom: 350px; /* Move o modal 100px para cima da borda inferior */
-    right: 30px;  /* Continua no canto direito */
-    background-color: white;
-    color: black;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    z-index: 9999;
-    width: 350px;
-    font-family: "Sora", sans-serif;
-}
-
-
-.modalratingbox {
-    text-align: center;
-}
-
-.stars {
-    font-size: 30px;
-    cursor: pointer;
-}
-
-.star {
-    margin: 0 5px;
-}
-
-.star.selected {
-    color: gold;
-}
-
-#submitRating:disabled {
-    background-color: gray;
-    cursor: not-allowed;
-}
-
-#submitRating {
-    margin-top: 15px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-
-
-
-
-
 /* Estilo da janela modal */
 .modal {
     display: none; /* Inicialmente escondida */
