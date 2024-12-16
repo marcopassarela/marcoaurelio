@@ -442,6 +442,44 @@ html:lang(pt) ul li a {
     background-color: #45a049;
 }
 
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 9999;
+}
+
+.loading-box {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+}
+
+.loading-steps p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.success {
+    color: #4CAF50; /* Cor verde para sucesso */
+    margin-left: 10px;
+}
+
+#progress-percentage {
+    font-weight: bold;
+}
+
+
 
 #privacy {
     width: 100%;

@@ -193,3 +193,62 @@ function showUpdateModal(version) {
     });
 }
 
+
+
+function showUpdateModal(version) {
+    const modal = document.getElementById("modalupgrade");
+    const versionDisplay = document.getElementById("current-version");
+    versionDisplay.innerHTML = `O site foi atualizado para a versão: <strong>${version}</strong>`;
+
+    modal.style.display = "flex";
+
+    document.getElementById('update-btn').addEventListener('click', () => {
+        modal.style.display = "none"; // Fecha o modal
+        startLoadingAnimation(); // Inicia a animação de loading
+    });
+}
+
+function startLoadingAnimation() {
+    const loadingContainer = document.getElementById("loading-container");
+    const loadingSteps = document.getElementById("loading-steps");
+    const progressPercentage = document.getElementById("progress-percentage");
+    const steps = [
+        "Verificando arquivos...",
+        "Baixando atualizações...",
+        "Instalando pacotes...",
+        "Atualização aplicada com sucesso!"
+    ];
+
+    let currentStep = 0;
+    let progress = 0;
+
+    loadingContainer.style.display = "flex"; // Exibe o contêiner de loading
+    loadingSteps.innerHTML = ""; // Limpa os passos anteriores
+    progressPercentage.textContent = progress; // Reinicia o progresso
+
+    const interval = setInterval(() => {
+        if (currentStep < steps.length) {
+            const step = document.createElement("p");
+            step.textContent = steps[currentStep];
+            step.className = "loading-step";
+
+            if (currentStep === steps.length - 1) {
+                // Último passo com ícone verde
+                const checkmark = document.createElement("span");
+                checkmark.textContent = "✔️";
+                checkmark.className = "success";
+                step.appendChild(checkmark);
+            }
+            loadingSteps.appendChild(step);
+            currentStep++;
+            progress += 100 / steps.length; // Atualiza o progresso
+            progressPercentage.textContent = Math.round(progress);
+        } else {
+            clearInterval(interval); // Para a animação
+            setTimeout(() => {
+                loadingContainer.style.display = "none"; // Oculta o loading
+                location.reload(); // Recarrega a página
+            }, 1000); // Espera um segundo antes de recarregar
+        }
+    }, 1000); // Tempo entre passos
+}
