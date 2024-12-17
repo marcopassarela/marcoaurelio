@@ -162,13 +162,16 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .then(data => {
             const currentVersion = data.version;
+            const updateMessage = data.updateMessage || "Atualização disponível.";
+            const importantNotes = data.importantNotes || "Verifique as melhorias.";
+
             console.log("Versão atual:", currentVersion);
 
             let storedVersion = localStorage.getItem("siteVersion");
 
             // Se a versão armazenada for diferente da versão atual, exibe o modal
             if (storedVersion !== currentVersion) {
-                showUpdateModal(currentVersion);
+                showUpdateModal(currentVersion, updateMessage, importantNotes);
             } else {
                 console.log("A página está atualizada.");
             }
@@ -180,10 +183,15 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Função para exibir o modal de atualização
-function showUpdateModal(version) {
+function showUpdateModal(version, updateMessage, importantNotes) {
     const modal = document.getElementById("modalupgrade");
     const versionDisplay = document.getElementById("current-version");
+    const updateInfo = document.getElementById("update-info");
+    const updateNotes = document.getElementById("update-notes");
+
     versionDisplay.innerHTML = `Próxima versão: <strong>${version}</strong>`;
+    updateInfo.innerHTML = updateMessage;
+    updateNotes.innerHTML = `<strong>Notas importantes:</strong> ${importantNotes}`;
 
     modal.style.display = "flex"; // Exibe o modal de forma imediata
 
