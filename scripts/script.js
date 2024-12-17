@@ -148,7 +148,7 @@ window.addEventListener('load', () => {
 });
 
 
-// Função para verificar o site.
+// Função para verificar a versão do site
 document.addEventListener("DOMContentLoaded", () => {
     const versionUrl = '/version.json'; 
 
@@ -179,68 +179,72 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 });
 
+// Função para exibir o modal de atualização
 function showUpdateModal(version) {
-    // Exibe o modal de atualização
     const modal = document.getElementById("modalupgrade");
     const versionDisplay = document.getElementById("current-version");
-    versionDisplay.innerHTML = `O site foi atualizado para a versão: <strong>${version}</strong>`;
+    versionDisplay.innerHTML = `Próxima versão: <strong>${version}</strong>`;
 
     modal.style.display = "flex"; // Exibe o modal de forma imediata
 
     document.getElementById('update-btn').addEventListener('click', () => {
         modal.style.display = "none"; // Fecha o modal
-        location.reload(); // Recarga a página para garantir que a versão mais recente seja carregada
+        startLoadingAnimation(); // Inicia a animação de carregamento
     });
 }
 
+function startLoadingAnimation() {
+    const loadingScreen = document.getElementById("loading-container");
+    loadingScreen.style.display = "flex";
 
-
-
-
-document.getElementById("update-btn").addEventListener("click", () => {
-    // Exibe o modal de loading
-    const modal = document.getElementById("loading-container");
-    modal.style.display = "flex";
-
-    const progressPercentage = document.getElementById("progress-percentage");
-    const stepVerifying = document.getElementById("verifying-progress");
-    const stepDownloading = document.getElementById("downloading-progress");
-    const stepInstalling = document.getElementById("installing-progress");
+    const verifyingProgress = document.getElementById("verifying-progress");
+    const downloadingProgress = document.getElementById("downloading-progress");
+    const installingProgress = document.getElementById("installing-progress");
     const stepSuccess = document.getElementById("step-success");
 
-    let totalProgress = 0;
+    stepSuccess.style.display = "none"; // Esconde a etapa de sucesso inicialmente
 
-    // Atualizar progresso gradualmente
-    const updateProgress = (stepElement, percentages, callback) => {
-        let index = 0;
+    const simulateStep = (progressElement, callback) => {
+        let progress = 0;
 
-        const interval = setInterval(() => {
-            if (index < percentages.length) {
-                stepElement.innerText = `${percentages[index]}%`;
-                totalProgress += percentages[index] - (index > 0 ? percentages[index - 1] : 0);
-                progressPercentage.innerText = totalProgress;
-                index++;
+        const updateProgress = () => {
+            // Atualiza o texto do progresso
+            progressElement.innerText = `${progress}%`;
+
+            // Adiciona pausas específicas
+            if ([15, 27, 39, 68, 78].includes(progress)) {
+                setTimeout(() => {
+                    progress += 1;
+                    updateProgress(); // Chama a função recursivamente
+                }, 500); // Pausa de 500ms
+            } else if (progress < 100) {
+                progress += 1;
+                setTimeout(updateProgress, 50); // Continua a animação
             } else {
-                clearInterval(interval);
-                if (callback) callback(); // Passa para a próxima etapa
+                // Adiciona a classe de sucesso ao atingir 100%
+                progressElement.classList.add('progress-success');
+                if (callback) callback();
             }
-        }, 1000); // Tempo entre cada incremento
+        };
+
+        updateProgress(); // Inicia a atualização do progresso
     };
 
-    // Inicia a sequência
-    updateProgress(stepVerifying, [0, 35, 67, 89, 100], () => {
-        updateProgress(stepDownloading, [0, 25, 50, 75, 100], () => {
-            updateProgress(stepInstalling, [0, 30, 60, 90, 100], () => {
-                // Finaliza com sucesso
-                stepSuccess.style.display = "inline"; // Mostra o "✔️"
-                progressPercentage.innerText = 100; // Progresso completo
+    // Sequência de animação
+    simulateStep(verifyingProgress, () => {
+        console.log("Verificação concluída");
+        simulateStep(downloadingProgress, () => {
+            console.log("Download concluído");
+            simulateStep(installingProgress, () => {
+                console.log("Instalação concluída");
+                stepSuccess.style.display = "block"; // Exibe a etapa de sucesso
+                console.log("Atualização aplicada com sucesso!");
 
-                // Aguarda antes de fechar o modal
                 setTimeout(() => {
-                    modal.style.display = "none";
-                    location.reload(); // Recarrega a página
-                }, 2000);
+                    location.reload(); // Recarrega a página após a animação de sucesso
+                    console.log("Página recarregada");
+                }, 2000); // Delay de 2 segundos antes de recarregar a página
             });
         });
     });
-});
+}
