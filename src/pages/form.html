@@ -103,6 +103,33 @@
     </div>
 </div>
 </form>
+
+        <!-- Contêiner de Loading -->
+<div id="loading-container" class="loading-container">
+    <div class="loading-box">
+        <h2>Atualizando...</h2>
+        <div id="loading-steps">
+            <p id="step-verifying">Verificando arquivos... <span id="verifying-progress" class="progress"></span></p>
+            <p id="step-downloading">Baixando atualizações... <span id="downloading-progress" class="progress"></span></p>
+            <p id="step-installing">Instalando pacotes... <span id="installing-progress" class="progress"></span></p>
+            <p id="step-success">Atualização aplicada com sucesso! <span class="success">✔️</span></p>
+        </div>        
+    </div>
+</div>
+
+
+<!-- Modal de Atualização -->
+<div id="modalupgrade" class="modalupgrade">
+    <div class="modalupgradebox">
+        <h2>Atualização Disponível!</h2>
+        <p id="update-info">Informamos que nosso site passou por uma atualização significativa, que inclui aprimoramentos importantes em seu desempenho, novas funcionalidades e melhorias na experiência do usuário. Essas mudanças foram implementadas com o objetivo de oferecer um ambiente ainda mais eficiente, intuitivo e agradável para a sua navegação.</p>
+        <p>Atualização referente: A atualização fornece correção de bugs na página about importante e é recomendada a todos os usuários do nosso site, alguns recursos podem não estar disponíveis no momento ou em alguns dispositivos.</p>
+        <p id="current-version"></p> <!-- Aqui será exibida a versão atual -->
+        <button id="update-btn">Atualizar Agora</button>
+    </div>
+</div>
+
+<script src="/scripts/upgrade.js"></script>
 <script src="/scripts/form.js"></script>
 </body>
 </html>

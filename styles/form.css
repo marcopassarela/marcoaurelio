@@ -173,6 +173,119 @@ p {
     background-color: rgb(45, 146, 45)
 }
 
+/* Estilo para o modal */
+.modalupgrade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; /* O modal ficará escondido inicialmente */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+
+.modalupgradebox {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    height: 380px;
+}
+.modalupgradebox h2 {
+    font-family: "Sora", sans-serif;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+.modalupgradebox p {
+    font-family: "Sora", sans-serif;
+    font-size: 13px;
+    hyphens: auto;
+    text-align: justify;
+    word-spacing: normal;
+    letter-spacing: normal;
+    margin-bottom: 15px;
+}
+
+#update-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#update-btn:hover {
+    background-color: #45a049;
+}
+
+/* Modal de Carregamento */
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
+    display: none; /* Inicialmente invisível */
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 9999; /* Garantir que o modal fique acima de outros elementos */
+}
+
+.loading-box {
+    text-align: center;
+    padding: 20px;
+    background-color: white; /* Fundo escuro para melhor contraste */
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    color: black;
+    font-family: "Sora", sans-serif;
+}
+
+.loading-box h2 {
+    font-size: 20px;
+}
+
+#loading-steps p {
+    margin: 10px 0;
+    font-size: 14px;
+    line-height: 10px;
+}
+
+.progress {
+    padding-left: 5px; /* Pequeno espaço à esquerda */
+    display: inline-block; /* Isso ajuda a manter o layout consistente */
+    min-width: 40px; /* Ajuste o valor conforme necessário */
+    text-align: right; /* Alinha o texto à direita */
+}
+.progress-success {
+    color: green; /* Define a cor verde */
+    font-weight: 600;
+}
+
+
+#loading-progress {
+    font-size: 15px;
+}
+
+.success {
+    color: #4CAF50; /* Cor verde para sucesso */
+    margin-left: 10px;
+}
+
+#progress-percentage {
+    font-weight: bold;
+}
+
 
 
 
