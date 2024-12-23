@@ -158,9 +158,12 @@ html:lang(pt) ul li a {
 
 .myMovie {
     width: 100%;
-    max-width: 550px;
+    max-width: 500px;
     object-fit: cover;
     display: block;
+}
+.mobile-video {
+    display: none;
 }
 
 .content span {
@@ -790,8 +793,12 @@ html:lang(pt) ul li a {
         width: 100%;
         height: auto;
     }
-    .myMovie {
-        max-width: 70%;
+    .desktop-video {
+        display: none;
+    }
+    .mobile-video {
+        display: block;
+        width: 80%;
     }
     .content span {
         width: 90%;
