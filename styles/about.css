@@ -160,16 +160,32 @@ html:lang(pt) ul li a {
     border-radius: 50%;
     margin-left: 200px;
 }
-.mobile-img {
+/* Inicializa as imagens, mostrando a imagem mobile por padrão */
+.desktop-img {
     display: none;
 }
-.desktop-img {
+.mobile-img {
     display: block;
 }
 
+/* Quando o tema for escuro (dark), mostramos a imagem mobile e escondemos a desktop */
+.dark-theme .desktop-img {
+    display: none;
+}
 .dark-theme .mobile-img {
     display: block;
 }
+
+/* Quando o tema for claro (light), mostramos a imagem desktop e escondemos a mobile */
+.light-theme .desktop-img {
+    display: block;
+}
+.light-theme .mobile-img {
+    display: none;
+}
+
+
+  
 
 .content span {
     margin-top: 20px;
