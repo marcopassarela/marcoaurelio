@@ -156,11 +156,13 @@ html:lang(pt) ul li a {
     align-items: center;
 }
 
-.content img {
-    align-self: center;
-    max-width: 100%;
-    height: auto;
+.myMovie {
+    width: 100%;
+    max-width: 550px;
+    object-fit: cover;
+    display: block;
 }
+
 .content span {
     margin-top: 20px;
     font-family: "Sora", sans-serif;
@@ -787,6 +789,9 @@ html:lang(pt) ul li a {
         flex-direction: column;
         width: 100%;
         height: auto;
+    }
+    .myMovie {
+        max-width: 70%;
     }
     .content span {
         width: 90%;
