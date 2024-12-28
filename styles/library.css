@@ -58,16 +58,14 @@ html:lang(pt) ul li a {
 }
 #container {
     width: 100%;
-    height: 550px;
+    height: auto;
     display: flex;
-    background-color: red;
     margin-top: 50px;
     font-family: "Sora", sans-serif;
 }
 .content {
     width: 50%;
     height: auto;
-    background-color: yellow;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -82,9 +80,9 @@ html:lang(pt) ul li a {
     width: 90%;
     margin-left: 30px;
     margin-top: 30px;
+    margin-bottom: 15px;
 }
 .photo {
-    background-color: blue;
     width: 50%;
     margin-right: auto;
     display: flex;
@@ -98,16 +96,15 @@ html:lang(pt) ul li a {
 }
 #shop {
     width: 100%;
-    height: 150px;
-    background-color: red;
+    height: auto;
     font-family: "Sora", sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
 #shop h1 {
     font-size: 20px;
+    
 }
 #shop p {
     width: 50%;
@@ -115,9 +112,9 @@ html:lang(pt) ul li a {
     font-size: 14px;
     align-items: center;
     text-align: center;
+    margin-bottom: 10px;
 }
 #books {
-    background-color: yellow;
     width: 100%;
     height: 100%;
     display: flex;
@@ -128,17 +125,18 @@ html:lang(pt) ul li a {
 #books h3 {
     display: flex;
     justify-content: center;
+    margin-top: 15px;
 }
 #my-books {
     width: 60%;
     height: 100%;
-    background-color: aquamarine;
     display: flex;
     gap: 20px;
     justify-content: center;
     margin-top: 20px;
     flex-wrap: wrap;
 }
+
 .options-books {
     width: 170px;
     height: 330px;
@@ -157,7 +155,7 @@ html:lang(pt) ul li a {
     width: 170px;
     height: 250px;
     border-radius: 5px;
-    cursor: pointer;
+    
 }
 .options-books span {
     line-height: 18px;
@@ -166,11 +164,12 @@ html:lang(pt) ul li a {
     margin-top: 5px;
 }
 .options-books a {
-    padding: 5px 40px;
+    font-size: 14px;
+    padding: 5px 20px;
     background-color: rgb(0, 163, 0);
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 4px;
     transition: 0.5s ease;
     font-weight: 300;
     position: absolute;
@@ -196,15 +195,34 @@ html:lang(pt) ul li a {
 
 .modal-content {
     background-color: white;
-    padding: 20px;
+    padding: 25px;
     border-radius: 10px;
-    width: 600px;
-    height: 600px;
+    width: 400px;
+    height: auto;
     text-align: center;
     position: relative; /* Para posicionar o botão de fechar */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: justify;
+    word-spacing: normal;
+    letter-spacing: normal;
+    hyphens: auto;
 }
-
+#modal-description {
+    margin-bottom: 15px;
+}
+.buy {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+    height: 30px;
+    margin: auto;
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 300;
+    align-items: center;
+    background-color: green;
+}
 .close-btn {
     position: absolute;
     top: 10px;
@@ -214,6 +232,13 @@ html:lang(pt) ul li a {
     font-size: 24px;
     color: black;
     cursor: pointer;
+}
+#modal-title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+#modal-description {
+    font-size: 16px;
 }
 
 /* Estilo para o modal */
@@ -344,6 +369,29 @@ html:lang(pt) ul li a {
         position: relative;
         text-align: center;
     }
+    #container{
+        display: flex;
+        flex-direction: column;
+    }
+    .photo {
+        width: 100%;
+        height: auto;
+    }
+    .photo img {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 15px;
+    }
+    .content {
+        width: 100%;
+    }
+    .content p {
+        text-align: justify;
+        width: 85%;
+        letter-spacing: normal;
+        word-spacing: normal;
+        hyphens: auto;
+    }
     #menu li a:hover {
         color: var(--color-white);
     }
@@ -353,6 +401,33 @@ html:lang(pt) ul li a {
         height: auto;
         flex-direction: column;
         margin-top: 15px;
+    }
+    #shop p{
+        width: 90%;
+        margin-bottom: 15px;
+        text-align: justify;
+        hyphens: auto;
+        word-spacing: normal;
+        letter-spacing: normal;
+    }
+    #my-books {
+        width: 100%;
+    }
+    .options-books {
+        width: 180px;
+        margin-bottom: 10px;
+    }
+    .options-books img {
+        width: 180px;
+    }
+    .modal-content {
+        width: 70%;
+    }
+    #modal-title {
+        font-size: 18px;
+    }
+    #modal-description {
+        font-size: 14px;
     }
 
 }
@@ -377,6 +452,34 @@ html:lang(pt) ul li a {
         flex-direction: column;
         margin-top: 15px;
     }
+    #container {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .photo img {
+        width: 350px;
+        height: 350px;
+    }
+    .content p {
+        width: 90%;
+        text-align: justify;
+        word-spacing: normal;
+        letter-spacing: normal;
+        hyphens: auto;
+    }
+    #shop p {
+        width: 95%;
+    }
+    #my-books {
+        width: 95%;
+    }
+    .options-books {
+        width: 190px;
+        margin-bottom: 10px;
+    }
+    .options-books img {
+        width: 190px;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -398,6 +501,34 @@ html:lang(pt) ul li a {
         height: auto;
         flex-direction: column;
         margin-top: 15px;
+    }
+    #container {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .photo img {
+        width: 350px;
+        height: 350px;
+    }
+    .content p {
+        width: 90%;
+        text-align: justify;
+        word-spacing: normal;
+        letter-spacing: normal;
+        hyphens: auto;
+    }
+    #shop p {
+        width: 95%;
+    }
+    #my-books {
+        width: 95%;
+    }
+    .options-books {
+        width: 190px;
+        margin-bottom: 10px;
+    }
+    .options-books img {
+        width: 190px;
     }
 }
 
