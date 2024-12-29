@@ -547,6 +547,14 @@ html:lang(pt) ul li a {
         position: relative;
         text-align: center;
     }
+    #menu li a:hover {
+        color: black !important; 
+        transition: none !important; 
+    }
+    #menu li a:hover, #menu li a:active {
+        color: var(--color-text);
+        background-color: transparent;
+    }
     #container{
         display: flex;
         flex-direction: column;
