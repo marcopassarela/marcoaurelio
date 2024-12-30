@@ -79,7 +79,7 @@ ul a:hover {
     flex-direction: column;
     justify-content: space-between;
     height: 25px;
-    width: 22px;
+    width: 25px;
     filter: blur(15px);
     transform: translateX(+100%);
     transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
@@ -87,13 +87,13 @@ ul a:hover {
 #menu-toggle::before {
     content: '';
     position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
+    top: -14px;
+    left: -14px;
+    right: -14px;
+    bottom: -14px;
     background: #35353549;
     z-index: -1;
-    border-radius: 14px; 
+    border-radius: 12px; 
 }
 #menu-toggle.myShow {
     opacity: 1;
@@ -118,11 +118,11 @@ ul a:hover {
 /* Estilizar as linhas do hambúrguer */
 #menu-toggle span {
     display: block;
-    width: 22px;
+    width: 25px;
     height: 2px;
     background-color: var(--color-white);
     transition: transform 0.3s ease, opacity 0.3s ease;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
 }
 
 /* Remove o espaço extra da última linha */
