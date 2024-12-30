@@ -87,7 +87,7 @@ ul a:hover {
 #menu-toggle::before {
     content: '';
     position: absolute;
-    top: -15px; /* Ajuste conforme necessário */
+    top: -13px; /* Ajuste conforme necessário */
     left: -15px;
     right: -15px;
     bottom: -15px;
