@@ -110,7 +110,7 @@ ul a:hover {
 #menu-toggle span {
     display: block;
     width: 30px;
-    height: 3px;
+    height: 4px;
     background-color: var(--color-white);
     transition: transform 0.3s ease, opacity 0.3s ease;
     margin-bottom: 6px;
