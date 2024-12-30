@@ -87,11 +87,11 @@ ul a:hover {
 #menu-toggle::before {
     content: '';
     position: absolute;
-    top: -14px; /* Ajuste conforme necessário */
+    top: -11px; /* Ajuste conforme necessário */
     left: -14px;
     right: -14px;
     bottom: -14px;
-    background: #3b3b3b6b;
+    background: #3b3b3b;
     z-index: -1;
     border-radius: 15px; 
 }
@@ -118,7 +118,7 @@ ul a:hover {
 /* Estilizar as linhas do hambúrguer */
 #menu-toggle span {
     display: block;
-    width: 22px;
+    width: 24px;
     height: 2px;
     background-color: var(--color-white);
     transition: transform 0.3s ease, opacity 0.3s ease;
