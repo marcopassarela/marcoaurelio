@@ -91,7 +91,7 @@ ul a:hover {
     left: -15px;
     right: -15px;
     bottom: -15px;
-    background: #3b3b3b;
+    background: #3b3b3b8f;
     z-index: -1;
     border-radius: 14px; 
 }
@@ -1116,7 +1116,7 @@ ul a:hover {
     #menu {
         display: none;
         flex-direction: column;
-        background-color: #1F1F1F;
+        background-color: #1f1f1f;
         list-style: none;
         position: absolute;
         top: 0;
