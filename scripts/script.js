@@ -256,3 +256,24 @@ function startLoadingAnimation() {
         });
     });
 }
+
+const menuToggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
+
+// Alternar o menu hamburguer
+menuToggle.addEventListener('click', () => {
+    // Alternar a classe 'myShow' para abrir/fechar o menu
+    menu.classList.toggle('myShow');
+    
+    // Alternar a classe 'open' para transformar o hambúrguer em "X"
+    menuToggle.classList.toggle('open');
+});
+
+// Fechar o menu ao clicar em um link do menu
+const menuLinks = document.querySelectorAll('#menu a');
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menu.classList.remove('myShow');  // Fechar o menu
+        menuToggle.classList.remove('open');  // Voltar ao hambúrguer
+    });
+});
