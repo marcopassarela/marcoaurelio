@@ -71,11 +71,10 @@ ul a:hover {
     background: none;
     border: none;
     position: absolute;
-    top: 10px;
+    top: 25px;
     right: 30px;
     z-index: 1100;
     cursor: pointer;
-    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -84,7 +83,17 @@ ul a:hover {
     filter: blur(15px);
     transform: translateX(+100%);
     transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
-    
+}
+#menu-toggle::before {
+    content: '';
+    position: absolute;
+    top: -14px; /* Ajuste conforme necessário */
+    left: -14px;
+    right: -14px;
+    bottom: -14px;
+    background: #3b3b3b6b;
+    z-index: -1;
+    border-radius: 15px; 
 }
 #menu-toggle.myShow {
     opacity: 1;
