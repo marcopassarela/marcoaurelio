@@ -122,7 +122,7 @@ window.onclick = function(event) {
 
 // Array com os IDs dos elementos.
 if (typeof elementsToObserve === 'undefined') {
-    const elementsToObserve = ['#my', '#skills', '#about', '#contact', '#privacy', '#menu'];
+    const elementsToObserve = ['#my', '#skills', '#about', '#contact', '#privacy', '#menu', '#menu-toggle'];
 
     const myObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -264,7 +264,6 @@ const menu = document.getElementById('menu');
 menuToggle.addEventListener('click', () => {
     // Alternar a classe 'myShow' para abrir/fechar o menu
     menu.classList.toggle('myShow');
-    
     // Alternar a classe 'open' para transformar o hambúrguer em "X"
     menuToggle.classList.toggle('open');
 });
