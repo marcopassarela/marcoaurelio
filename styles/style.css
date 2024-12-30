@@ -91,7 +91,7 @@ ul a:hover {
     left: -14px;
     right: -14px;
     bottom: -14px;
-    background: #35353549;
+    
     z-index: -1;
     border-radius: 12px; 
 }
@@ -112,7 +112,7 @@ ul a:hover {
 }
 
 #menu-toggle.open span:nth-child(3) {
-    transform: translateY(-6px) rotate(-45deg);
+    transform: translateY(-4px) rotate(-45deg);
 }
 
 /* Estilizar as linhas do hambúrguer */
