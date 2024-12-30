@@ -84,6 +84,7 @@ ul a:hover {
     filter: blur(15px);
     transform: translateX(+100%);
     transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+    
 }
 #menu-toggle.myShow {
     opacity: 1;
@@ -109,10 +110,11 @@ ul a:hover {
 #menu-toggle span {
     display: block;
     width: 30px;
-    height: 4px;
+    height: 3px;
     background-color: var(--color-white);
     transition: transform 0.3s ease, opacity 0.3s ease;
     margin-bottom: 6px;
+    background-color: var(--color-blue);
 }
 
 /* Remove o espaço extra da última linha */
