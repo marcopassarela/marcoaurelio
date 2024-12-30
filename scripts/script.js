@@ -256,3 +256,22 @@ function startLoadingAnimation() {
         });
     });
 }
+
+const menuToggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
+
+menuToggle.addEventListener('click', () => {
+    if (menu.classList.contains('myShow')) {
+        menu.classList.remove('myShow'); // Fechar menu
+    } else {
+        menu.classList.add('myShow'); // Abrir menu
+    }
+});
+
+// Fechar o menu ao clicar em um link
+const menuLinks = document.querySelectorAll('#menu a');
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menu.classList.remove('myShow');
+    });
+});
