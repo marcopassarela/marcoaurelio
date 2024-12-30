@@ -90,7 +90,7 @@ ul a:hover {
     top: -15px; /* Ajuste conforme necessário */
     left: -15px;
     right: -15px;
-    bottom: -15px;
+    bottom: -14px;
     background: #3b3b3b;
     z-index: -1;
     border-radius: 15px; 
