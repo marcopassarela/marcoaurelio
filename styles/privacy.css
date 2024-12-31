@@ -87,24 +87,16 @@ html {
     font-family: "Sora", sans-serif;
     border-radius: 5px;
     font-weight: normal;
-    
+    padding: 7px;
 }
+#menu-items .tag-index {
+    color: var(--color-blue);
+}
+
 
 #menu-items .tag-a:focus {
     font-weight: 600; 
 }
-#menu-items {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Garante que os itens fiquem no topo */
-    height: 100%;
-}
-
-#menu-items li:last-child {
-    margin-top: auto; /* Empurra o último item para baixo */
-}
-
-
 
 
 /* Menu mobile escondido por padrão */
