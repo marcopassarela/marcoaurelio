@@ -520,11 +520,10 @@ html:lang(pt) ul li a {
 }
 
 #privacy img {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     margin-left: 150px;
-    margin-top: 20px;
-    display: none;
+    margin-top: 40px;
 }
 .map-page {
     margin-top: 20px;
