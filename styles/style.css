@@ -717,11 +717,11 @@ ul a:hover {
 }
 
 #privacy img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     margin-left: 150px;
-    margin-top: 20px;
-    display: none;
+    margin-top: 40px;
+    
 }
 .map-page {
     margin-top: 20px;
@@ -1375,7 +1375,7 @@ ul a:hover {
         margin-left: 0px;
         display: flex;
         justify-content: center;
-        display: none;
+        
     }
     .my-logo {
         margin-left: 0px;
