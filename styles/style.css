@@ -96,6 +96,7 @@ ul a:hover {
     border-radius: 12px; 
 }
 #menu-toggle.myShow {
+    display: none;
     opacity: 1;
     filter: blur(0);
     transform: translateX(0);
@@ -112,7 +113,7 @@ ul a:hover {
 }
 
 #menu-toggle.open span:nth-child(3) {
-    transform: translateY(-6px) rotate(-45deg);
+    transform: translateY(-13px) rotate(-45deg);
 }
 
 /* Estilizar as linhas do hambúrguer */
@@ -1142,6 +1143,13 @@ ul a:hover {
         opacity: 1;
         visibility: visible;
         transform: translateX(0);
+    }
+    #menu-toggle.myShow {
+       display: flex;
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+        transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
     }
 
     #my {
