@@ -1,5 +1,6 @@
 {
-    "version": "1.2",
-    "updateMessage": "Informamos que nosso site passou por uma atualização significativa, que inclui aprimoramentos importantes em seu desempenho, novas funcionalidades e melhorias na experiência do usuário. Essas mudanças foram implementadas com o objetivo de oferecer um ambiente ainda mais eficiente, intuitivo e agradável para a sua navegação.",
-    "importantNotes": "A atualização fornece correção de bugs na página about importante e é recomendada a todos os usuários do nosso site, alguns recursos podem não estar disponíveis no momento ou em alguns dispositivos."
+    "version": "1.2 Beta",
+    "updateMessage": "Informamos que nosso site passou por uma atualização significativa, que inclui aprimoramentos importantes em seu desempenho, novas funcionalidades e melhorias na experiência do usuário. Essas mudanças foram implementadas com o objetivo de oferecer um ambiente mais eficiente, intuitivo e agradável para a sua navegação.",
+    "importantNotes": "A versão 1.2 Beta oferece uma prévia da próxima atualização, com um conjunto inicial de recursos em desenvolvimento. Para uma experiência otimizada, o idioma deverá estar configurado para inglês (EUA) por padrão no site. Algumas funcionalidades podem não estar disponíveis em todos os dispositivos enquanto finalizamos as melhorias e ajustes necessários."
 }
+
