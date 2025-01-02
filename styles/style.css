@@ -33,23 +33,17 @@ html {
     transition: opacity 2s cubic-bezier(0.42, 0, 0.58, 1), 
                 filter 2s cubic-bezier(0.42, 0, 0.58, 1);
 }
-
-/* Aplica a animação de entrada */
 #menu.myShow {
     opacity: 1;
     filter: blur(0);
     transform: translateX(0);
 }
-
-/* Quando o menu for clicado, ele fica visível sem animação */
 #menu.clicked {
-    opacity: 1 !important;   /* Garante que o menu se mantenha visível */
-    filter: none !important; /* Remove o desfoque */
-    transform: none !important; /* Remove a transformação */
-    transition: none; /* Remove qualquer transição */
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    transition: none;
 }
-
-
 
 ul {
     display: flex;
