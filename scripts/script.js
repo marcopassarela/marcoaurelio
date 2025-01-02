@@ -121,7 +121,8 @@ window.onclick = function(event) {
 
 
 // IDs dos elementos a serem observados
-const elementsToObserve = ['#my', '#skills', '#about', '#contact', '#privacy', '#menu', '#menu-toggle', "#title"];
+// IDs dos elementos a serem observados
+const elementsToObserve = ['#my', '#skills', '#about', '#contact', '#privacy', '#menu', '#menu-toggle', '#title'];
 
 // Verifica a existência dos elementos e cria o IntersectionObserver
 if (elementsToObserve.length) {
@@ -129,7 +130,7 @@ if (elementsToObserve.length) {
         entries.forEach(entry => {
             // Quando o elemento está visível
             if (entry.isIntersecting && !entry.target.classList.contains('myShow')) {
-                entry.target.classList.add('myShow'); // Adiciona a classe
+                entry.target.classList.add('myShow'); // Adiciona a classe para animação de entrada
                 myObserver.unobserve(entry.target);  // Para de observar
             }
         });
@@ -141,6 +142,11 @@ if (elementsToObserve.length) {
         if (element) myObserver.observe(element);   // Adiciona o observador
     });
 }
+
+// Lógica de clique no menu para garantir que ele não desapareça
+document.getElementById('menu').addEventListener('click', function() {
+    this.classList.add('clicked'); // Adiciona a classe 'clicked' ao clicar
+});
 
 
 // Time de 5 segundos para exibir o popup!

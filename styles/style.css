@@ -30,14 +30,26 @@ html {
     opacity: 0;
     filter: blur(15px);
     transform: translateX(0%);
-    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+    transition: opacity 2s cubic-bezier(0.42, 0, 0.58, 1), 
+                filter 2s cubic-bezier(0.42, 0, 0.58, 1);
 }
+
+/* Aplica a animação de entrada */
 #menu.myShow {
     opacity: 1;
-    filter: blur(0px);
+    filter: blur(0);
     transform: translateX(0);
-    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
 }
+
+/* Quando o menu for clicado, ele fica visível sem animação */
+#menu.clicked {
+    opacity: 1 !important;   /* Garante que o menu se mantenha visível */
+    filter: none !important; /* Remove o desfoque */
+    transform: none !important; /* Remove a transformação */
+    transition: none; /* Remove qualquer transição */
+}
+
+
 
 ul {
     display: flex;
