@@ -122,7 +122,7 @@ window.onclick = function(event) {
 
 // Array com os IDs dos elementos.
 if (typeof elementsToObserve === 'undefined') {
-    const elementsToObserve = ['#my', '#skills', '#about', '#contact', '#privacy', '#menu', '#menu-toggle'];
+    const elementsToObserve = ['#my', '#skills', '#about', '#contact', '#privacy', '#menu', '#menu-toggle', "#title",];
 
     const myObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
