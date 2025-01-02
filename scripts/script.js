@@ -120,24 +120,28 @@ window.onclick = function(event) {
 }
 
 
-// Array com os IDs dos elementos.
-if (typeof elementsToObserve === 'undefined') {
-    const elementsToObserve = ['#my', '#skills', '#about', '#contact', '#privacy', '#menu', '#menu-toggle', "#title",];
+// IDs dos elementos a serem observados
+const elementsToObserve = ['#my', '#skills', '#about', '#contact', '#privacy', '#menu', '#menu-toggle', "#title"];
 
+// Verifica a existência dos elementos e cria o IntersectionObserver
+if (elementsToObserve.length) {
     const myObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
+            // Quando o elemento está visível
             if (entry.isIntersecting && !entry.target.classList.contains('myShow')) {
-                entry.target.classList.add('myShow');
-                myObserver.unobserve(entry.target);
+                entry.target.classList.add('myShow'); // Adiciona a classe
+                myObserver.unobserve(entry.target);  // Para de observar
             }
         });
     });
 
+    // Observa cada elemento do array
     elementsToObserve.forEach(id => {
-        const element = document.querySelector(id);
-        if (element) myObserver.observe(element);
+        const element = document.querySelector(id); // Seleciona o elemento
+        if (element) myObserver.observe(element);   // Adiciona o observador
     });
 }
+
 
 // Time de 5 segundos para exibir o popup!
 window.addEventListener('load', () => {
