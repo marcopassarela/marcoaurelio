@@ -234,13 +234,6 @@ ul a:hover {
     border: 1px solid #000000;
     border-radius: 2px;
 }
-#estados {
-    width: 382px;
-    height: 45px;
-    padding: 7px 15px;
-    border: 1px solid #000000;
-    border-radius: 2px;
-}
 label {
     font-size: 12px;
     
