@@ -234,6 +234,7 @@ ul a:hover {
     border: 1px solid #000000;
     border-radius: 2px;
     font-size: 16px;
+    background: white;
 }
 label {
     font-size: 12px;
