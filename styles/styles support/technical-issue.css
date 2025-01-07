@@ -716,6 +716,12 @@ body { overflow-x: hidden; }
         display: inline-grid;
         grid-template-columns: 1fr 1fr 1fr;
     }
+    #pais {
+        width: 382px;
+    }
+    #request_description {
+        width: 350px;
+    }
     #submit-button {
         margin-top: 0px;
     }
