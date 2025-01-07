@@ -228,9 +228,10 @@ ul a:hover {
     font-family: "Sora", sans-serif;
 }
 #redirectSelect {
-    width: 350px;
-    height: 40px;
-    border: 1px solid #808080;
+    width: 382px;
+    height: 45px;
+    padding: 7px 15px;
+    border: 1px solid #000000;
     border-radius: 2px;
 }
 label {
