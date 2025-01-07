@@ -18,7 +18,6 @@
 <form action="https://formsubmit.co/f44f7a7fb66615b5ffaa2226a0443328" method="POST">
 <div id="form-container">
     <h2>Formulário para Contato</h2>
-    <form action="php/processa_formulario.php" method="post">
     
     <div class="form-row">
         <input type="text" id="input-name" class="input-field" name="nome" placeholder="Nome completo" maxlength="35" required oninput="validarTexto(this)" autocomplete="name">
@@ -97,8 +96,6 @@
 
     <div class="form-row">
         <input type="hidden" name="_next" value="https://marcoaurelio.vercel.app/src/pages/thanks.html">
-
-
         <input type="submit" value="Enviar" id="submit-button">
     </div>
 </div>
