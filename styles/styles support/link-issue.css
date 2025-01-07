@@ -248,6 +248,13 @@ ul a:hover {
     text-align: left; /* Alinha o texto das opções à esquerda */
     direction: ltr; /* Garante a direção do texto das opções */
 }
+.select-container span {
+    margin-left: 5px;
+    font-family: "Sora", sans-serif;
+    font-size: 12px;
+    color: var(--color-black);
+    letter-spacing: 1.2px;
+}
 
 
 
