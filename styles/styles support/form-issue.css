@@ -1,0 +1,566 @@
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;  
+}
+
+body {
+    text-rendering: optimizeLegibility; /* Melhora a legibilidade e suaviza as fontes */
+}
+
+html {
+    scroll-behavior: smooth;
+    font-smoothing: antialiased; /* Para navegadores como o Safari */
+}
+
+:root {
+    --color-blue: #007bff;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-background: black;
+    --color-text: white;
+}
+
+#menu {
+    width: 100%;
+    height: 5vh;
+    z-index: 1000;
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateX(0%);
+    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+}
+#menu.myShow {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+ul {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    width: 100%;
+    height: 5vh;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    list-style: none;
+}
+
+ul a {
+    list-style: none;
+    text-decoration: none;
+    color: var(--color-white);
+    font-family: "Sora", sans-serif;
+    font-size: 14px;
+}
+html:lang(pt) ul a {
+    font-size: 12px; /* tamanho reduzido para traduções */
+}
+
+ul a:hover {
+    color: var(--color-blue);
+    transition: 0.4s ease-in-out;
+}
+
+/* Estilo do botão de menu hamburguer */
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    z-index: 1100;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 25px;
+    width: 25px;
+    filter: blur(15px);
+    transform: translateX(+100%);
+    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+}
+#menu-toggle::before {
+    content: '';
+    position: absolute;
+    top: -14px;
+    left: -14px;
+    right: -14px;
+    bottom: -14px;
+    z-index: -1;
+    border-radius: 12px; 
+}
+#menu-toggle.myShow {
+    display: none;
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+/* Quando o menu estiver aberto, transformar o hambúrguer em "X" */
+#menu-toggle.open span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+#menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+#menu-toggle.open span:nth-child(3) {
+    transform: translateY(-13px) rotate(-45deg);
+}
+
+/* Estilizar as linhas do hambúrguer */
+#menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: var(--color-black);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    margin-bottom: 6px;
+}
+
+/* Remove o espaço extra da última linha */
+#menu-toggle span:last-child {
+    margin-bottom: 0;
+}
+#title {
+    width: 100%;
+    height: 300px;
+    background-color: var(--color-black);
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateX(0%);
+    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+#title.myShow {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+#title h1 {
+    margin: 0 auto;
+    padding-left: 150px;
+    font-size: 50px;
+    font-family: "Sora", sans-serif;
+    letter-spacing: 1.2px;
+    position: relative;
+    padding-top: 70px;
+    color: var(--color-white);
+}
+
+.breadcrumb {
+    max-width: 600px;
+    margin: 30px 0;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+.breadcrumb a {
+    text-decoration: none;
+    color: #363636;
+    font-family: "Sora", sans-serif;
+    font-size: 12px;
+}
+.breadcrumb a:hover {
+    color: rgb(0, 174, 255);
+    font-weight: 500;
+}
+.breadcrumb span {
+    color: #000;
+    font-weight: bold;
+}
+.breadcrumb a:last-of-type {
+    pointer-events: none;
+    color: #000;
+    font-weight: bold;
+}
+#support {
+    width: 100%;
+    height: auto;
+    display: block;
+    font-family: "Sora", sans-serif;
+}
+#support h1 {
+    display: flex;
+    justify-content: center;
+}
+#support p {
+    font-size: 9px;
+    margin: 0 auto;
+    max-width: 900px;
+    margin-bottom: 5px;
+}
+#support label {
+    padding: 10px;
+}
+#support .description {
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    max-width: 900px;
+    letter-spacing: 1.1px;
+}
+.line {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 5px 0;
+    color: #808080;
+    border-bottom: 1px solid #d2d2d2;
+    font-family: "Sora", sans-serif;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+#options {
+    max-width: 450px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: "Sora", sans-serif;
+}
+#redirectSelect {
+    width: 350px;
+    height: 40px;
+    border: 1px solid #808080;
+    border-radius: 2px;
+}
+label {
+    font-size: 12px;
+    
+    text-align: left; 
+}
+
+#privacy {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    display: flex;
+    margin-top: 100px;
+}
+
+#privacy img {
+    width: 60px;
+    height: 60px;
+    margin-left: 150px;
+    margin-top: 40px;
+}
+.map-page {
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.map-page h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-family: "Sora", sans-serif;
+    color: black;
+}
+.map-page a {
+    color: black;
+    font-family: "Sora", sans-serif;
+    font-size: 11px;
+    display: flex;
+    margin-bottom: 10px;
+    text-decoration: none;
+    width: 45px;
+    position: relative;
+    width: fit-content;
+}
+.map-page a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background-color: black; 
+    width: 0;
+    transition: width 0.5s ease;
+}
+.map-page a:hover::after {
+    width: 100%;
+}
+.support {
+    margin-top: 20px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.support h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-family: "Sora", sans-serif;
+    color: black;
+}
+.support a {
+    color: black;
+    font-family: "Sora", sans-serif;
+    font-size: 11px;
+    display: inline-block; 
+    margin-bottom: 10px;
+    text-decoration: none;
+    position: relative;
+    width: fit-content;
+}
+
+.support a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background-color: black; 
+    width: 0;
+    transition: width 0.5s ease;
+}
+
+.support a:hover::after {
+    width: 100%;
+}
+
+.redes-sociais {
+    margin-top: 20px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.redes-sociais h3 {
+    font-size: 14px;
+    font-family: "Sora", sans-serif;
+    color: black;
+}
+.redes-sociais a {
+    color: black;
+    font-family: "Sora", sans-serif;
+    font-size: 11px;
+    text-decoration: none !important; 
+    position: relative;
+    display: inline-block;
+}
+
+.redes-sociais a:hover {
+    text-decoration: none !important;
+}
+
+.redes-sociais a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background-color: black; 
+    width: 0;
+    transition: width 0.5s ease;
+}
+
+.redes-sociais a:hover::after {
+    width: 100%;
+}
+
+.privacy-terms {
+    margin-top: 20px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.privacy-terms h3 {
+    font-size: 14px;
+    font-family: "Sora", sans-serif;
+    color: black;
+}
+.privacy-terms a {
+    color: black;
+    font-family: "Sora", sans-serif;
+    font-size: 11px;
+    display: inline-block;
+    text-decoration: none;
+    width: 90px;
+    position: relative;
+    width: fit-content;
+}
+
+.privacy-terms a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background-color: black; 
+    width: 0;
+    transition: width 0.5s ease;
+}
+
+.privacy-terms a:hover::after {
+    width: 100%;
+}
+.redes-sociais a:hover {
+    text-decoration: underline;
+}
+/* Ícones SVG */
+.icon-theme path {
+    fill: black; /* A cor do ícone será a cor do texto do tema */
+}
+/* Outros estilos para o SVG, caso necessário */
+.icon-theme svg {
+    transition: fill 0.3s ease; /* Adiciona uma transição suave para a mudança de cor */
+}
+
+.create-by {
+    width: 100%;
+    height: 15px;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.create-by p {
+    font-size: 10px;
+    color: black;
+    font-family: "Sora", sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 321px) and (max-width: 430px) {
+body { overflow-x: hidden; }
+
+    #menu { 
+        gap: 25px; 
+        
+    }
+    ul a:hover {
+        color: var(--color-white);
+    }
+    #menu-toggle {
+        display: block; /* Exibir o botão hamburguer em telas pequenas */
+    }
+
+    /* Esconder o menu por padrão em dispositivos móveis */
+    #menu {
+        display: none;
+        flex-direction: column;
+        background-color: #1f1f1f;
+        list-style: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 40%;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-100%);
+        transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
+    }
+    ul a {
+        color: var(--color-white);
+        font-family: "Sora", sans-serif;
+        font-size: 16px;
+    }
+
+    /* Mostrar o menu quando estiver ativo */
+    #menu.myShow {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+    #menu-toggle.myShow {
+       display: flex;
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+        transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+    }
+    #title {
+        width: 80%;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0px 0px 40px 0px;
+    }
+    #title h1 {
+        font-size: 20px;
+        padding-top: 0px;
+        padding-left: 0px;
+    }
+    #support h1 {
+        font-size: 30px;
+    }
+    #support p {
+        max-width: 300px;
+        margin-top: 20px;
+    }
+    .line {
+        max-width: 300px;
+    }
+    .breadcrumb {
+        max-width: 265px;
+    }
+    #options {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #support .description {
+        font-size: 14px;
+    }
+    #privacy {
+        width: 100%;
+        height: auto;
+        gap: 20px;
+        border-top: 1px solid rgba(0, 0, 0, 0.151);
+        margin-top: 240px;
+    }
+    #privacy img {
+        width: 50px;
+        height: 50px;
+        margin-left: 0px;
+        display: flex;
+        justify-content: center;
+    }
+    .my-logo {
+        margin-left: 0px;
+    }
+    .map-page {
+        margin-left: 0px;
+        display: none;
+    }
+    .support {
+        margin-left: 0;
+    }
+    .support h3 {
+        font-size: 12px;
+    }
+    .redes-sociais {
+        margin-left: 0;
+    }
+    .redes-sociais h3 {
+        font-size: 12px;
+    }
+    .privacy-terms {
+        margin-left: 0;
+    }
+    .privacy-terms h3 {
+        font-size: 12px;
+    }
+}
