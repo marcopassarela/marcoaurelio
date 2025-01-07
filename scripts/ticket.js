@@ -44,3 +44,41 @@ fileInput.addEventListener('change', () => {
   }
 });
 
+const paises = [
+    { sigla: "US", nome: "Estados Unidos" },
+    { sigla: "CN", nome: "China" },
+    { sigla: "DE", nome: "Alemanha" },
+    { sigla: "BR", nome: "Brasil" },
+    { sigla: "IN", nome: "Índia" },
+    { sigla: "GB", nome: "Reino Unido" },
+    { sigla: "JP", nome: "Japão" },
+    { sigla: "FR", nome: "França" },
+    { sigla: "RU", nome: "Rússia" },
+    { sigla: "CA", nome: "Canadá" },
+    { sigla: "AU", nome: "Austrália" },
+    { sigla: "IT", nome: "Itália" },
+    { sigla: "SA", nome: "Arábia Saudita" },
+    { sigla: "AE", nome: "Emirados Árabes Unidos" },
+    { sigla: "KR", nome: "Coreia do Sul" },
+    { sigla: "AQ", nome: "Antártida" },
+    { sigla: "AR", nome: "Argentina" },
+];
+
+const paisesSelect = document.getElementById("pais");
+paises.forEach(pais => {
+    const option = document.createElement("option");
+    option.value = pais.nome;  // Valor será a nome do país
+    option.textContent = pais.nome;  // Texto exibido será a nome
+    paisesSelect.appendChild(option);
+});
+
+
+const estados = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"];
+
+const estadosSelect = document.getElementById("estados");
+estados.forEach(sigla => {
+    const option = document.createElement("option");
+    option.value = sigla;
+    option.textContent = sigla; // Mostra apenas as siglas
+    estadosSelect.appendChild(option);
+});
