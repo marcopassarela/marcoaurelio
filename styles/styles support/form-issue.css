@@ -228,7 +228,7 @@ ul a:hover {
     font-family: "Sora", sans-serif;
 }
 #pais {
-    width: 382px;
+    width: 431px;
     height: 45px;
     padding: 7px 25px;
     border: 1px solid #000000;
@@ -238,7 +238,6 @@ ul a:hover {
 }
 label {
     font-size: 12px;
-    
     text-align: left; 
 }
 #form {
@@ -365,7 +364,7 @@ label {
   }
 
   #request_description {
-    width: 350px;
+    width: 400px;
     font-size: 16px;
     padding: 7px 15px;
     height: 70px;
