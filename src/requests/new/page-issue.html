@@ -59,14 +59,35 @@
             <label for="input-name">Qual melhor opção combina com sua situação</label>
             <span style="color: red;">*</span>
         </div>
-        <select name="opcoes" id="options">
-            <option value="opcao0">-</option>
-            <option value="opcao1">Estou em busca de um orçamento.</option>
-            <option value="opcao2">Minha empresa possui uma demanda.</option>
-            <option value="opcao3">Estou planejando um projeto.</option>
-            <option value="opcao4">Visibilidade na internet.</option>
-            <option value="opcao5">Outros assuntos</option>
-        </select>
+        
+        <div id="checkbox">
+            <div class="checkbox-item">
+                <input type="checkbox" id="issue-homepage" class="checkbox">
+                <label for="issue-homepage">Problema na página incial</label>
+            </div>
+            
+            <div class="checkbox-item">
+                <input type="checkbox" id="issue-about" class="checkbox">
+                <label for="issue-about">Problema na página About</label>
+            </div>
+            
+            <div class="checkbox-item">
+                <input type="checkbox" id="issue-form-link" class="checkbox">
+                <label for="issue-form-link">problema com o link do Formulário</label>
+            </div>
+            
+            <div class="checkbox-item">
+                <input type="checkbox" id="issue-contact" class="checkbox">
+                <label for="issue-contact">Problema na página Contact</label>
+            </div>
+            
+            <div class="checkbox-item">
+                <input type="checkbox" id="issue-links" class="checkbox">
+                <label for="issue-links">Problema com links</label>
+            </div>
+        </div>
+        
+
         <div class="requests">
             <label for="input-name">Assunto</label>
             <span style="color: red;">*</span>
@@ -77,15 +98,7 @@
         </div>
         <textarea name="mensagem" rows="5" cols="10"></textarea>
     </div>
-    <div class="form-row">
-        <span style="color: red;">*</span>
-        <div class="file-upload-container">
-          <input type="file" accept="image/*, video/*" id="file-input" class="file-input" multiple required>
-          <label for="file-input" class="file-label"></label>
-          <span>/Adicione seus arquivos ou solte eles aqui</span>
-        </div>
-        <div class="uploaded-files"></div>
-      </div>
+    
     <div id="send">
         <input type="hidden" name="_next" value="https://marcoaurelio.vercel.app/src/pages/thanks.html">
         <input type="submit" value="Enviar" id="submit-button">
