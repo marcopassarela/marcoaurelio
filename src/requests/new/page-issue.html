@@ -44,9 +44,51 @@
 
 <div id="form">
   <form action="https://formsubmit.co/f44f7a7fb66615b5ffaa2226a0443328" method="POST">
-    
-    
-
+    <div id="request">
+        <div class="requests">
+            <label for="input-name">Nome completo</label>
+            <span style="color: red;">*</span>
+        </div>
+        <input type="text" id="input-name" name="text" maxlength="32" required>
+        <div class="requests">
+            <label for="input-name">E-mail</label>
+            <span style="color: red;">*</span>
+        </div>
+        <input type="email" id="input-email" name="email" maxlength="30" autocomplete="email" required>
+        <div class="requests">
+            <label for="input-name">Qual melhor opção combina com sua situação</label>
+            <span style="color: red;">*</span>
+        </div>
+        <select name="opcoes" id="options">
+            <option value="opcao">-</option>
+            <option value="opcao">Estou em busca de um orçamento.</option>
+            <option value="opcao">Minha empresa possui uma demanda.</option>
+            <option value="opcao">Estou planejando um projeto.</option>
+            <option value="opcao">Visibilidade na internet.</option>
+            <option value="opcao">Outros assuntos</option>
+        </select>
+        <div class="requests">
+            <label for="input-name">Assunto</label>
+            <span style="color: red;">*</span>
+        </div>
+        <input type="text" id="input-name" name="text" maxlength="30" required>
+        <div class="requests">
+            <label for="input-name">Descrição</label>
+        </div>
+        <textarea name="mensagem" rows="5" cols="10"></textarea>
+    </div>
+    <div class="form-row">
+        <div class="file-upload-container">
+          <input type="file" accept="image/*, video/*" id="file-input" class="file-input" multiple>
+          <label for="file-input" class="file-label"></label>
+          <span>/Adicione seus arquivos ou solte eles aqui</span>
+        </div>
+        <div class="uploaded-files"></div>
+      </div>
+    <div id="send">
+        <input type="hidden" name="_next" value="https://marcoaurelio.vercel.app/src/pages/thanks.html">
+        <input type="submit" value="Enviar" id="submit-button">
+    </div>
   </form>
 </div>
 
@@ -96,9 +138,9 @@
 
 
 
+<script src="/scripts/ticket.js"></script>
 <script src="/scripts/support.js" defer></script>
 <script src="/scripts/script.js" defer></script>
 <script src="/scripts/essential.js" defer></script>
-<script src="/scripts/ticket.js"></script>
 </body>
 </html>
