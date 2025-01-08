@@ -247,6 +247,7 @@ ul a:hover {
     border-radius: 3px;
     border: 1px solid rgba(0, 0, 0, 0.432);
     transition: border 0.4s ease-in-out;
+    font-size: 16px;
 }
 #request input:focus {
     border: 1px solid blue !important;
