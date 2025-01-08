@@ -72,14 +72,15 @@
             <span style="color: red;">*</span>
         </div>
         <input type="text" id="input-name" name="text" maxlength="30" required>
-        <div class="requests">
+        <div class="requests" aria-required="true">
             <label for="input-name">Descrição</label>
         </div>
         <textarea name="mensagem" rows="5" cols="10"></textarea>
     </div>
     <div class="form-row">
+        <span style="color: red;">*</span>
         <div class="file-upload-container">
-          <input type="file" accept="image/*, video/*" id="file-input" class="file-input" multiple>
+          <input type="file" accept="image/*, video/*" id="file-input" class="file-input" multiple required>
           <label for="file-input" class="file-label"></label>
           <span>/Adicione seus arquivos ou solte eles aqui</span>
         </div>
