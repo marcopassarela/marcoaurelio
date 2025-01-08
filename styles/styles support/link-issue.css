@@ -581,6 +581,7 @@ body { overflow-x: hidden; }
         width: 85%;
         margin-bottom: 10px;
         border-radius: 3px;
+        font-size: 16px;
     }
 
     #privacy {
