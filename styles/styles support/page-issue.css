@@ -302,6 +302,7 @@ ul a:hover {
     color: var(--color-white);
     cursor: pointer;
     transition: .3s ease-in-out;
+    margin-top: 10px;
 }
 #submit-button:hover {
     background: rgb(2, 161, 2);
