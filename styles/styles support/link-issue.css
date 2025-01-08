@@ -255,13 +255,23 @@ ul a:hover {
     color: var(--color-black);
     letter-spacing: 1.2px;
 }
-
-
-
-
-
+#button-send {
+    display: flex;
+    justify-content: center;
+}
+#submit-button {
+    width: 180px;
+    height: 35px;
+    margin-top: 10px;
+    color: var(--color-white);
+    background-color: green;
+    border: transparent;
+    border-radius: 3px;
+    letter-spacing: 1.2px;
+}
 #submit-button:hover {
-    background: green;
+    background-color: rgb(4, 167, 4);
+    cursor: pointer;
 }
 
 
@@ -554,34 +564,22 @@ body { overflow-x: hidden; }
         width: 100%;
         height: auto;
     }
-    .form-row input {
-        width: 350px;
-        font-size: 16px;
-        
-    }
-    .form-row label {
-        left: 25px;
-    }
-    .file-upload-container {
-        width: 90%;
-        display: inline-flex;
-        justify-content: center;
-    }
-    .uploaded-files {
-        width: 80%;
+    .select-container {
+        width: 100%;
+        display: flex;
         align-items: center;
         justify-content: center;
-        display: inline-grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        flex-direction: column;
     }
-    #pais {
-        width: 382px;
+    .select-container span {
+        margin-bottom: 5px;
+        align-self: flex-start;
+        margin-left: 40px;
     }
-    #request_description {
-        width: 350px;
-    }
-    #submit-button {
-        margin-top: 0px;
+    
+    #form select {
+        width: 85%;
+        margin-bottom: 10px;
     }
 
     #privacy {
