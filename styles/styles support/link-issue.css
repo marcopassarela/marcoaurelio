@@ -163,6 +163,7 @@ ul a:hover {
     display: flex;
     gap: 10px;
     justify-content: center;
+    letter-spacing: 1.2px;
 }
 .breadcrumb a {
     text-decoration: none;
@@ -219,61 +220,104 @@ ul a:hover {
     text-transform: uppercase;
     font-size: 10px;
 }
+#form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    font-family: "Sora", sans-serif;
+}
+#request {
+    width: 400px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 14px;
+}
+#request label {
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    font-size: 13px;
+}
+#request input {
+    max-width: 350px;
+    height: 25px;
+    padding: 7px 15px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.432);
+    transition: border 0.4s ease-in-out;
+    font-size: 16px;
+}
+#request input:focus {
+    border: 1px solid blue !important;
+    outline: none;
+}
 #options {
-    max-width: 450px;
-    margin: 0 auto;
+    max-width: 350px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     font-family: "Sora", sans-serif;
 }
-#form {
-    width: 100%;
-    height: auto;
-    display: flex; 
-    justify-content: center; 
-    font-family: "Sora", sans-serif;
-}
-#form select {
-    display: flex;
-    padding: 5px;
-    margin: 5px;
-    width: 400px;
+#redirectSelect {
+    width: 382px;
     height: 40px;
-    text-align: left;
-    text-align-last: left;
-    direction: ltr;
+    border: 1px solid #808080;
+    border-radius: 2px;
 }
-#form option {
-    text-align: left; /* Alinha o texto das opções à esquerda */
-    direction: ltr; /* Garante a direção do texto das opções */
-}
-.select-container span {
-    margin-left: 5px;
-    font-family: "Sora", sans-serif;
+label {
     font-size: 12px;
-    color: var(--color-black);
-    letter-spacing: 1.2px;
+    text-align: left; 
 }
-#button-send {
+#options:focus {
+    outline: none;
+    border: 1px solid blue !important;
+}
+#request textarea {
+    width: 350px;
+    padding: 7px 15px;
+    resize: none;
+}
+
+#checkbox {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#checkbox input {
+    width: 15px;
+    height: 15px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+
+#send {
     display: flex;
     justify-content: center;
 }
 #submit-button {
-    width: 180px;
-    height: 35px;
-    margin-top: 10px;
-    color: var(--color-white);
-    background-color: green;
-    border: transparent;
+    width: 150px;
+    padding: 7px 15px;
     border-radius: 3px;
-    letter-spacing: 1.2px;
+    border: 1px solid green;
+    background: green;
+    color: var(--color-white);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    margin-top: 10px;
 }
 #submit-button:hover {
-    background-color: rgb(4, 167, 4);
-    cursor: pointer;
+    background: rgb(2, 161, 2);
 }
-
 
 #privacy {
     width: 100%;
@@ -563,25 +607,6 @@ body { overflow-x: hidden; }
     #form {
         width: 100%;
         height: auto;
-    }
-    .select-container {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-    .select-container span {
-        margin-bottom: 5px;
-        align-self: flex-start;
-        margin-left: 40px;
-    }
-    
-    #form select {
-        width: 85%;
-        margin-bottom: 10px;
-        border-radius: 3px;
-        font-size: 14px;
     }
 
     #privacy {

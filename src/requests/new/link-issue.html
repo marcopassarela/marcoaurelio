@@ -25,7 +25,7 @@
 </ul>
 
 <div class="myShow" id="title">
-    <h1>Support Marco Aurélio</h1>
+    <h1>Support Marco Aurélio3</h1>
 </div>
 
 <nav class="breadcrumb">
@@ -44,53 +44,76 @@
 
 <div id="form">
   <form action="https://formsubmit.co/f44f7a7fb66615b5ffaa2226a0443328" method="POST">
-    <div class="select-container">
-      <span>Does the homepage load normally?</span>
-      <select>
-        <option value="">-</option>
-        <option value="">The page has been slow for a few days.</option>
-        <option value="">The page just keeps loading and doesn't open.</option>
-        <option value="">Whenever I go to another page, it becomes slow.</option>
-        <option value="">I can't navigate on the page.</option>
-      </select>
-      <span>Does the problem occur on all pages?</span>
-      <select>
-        <option value="">-</option>
-        <option value="">The problem is on the About page.</option>
-        <option value="">The problem is on the homepage.</option>
-        <option value="">The problem is on the page to submit a service form.</option>
-        <option value="">The support page is showing an error.</option>
-      </select>
-      <span>Does any button or link not work?</span>
-      <select>
-        <option value="">-</option>
-        <option value="">There is a button on the homepage that is giving an error.</option>
-        <option value="">There is a button on the About page that is buggy.</option>
-        <option value="">The button on the support page is showing an error.</option>
-        <option value="">I'm having trouble with some buttons.</option>
-      </select>
-      <span>Does the layout appear misaligned?</span>
-      <select>
-        <option value="">-</option>
-        <option value="">The layout of the page is buggy for me.</option>
-        <option value="">The layout of the homepage is buggy on my phone.</option>
-        <option value="">The layout of the About page is shifting to the side or is buggy.</option>
-        <option value="">The layouts are buggy for me.</option>
-      </select>
-      <span>Does the error occur in all browsers?</span>
-      <select>
-        <option value="">-</option>
-        <option value="">The error is happening on Google Chrome.</option>
-        <option value="">The error is happening on Firefox.</option>
-        <option value="">The error is happening on Opera.</option>
-        <option value="">The error is happening on Safari.</option>
-        <option value="">The error is happening on Microsoft Edge.</option>
-        <option value="">The error is happening on Brave.</option>
-      </select>
+    <div id="request">
+        <div id="options">
+            <label for="redirectSelect">1. Choose a subject.</label>
+            <select id="redirectSelect" onchange="redirectToPage(this)">
+                <option value="" disabled>-</option>
+                <option value="/src/requests/new/link-issue.html?ticket_form_id=546788004213">Issues with access link</option>
+                <option value="/src/requests/new/page-issue.html?ticket_form_id=234567342118">Issue with the homepage or the others.</option>
+                <option value="/src/requests/new/form-issue.html?ticket_form_id=234114566789">Issues with form.</option>
+                <option value="/src/requests/new/technical-issue.html?ticket_form_id=345278990761">Technical problems</option>
+                <option value="/src/requests/new/report-error.html?ticket_form_id=890677542213">Report an error</option>
+            </select>
+        </div>
+        <div class="requests">
+            <label for="input-name">Nome completo</label>
+            <span style="color: red;">*</span>
+        </div>
+        <input type="text" id="input-name" name="text" maxlength="32" required>
+        <div class="requests">
+            <label for="input-name">E-mail</label>
+            <span style="color: red;">*</span>
+        </div>
+        <input type="email" id="input-email" name="email" maxlength="30" autocomplete="email" required>
+        <div class="requests">
+            <label for="input-name">Qual melhor opção combina com sua situação</label>
+            <span style="color: red;">*</span>
+        </div>
+        
+        <div id="checkbox">
+            <div class="checkbox-item">
+                <input type="checkbox" id="checkbox1" class="checkbox" name="problema_pagina_incial">
+            <label for="checkbox1">Problema na página inicial</label>
+            </div>
+            
+            <div class="checkbox-item">
+                <input type="checkbox" id="checkbox2" class="checkbox" name="problema_com_link">
+            <label for="checkbox2">Não consigo acessar um link na página inicial</label>
+            </div>
+            
+            <div class="checkbox-item">
+                <input type="checkbox" id="checkbox3" class="checkbox" name="problema_pagina_about">
+            <label for="checkbox3">Estou com problema na página about</label>
+            </div>
+            
+            <div class="checkbox-item">
+                <input type="checkbox" id="checkbox4" class="checkbox" name="erro_no_link">
+            <label for="checkbox4">Erro em alguns links</label>
+            </div>
+            
+            <div class="checkbox-item">
+                <input type="checkbox" id="checkbox5" class="checkbox" name="erro_na_pagina_contato">
+                <label for="checkbox5">Erro na página contato</label>
+            </div>
+        </div>
+        
+
+        <div class="requests">
+            <label for="input-name">Assunto</label>
+            <span style="color: red;">*</span>
+        </div>
+        <input type="text" id="input-name" name="text" maxlength="30" required>
+        <div class="requests" aria-required="true">
+            <label for="input-name">Descrição</label>
+            <span style="color: red;">*</span>
+        </div>
+        <textarea name="mensagem" rows="5" cols="10" required></textarea>
     </div>
-    <div id="button-send">
-      <input type="hidden" name="_next" value="https://marcoaurelio.vercel.app/src/pages/thanks.html">
-      <input type="submit" value="Enviar" id="submit-button">
+    
+    <div id="send">
+        <input type="hidden" name="_next" value="https://marcoaurelio.vercel.app/src/pages/thanks.html">
+        <input type="submit" value="Enviar" id="submit-button">
     </div>
   </form>
 </div>
@@ -141,9 +164,9 @@
 
 
 
+<script src="/scripts/ticket.js"></script>
 <script src="/scripts/support.js" defer></script>
 <script src="/scripts/script.js" defer></script>
 <script src="/scripts/essential.js" defer></script>
-<script src="/scripts/ticket.js"></script>
 </body>
 </html>

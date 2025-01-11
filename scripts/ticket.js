@@ -82,4 +82,3 @@ estados.forEach(sigla => {
     option.textContent = sigla; // Mostra apenas as siglas
     estadosSelect.appendChild(option);
 });
-

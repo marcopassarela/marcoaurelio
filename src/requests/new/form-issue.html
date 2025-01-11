@@ -25,7 +25,7 @@
 </ul>
 
 <div class="myShow" id="title">
-    <h1>Support Marco Aurélio</h1>
+    <h1>Support Marco Aurélio3</h1>
 </div>
 
 <nav class="breadcrumb">
@@ -44,41 +44,77 @@
 
 <div id="form">
   <form action="https://formsubmit.co/f44f7a7fb66615b5ffaa2226a0443328" method="POST">
+    <div id="request">
+        <div id="options">
+            <label for="redirectSelect">1. Choose a subject.</label>
+            <select id="redirectSelect" onchange="redirectToPage(this)">
+                <option value="" disabled>-</option>
+                <option value="/src/requests/new/form-issue.html?ticket_form_id=234114566789">Issues with form.</option>
+                <option value="/src/requests/new/page-issue.html?ticket_form_id=234567342118">Issue with the homepage or the others.</option>
+                <option value="/src/requests/new/link-issue.html?ticket_form_id=546788004213">Issues with access link</option>
+                <option value="/src/requests/new/technical-issue.html?ticket_form_id=345278990761">Technical problems</option>
+                <option value="/src/requests/new/report-error.html?ticket_form_id=890677542213">Report an error</option>
+            </select>
+        </div>
+        <div class="requests">
+            <label for="input-name">Nome completo</label>
+            <span style="color: red;">*</span>
+        </div>
+        <input type="text" id="input-name" name="text" maxlength="32" required>
+        <div class="requests">
+            <label for="input-name">E-mail</label>
+            <span style="color: red;">*</span>
+        </div>
+        <input type="email" id="input-email" name="email" maxlength="30" autocomplete="email" required>
+        <div class="requests">
+            <label for="input-name">Qual melhor opção combina com sua situação</label>
+            <span style="color: red;">*</span>
+        </div>
+        
+        <div id="checkbox">
+            <div class="checkbox-item">
+                <input type="checkbox" id="checkbox1" class="checkbox" name="problema_pagina_incial">
+            <label for="checkbox1">Problema na página inicial</label>
+            </div>
+            
+            <div class="checkbox-item">
+                <input type="checkbox" id="checkbox2" class="checkbox" name="problema_com_link">
+            <label for="checkbox2">Não consigo acessar um link na página inicial</label>
+            </div>
+            
+            <div class="checkbox-item">
+                <input type="checkbox" id="checkbox3" class="checkbox" name="problema_pagina_about">
+            <label for="checkbox3">Estou com problema na página about</label>
+            </div>
+            
+            <div class="checkbox-item">
+                <input type="checkbox" id="checkbox4" class="checkbox" name="erro_no_link">
+            <label for="checkbox4">Erro em alguns links</label>
+            </div>
+            
+            <div class="checkbox-item">
+                <input type="checkbox" id="checkbox5" class="checkbox" name="erro_na_pagina_contato">
+                <label for="checkbox5">Erro na página contato</label>
+            </div>
+        </div>
+        
 
-    <div class="form-row">
-      <input type="text" id="input-name" name="text" maxlength="30" required>
-      <label for="">Full name</label>
+        <div class="requests">
+            <label for="input-name">Assunto</label>
+            <span style="color: red;">*</span>
+        </div>
+        <input type="text" id="input-name" name="text" maxlength="30" required>
+        <div class="requests" aria-required="true">
+            <label for="input-name">Descrição</label>
+            <span style="color: red;">*</span>
+        </div>
+        <textarea name="mensagem" rows="5" cols="10" required></textarea>
     </div>
-    <div class="form-row">
-      <input type="email" id="input-email" name="email" maxlength="30" autocomplete="email" required>
-      <label for="">E-mail</label>
+    
+    <div id="send">
+        <input type="hidden" name="_next" value="https://marcoaurelio.vercel.app/src/pages/thanks.html">
+        <input type="submit" value="Enviar" id="submit-button">
     </div>
-    <div class="form-row">
-      <span class="title-description">Região</span>
-      <select id="pais">
-        <option value="" selected disabled>-</option>
-      </select>
-    </div>
-    <div class="form-row">
-      <span class="title-description">Description</span>
-      <textarea name="request[description]" id="request_description" aria-required="true" aria-labelledby="request_description_label" data-listener-added_88c80428="true" data-gtm-form-interact-field-id="1"></textarea request>
-    </div>
-
-    <div class="form-row">
-      <div class="file-upload-container">
-        <input type="file" accept="image/*, video/*" id="file-input" class="file-input" multiple>
-        <label for="file-input" class="file-label"></label>
-        <span>/Adicione seus arquivos ou solte eles aqui</span>
-      </div>
-      <div class="uploaded-files"></div>
-    </div>
-
-
-  <div class="form-row">
-    <input type="hidden" name="_next" value="https://marcoaurelio.vercel.app/src/pages/thanks.html">
-    <input type="submit" value="Enviar" id="submit-button">
-  </div>
-
   </form>
 </div>
 
@@ -128,9 +164,9 @@
 
 
 
+<script src="/scripts/ticket.js"></script>
 <script src="/scripts/support.js" defer></script>
 <script src="/scripts/script.js" defer></script>
 <script src="/scripts/essential.js" defer></script>
-<script src="/scripts/ticket.js"></script>
 </body>
 </html>

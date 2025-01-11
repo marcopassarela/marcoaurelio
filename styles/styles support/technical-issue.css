@@ -163,6 +163,7 @@ ul a:hover {
     display: flex;
     gap: 10px;
     justify-content: center;
+    letter-spacing: 1.2px;
 }
 .breadcrumb a {
     text-decoration: none;
@@ -219,192 +220,103 @@ ul a:hover {
     text-transform: uppercase;
     font-size: 10px;
 }
-#options {
-    max-width: 450px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    font-family: "Sora", sans-serif;
-}
-#pais {
-    width: 431px;
-    height: 45px;
-    padding: 7px 25px;
-    border: 1px solid #000000;
-    border-radius: 2px;
-    font-size: 16px;
-    background: white;
-}
-label {
-    font-size: 12px;
-    text-align: left; 
-}
 #form {
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
-    text-align: center;
-}
-.form-row {
-    position: relative;
-    margin: 20px 0;
-}
-
-.form-row label {
-    position: absolute;
-    transform: translateY(-50%);
-    top: 50%;
-    left: 15px;
-    pointer-events: none;
-    transition: .5s ease-in-out;
     font-family: "Sora", sans-serif;
-    padding: 4px;
-    font-size: 13px;
 }
-.form-row input {
+#request {
     width: 400px;
-    height: 35px;
-    font-family: "Sora", sans-serif;
-    border: 1px solid black;
-    border-radius: 3px;
-    padding: 7px 15px;
-    background: white;
-    font-size: 14px;
-}
-.form-row input:focus {
-    border-width: 1px solid black;
-    outline: none;
-    border-color: blue;
-    transition: .5s ease-in-out;
-}
-
-.form-row input:focus~label,
-.form-row input:valid~label {
-    top: 0;
-    background-color: white;
-}
-.file-upload-container {
-    border: 2px dashed #ccc;
-    text-align: center;
-    cursor: pointer;
-    height: 70px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    font-family: "Sora", sans-serif;
-    font-size: 10px;
-    letter-spacing: 1.2px;
-  }
-  .file-label {
-    display: block;
-    font-size: 16px;
-    color: #666;
-    cursor: pointer;
-  }
-  
-  .file-icon {
-    margin-left: 10px;
-  }
-  
- #file-input {
-    opacity: 0;
-    cursor: pointer;
-    height: 70px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-  
-  .uploaded-files-container {
-    margin-top: 20px;
-    text-align: left;
-  }
-  
-  .uploaded-files .file-item {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
-    font-family: "Sora", sans-serif;
-  }
-  
-  .uploaded-files .file-preview {
-    width: 35px;
-    height: 35px;
-    margin-right: 10px;
-    background-size: cover;
-    background-position: center;
-  }
-  .file-name {
-    font-size: 10px;
-    cursor: default;
-  }
-  .uploaded-files{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 100%;
     height: auto;
-    margin-top: 5px;
-    justify-content: center;
-  }
-  .remove-btn {
-    background-color: #ff4d4d;
-    border: none;
-    color: white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    font-size: 14px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #request_description {
-    width: 400px;
-    font-size: 16px;
-    padding: 7px 15px;
-    height: 70px;
-    border: 1px solid black;
-    border-radius: 3px;
-  }
-  #request_description:hover {
-    border-width: 1px solid black;
-    outline: none;
-    border-color: blue;
-    transition: .5s ease-in-out;
-  }
-  .title-description {
-    position: absolute;
-    top: 0;
-    transform: translateY(-50%);
-    margin-left: 25px;
-    background: white;
-    padding: 5px;
-    font-family: "Sora", sans-serif;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 14px;
+}
+#request label {
+    font-weight: 500;
+    letter-spacing: 1.2px;
     font-size: 13px;
 }
-  
-
-#submit-button {
-    margin-top: 30px;
-    width: 200px;
-    cursor: pointer;
+#request input {
+    max-width: 350px;
+    height: 25px;
+    padding: 7px 15px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.432);
+    transition: border 0.4s ease-in-out;
+    font-size: 16px;
+}
+#request input:focus {
+    border: 1px solid blue !important;
+    outline: none;
+}
+#options {
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     font-family: "Sora", sans-serif;
+}
+#redirectSelect {
+    width: 382px;
+    height: 40px;
+    border: 1px solid #808080;
+    border-radius: 2px;
+}
+label {
+    font-size: 12px;
+    text-align: left; 
+}
+#options:focus {
+    outline: none;
+    border: 1px solid blue !important;
+}
+#request textarea {
+    width: 350px;
+    padding: 7px 15px;
+    resize: none;
+}
+
+#checkbox {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#checkbox input {
+    width: 15px;
+    height: 15px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+
+#send {
+    display: flex;
+    justify-content: center;
+}
+#submit-button {
+    width: 150px;
+    padding: 7px 15px;
+    border-radius: 3px;
     border: 1px solid green;
-    background: rgb(1, 151, 1);
+    background: green;
     color: var(--color-white);
-    letter-spacing: 1.2px;
-    transition: 0.3s ease;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    margin-top: 10px;
 }
 #submit-button:hover {
-    background: green;
-}
-#input-description {
-    height: 90px;
+    background: rgb(2, 161, 2);
 }
 
 #privacy {
@@ -695,35 +607,6 @@ body { overflow-x: hidden; }
     #form {
         width: 100%;
         height: auto;
-    }
-    .form-row input {
-        width: 350px;
-        font-size: 16px;
-        
-    }
-    .form-row label {
-        left: 25px;
-    }
-    .file-upload-container {
-        width: 90%;
-        display: inline-flex;
-        justify-content: center;
-    }
-    .uploaded-files {
-        width: 80%;
-        align-items: center;
-        justify-content: center;
-        display: inline-grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-    #pais {
-        width: 382px;
-    }
-    #request_description {
-        width: 350px;
-    }
-    #submit-button {
-        margin-top: 0px;
     }
 
     #privacy {
