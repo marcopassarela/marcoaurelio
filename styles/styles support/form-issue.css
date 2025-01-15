@@ -236,9 +236,11 @@ ul a:hover {
     font-size: 14px;
 }
 #request label {
-    font-weight: 500;
     letter-spacing: 1.2px;
     font-size: 13px;
+}
+.title-quest {
+    font-weight: 600;
 }
 #request input {
     max-width: 350px;
@@ -254,7 +256,7 @@ ul a:hover {
     outline: none;
 }
 #options {
-    max-width: 350px;
+    max-width: 382px;
     display: flex;
     flex-direction: column;
     gap: 10px;
