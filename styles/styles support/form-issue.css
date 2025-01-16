@@ -277,8 +277,9 @@ label {
 }
 #request textarea {
     width: 350px;
-    padding: 7px 15px;
+    padding: 10px 15px;
     resize: none;
+    font-size: 16px;
 }
 
 #checkbox {
