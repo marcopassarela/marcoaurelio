@@ -237,6 +237,7 @@ ul a:hover {
 #request label {
     letter-spacing: 1.2px;
     font-size: 13px;
+    max-width: 200px;
 }
 .title-quest {
     font-weight: 600;
@@ -615,6 +616,18 @@ body { overflow-x: hidden; }
     #form {
         width: 100%;
         height: auto;
+    }
+    #redirectSelect {
+        max-width: 370px;
+    }
+    #request {
+        max-width: 370px;
+    }
+    #request label {
+        max-width: 100%;
+    }
+    #request textarea {
+        padding: 10px 10px;
     }
     #privacy {
         width: 100%;
