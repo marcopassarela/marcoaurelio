@@ -1,0 +1,61 @@
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;  
+}
+
+body {
+    text-rendering: optimizeLegibility; /* Melhora a legibilidade e suaviza as fontes */
+}
+
+html {
+    scroll-behavior: smooth;
+    font-smoothing: antialiased; /* Para navegadores como o Safari */
+}
+
+:root {
+    --color-blue: #007bff;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-background: black;
+    --color-text: white;
+}
+#container {
+    width: 100%;
+    height: auto;
+    padding: 7px 7px;
+    background-color: red;
+}
+.content {
+    width: 100%;
+    height: auto;
+    background-color: blue;
+}
+.widget1 {
+    max-width: 370px;
+    height: 70px;
+    background-color: green;
+    display: flex;
+}
+.my-photo {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 4px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.title {
+    font-size: 16px;
+    height: 20px;
+    color: var(--color-white);
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.description {
+    width: 150px;
+    font-size: 11px;
+    font-family: "Sora", sans-serif;
+}
