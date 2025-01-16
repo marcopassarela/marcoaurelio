@@ -627,7 +627,7 @@ body { overflow-x: hidden; }
         max-width: 100%;
     }
     #request textarea {
-        padding: 10px 10px;
+        padding: 10px 9px;
     }
     #privacy {
         width: 100%;
