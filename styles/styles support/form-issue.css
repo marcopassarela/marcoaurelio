@@ -333,7 +333,7 @@ label {
     height: auto;
     justify-content: center;
     display: flex;
-    margin-top: 100px;
+    margin-top: 30px;
 }
 
 #privacy img {
@@ -621,7 +621,6 @@ body { overflow-x: hidden; }
         height: auto;
         gap: 20px;
         border-top: 1px solid rgba(0, 0, 0, 0.151);
-        margin-top: 240px;
     }
     #privacy img {
         width: 50px;
