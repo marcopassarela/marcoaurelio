@@ -282,6 +282,13 @@ label {
     font-size: 16px;
 }
 
+#request textarea:focus {
+    outline: none;
+    border: 1px solid blue !important;
+    border-radius: 3px !important;
+    transition: .4s ease-in-out;
+}
+
 #checkbox {
     display: flex;
     flex-direction: column;
