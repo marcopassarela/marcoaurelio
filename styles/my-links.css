@@ -24,38 +24,23 @@ html {
 #container {
     width: 100%;
     height: auto;
-    padding: 7px 7px;
     background-color: red;
+    flex-wrap: wrap;
+    display: flex;
 }
 .content {
     width: 100%;
     height: auto;
     background-color: blue;
+    display: flex;
+    flex-wrap: wrap;
 }
 .widget1 {
-    max-width: 370px;
-    height: 70px;
-    background-color: green;
+    width: 50%;
+    height: 500px;
+    background-color: rgb(60, 255, 0);
     display: flex;
-}
-.my-photo {
-    width: 50px;
-    height: 50px;
-    background-color: red;
-    border-radius: 4px;
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-top: 10px;
-}
-.title {
-    font-size: 16px;
-    height: 20px;
-    color: var(--color-white);
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-.description {
-    width: 150px;
-    font-size: 11px;
+    gap: 20px;
+    flex-wrap: wrap;
     font-family: "Sora", sans-serif;
 }

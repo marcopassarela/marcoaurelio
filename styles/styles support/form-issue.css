@@ -237,7 +237,7 @@ ul a:hover {
 #request label {
     letter-spacing: 1.2px;
     font-size: 13px;
-    max-width: 200px;
+    width: 100%;
 }
 .title-quest {
     font-weight: 600;
