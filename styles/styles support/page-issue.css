@@ -228,7 +228,7 @@ ul a:hover {
     font-family: "Sora", sans-serif;
 }
 #request {
-    width: 400px;
+    width: 380px;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -236,9 +236,12 @@ ul a:hover {
     font-size: 14px;
 }
 #request label {
-    font-weight: 500;
     letter-spacing: 1.2px;
     font-size: 13px;
+    width: 100%;
+}
+.title-quest {
+    font-weight: 600;
 }
 #request input {
     max-width: 350px;
@@ -254,7 +257,7 @@ ul a:hover {
     outline: none;
 }
 #options {
-    max-width: 350px;
+    max-width: 382px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -276,8 +279,18 @@ label {
 }
 #request textarea {
     width: 350px;
-    padding: 7px 15px;
+    padding: 10px 15px;
     resize: none;
+    font-size: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.432);
+    border-radius: 3px;
+}
+
+#request textarea:focus {
+    outline: none;
+    border: 1px solid blue !important;
+    border-radius: 3px !important;
+    transition: .4s ease-in-out;
 }
 
 #checkbox {
@@ -324,7 +337,7 @@ label {
     height: auto;
     justify-content: center;
     display: flex;
-    margin-top: 100px;
+    margin-top: 30px;
 }
 
 #privacy img {
@@ -599,7 +612,6 @@ body { overflow-x: hidden; }
     #options {
         display: flex;
         justify-content: center;
-        align-items: center;
     }
     #support .description {
         font-size: 14px;
@@ -608,13 +620,23 @@ body { overflow-x: hidden; }
         width: 100%;
         height: auto;
     }
-
+    #redirectSelect {
+        max-width: 370px;
+    }
+    #request {
+        max-width: 370px;
+    }
+    #request label {
+        max-width: 100%;
+    }
+    #request textarea {
+        padding: 10px 9px;
+    }
     #privacy {
         width: 100%;
         height: auto;
         gap: 20px;
         border-top: 1px solid rgba(0, 0, 0, 0.151);
-        margin-top: 240px;
     }
     #privacy img {
         width: 50px;
