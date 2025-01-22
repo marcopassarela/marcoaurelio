@@ -228,6 +228,7 @@ ul a:hover {
     font-family: "Sora", sans-serif;
 }
 #request {
+    width: 380px;
     height: auto;
     display: flex;
     flex-direction: column;
