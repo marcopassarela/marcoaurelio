@@ -599,7 +599,7 @@ body { overflow-x: hidden; }
     #options {
         display: flex;
         justify-content: center;
-        align-items: center;
+        
     }
     #support .description {
         font-size: 14px;
@@ -607,6 +607,9 @@ body { overflow-x: hidden; }
     #form {
         width: 100%;
         height: auto;
+    }
+    #redirectSelect {
+        max-width: 370px;
     }
 
     #privacy {

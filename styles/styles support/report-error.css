@@ -599,7 +599,6 @@ body { overflow-x: hidden; }
     #options {
         display: flex;
         justify-content: center;
-        align-items: center;
     }
     #support .description {
         font-size: 14px;
