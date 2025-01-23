@@ -31,15 +31,15 @@ html {
 .content {
     width: 35%;
     height: 25vh;
-    background-color: rgb(25, 0, 255);
     display: flex;
     justify-content: center;
     gap: 45px;
+    background-color: red;
+    border-radius: 30px;
 }
 .photo {
     width: 150px;
     height: 150px;
-    background-color: rgb(81, 255, 0);
     position: relative;
     top: 25%;
     border-radius: 50%;
@@ -53,7 +53,7 @@ html {
 .info {
     width: 310px;
     height: 130px;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     position: relative;
     top: 25%;
     padding: 10px;
@@ -61,22 +61,24 @@ html {
 }
 .info h1 {
     font-size: 18px;
-    font-family: "Sora", sans-serif;
+    font-family: "Sora", sans-serif; font-family: "Sora", sans-serif;
     margin-bottom: 2px;
+    color: black;
 }
 .info h4 {
     font-size: 10px;
     font-family: "Sora", sans-serif;
-    color: rgba(0, 0, 0, 0.226);
+    color: black;
     margin-bottom: 1px;
 }
 .info p {
     font-size: 14px;
     font-family: "Sora", sans-serif;
     margin-bottom: 1px;
+    color: black;
 }
 #skills {
-    background-color: red;
+    background-color: black;
     width: 100%;
     height: auto;
     gap: 20px;
@@ -86,6 +88,9 @@ html {
     padding: 10px 0px;
 }
 .my-skills {
+    width: 35%;
+    border-radius: 30px;
+    background-color: yellow;
     display: flex;
     flex-wrap: wrap; 
     gap: 20px; 
@@ -99,18 +104,217 @@ html {
 .skill {
     width: 90px; 
     height: 90px; 
-    background-color: #ccc; 
-    border-radius: 50%; 
+    background-color: #ffffff; 
     display: flex;
     align-items: center; 
     justify-content: center;
     overflow: hidden;
+    border-radius: 50%;
+    cursor: pointer;
 }
-.skill img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.html {
+    width: 70%;
+    height:70%;
+    background-color: transparent;
 }
+.css {
+    width: 70%;
+    height:70%;
+    background-color: transparent;
+}
+.js {
+    width: 70%;
+    height:70%;
+    background-color: transparent;
+}
+.python {
+    width: 70%;
+    height:70%;
+    background-color: transparent;
+}
+.ts {
+    width: 70%;         
+    height:70%;
+    background-color: transparent;
+} 
+/*Animação html*/
+@keyframes primaryColor {
+    0% {
+      fill: black;
+    }
+    50% {
+      fill: #E44D26;
+    }
+    100% {
+      fill: black;
+    }
+  }
+  @keyframes secondaryColor {
+    0% {
+      fill: black;
+    }
+    50% {
+      fill: #F16529;
+    }
+    100% {
+      fill: black;
+    }
+  }
+  @keyframes highlightColor {
+    0% {
+      fill: #ffffff;
+    }
+    50% {
+      fill: white;
+    }
+    100% {
+      fill: rgb(255, 255, 255);
+    }
+  }
+  
+  /* Aplica as animações contínuas */
+  .html .primary {
+    animation: primaryColor 3s infinite;
+  }
+  
+  .html .secondary {
+    animation: secondaryColor 3s infinite;
+  }
+  
+  .html .highlight {
+    animation: highlightColor 3s infinite;
+  }
+  
+  /* Animação css */
+  @keyframes primaryCssColor {
+    0% {
+      fill: black;
+    }
+    50% {
+      fill: #1172B8;
+    }
+    100% {
+      fill: black;
+    }
+  }
+  
+  @keyframes secondaryCssColor {
+    0% {
+      fill: black;
+    }
+    50% {
+      fill: #33AADD;
+    }
+    100% {
+      fill: black;
+    }
+  }
+  
+  @keyframes highlightCssColor {
+    0% {
+      fill: #ffffff;
+    }
+    50% {
+      fill: white;
+    }
+    100% {
+      fill: rgb(255, 255, 255);
+    }
+  }
+  .css .primary {
+    animation: primaryCssColor 3s infinite;
+  }
+  
+  .css .secondary {
+    animation: secondaryCssColor 3s infinite;
+  }
+  
+  .css .highlight {
+    animation: highlightCssColor 3s infinite;
+  }
+  
+/*Animação JS */
+@keyframes jsColor {
+    0% {
+      fill: black;
+    }
+    50% {
+      fill: #f5de19;
+    }
+    100% {
+      fill: black;
+    }
+  }
+  .js path {
+    animation: jsColor 3s infinite;
+  }
+  
+/*Animação python*/
+@keyframes color-primary {
+    0% {
+      fill: #000000;
+    }
+    50% {
+      fill: #FFD43B
+    }
+    100% {
+      fill: #306998; 
+    }
+  }
+  
+  @keyframes color-secondary {
+    0% {
+      fill: #000000;
+    }
+    50% {
+      fill: #306998;
+    }
+    100% {
+      fill: #FFD43B;
+    }
+  }
+  
+  .color-primary {
+    animation: color-primary 3s infinite;
+  }
+  
+  .color-secondary {
+    animation: color-secondary 3s infinite;
+  }
+
+  /*Animação Typescript */
+@keyframes ts-colorPrimary {
+    0% {
+      fill: #007acc; /* Azul do TypeScript */
+    }
+    50% {
+      fill: #f4f4f4; /* Cor complementar (cinza claro) */
+    }
+    100% {
+      fill: #007acc; /* Azul do TypeScript */
+    }
+  }
+  
+  @keyframes ts-colorSecundary {
+    0% {
+      fill: #f4f4f4; /* Cor complementar (cinza claro) */
+    }
+    50% {
+      fill: #007acc; /* Azul do TypeScript */
+    }
+    100% {
+      fill: #f4f4f4; /* Cor complementar (cinza claro) */
+    }
+  }
+  
+  .ts-colorPrimary {
+    animation: ts-colorPrimary 3s infinite;
+  }
+  
+  .ts-colorSecundary {
+    animation: ts-colorSecundary 3s infinite;
+  }
+
 .title {
     margin: 10px 0 0; 
     text-align: center; 
@@ -129,209 +333,318 @@ html {
 .my-itens {
     display: flex;
     gap: 20px;
-    padding: 10px;
+    background-color: green;
+    border-radius: 30px;
+    width: 35%;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
 }
-.portfolio-item {
+/* Container principal dos itens */
+.portfolio-item, .ebook-item {
     position: relative;
     width: 250px;
     height: 330px;
     overflow: hidden;
-    border-radius: 10px;
-}
-.portfolio-item a {
-    width: 250px;
-    height: 330px;
-    background-color: rgb(51, 51, 51);
-    border-radius: 10px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 22px;
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    font-family: "Sora", sans-serif;
-    letter-spacing: 1.2px;
-    transition: transform 0.4s ease-in-out;
-}
-
-.portfolio-item span {
-    position: absolute;
-    top: 0;
-    left: 0;
+    border-radius: 20px;
+    margin: 10px;
+  }
+  
+  .portfolio-item a, .ebook-item a {
+    display: block;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 22px;
-    font-family: "Sora", sans-serif;
-    cursor: pointer;
-    pointer-events: auto;
-    opacity: 1;
-    transition: opacity 0.4s ease-in-out;
-}
-
-.portfolio-item span:hover {
-    opacity: 0;
-}
-.portfolio-item a img {
-    object-fit: cover;
-    position: absolute;
-    width: 250px;
-    height: 330px;
+    position: relative;
     border-radius: 10px;
-}
-
-.ebook-item {
-    position: relative; 
-    width: 250px;
-    height: 330px;
     overflow: hidden;
-    border-radius: 10px;
-}
-.ebook-item a {
-    width: 250px;
-    height: 330px;
-    background-color: rgb(51, 51, 51);
-    border-radius: 10px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 22px;
     text-decoration: none;
-    color: rgb(255, 255, 255);
-    font-family: "Sora", sans-serif;
-    letter-spacing: 1.2px;
+  }
+  
+  .portfolio-item a img, .ebook-item a img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
     transition: transform 0.4s ease-in-out;
-}
-
-.ebook-item span {
+  }
+  
+  .portfolio-item a:hover img, .ebook-item a:hover img {
+    transform: scale(1.0);
+  }
+  
+  .portfolio-item a span, .ebook-item a span {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
     font-size: 22px;
     font-family: "Sora", sans-serif;
-    cursor: pointer;
-    opacity: 1;
     transition: opacity 0.4s ease-in-out;
-}
-.ebook-item span:hover {
+  }
+  
+  .portfolio-item a:hover span, .ebook-item a:hover span {
     opacity: 0;
-}
-.ebook-item a img {
-    object-fit: cover;
-    position: absolute;
-    width: 250px;
-    height: 330px;
-    border-radius: 10px;
-}
+  }
 #about-me {
     width: 100%;
     height: auto;
-    background-color: rgb(81, 255, 0);
+    background-color: black;
     display: flex;
     justify-content: center;
-    padding: 10px 0px;
+    
 }
 .box {
-    width: 500px;
-    height: 500px;
+    width: 34%;
+    height: auto;
     background-color: red;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 10px 0px;
-}
-.redes {
-    width: 400px;
-    height: 150px;
-    background-color: blue;
-    border-radius: 10px;
     display: grid;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 20px;
-    gap: 10px;
-    grid-template-columns: repeat(2, 70px);
-    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(2, 160px);
+    gap: 20px;
+    padding: 10px 10px;
+    justify-content: center;
+    border-radius: 30px;
 }
-.instagram {
-    width: 70px;
-    height: 70px;
-    background-color: black;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.facebook {
-    width: 70px;
-    height: 70px;
-    background-color: black;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.tiktok {
-    width: 70px;
-    height: 70px;
-    background-color: black;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.mail {
-    width: 70px;
-    height: 70px;
-    background-color: black;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.widget5 {
-    width: 400px;
-    height: 150px;
-    background-color: blue;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    justify-content: flex-end;
-    overflow: hidden;
-}
-.emoji {
-    background-color: black;
+.box-instagram {
+    position: relative;
     width: 150px;
     height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-}
-.emoji img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    animation: emoji-rotate 10s linear infinite;
-}
-@keyframes emoji-rotate { 
-    0% { 
-        transform: rotate(0deg); 
-    }
-    100% { 
-        transform: rotate(360deg); 
-    }
-}
-.music-info {
+    background-color: rgb(194, 194, 194);
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
+.instagram {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+}
+.box-instagram a {
+    position: absolute;
+    z-index: 2; 
+    font-size: 10px;
+    color: #000;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    font-family: "Sora", sans-serif;
+    background-color: rgb(180, 180, 180);
+    border: 3px solid white;
 
+}
+.titleLink {
+    position: relative;
+    color: rgb(255, 255, 255);
+    z-index: 3;
+    top: 70%;
+    left: 0%;
+    font-size: 11px;
+    display: inline-block;
+    width: 110px;
+    height: auto;
+    word-wrap: break-word; 
+    white-space: normal;
+    color: black;
+}
+.instagram img {
+    background-color: yellow;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.box-facebook {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(194, 194, 194);
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.facebook {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+}
+.box-facebook a {
+    position: absolute;
+    z-index: 2; 
+    font-size: 10px;
+    color: #000;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    font-family: "Sora", sans-serif;
+    background-color: rgb(180, 180, 180);
+    border: 3px solid white;
+
+}
+.titleLink {
+    position: relative;
+    color: rgb(255, 255, 255);
+    z-index: 3;
+    top: 70%;
+    left: 0%;
+    font-size: 11px;
+    display: inline-block;
+    width: 110px;
+    height: auto;
+    word-wrap: break-word; 
+    white-space: normal;
+    color: black;
+}
+.facebook img {
+    background-color: yellow;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.box-linkedin {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(194, 194, 194);
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.mail {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+}
+.box-linkedin a {
+    position: absolute;
+    z-index: 2; 
+    font-size: 10px;
+    color: #000;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    font-family: "Sora", sans-serif;
+    background-color: rgb(180, 180, 180);
+    border: 3px solid white;
+
+}
+.titleLink {
+    position: relative;
+    color: rgb(255, 255, 255);
+    z-index: 3;
+    top: 70%;
+    left: 0%;
+    font-size: 11px;
+    display: inline-block;
+    width: 110px;
+    height: auto;
+    word-wrap: break-word; 
+    white-space: normal;
+    color: black;
+}
+.linkedin img {
+    background-color: yellow;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    border-radius: 5px;
+    z-index: 2;
+}
+.box-tiktok {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(194, 194, 194);
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.tiktok {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+}
+.box-tiktok a {
+    position: absolute;
+    z-index: 2; 
+    font-size: 10px;
+    color: #000;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    font-family: "Sora", sans-serif;
+    background-color: rgb(180, 180, 180);
+    border: 3px solid white;
+
+}
+.titleLink {
+    position: relative;
+    color: rgb(255, 255, 255);
+    z-index: 3;
+    top: 70%;
+    left: 0%;
+    font-size: 11px;
+    display: inline-block;
+    width: 110px;
+    height: auto;
+    word-wrap: break-word; 
+    white-space: normal;
+    color: black;
+}
+.tiktok img {
+    background-color: yellow;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    border-radius: 5px;
+    z-index: 2;
+}
 
 
 
