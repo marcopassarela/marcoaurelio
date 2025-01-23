@@ -27,6 +27,7 @@ html {
     background-color: white;
     display: flex;
     justify-content: center;
+    margin-top: 10px;
 }
 .content {
     width: 35%;
@@ -62,7 +63,7 @@ html {
 }
 .info h1 {
     font-size: 18px;
-    font-family: "Sora", sans-serif; font-family: "Sora", sans-serif;
+    font-family: "Sora", sans-serif;
     margin-bottom: 2px;
     color: black;
 }
@@ -321,7 +322,7 @@ html {
 .title {
     margin: 10px 0 0; 
     text-align: center; 
-    font-size: 11px;
+    font-size: 10px;
     color: black;
     font-family: "Sora", sans-serif;
 }
@@ -332,6 +333,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
 }
 .my-itens {
     display: flex;
