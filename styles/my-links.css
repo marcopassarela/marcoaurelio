@@ -24,7 +24,7 @@ html {
 #container {
     width: 100%;
     height: auto;
-    background-color: rgb(0, 0, 0);
+    background-color: white;
     display: flex;
     justify-content: center;
 }
@@ -34,7 +34,7 @@ html {
     display: flex;
     justify-content: center;
     gap: 45px;
-    background-color: red;
+    box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
     border-radius: 30px;
 }
 .photo {
@@ -49,6 +49,7 @@ html {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top;
 }
 .info {
     width: 310px;
@@ -78,7 +79,7 @@ html {
     color: black;
 }
 #skills {
-    background-color: black;
+    background-color: white;
     width: 100%;
     height: auto;
     gap: 20px;
@@ -90,16 +91,18 @@ html {
 .my-skills {
     width: 35%;
     border-radius: 30px;
-    background-color: yellow;
+    box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
     display: flex;
     flex-wrap: wrap; 
     gap: 20px; 
     justify-content: center; 
+    margin-top: 5px;
 }
 .skill-item {
     display: flex;
     flex-direction: column;
     align-items: center; 
+    margin-bottom: 10px;
 }
 .skill {
     width: 90px; 
@@ -319,13 +322,13 @@ html {
     margin: 10px 0 0; 
     text-align: center; 
     font-size: 11px;
-    color: rgb(255, 255, 255);
+    color: black;
     font-family: "Sora", sans-serif;
 }
 #portfolio {
     width: 100%;
     height: auto;
-    background-color: rgb(0, 0, 0);
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -333,12 +336,13 @@ html {
 .my-itens {
     display: flex;
     gap: 20px;
-    background-color: green;
     border-radius: 30px;
     width: 35%;
-    margin-top: 5px;
+    margin-top: 15px;
     display: flex;
     justify-content: center;
+    box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
+    padding: 10px 5px;
 }
 /* Container principal dos itens */
 .portfolio-item, .ebook-item {
@@ -348,6 +352,7 @@ html {
     overflow: hidden;
     border-radius: 20px;
     margin: 10px;
+    box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
   }
   
   .portfolio-item a, .ebook-item a {
@@ -395,21 +400,21 @@ html {
 #about-me {
     width: 100%;
     height: auto;
-    background-color: black;
+    background-color: white;
     display: flex;
     justify-content: center;
-    
 }
 .box {
     width: 34%;
     height: auto;
-    background-color: red;
     display: grid;
     grid-template-columns: repeat(2, 160px);
     gap: 20px;
-    padding: 10px 10px;
+    padding: 15px 15px;
+    margin-top: 5px;
     justify-content: center;
     border-radius: 30px;
+    box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
 }
 .box-instagram {
     position: relative;
@@ -436,14 +441,19 @@ html {
     z-index: 2; 
     font-size: 10px;
     color: #000;
+    font-weight: 500;
     text-decoration: none;
     width: 100%;
     height: 100%;
     border-radius: 30px;
     font-family: "Sora", sans-serif;
-    background-color: rgb(180, 180, 180);
-    border: 3px solid white;
-
+    background-color: white;
+    border: 3px solid white;        
+    box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
+    transition: .3s ease-in-out;
+}
+.box-instagram a:hover {
+    background-color: rgb(211, 211, 211);
 }
 .titleLink {
     position: relative;
@@ -460,13 +470,12 @@ html {
     color: black;
 }
 .instagram img {
-    background-color: yellow;
     width: 50px;
     height: 50px;
     position: absolute;
     top: 10%;
     left: 10%;
-    border-radius: 5px;
+    border-radius: 10px;
     z-index: 2;
 }
 
@@ -495,14 +504,19 @@ html {
     z-index: 2; 
     font-size: 10px;
     color: #000;
+    font-weight: 500;
     text-decoration: none;
     width: 100%;
     height: 100%;
     border-radius: 30px;
     font-family: "Sora", sans-serif;
-    background-color: rgb(180, 180, 180);
-    border: 3px solid white;
-
+    background-color: white;
+    border: 3px solid white;        
+    box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
+    transition: .3s ease-in-out;
+}
+.box-facebook a:hover {
+    background-color: rgb(211, 211, 211);
 }
 .titleLink {
     position: relative;
@@ -519,13 +533,12 @@ html {
     color: black;
 }
 .facebook img {
-    background-color: yellow;
     width: 50px;
     height: 50px;
     position: absolute;
     top: 10%;
     left: 10%;
-    border-radius: 5px;
+    border-radius: 10px;
     z-index: 2;
 }
 
@@ -554,14 +567,19 @@ html {
     z-index: 2; 
     font-size: 10px;
     color: #000;
+    font-weight: 500;
     text-decoration: none;
     width: 100%;
     height: 100%;
     border-radius: 30px;
     font-family: "Sora", sans-serif;
-    background-color: rgb(180, 180, 180);
-    border: 3px solid white;
-
+    background-color: white;
+    border: 3px solid white;        
+    box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
+    transition: .3s ease-in-out;
+}
+.box-linkedin a:hover {
+    background-color: rgb(211, 211, 211);
 }
 .titleLink {
     position: relative;
@@ -578,13 +596,12 @@ html {
     color: black;
 }
 .linkedin img {
-    background-color: yellow;
     width: 50px;
     height: 50px;
     position: absolute;
     top: 10%;
     left: 10%;
-    border-radius: 5px;
+    border-radius: 10px;
     z-index: 2;
 }
 .box-tiktok {
@@ -612,14 +629,19 @@ html {
     z-index: 2; 
     font-size: 10px;
     color: #000;
+    font-weight: 500;
     text-decoration: none;
     width: 100%;
     height: 100%;
     border-radius: 30px;
     font-family: "Sora", sans-serif;
-    background-color: rgb(180, 180, 180);
-    border: 3px solid white;
-
+    background-color: white;
+    border: 3px solid white;        
+    box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
+    transition: .3s ease-in-out;
+}
+.box-tiktok a:hover {
+    background-color: rgb(211, 211, 211);
 }
 .titleLink {
     position: relative;
@@ -636,13 +658,12 @@ html {
     color: black;
 }
 .tiktok img {
-    background-color: yellow;
     width: 50px;
     height: 50px;
     position: absolute;
     top: 10%;
     left: 10%;
-    border-radius: 5px;
+    border-radius: 10px;
     z-index: 2;
 }
 
