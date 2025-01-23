@@ -24,23 +24,351 @@ html {
 #container {
     width: 100%;
     height: auto;
-    background-color: red;
-    flex-wrap: wrap;
+    background-color: rgb(0, 0, 0);
     display: flex;
+    justify-content: center;
 }
 .content {
+    width: 35%;
+    height: 25vh;
+    background-color: rgb(25, 0, 255);
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+}
+.photo {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(81, 255, 0);
+    position: relative;
+    top: 25%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.info {
+    width: 310px;
+    height: 130px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    top: 25%;
+    padding: 10px;
+    border-radius: 5px;
+}
+.info h1 {
+    font-size: 18px;
+    font-family: "Sora", sans-serif;
+    margin-bottom: 2px;
+}
+.info h4 {
+    font-size: 10px;
+    font-family: "Sora", sans-serif;
+    color: rgba(0, 0, 0, 0.226);
+    margin-bottom: 1px;
+}
+.info p {
+    font-size: 14px;
+    font-family: "Sora", sans-serif;
+    margin-bottom: 1px;
+}
+#skills {
+    background-color: red;
     width: 100%;
     height: auto;
-    background-color: blue;
-    display: flex;
-    flex-wrap: wrap;
-}
-.widget1 {
-    width: 50%;
-    height: 500px;
-    background-color: rgb(60, 255, 0);
-    display: flex;
     gap: 20px;
-    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px;
+}
+.my-skills {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center; 
+}
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+.skill {
+    width: 90px; 
+    height: 90px; 
+    background-color: #ccc; 
+    border-radius: 50%; 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    overflow: hidden;
+}
+.skill img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.title {
+    margin: 10px 0 0; 
+    text-align: center; 
+    font-size: 11px;
+    color: rgb(255, 255, 255);
     font-family: "Sora", sans-serif;
 }
+#portfolio {
+    width: 100%;
+    height: auto;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.my-itens {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+}
+.portfolio-item {
+    position: relative;
+    width: 250px;
+    height: 330px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.portfolio-item a {
+    width: 250px;
+    height: 330px;
+    background-color: rgb(51, 51, 51);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: "Sora", sans-serif;
+    letter-spacing: 1.2px;
+    transition: transform 0.4s ease-in-out;
+}
+
+.portfolio-item span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 22px;
+    font-family: "Sora", sans-serif;
+    cursor: pointer;
+    pointer-events: auto;
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.portfolio-item span:hover {
+    opacity: 0;
+}
+.portfolio-item a img {
+    object-fit: cover;
+    position: absolute;
+    width: 250px;
+    height: 330px;
+    border-radius: 10px;
+}
+
+.ebook-item {
+    position: relative; 
+    width: 250px;
+    height: 330px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.ebook-item a {
+    width: 250px;
+    height: 330px;
+    background-color: rgb(51, 51, 51);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: "Sora", sans-serif;
+    letter-spacing: 1.2px;
+    transition: transform 0.4s ease-in-out;
+}
+
+.ebook-item span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 22px;
+    font-family: "Sora", sans-serif;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+}
+.ebook-item span:hover {
+    opacity: 0;
+}
+.ebook-item a img {
+    object-fit: cover;
+    position: absolute;
+    width: 250px;
+    height: 330px;
+    border-radius: 10px;
+}
+#about-me {
+    width: 100%;
+    height: auto;
+    background-color: rgb(81, 255, 0);
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
+}
+.box {
+    width: 500px;
+    height: 500px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 0px;
+}
+.redes {
+    width: 400px;
+    height: 150px;
+    background-color: blue;
+    border-radius: 10px;
+    display: grid;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px;
+    gap: 10px;
+    grid-template-columns: repeat(2, 70px);
+    grid-auto-rows: 1fr;
+}
+.instagram {
+    width: 70px;
+    height: 70px;
+    background-color: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.facebook {
+    width: 70px;
+    height: 70px;
+    background-color: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.tiktok {
+    width: 70px;
+    height: 70px;
+    background-color: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.mail {
+    width: 70px;
+    height: 70px;
+    background-color: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.widget5 {
+    width: 400px;
+    height: 150px;
+    background-color: blue;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+.emoji {
+    background-color: black;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.emoji img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: emoji-rotate 10s linear infinite;
+}
+@keyframes emoji-rotate { 
+    0% { 
+        transform: rotate(0deg); 
+    }
+    100% { 
+        transform: rotate(360deg); 
+    }
+}
+.music-info {
+    text-align: center;
+}
+
+
+
+
+@media screen and (min-width: 321px) and (max-width: 430px) {
+    .content {
+        width: 100%;
+        gap: 0px;
+    }
+    .photo {
+        max-width: 80px;
+        max-height: 80px;
+        background-color: black;
+        position: absolute;
+        top: 10%;
+        left: 7%;
+    }
+    .info {
+        max-width: 210px;
+        max-height: 100px;
+        position: absolute;
+        top: 10%;
+        left: 35%;
+    }
+    .info h1 {
+        font-size: 12px;
+        font-family: "Sora", sans-serif;
+        margin-bottom: 2px;
+    }
+    .info h4 {
+        font-size: 10px;
+        font-family: "Sora", sans-serif;
+        color: rgba(0, 0, 0, 0.226);
+        margin-bottom: 1px;
+    }
+    .info p {
+        font-size: 10px;
+        font-family: "Sora", sans-serif;
+        margin-bottom: 1px;
+    }
+}  
