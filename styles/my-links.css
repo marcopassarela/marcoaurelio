@@ -753,6 +753,9 @@ html {
       width: 40px;
       height: 40px;
     }
+    .box-instagram a:hover, .box-facebook a:hover, .box-linkedin a:hover, .box-tiktok a:hover {
+      background-color: white;
+    }
     .titleLink {
       font-size: 10px;
     }
