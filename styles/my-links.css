@@ -735,8 +735,10 @@ html {
     .box {
       width: 82%;
       display: grid;
+      justify-content: center;
       grid-template-columns: repeat(2, 130px);
-      gap: 20px;
+      gap: 30px;
+      padding: 15px;
     }
     .instagram, .facebook, .linkedin, .tiktok {
       width: 130px;
@@ -783,3 +785,226 @@ html {
     }
     
 }  
+
+@media screen and (min-width: 431px) and (max-width: 768px) {
+    .content {
+      width: 60%;
+      height: 160px;
+      gap: 0px;
+  }
+  .photo {
+      max-width: 80px;
+      max-height: 80px;
+      background-color: black;
+      position: absolute;
+      top: 5%;
+      left: 23%;
+  }
+  .info {
+      max-width: 215px;
+      max-height: 100px;
+      position: absolute;
+      top: 4%;
+      left: 40%;
+      padding: 5px;
+  }
+  .info h1 {
+      font-size: 12px;
+      font-family: "Sora", sans-serif;
+      margin-bottom: 2px;
+  }
+  .info h4 {
+      font-size: 10px;
+      font-family: "Sora", sans-serif;
+      color: rgba(0, 0, 0, 0.226);
+      margin-bottom: 1px;
+  }
+  .info p {
+      font-size: 10px;
+      font-family: "Sora", sans-serif;
+      margin-bottom: 1px;
+  }
+  #skills {
+    width: 100%;
+  }
+  .my-skills {
+    width: 60%;
+    gap: 10px;
+    border-radius: 20px;
+  }
+  .html, .css, .js, .python, .ts {
+    width: 50%;
+    height: 50%;
+  }
+  .skill {
+    width: 80px;
+    height: 80px;
+  }
+  .title {
+    margin: 0px 0 0;
+    font-size: 9px;
+  }
+  #about-me {
+    width: 100%;
+  }
+  .box {
+    width: 56%;
+    display: grid;
+    grid-template-columns: repeat(2, 160px);
+    gap: 30px;
+  }
+  .instagram, .facebook, .linkedin, .tiktok {
+    width: 130px;
+    height: 130px;
+  }
+  .box-instagram, .box-facebook, .box-linkedin, .box-tiktok {
+    max-width: 160px;
+    height: 160px;
+  }
+  .box-instagram a, .box-facebook a, .box-linkedin a, .box-tiktok a {
+    font-size: 8px;
+  }
+  .instagram img, .facebook img, .linkedin img, .tiktok img {
+    width: 40px;
+    height: 40px;
+  }
+  .box-instagram a:hover, .box-facebook a:hover, .box-linkedin a:hover, .box-tiktok a:hover {
+    background-color: white;
+  }
+  .titleLink {
+    font-size: 10px;
+  }
+  #portfolio {
+    width: 100%;
+  }
+  .my-itens {
+    width: 60%;
+    gap: 10px;
+    border-radius: 20px;
+    padding: 0px 0px;
+  }
+  .portfolio-item, .ebook-item {
+    width: 250px;
+    height: 200px;
+    position: relative;
+  }
+  .portfolio-item a img, .ebook-item a img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .content {
+      width: 70%;
+      height: 200px;
+      gap: 0px;
+  }
+  .photo {
+      max-width: 100px;
+      max-height: 100px;
+      background-color: black;
+      position: absolute;
+      top: 6%;
+      left: 25%;
+  }
+  .info {
+      max-width: 215px;
+      max-height: 100px;
+      position: absolute;
+      top: 6%;
+      left: 45%;
+      padding: 5px;
+  }
+  .info h1 {
+      font-size: 12px;
+      font-family: "Sora", sans-serif;
+      margin-bottom: 2px;
+  }
+  .info h4 {
+      font-size: 10px;
+      font-family: "Sora", sans-serif;
+      color: rgba(0, 0, 0, 0.226);
+      margin-bottom: 1px;
+  }
+  .info p {
+      font-size: 10px;
+      font-family: "Sora", sans-serif;
+      margin-bottom: 1px;
+  }
+  #skills {
+    width: 100%;
+  }
+  .my-skills {
+    width: 70%;
+    gap: 10px;
+    border-radius: 20px;
+  }
+  .html, .css, .js, .python, .ts {
+    width: 50%;
+    height: 50%;
+  }
+  .skill {
+    width: 80px;
+    height: 80px;
+  }
+  .title {
+    margin: 0px 0 0;
+    font-size: 12px;
+  }
+  #about-me {
+    width: 100%;
+  }
+  .box {
+    width: 67%;
+    display: grid;
+    grid-template-columns: repeat(2, 160px);
+    gap: 30px;
+  }
+  .instagram, .facebook, .linkedin, .tiktok {
+    width: 130px;
+    height: 130px;
+  }
+  .box-instagram, .box-facebook, .box-linkedin, .box-tiktok {
+    max-width: 160px;
+    height: 160px;
+  }
+  .box-instagram a, .box-facebook a, .box-linkedin a, .box-tiktok a {
+    font-size: 8px;
+  }
+  .instagram img, .facebook img, .linkedin img, .tiktok img {
+    width: 40px;
+    height: 40px;
+  }
+  .box-instagram a:hover, .box-facebook a:hover, .box-linkedin a:hover, .box-tiktok a:hover {
+    background-color: white;
+  }
+  .titleLink {
+    font-size: 10px;
+  }
+  #portfolio {
+    width: 100%;
+  }
+  .my-itens {
+    width: 70%;
+    gap: 10px;
+    border-radius: 20px;
+    padding: 0px 0px;
+  }
+  .portfolio-item, .ebook-item {
+    width: 250px;
+    height: 200px;
+    position: relative;
+  }
+  .portfolio-item a img, .ebook-item a img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
