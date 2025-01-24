@@ -788,7 +788,7 @@ html {
 
 @media screen and (min-width: 431px) and (max-width: 768px) {
     .content {
-      width: 60%;
+      width: 70%;
       height: 160px;
       gap: 0px;
   }
@@ -828,7 +828,7 @@ html {
     width: 100%;
   }
   .my-skills {
-    width: 60%;
+    width: 70%;
     gap: 10px;
     border-radius: 20px;
   }
@@ -837,8 +837,8 @@ html {
     height: 50%;
   }
   .skill {
-    width: 80px;
-    height: 80px;
+    width: 55px;
+    height: 70px;
   }
   .title {
     margin: 0px 0 0;
@@ -848,9 +848,9 @@ html {
     width: 100%;
   }
   .box {
-    width: 56%;
+    width: 64%;
     display: grid;
-    grid-template-columns: repeat(2, 160px);
+    grid-template-columns: repeat(2, 150px);
     gap: 30px;
   }
   .instagram, .facebook, .linkedin, .tiktok {
@@ -878,7 +878,7 @@ html {
     width: 100%;
   }
   .my-itens {
-    width: 60%;
+    width: 70%;
     gap: 10px;
     border-radius: 20px;
     padding: 0px 0px;
