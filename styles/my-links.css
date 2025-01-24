@@ -673,7 +673,8 @@ html {
 
 @media screen and (min-width: 321px) and (max-width: 430px) {
     .content {
-        width: 100%;
+        width: 90%;
+        height: 160px;
         gap: 0px;
     }
     .photo {
@@ -681,15 +682,16 @@ html {
         max-height: 80px;
         background-color: black;
         position: absolute;
-        top: 10%;
-        left: 7%;
+        top: 6%;
+        left: 10%;
     }
     .info {
         max-width: 210px;
         max-height: 100px;
         position: absolute;
-        top: 10%;
+        top: 5%;
         left: 35%;
+        padding: 5px;
     }
     .info h1 {
         font-size: 12px;
@@ -706,5 +708,65 @@ html {
         font-size: 10px;
         font-family: "Sora", sans-serif;
         margin-bottom: 1px;
+    }
+    #skills {
+      width: 100%;
+    }
+    .my-skills {
+      width: 90%;
+      gap: 10px;
+      border-radius: 20px;
+    }
+    .html, .css, .js, .python, .ts {
+      width: 50%;
+      height: 50%;
+    }
+    .skill {
+      width: 50px;
+      height: 50px;
+    }
+    .title {
+      margin: 2px 0 0;
+      font-size: 9px;
+    }
+    #about-me {
+      width: 100%;
+    }
+    .box {
+      width: 82%;
+      display: grid;
+      grid-template-columns: repeat(2, 130px);
+      gap: 20px;
+    }
+    .instagram, .facebook, .linkedin, .tiktok {
+      width: 130px;
+      height: 130px;
+    }
+    .box-instagram, .box-facebook, .box-linkedin, .box-tiktok {
+      max-width: 130px;
+      height: 130px;
+    }
+    .box-instagram a, .box-facebook a, .box-linkedin a, .box-tiktok a {
+      font-size: 8px;
+    }
+    .instagram img, .facebook img, .linkedin img, .tiktok img {
+      width: 40px;
+      height: 40px;
+    }
+    .titleLink {
+      font-size: 10px;
+    }
+    #portfolio {
+      width: 100%;
+    }
+    .my-itens {
+      width: 90%;
+      gap: 10px;
+      border-radius: 20px;
+      padding: 0px 0px;
+    }
+    .portfolio-item, .ebook-item {
+      width: 250px;
+      height: 200px;
     }
 }  
