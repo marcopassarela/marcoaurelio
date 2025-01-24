@@ -379,10 +379,6 @@ html {
     transition: transform 0.4s ease-in-out;
   }
   
-  .portfolio-item a:hover img, .ebook-item a:hover img {
-    transform: scale(1.0);
-  }
-  
   .portfolio-item a span, .ebook-item a span {
     position: absolute;
     top: 0;
