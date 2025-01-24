@@ -771,5 +771,15 @@ html {
     .portfolio-item, .ebook-item {
       width: 250px;
       height: 200px;
+      position: relative;
     }
+    .portfolio-item a img, .ebook-item a img {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
 }  
