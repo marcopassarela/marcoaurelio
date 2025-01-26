@@ -1,1009 +1,491 @@
 * {
-    padding: 0;
-    margin: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;  
-}
-
-body {
-    text-rendering: optimizeLegibility; /* Melhora a legibilidade e suaviza as fontes */
-}
-
-html {
-    scroll-behavior: smooth;
-    font-smoothing: antialiased; /* Para navegadores como o Safari */
+  padding: 0;
+  margin: 0;
 }
 
 :root {
-    --color-blue: #007bff;
-    --color-black: #000000;
-    --color-white: #ffffff;
-    --color-background: black;
-    --color-text: white;
+  --color-font: #ffffff;
+  --color-background: #1C1C1D;
+  --color-background-box: #252728;
+  --color-background-circle: #ffffff;
 }
-#container {
-    width: 100%;
-    height: auto;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
+.container {
+  background-color: black;
+  width: 100%;
+  height: auto;
 }
 .content {
-    width: 35%;
-    height: 25vh;
-    display: flex;
-    justify-content: center;
-    gap: 45px;
-    box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
-    border-radius: 30px;
+  background-color: white;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.photo {
-    width: 150px;
-    height: 150px;
-    position: relative;
-    top: 25%;
-    border-radius: 50%;
-    overflow: hidden;
-}
-.photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-}
-.info {
-    width: 310px;
-    height: 130px;
-    background-color: white;
-    position: relative;
-    top: 25%;
-    padding: 10px;
-    border-radius: 5px;
-}
-.info h1 {
-    font-size: 18px;
-    font-family: "Sora", sans-serif;
-    margin-bottom: 2px;
-    color: black;
-}
-.info h4 {
-    font-size: 10px;
-    font-family: "Sora", sans-serif;
-    color: black;
-    margin-bottom: 1px;
-}
-.info p {
-    font-size: 14px;
-    font-family: "Sora", sans-serif;
-    margin-bottom: 1px;
-    color: black;
-}
-#skills {
-    background-color: white;
-    width: 100%;
-    height: auto;
-    gap: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0px;
-}
-.my-skills {
-    width: 35%;
-    border-radius: 30px;
-    box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 20px; 
-    justify-content: center; 
-    margin-top: 5px;
-}
-.skill-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    margin-bottom: 10px;
-}
-.skill {
-    width: 90px; 
-    height: 90px; 
-    background-color: #ffffff; 
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 50%;
-    cursor: pointer;
-}
-.html {
-    width: 70%;
-    height:70%;
-    background-color: transparent;
-}
-.css {
-    width: 70%;
-    height:70%;
-    background-color: transparent;
-}
-.js {
-    width: 70%;
-    height:70%;
-    background-color: transparent;
-}
-.python {
-    width: 70%;
-    height:70%;
-    background-color: transparent;
-}
-.ts {
-    width: 70%;         
-    height:70%;
-    background-color: transparent;
-} 
-/*Animação html*/
-@keyframes primaryColor {
-    0% {
-      fill: black;
-    }
-    50% {
-      fill: #E44D26;
-    }
-    100% {
-      fill: black;
-    }
-  }
-  @keyframes secondaryColor {
-    0% {
-      fill: black;
-    }
-    50% {
-      fill: #F16529;
-    }
-    100% {
-      fill: black;
-    }
-  }
-  @keyframes highlightColor {
-    0% {
-      fill: #ffffff;
-    }
-    50% {
-      fill: white;
-    }
-    100% {
-      fill: rgb(255, 255, 255);
-    }
-  }
-  
-  /* Aplica as animações contínuas */
-  .html .primary {
-    animation: primaryColor 3s infinite;
-  }
-  
-  .html .secondary {
-    animation: secondaryColor 3s infinite;
-  }
-  
-  .html .highlight {
-    animation: highlightColor 3s infinite;
-  }
-  
-  /* Animação css */
-  @keyframes primaryCssColor {
-    0% {
-      fill: black;
-    }
-    50% {
-      fill: #1172B8;
-    }
-    100% {
-      fill: black;
-    }
-  }
-  
-  @keyframes secondaryCssColor {
-    0% {
-      fill: black;
-    }
-    50% {
-      fill: #33AADD;
-    }
-    100% {
-      fill: black;
-    }
-  }
-  
-  @keyframes highlightCssColor {
-    0% {
-      fill: #ffffff;
-    }
-    50% {
-      fill: white;
-    }
-    100% {
-      fill: rgb(255, 255, 255);
-    }
-  }
-  .css .primary {
-    animation: primaryCssColor 3s infinite;
-  }
-  
-  .css .secondary {
-    animation: secondaryCssColor 3s infinite;
-  }
-  
-  .css .highlight {
-    animation: highlightCssColor 3s infinite;
-  }
-  
-/*Animação JS */
-@keyframes jsColor {
-    0% {
-      fill: black;
-    }
-    50% {
-      fill: #f5de19;
-    }
-    100% {
-      fill: black;
-    }
-  }
-  .js path {
-    animation: jsColor 3s infinite;
-  }
-  
-/*Animação python*/
-@keyframes color-primary {
-    0% {
-      fill: #000000;
-    }
-    50% {
-      fill: #FFD43B
-    }
-    100% {
-      fill: #306998; 
-    }
-  }
-  
-  @keyframes color-secondary {
-    0% {
-      fill: #000000;
-    }
-    50% {
-      fill: #306998;
-    }
-    100% {
-      fill: #FFD43B;
-    }
-  }
-  
-  .color-primary {
-    animation: color-primary 3s infinite;
-  }
-  
-  .color-secondary {
-    animation: color-secondary 3s infinite;
-  }
 
-  /*Animação Typescript */
-@keyframes ts-colorPrimary {
-    0% {
-      fill: #007acc; /* Azul do TypeScript */
-    }
-    50% {
-      fill: #f4f4f4; /* Cor complementar (cinza claro) */
-    }
-    100% {
-      fill: #007acc; /* Azul do TypeScript */
-    }
-  }
+.box-general {
+  width: 500px;
+  height: 1015px;
+  background-color: var(--color-background);
+  border-radius: 30px;
+  padding: 10px;
   
-  @keyframes ts-colorSecundary {
-    0% {
-      fill: #f4f4f4; /* Cor complementar (cinza claro) */
-    }
-    50% {
-      fill: #007acc; /* Azul do TypeScript */
-    }
-    100% {
-      fill: #f4f4f4; /* Cor complementar (cinza claro) */
-    }
-  }
-  
-  .ts-colorPrimary {
-    animation: ts-colorPrimary 3s infinite;
-  }
-  
-  .ts-colorSecundary {
-    animation: ts-colorSecundary 3s infinite;
-  }
+}
+.box-general h1 {
+  color: white;
+}
+.cover {
+  background-color: var(--color-background-box);
+  width: 100%;
+  height: 170px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.253);
+  position: relative;
+}
+.myPhoto {
+  object-fit: cover;
+  background-repeat: no-repeat;
+  object-position: top;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+.my-photo {
+  object-fit: cover;
+  background-repeat: no-repeat;
+  object-position: top;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2px solid var(--color-background);
+}
+.box-description {
+  width: 100%;
+  height: auto;
+  background-color: var(--color-background-box);
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px 0px;
+}
+.box-description h1 {
+  font-family: 'Sora', sans-serif;
+  color: var(--color-font);
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  letter-spacing: 1.1px;
+}
+.category {
+  font-family: 'Sora', sans-serif;
+  color: rgba(0, 0, 0, 0.39);
+}
+.box-description span {
+  margin-left: 0px;
+  text-align: left;
+  margin-left: 10px;
+  font-family: 'Sora', sans-serif;
+  font-size: 10px;
+  color: var(--color-font);
+}
+#box-skills {
+  width: 100%;
+  height: 70px;
+  background-color: var(--color-background-box);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 10px;
+  overflow: hidden;
+  border-radius: 20px;
+}
 
-.title {
-    margin: 10px 0 0; 
-    text-align: center; 
-    font-size: 10px;
-    color: black;
-    font-family: "Sora", sans-serif;
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--color-background-circle);
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 35%;
+  transform: translate(-50%, -50%);
 }
-#portfolio {
-    width: 100%;
-    height: auto;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
+
+.circle2 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--color-background-circle);
+  position: absolute;
+  z-index: 2;            
+  top: 50%;             
+  left: 44%;              
+  transform: translate(-50%, -50%);
 }
-.my-itens {
-    display: flex;
-    gap: 20px;
-    border-radius: 30px;
-    width: 35%;
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
-    padding: 10px 5px;
+
+.circle3 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--color-background-circle);
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 52%;
+  transform: translate(-50%, -50%);
 }
-/* Container principal dos itens */
-.portfolio-item, .ebook-item {
-    position: relative;
-    width: 250px;
-    height: 330px;
-    overflow: hidden;
-    border-radius: 20px;
-    margin: 10px;
-    box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
-  }
-  
-  .portfolio-item a, .ebook-item a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    text-decoration: none;
-  }
-  
-  .portfolio-item a img, .ebook-item a img {
-    object-fit: cover;
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-    transition: transform 0.4s ease-in-out;
-  }
-  
-  .portfolio-item a span, .ebook-item a span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 22px;
-    font-family: "Sora", sans-serif;
-    transition: opacity 0.4s ease-in-out;
-  }
-  
-  .portfolio-item a:hover span, .ebook-item a:hover span {
-    opacity: 0;
-  }
-#about-me {
-    width: 100%;
-    height: auto;
-    background-color: white;
-    display: flex;
-    justify-content: center;
+
+.circle4 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--color-background-circle);
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
 }
-.box {
-    width: 34%;
-    height: auto;
-    display: grid;
-    grid-template-columns: repeat(2, 160px);
-    gap: 20px;
-    padding: 15px 15px;
-    margin-top: 5px;
-    justify-content: center;
-    border-radius: 30px;
-    box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
+
+.circle5 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--color-background-circle);
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 68%;
+  transform: translate(-50%, -50%);
+}
+.circle-general {
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.253);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.html, .css, .js, .python, .typescript {
+  width: 75%;
+  height: 75%;
+}
+
+#social-media {
+  width: 100%;
+  
+  padding: 10px 0;
+  background-color: var(--color-background-box);
+  margin-top: 10px;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  justify-content: center;
+  align-items: center;
+  gap: 20px; 
+  position: relative;
 }
 .box-instagram {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    background-color: rgb(194, 194, 194);
-    border-radius: 30px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-color: rgb(194, 194, 194);
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .instagram {
-    width: 150px;
-    height: 150px;
-    background-color: rgb(0, 0, 0);
-    border-radius: 30px;
-    cursor: pointer;
-    position: relative;
+  width: 150px;
+  height: 150px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 30px;
+  cursor: pointer;
+  position: relative;
 }
 .box-instagram a {
-    position: absolute;
-    z-index: 2; 
-    font-size: 10px;
-    color: #000;
-    font-weight: 500;
-    text-decoration: none;
-    width: 100%;
-    height: 100%;
-    border-radius: 30px;
-    font-family: "Sora", sans-serif;
-    background-color: white;
-    border: 3px solid white;        
-    box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
-    transition: .3s ease-in-out;
+  position: absolute;
+  z-index: 2; 
+  font-size: 10px;
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  font-family: "Sora", sans-serif;
+  background-color: white;
+  border: 3px solid white;        
+  box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
+  transition: .3s ease-in-out;
 }
 .box-instagram a:hover {
-    background-color: rgb(211, 211, 211);
+  background-color: rgb(211, 211, 211);
 }
 .titleLink {
-    position: relative;
-    color: rgb(255, 255, 255);
-    z-index: 3;
-    top: 70%;
-    left: 0%;
-    font-size: 11px;
-    display: inline-block;
-    width: 110px;
-    height: auto;
-    word-wrap: break-word; 
-    white-space: normal;
-    color: black;
+  position: relative;
+  color: rgb(255, 255, 255);
+  z-index: 3;
+  top: 70%;
+  left: 0%;
+  font-size: 11px;
+  display: inline-block;
+  width: 110px;
+  height: auto;
+  word-wrap: break-word; 
+  white-space: normal;
+  color: black;
 }
 .instagram img {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    border-radius: 10px;
-    z-index: 2;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  border-radius: 10px;
+  z-index: 2;
 }
 
 .box-facebook {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    background-color: rgb(194, 194, 194);
-    border-radius: 30px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-color: rgb(194, 194, 194);
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .facebook {
-    width: 150px;
-    height: 150px;
-    background-color: rgb(0, 0, 0);
-    border-radius: 30px;
-    cursor: pointer;
-    position: relative;
+  width: 150px;
+  height: 150px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 30px;
+  cursor: pointer;
+  position: relative;
 }
 .box-facebook a {
-    position: absolute;
-    z-index: 2; 
-    font-size: 10px;
-    color: #000;
-    font-weight: 500;
-    text-decoration: none;
-    width: 100%;
-    height: 100%;
-    border-radius: 30px;
-    font-family: "Sora", sans-serif;
-    background-color: white;
-    border: 3px solid white;        
-    box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
-    transition: .3s ease-in-out;
+  position: absolute;
+  z-index: 2; 
+  font-size: 10px;
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  font-family: "Sora", sans-serif;
+  background-color: white;
+  border: 3px solid white;        
+  box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
+  transition: .3s ease-in-out;
 }
 .box-facebook a:hover {
-    background-color: rgb(211, 211, 211);
+  background-color: rgb(211, 211, 211);
 }
-.titleLink {
-    position: relative;
-    color: rgb(255, 255, 255);
-    z-index: 3;
-    top: 70%;
-    left: 0%;
-    font-size: 11px;
-    display: inline-block;
-    width: 110px;
-    height: auto;
-    word-wrap: break-word; 
-    white-space: normal;
-    color: black;
-}
+
 .facebook img {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    border-radius: 10px;
-    z-index: 2;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  border-radius: 10px;
+  z-index: 2;
 }
 
 .box-linkedin {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    background-color: rgb(194, 194, 194);
-    border-radius: 30px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.mail {
-    width: 150px;
-    height: 150px;
-    background-color: rgb(0, 0, 0);
-    border-radius: 30px;
-    cursor: pointer;
-    position: relative;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-color: rgb(194, 194, 194);
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .box-linkedin a {
-    position: absolute;
-    z-index: 2; 
-    font-size: 10px;
-    color: #000;
-    font-weight: 500;
-    text-decoration: none;
-    width: 100%;
-    height: 100%;
-    border-radius: 30px;
-    font-family: "Sora", sans-serif;
-    background-color: white;
-    border: 3px solid white;        
-    box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
-    transition: .3s ease-in-out;
+  position: absolute;
+  z-index: 2; 
+  font-size: 10px;
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  font-family: "Sora", sans-serif;
+  background-color: white;
+  border: 3px solid white;        
+  box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
+  transition: .3s ease-in-out;
 }
 .box-linkedin a:hover {
-    background-color: rgb(211, 211, 211);
+  background-color: rgb(211, 211, 211);
 }
-.titleLink {
-    position: relative;
-    color: rgb(255, 255, 255);
-    z-index: 3;
-    top: 70%;
-    left: 0%;
-    font-size: 11px;
-    display: inline-block;
-    width: 110px;
-    height: auto;
-    word-wrap: break-word; 
-    white-space: normal;
-    color: black;
-}
+
 .linkedin img {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    border-radius: 10px;
-    z-index: 2;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  border-radius: 10px;
+  z-index: 2;
 }
 .box-tiktok {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    background-color: rgb(194, 194, 194);
-    border-radius: 30px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-color: rgb(194, 194, 194);
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .tiktok {
-    width: 150px;
-    height: 150px;
-    background-color: rgb(0, 0, 0);
-    border-radius: 30px;
-    cursor: pointer;
-    position: relative;
+  width: 150px;
+  height: 150px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 30px;
+  cursor: pointer;
+  position: relative;
 }
 .box-tiktok a {
-    position: absolute;
-    z-index: 2; 
-    font-size: 10px;
-    color: #000;
-    font-weight: 500;
-    text-decoration: none;
-    width: 100%;
-    height: 100%;
-    border-radius: 30px;
-    font-family: "Sora", sans-serif;
-    background-color: white;
-    border: 3px solid white;        
-    box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
-    transition: .3s ease-in-out;
+  position: absolute;
+  z-index: 2; 
+  font-size: 10px;
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  font-family: "Sora", sans-serif;
+  background-color: white;
+  border: 3px solid white;        
+  box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
+  transition: .3s ease-in-out;
 }
 .box-tiktok a:hover {
-    background-color: rgb(211, 211, 211);
+  background-color: rgb(211, 211, 211);
 }
-.titleLink {
-    position: relative;
-    color: rgb(255, 255, 255);
-    z-index: 3;
-    top: 70%;
-    left: 0%;
-    font-size: 11px;
-    display: inline-block;
-    width: 110px;
-    height: auto;
-    word-wrap: break-word; 
-    white-space: normal;
-    color: black;
-}
+
 .tiktok img {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    border-radius: 10px;
-    z-index: 2;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  border-radius: 10px;
+  z-index: 2;
+}
+.box-portfolio {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-color: rgb(194, 194, 194);
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.box-portfolio a {
+  position: absolute;
+  z-index: 2; 
+  font-size: 10px;
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  font-family: "Sora", sans-serif;
+  background-color: white;
+  border: 3px solid white;        
+  box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
+  transition: .3s ease-in-out;
+}
+.box-portfolio a:hover {
+  background-color: rgb(211, 211, 211);
 }
 
-
-
-@media screen and (min-width: 321px) and (max-width: 430px) {
-    .content {
-        width: 90%;
-        height: 160px;
-        gap: 0px;
-    }
-    .photo {
-        max-width: 80px;
-        max-height: 80px;
-        background-color: black;
-        position: absolute;
-        top: 6%;
-        left: 10%;
-    }
-    .info {
-        max-width: 215px;
-        max-height: 100px;
-        position: absolute;
-        top: 5%;
-        left: 35%;
-        padding: 5px;
-    }
-    .info h1 {
-        font-size: 12px;
-        font-family: "Sora", sans-serif;
-        margin-bottom: 2px;
-    }
-    .info h4 {
-        font-size: 10px;
-        font-family: "Sora", sans-serif;
-        color: rgba(0, 0, 0, 0.226);
-        margin-bottom: 1px;
-    }
-    .info p {
-        font-size: 10px;
-        font-family: "Sora", sans-serif;
-        margin-bottom: 1px;
-    }
-    #skills {
-      width: 100%;
-    }
-    .my-skills {
-      width: 90%;
-      gap: 10px;
-      border-radius: 20px;
-    }
-    .html, .css, .js, .python, .ts {
-      width: 50%;
-      height: 50%;
-    }
-    .skill {
-      width: 50px;
-      height: 50px;
-    }
-    .title {
-      margin: 2px 0 0;
-      font-size: 9px;
-    }
-    #about-me {
-      width: 100%;
-    }
-    .box {
-      width: 82%;
-      display: grid;
-      justify-content: center;
-      grid-template-columns: repeat(2, 130px);
-      gap: 30px;
-      padding: 15px;
-    }
-    .instagram, .facebook, .linkedin, .tiktok {
-      width: 130px;
-      height: 130px;
-    }
-    .box-instagram, .box-facebook, .box-linkedin, .box-tiktok {
-      max-width: 130px;
-      height: 130px;
-    }
-    .box-instagram a, .box-facebook a, .box-linkedin a, .box-tiktok a {
-      font-size: 8px;
-    }
-    .instagram img, .facebook img, .linkedin img, .tiktok img {
-      width: 40px;
-      height: 40px;
-    }
-    .box-instagram a:hover, .box-facebook a:hover, .box-linkedin a:hover, .box-tiktok a:hover {
-      background-color: white;
-    }
-    .titleLink {
-      font-size: 10px;
-    }
-    #portfolio {
-      width: 100%;
-    }
-    .my-itens {
-      width: 90%;
-      gap: 10px;
-      border-radius: 20px;
-      padding: 0px 0px;
-    }
-    .portfolio-item, .ebook-item {
-      width: 250px;
-      height: 200px;
-      position: relative;
-    }
-    .portfolio-item a img, .ebook-item a img {
-      width: 100px;
-      height: 100px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    
-}  
-
-@media screen and (min-width: 431px) and (max-width: 768px) {
-    .content {
-      width: 70%;
-      height: 160px;
-      gap: 0px;
-  }
-  .photo {
-      max-width: 80px;
-      max-height: 80px;
-      background-color: black;
-      position: absolute;
-      top: 5%;
-      left: 23%;
-  }
-  .info {
-      max-width: 215px;
-      max-height: 100px;
-      position: absolute;
-      top: 4%;
-      left: 40%;
-      padding: 5px;
-  }
-  .info h1 {
-      font-size: 12px;
-      font-family: "Sora", sans-serif;
-      margin-bottom: 2px;
-  }
-  .info h4 {
-      font-size: 10px;
-      font-family: "Sora", sans-serif;
-      color: rgba(0, 0, 0, 0.226);
-      margin-bottom: 1px;
-  }
-  .info p {
-      font-size: 10px;
-      font-family: "Sora", sans-serif;
-      margin-bottom: 1px;
-  }
-  #skills {
-    width: 100%;
-  }
-  .my-skills {
-    width: 70%;
-    gap: 10px;
-    border-radius: 20px;
-  }
-  .html, .css, .js, .python, .ts {
-    width: 50%;
-    height: 50%;
-  }
-  .skill {
-    width: 55px;
-    height: 70px;
-  }
-  .title {
-    margin: 0px 0 0;
-    font-size: 9px;
-  }
-  #about-me {
-    width: 100%;
-  }
-  .box {
-    width: 64%;
-    display: grid;
-    grid-template-columns: repeat(2, 150px);
-    gap: 30px;
-  }
-  .instagram, .facebook, .linkedin, .tiktok {
-    width: 130px;
-    height: 130px;
-  }
-  .box-instagram, .box-facebook, .box-linkedin, .box-tiktok {
-    max-width: 160px;
-    height: 160px;
-  }
-  .box-instagram a, .box-facebook a, .box-linkedin a, .box-tiktok a {
-    font-size: 8px;
-  }
-  .instagram img, .facebook img, .linkedin img, .tiktok img {
-    width: 40px;
-    height: 40px;
-  }
-  .box-instagram a:hover, .box-facebook a:hover, .box-linkedin a:hover, .box-tiktok a:hover {
-    background-color: white;
-  }
-  .titleLink {
-    font-size: 10px;
-  }
-  #portfolio {
-    width: 100%;
-  }
-  .my-itens {
-    width: 70%;
-    gap: 10px;
-    border-radius: 20px;
-    padding: 0px 0px;
-  }
-  .portfolio-item, .ebook-item {
-    width: 250px;
-    height: 200px;
-    position: relative;
-  }
-  .portfolio-item a img, .ebook-item a img {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+.box-portfolio {
+  position: relative;
+  width: 320px;
+  height: 150px;
+  background-color: rgb(194, 194, 194);
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .content {
-      width: 70%;
-      height: 200px;
-      gap: 0px;
-  }
-  .photo {
-      max-width: 100px;
-      max-height: 100px;
-      background-color: black;
-      position: absolute;
-      top: 6%;
-      left: 25%;
-  }
-  .info {
-      max-width: 215px;
-      max-height: 100px;
-      position: absolute;
-      top: 6%;
-      left: 45%;
-      padding: 5px;
-  }
-  .info h1 {
-      font-size: 12px;
-      font-family: "Sora", sans-serif;
-      margin-bottom: 2px;
-  }
-  .info h4 {
-      font-size: 10px;
-      font-family: "Sora", sans-serif;
-      color: rgba(0, 0, 0, 0.226);
-      margin-bottom: 1px;
-  }
-  .info p {
-      font-size: 10px;
-      font-family: "Sora", sans-serif;
-      margin-bottom: 1px;
-  }
-  #skills {
-    width: 100%;
-  }
-  .my-skills {
-    width: 70%;
-    gap: 10px;
-    border-radius: 20px;
-  }
-  .html, .css, .js, .python, .ts {
-    width: 50%;
-    height: 50%;
-  }
-  .skill {
-    width: 80px;
-    height: 80px;
-  }
-  .title {
-    margin: 0px 0 0;
-    font-size: 12px;
-  }
-  #about-me {
-    width: 100%;
-  }
-  .box {
-    width: 67%;
-    display: grid;
-    grid-template-columns: repeat(2, 160px);
-    gap: 30px;
-  }
-  .instagram, .facebook, .linkedin, .tiktok {
-    width: 130px;
-    height: 130px;
-  }
-  .box-instagram, .box-facebook, .box-linkedin, .box-tiktok {
-    max-width: 160px;
-    height: 160px;
-  }
-  .box-instagram a, .box-facebook a, .box-linkedin a, .box-tiktok a {
-    font-size: 8px;
-  }
-  .instagram img, .facebook img, .linkedin img, .tiktok img {
-    width: 40px;
-    height: 40px;
-  }
-  .box-instagram a:hover, .box-facebook a:hover, .box-linkedin a:hover, .box-tiktok a:hover {
-    background-color: white;
-  }
-  .titleLink {
-    font-size: 10px;
-  }
-  #portfolio {
-    width: 100%;
-  }
-  .my-itens {
-    width: 70%;
-    gap: 10px;
-    border-radius: 20px;
-    padding: 0px 0px;
-  }
-  .portfolio-item, .ebook-item {
-    width: 250px;
-    height: 200px;
-    position: relative;
-  }
-  .portfolio-item a img, .ebook-item a img {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+.portfolio {
+  width: 150px;
+  height: 150px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 30px;
+  cursor: pointer;
+  position: relative;
+}
+.box-portfolio a {
+  position: absolute;
+  z-index: 2; 
+  font-size: 10px;
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  font-family: "Sora", sans-serif;
+  background-color: white;
+  border: 3px solid white;        
+  box-shadow: 0px 0px 5px 5px rgba(129, 129, 129, 0.192);
+  transition: .3s ease-in-out;
+}
+.box-portfolio a:hover {
+  background-color: rgb(211, 211, 211);
+}
+.portfolio img {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 10%;
+  left: 34%;
+  border-radius: 10px;
+  z-index: 2;
+}
+.titlePortfolio {
+  position: relative;
+  color: rgb(255, 255, 255);
+  z-index: 3;
+  top: 70%;
+  left: 0%;
+  font-size: 11px;
+  display: inline-block;
+  width: 190px;
+  height: auto;
+  word-wrap: break-word; 
+  white-space: normal;
+  color: black;
 }
