@@ -489,3 +489,25 @@
   white-space: normal;
   color: black;
 }
+
+@media screen and (min-width: 321px) and (max-width: 430px) {
+  .box-general {
+    border-radius: 0px;
+  }
+  .circle {
+    left: 34%;
+  }
+  .circle2 {
+    left: 43%;
+  }
+  .circle3 {
+    left: 52%;
+  }
+  .circle4 {
+    left: 61%;
+  }
+  .circle5 {
+    left: 70%;
+  }
+
+}
