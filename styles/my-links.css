@@ -669,7 +669,7 @@
   .circle5 {
     left: 70%;
   }
-  .box-instagram a:hover, .box-facebook a:hover, .box-linkedin a:hover, .box-mail a:hover, .box-portfolio a:hover {
+  .box-instagram a:hover, .box-facebook a:hover, .box-linkedin a:hover, .box-mail a:hover, .box-portfolio a:hover, .box-github a:hover, .box-tiktok a:hover {
     background-color: white;
   } 
 }
