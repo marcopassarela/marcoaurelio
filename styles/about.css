@@ -335,6 +335,19 @@ html:lang(pt) ul li a {
     text-decoration: none;
     font-family: "Sora", sans-serif;
   }
+  .btnContinue {
+    background-color: green;
+    color: white;
+    font-size: 12px;
+    border: 1px solid black;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-family: "Sora", sans-serif;
+  }
   .btn {
     width: 100px;
     height: 30px;
