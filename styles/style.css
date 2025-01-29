@@ -28,16 +28,17 @@ html {
     height: 5vh;
     z-index: 1000;
     opacity: 0;
-    filter: blur(16px);
-    transform: translateX(0%);
-    transition: opacity 2s cubic-bezier(0.42, 0, 0.58, 1), 
-                filter 2s cubic-bezier(0.42, 0, 0.58, 1);
+    margin-top: 0; /* Garante que não começa com espaçamento extra */
+    transform: translateY(-20px); /* Pequeno deslocamento inicial */
+    will-change: opacity, transform;
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
-#menu.myShow {
+
+#menu.myShow {    
     opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
+    transform: translateY(0); /* Retorna à posição correta */
 }
+
 #menu.clicked {
     opacity: 1 !important;
     filter: none !important;
@@ -142,16 +143,17 @@ ul a:hover {
     margin: 0;
     border-top: 1px solid transparent;
     opacity: 0;
-    filter: blur(15px);
-    transform: translateX(-100%);
-    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+    clip-path: inset(0 20% 0 0); /* Efeito de entrada sem travar */
+    transform: translateY(30px); /* Animação mais suave */
+    will-change: opacity, transform;
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out, clip-path 1.5s ease-out;
 }
 #my.myShow {
     opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
-    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+    clip-path: inset(0 0 0 0); /* Remove o efeito */
+    transform: translateY(0);
 }
+
 
 #my h1 {
     margin-top: 150px;
@@ -197,15 +199,16 @@ ul a:hover {
     align-items: center;
     margin-bottom: 40px;
     opacity: 0;
-    filter: blur(15px);
-    transform: translateX(0%);
-    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+    clip-path: inset(0 20% 0 0); /* Efeito de entrada sem travar */
+    transform: translateY(30px); /* Animação mais suave */
+    will-change: opacity, transform;
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out, clip-path 1.5s ease-out;
+
 }
 #about.myShow {
     opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
-    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+    clip-path: inset(0 0 0 0); /* Remove o efeito */
+    transform: translateY(0);
 }
 
 #about a {
@@ -339,15 +342,16 @@ ul a:hover {
     align-items: center;
     gap: 20px;
     opacity: 0;
-    filter: blur(15px); 
-    transform: translateX(+100%);
-    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+    clip-path: inset(0 20% 0 0); /* Efeito de entrada sem travar */
+    transform: translateY(30px); /* Animação mais suave */
+    will-change: opacity, transform;
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out, clip-path 1.5s ease-out;
 }
 
 #skills.myShow {
-    opacity: 1; 
-    filter: blur(0); 
-    transform: translateX(0);
+    opacity: 1;
+    clip-path: inset(0 0 0 0); /* Remove o efeito */
+    transform: tran
 }
 
 .container-skills {
@@ -452,15 +456,15 @@ ul a:hover {
     align-items: center;
     margin-top: 20px;
     opacity: 0;
-    filter: blur(15px);
-    transform: translateX(-100%);
-    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+    clip-path: inset(0 20% 0 0); /* Efeito de entrada sem travar */
+    transform: translateY(30px); /* Animação mais suave */
+    will-change: opacity, transform;
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out, clip-path 1.5s ease-out;
 }
 #contact.myShow {
     opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
-    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+    clip-path: inset(0 0 0 0); /* Remove o efeito */
+    transform: translateY(0);
 }
 
 .container {
@@ -710,15 +714,15 @@ ul a:hover {
     display: flex;
     border-top: 1px solid rgba(0, 0, 0, 0.151);
     opacity: 0;
-    filter: blur(15px);
-    transform: translateX(0%);
-    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+    clip-path: inset(0 20% 0 0); /* Efeito de entrada sem travar */
+    transform: translateY(30px); /* Animação mais suave */
+    will-change: opacity, transform;
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out, clip-path 1.5s ease-out;
 }
 #privacy.myShow {
     opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
-    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+    clip-path: inset(0 0 0 0); /* Remove o efeito */
+    transform: translateY(0);
 }
 
 #privacy img {

@@ -123,17 +123,16 @@ window.onclick = function(event) {
 // IDs dos elementos a serem observados
 const elementsToObserve = ['#my', '#skills', '#about', '#contact', '#privacy', '#menu', '#menu-toggle', '#title'];
 
-// Verifica a existência dos elementos e cria o IntersectionObserver
 if (elementsToObserve.length) {
     const myObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            // Quando o elemento está visível
+
             if (entry.isIntersecting && !entry.target.classList.contains('myShow')) {
                 entry.target.classList.add('myShow');
                 myObserver.unobserve(entry.target); 
             }
         });
-    });
+    }); 
     // Observa cada elemento do array
     elementsToObserve.forEach(id => {
         const element = document.querySelector(id);
