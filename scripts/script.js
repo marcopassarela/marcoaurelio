@@ -283,3 +283,5 @@ menuLinks.forEach(link => {
         menuToggle.classList.remove('open');  // Voltar ao hambúrguer
     });
 });
+
+
