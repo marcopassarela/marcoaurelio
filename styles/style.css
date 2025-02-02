@@ -15,6 +15,7 @@
     background: #007bff;
     border-radius: 5px;
 }
+
 body {
     background-color: var(--color-black);
     text-rendering: optimizeLegibility; /* Melhora a legibilidade e suaviza as fontes */
