@@ -3,25 +3,17 @@
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    
 }
 ::-webkit-scrollbar {
     width: 7px;
 }
-
 ::-webkit-scrollbar-track {
     background: #111;
 }
-
 ::-webkit-scrollbar-thumb {
     background: #007bff;
     border-radius: 5px;
 }
-
-::-webkit-scrollbar-thumb:hover {
-    background: #666;
-}
-
 body {
     background-color: var(--color-black);
     text-rendering: optimizeLegibility; /* Melhora a legibilidade e suaviza as fontes */
