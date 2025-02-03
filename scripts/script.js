@@ -282,10 +282,10 @@ function closeMenu() {
     // Espera a animação terminar antes de esconder o menu
     setTimeout(() => {
         menu.classList.remove('closing');
-        menu.style.visibility = "hidden"; // Garante que o menu ficará oculto após a animação
-        menu.style.opacity = "0"; // Remove a opacidade ao fechar
-        menuToggle.classList.remove('open'); // Retorna ao estado original do botão
-    }, 500); // Tempo igual ao da animação de saída
+        menu.style.visibility = "hidden";
+        menu.style.opacity = "0";
+        menuToggle.classList.remove('open');
+    }, 500);
 }
 
 // Alternar o menu hamburguer
@@ -293,11 +293,10 @@ menuToggle.addEventListener('click', () => {
     if (menu.classList.contains("active")) {
         closeMenu();
     } else {
-        // Mostra o menu
         menu.style.visibility = "visible";
         menu.style.opacity = "1";
         menu.classList.add("active");
-        menuToggle.classList.add('open'); // Adiciona a classe para transformar o botão
+        menuToggle.classList.add('open');
     }
 });
 
@@ -305,14 +304,11 @@ menuToggle.addEventListener('click', () => {
 const menuLinks = document.querySelectorAll('#menu a');
 menuLinks.forEach(link => {
     link.addEventListener('click', () => {
-        // Remove a classe 'active' imediatamente
         menu.classList.remove('active');
-        menu.style.visibility = "hidden"; // Esconde o menu imediatamente
-        menu.style.opacity = "0"; // Remove a opacidade ao fechar
-        menuToggle.classList.remove('open'); // Retorna ao estado original do botão
-
-        // Aqui, você pode adicionar uma classe para estilizar a opção selecionada
-        menuLinks.forEach(l => l.classList.remove('selected')); // Remove a seleção de todas as opções
-        link.classList.add('selected'); // Adiciona a classe à opção clicada
+        menu.style.visibility = "hidden";
+        menu.style.opacity = "0";
+        menuToggle.classList.remove('open');
+        menuLinks.forEach(l => l.classList.remove('selected'));
+        link.classList.add('selected');
     });
 });
