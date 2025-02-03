@@ -264,6 +264,27 @@ function startLoadingAnimation() {
     });
 }
 
+const menuToggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
+
+// Alternar o menu hamburguer
+menuToggle.addEventListener('click', () => {
+    // Alternar a classe 'myShow' para abrir/fechar o menu
+    menu.classList.toggle('myShow');
+    // Alternar a classe 'open' para transformar o hambúrguer em "X"
+    menuToggle.classList.toggle('open');
+});
+
+// Fechar o menu ao clicar em um link do menu
+const menuLinks = document.querySelectorAll('#menu a');
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menu.classList.remove('myShow');  // Fechar o menu
+        menuToggle.classList.remove('open');  // Voltar ao hambúrguer
+    });
+});
+
+
 document.addEventListener("DOMContentLoaded", function () {
     let menuToggle = document.getElementById("menu-toggle");
     let menu = document.getElementById("menu");
@@ -273,7 +294,6 @@ document.addEventListener("DOMContentLoaded", function () {
     menu.style.visibility = "hidden";
     menu.style.opacity = "0";
 
-    // Alternar o menu ao clicar no botão de menu
     menuToggle.addEventListener("click", function () {
         if (menu.classList.contains("active")) {
             // Adiciona a classe de fechamento
@@ -287,28 +307,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 menu.style.opacity = "0"; // Remove a opacidade ao fechar
             }, 500); // Tempo igual ao da animação de saída (slideUp)
         } else {
-            // Mostra o menu com animação
+            // Mostra o menu
             menu.style.visibility = "visible";
             menu.style.opacity = "1";
             menu.classList.add("active");
         }
-    });
-
-    // Fechar o menu ao clicar em um link do menu
-    const menuLinks = document.querySelectorAll('#menu a');
-    menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (menu.classList.contains('active')) {
-                // Fechar o menu com animação
-                menu.classList.remove("active");
-                menu.classList.add("closing");
-
-                setTimeout(() => {
-                    menu.classList.remove("closing");
-                    menu.style.visibility = "hidden"; // Garante que o menu ficará oculto após a animação
-                    menu.style.opacity = "0"; // Remove a opacidade ao fechar
-                }, 500); // Tempo igual ao da animação de saída
-            }
-        });
     });
 });
