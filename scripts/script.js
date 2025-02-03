@@ -305,6 +305,14 @@ menuToggle.addEventListener('click', () => {
 const menuLinks = document.querySelectorAll('#menu a');
 menuLinks.forEach(link => {
     link.addEventListener('click', () => {
-        closeMenu();
+        // Remove a classe 'active' imediatamente
+        menu.classList.remove('active');
+        menu.style.visibility = "hidden"; // Esconde o menu imediatamente
+        menu.style.opacity = "0"; // Remove a opacidade ao fechar
+        menuToggle.classList.remove('open'); // Retorna ao estado original do botão
+
+        // Aqui, você pode adicionar uma classe para estilizar a opção selecionada
+        menuLinks.forEach(l => l.classList.remove('selected')); // Remove a seleção de todas as opções
+        link.classList.add('selected'); // Adiciona a classe à opção clicada
     });
 });
