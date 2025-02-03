@@ -267,50 +267,44 @@ function startLoadingAnimation() {
 const menuToggle = document.getElementById('menu-toggle');
 const menu = document.getElementById('menu');
 
+// Certifique-se de que o menu começa fechado ao carregar a página
+document.addEventListener("DOMContentLoaded", function () {
+    menu.classList.remove("active");
+    menu.style.visibility = "hidden";
+    menu.style.opacity = "0";
+});
+
+// Função para fechar o menu
+function closeMenu() {
+    menu.classList.remove('active');
+    menu.classList.add('closing');
+
+    // Espera a animação terminar antes de esconder o menu
+    setTimeout(() => {
+        menu.classList.remove('closing');
+        menu.style.visibility = "hidden"; // Garante que o menu ficará oculto após a animação
+        menu.style.opacity = "0"; // Remove a opacidade ao fechar
+        menuToggle.classList.remove('open'); // Retorna ao estado original do botão
+    }, 500); // Tempo igual ao da animação de saída
+}
+
 // Alternar o menu hamburguer
 menuToggle.addEventListener('click', () => {
-    // Alternar a classe 'myShow' para abrir/fechar o menu
-    menu.classList.toggle('myShow');
-    // Alternar a classe 'open' para transformar o hambúrguer em "X"
-    menuToggle.classList.toggle('open');
+    if (menu.classList.contains("active")) {
+        closeMenu();
+    } else {
+        // Mostra o menu
+        menu.style.visibility = "visible";
+        menu.style.opacity = "1";
+        menu.classList.add("active");
+        menuToggle.classList.add('open'); // Adiciona a classe para transformar o botão
+    }
 });
 
 // Fechar o menu ao clicar em um link do menu
 const menuLinks = document.querySelectorAll('#menu a');
 menuLinks.forEach(link => {
     link.addEventListener('click', () => {
-        menu.classList.remove('myShow');  // Fechar o menu
-        menuToggle.classList.remove('open');  // Voltar ao hambúrguer
-    });
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    let menuToggle = document.getElementById("menu-toggle");
-    let menu = document.getElementById("menu");
-
-    // Certifique-se de que o menu começa fechado ao carregar a página
-    menu.classList.remove("active");
-    menu.style.visibility = "hidden";
-    menu.style.opacity = "0";
-
-    menuToggle.addEventListener("click", function () {
-        if (menu.classList.contains("active")) {
-            // Adiciona a classe de fechamento
-            menu.classList.remove("active");
-            menu.classList.add("closing");
-
-            // Espera a animação terminar antes de esconder o menu
-            setTimeout(() => {
-                menu.classList.remove("closing");
-                menu.style.visibility = "hidden"; // Garante que o menu ficará oculto após a animação
-                menu.style.opacity = "0"; // Remove a opacidade ao fechar
-            }, 500); // Tempo igual ao da animação de saída (slideUp)
-        } else {
-            // Mostra o menu
-            menu.style.visibility = "visible";
-            menu.style.opacity = "1";
-            menu.classList.add("active");
-        }
+        closeMenu();
     });
 });
