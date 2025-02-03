@@ -1136,7 +1136,7 @@ ul a:hover {
 
     /* Esconder o menu por padrão em dispositivos móveis */
     #menu {
-        display: none;
+        display: flex;
         flex-direction: column;
         background-color: #1f1f1f;
         list-style: none;
@@ -1149,8 +1149,45 @@ ul a:hover {
         justify-content: center;
         opacity: 0;
         visibility: hidden;
-        transform: translateX(-100%);
-        transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
+        transform: translateY(-50px);
+    }
+
+    /* Quando o menu estiver ativo */
+    #menu.active {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        animation: slideDown 0.7s ease-out forwards;
+    }
+
+    /* Quando o menu fecha */
+    #menu.closing {
+        animation: slideUp 0.5s ease-in forwards;
+    }
+
+    /* Animação de entrada */
+    @keyframes slideDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Animação de saída */
+    @keyframes slideUp {
+        0% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-50px);
+            visibility: hidden;
+        }
     }
     ul a {
         color: var(--color-white);
@@ -1166,7 +1203,7 @@ ul a:hover {
         transform: translateX(0);
     }
     #menu-toggle.myShow {
-       display: flex;
+        display: flex;
         opacity: 1;
         filter: blur(0);
         transform: translateX(0);

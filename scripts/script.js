@@ -285,3 +285,25 @@ menuLinks.forEach(link => {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    let menuToggle = document.getElementById("menu-toggle");
+    let menu = document.getElementById("menu");
+
+    menuToggle.addEventListener("click", function () {
+        if (menu.classList.contains("active")) {
+            // Adiciona a classe de fechamento
+            menu.classList.remove("active");
+            menu.classList.add("closing");
+
+            // Espera a animação terminar antes de esconder o menu
+            setTimeout(() => {
+                menu.classList.remove("closing");
+                menu.style.visibility = "hidden";
+            }, 500); // Tempo igual ao da animação de saída (slideUp)
+        } else {
+            // Mostra o menu
+            menu.style.visibility = "visible";
+            menu.classList.add("active");
+        }
+    });
+});
