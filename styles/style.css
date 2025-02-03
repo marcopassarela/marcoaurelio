@@ -1148,23 +1148,23 @@ ul a:hover {
         align-items: center;
         justify-content: center;
         opacity: 0;
-        visibility: hidden;
-        transform: translateY(-50px);
+        visibility: hidden; /* Menu começa invisível */
+        transform: translateY(-50px); /* Começa fora da tela */
     }
-
-    /* Quando o menu estiver ativo */
+    
+    /* Quando o menu estiver ativo, ele aparece com animação */
     #menu.active {
         visibility: visible;
         opacity: 1;
         transform: translateY(0);
         animation: slideDown 0.7s ease-out forwards;
     }
-
-    /* Quando o menu fecha */
+    
+    /* Quando o menu fecha, ele some suavemente */
     #menu.closing {
         animation: slideUp 0.5s ease-in forwards;
     }
-
+    
     /* Animação de entrada */
     @keyframes slideDown {
         0% {
@@ -1176,7 +1176,7 @@ ul a:hover {
             transform: translateY(0);
         }
     }
-
+    
     /* Animação de saída */
     @keyframes slideUp {
         0% {
@@ -1189,6 +1189,7 @@ ul a:hover {
             visibility: hidden;
         }
     }
+    
     ul a {
         color: var(--color-white);
         font-family: "Sora", sans-serif;

@@ -289,6 +289,11 @@ document.addEventListener("DOMContentLoaded", function () {
     let menuToggle = document.getElementById("menu-toggle");
     let menu = document.getElementById("menu");
 
+    // Certifique-se de que o menu começa fechado ao carregar a página
+    menu.classList.remove("active");
+    menu.style.visibility = "hidden";
+    menu.style.opacity = "0";
+
     menuToggle.addEventListener("click", function () {
         if (menu.classList.contains("active")) {
             // Adiciona a classe de fechamento
@@ -298,11 +303,13 @@ document.addEventListener("DOMContentLoaded", function () {
             // Espera a animação terminar antes de esconder o menu
             setTimeout(() => {
                 menu.classList.remove("closing");
-                menu.style.visibility = "hidden";
+                menu.style.visibility = "hidden"; // Garante que o menu ficará oculto após a animação
+                menu.style.opacity = "0"; // Remove a opacidade ao fechar
             }, 500); // Tempo igual ao da animação de saída (slideUp)
         } else {
             // Mostra o menu
             menu.style.visibility = "visible";
+            menu.style.opacity = "1";
             menu.classList.add("active");
         }
     });
