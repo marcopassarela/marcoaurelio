@@ -277,16 +277,18 @@ document.addEventListener("DOMContentLoaded", function () {
 // Função para fechar o menu
 function closeMenu() {
     menu.classList.remove('active');
-    menu.classList.add('closing');
+    menu.classList.add('closing'); // Inicia a animação de fechamento
 
     // Espera a animação terminar antes de esconder o menu
-    setTimeout(() => {
+    menu.addEventListener('transitionend', function handleTransitionEnd() {
         menu.classList.remove('closing');
         menu.style.visibility = "hidden";
         menu.style.opacity = "0";
         menuToggle.classList.remove('open');
-    }, 500);
+        menu.removeEventListener('transitionend', handleTransitionEnd);
+    });
 }
+
 
 // Alternar o menu hamburguer
 menuToggle.addEventListener('click', () => {
