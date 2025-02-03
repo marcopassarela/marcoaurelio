@@ -1165,9 +1165,8 @@ ul a:hover {
         animation: slideUp 0.5s ease-in forwards;
     }
     #menu a {
-        transition: opacity 0.5s ease-out; /* Animação para o link desaparecer */
+        transition: opacity 0.5s ease-out;
     }
-    
     #menu a.removed {
         opacity: 0;
     }
