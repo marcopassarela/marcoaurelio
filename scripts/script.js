@@ -267,50 +267,77 @@ function startLoadingAnimation() {
 const menuToggle = document.getElementById('menu-toggle');
 const menu = document.getElementById('menu');
 
-// Certifique-se de que o menu começa fechado ao carregar a página
-document.addEventListener("DOMContentLoaded", function () {
-    menu.classList.remove("active");
-    menu.style.visibility = "hidden";
-    menu.style.opacity = "0";
-});
-
-// Função para fechar o menu
-function closeMenu() {
-    menu.classList.remove('active');
-    menu.classList.add('closing'); // Inicia a animação de fechamento
-
-    // Espera a animação terminar antes de esconder o menu
-    menu.addEventListener('transitionend', function handleTransitionEnd() {
-        menu.classList.remove('closing');
-        menu.style.visibility = "hidden";
-        menu.style.opacity = "0";
-        menuToggle.classList.remove('open');
-        menu.removeEventListener('transitionend', handleTransitionEnd);
-    });
+// Função para verificar se estamos em um dispositivo desktop
+function isDesktop() {
+    return window.innerWidth >= 768; // Aqui definimos que dispositivos com largura >= 768px são desktop
 }
 
+// Inicialização quando o DOM é carregado
+document.addEventListener("DOMContentLoaded", function () {
+    if (isDesktop()) {
+        // No desktop, o menu começa sempre visível
+        menu.classList.add("active");
+        menu.style.visibility = "visible";
+        menu.style.opacity = "1";
+    } else {
+        // No mobile, o menu começa oculto
+        menu.classList.remove("active");
+        menu.style.visibility = "hidden";
+        menu.style.opacity = "0";
+    }
+});
 
 // Alternar o menu hamburguer
 menuToggle.addEventListener('click', () => {
-    if (menu.classList.contains("active")) {
-        closeMenu();
-    } else {
+    if (isDesktop()) {
+        // No desktop, o menu está sempre visível
         menu.style.visibility = "visible";
         menu.style.opacity = "1";
         menu.classList.add("active");
         menuToggle.classList.add('open');
+    } else {
+        // No mobile, alterna entre abrir e fechar o menu com animação
+        if (menu.classList.contains("active")) {
+            // Se o menu está ativo (aberto), fecha ele
+            menu.style.visibility = "hidden";
+            menu.style.opacity = "0";
+            menu.classList.remove("active");
+            menuToggle.classList.remove('open');
+        } else {
+            // Caso contrário, abre o menu
+            menu.style.visibility = "visible";
+            menu.style.opacity = "1";
+            menu.classList.add("active");
+            menuToggle.classList.add('open');
+        }
     }
 });
 
-// Fechar o menu ao clicar em um link do menu
+// Fechar o menu ao clicar em um link do menu no mobile
 const menuLinks = document.querySelectorAll('#menu a');
 menuLinks.forEach(link => {
     link.addEventListener('click', () => {
-        menu.classList.remove('active');
-        menu.style.visibility = "hidden";
-        menu.style.opacity = "0";
-        menuToggle.classList.remove('open');
-        menuLinks.forEach(l => l.classList.remove('selected'));
-        link.classList.add('selected');
+        if (!isDesktop()) {
+            menu.style.visibility = "hidden";
+            menu.style.opacity = "0";
+            menu.classList.remove("active");
+            menuToggle.classList.remove('open');
+        }
     });
 });
+
+// Atualizar o comportamento do menu quando redimensionar a janela
+window.addEventListener('resize', function () {
+    if (isDesktop()) {
+        // No desktop, o menu está sempre visível
+        menu.classList.add("active");
+        menu.style.visibility = "visible";
+        menu.style.opacity = "1";
+    } else {
+        // No mobile, o menu começa oculto
+        menu.classList.remove("active");
+        menu.style.visibility = "hidden";
+        menu.style.opacity = "0";
+    }
+});
+
