@@ -269,7 +269,7 @@ const menu = document.getElementById('menu');
 
 // Função para verificar se estamos em um dispositivo desktop
 function isDesktop() {
-    return window.innerWidth >= 768; // Aqui definimos que dispositivos com largura >= 768px são desktop
+    return window.innerWidth >= 768;
 }
 
 // Inicialização quando o DOM é carregado
@@ -340,4 +340,3 @@ window.addEventListener('resize', function () {
         menu.style.opacity = "0";
     }
 });
-
