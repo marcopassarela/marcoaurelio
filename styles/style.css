@@ -619,6 +619,10 @@ ul a:hover {
     align-items: center;
     z-index: 9999;
 }
+#update-notes {
+    color: black;
+    margin-top:15px;
+}
 
 
 .modalupgradebox {
@@ -627,12 +631,13 @@ ul a:hover {
     border-radius: 10px;
     text-align: center;
     width: 300px;
-    height: 380px;
+    height: auto;
 }
 .modalupgradebox h2 {
     font-family: "Sora", sans-serif;
     font-size: 17px;
     margin-bottom: 15px;
+    margin-left: 25px;
 }
 .modalupgradebox p {
     font-family: "Sora", sans-serif;
@@ -641,7 +646,7 @@ ul a:hover {
     text-align: justify;
     word-spacing: normal;
     letter-spacing: normal;
-    margin-bottom: 15px;
+    margin-bottom: 2px;
 }
 
 #update-btn {
