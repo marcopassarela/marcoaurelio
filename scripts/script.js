@@ -191,50 +191,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Função para exibir o modal de atualização
 function showUpdateModal(version, updateMessage, importantNotes) {
-    // Abrindo o modal e exibindo as informações de versão
     const modal = document.getElementById("modalupgrade");
     const versionDisplay = document.getElementById("current-version");
     const updateInfo = document.getElementById("update-info");
     const updateNotes = document.getElementById("update-notes");
-  
+
+    updateInfo.innerHTML = `Versão atual: <strong>${updateMessage}</strong>`;
     versionDisplay.innerHTML = `Próxima versão: <strong>${version}</strong>`;
     updateNotes.innerHTML = `<strong>Notas importantes:</strong> ${importantNotes}`;
-  
-    // Função para calcular o tamanho das modificações (simulando a modificação dos arquivos)
-    const modifiedFiles = [
-      { name: 'style.css', size: 1024 },  // Exemplo de arquivo CSS
-      { name: 'index.html', size: 2048 }, // Exemplo de arquivo HTML
-      { name: 'script.js', size: 4096 }   // Exemplo de arquivo JS
-    ];
-  
-    // Calculando o tamanho total das modificações
-    const totalSize = modifiedFiles.reduce((acc, file) => acc + file.size, 0);
-    const formattedSize = formatFileSize(totalSize); // Formata o tamanho total
-  
-    // Atualizando a interface com o tamanho das modificações
-    updateInfo.innerHTML = `<strong>Tamanho:</strong> ${formattedSize}`;
-  
-    // Exibindo o modal
-    modal.style.display = "flex"; 
-  
+
+    modal.style.display = "flex"; // Exibe o modal de forma imediata
+
     document.getElementById('update-btn').addEventListener('click', () => {
-      modal.style.display = "none"; // Fecha o modal
-      startLoadingAnimation(); // Inicia a animação de carregamento
+        modal.style.display = "none"; // Fecha o modal
+        startLoadingAnimation(); // Inicia a animação de carregamento
     });
-  }
-  
-  function formatFileSize(size) {
-    if (size < 1024) {
-      return `${size} bytes`;
-    } else if (size < 1024 * 1024) {
-      return `${(size / 1024).toFixed(2)} KB`;
-    } else if (size < 1024 * 1024 * 1024) {
-      return `${(size / (1024 * 1024)).toFixed(2)} MB`;
-    } else {
-      return `${(size / (1024 * 1024 * 1024)).toFixed(2)} GB`;
-    }
-  }
-  
+}
 
 function startLoadingAnimation() {
     const loadingScreen = document.getElementById("loading-container");
