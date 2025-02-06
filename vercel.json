@@ -1,6 +1,5 @@
 {
   "rewrites": [
-    { "source": "/my-links", "destination": "/my-links.html" },
     { "source": "/about", "destination": "/src/pages/about.html" },
     { "source": "/", "destination": "/index.html" },
     { "source": "/support", "destination": "/src/requests/support.html" },
