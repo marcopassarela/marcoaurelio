@@ -1165,7 +1165,7 @@ ul a:hover {
     
     /* Quando o menu fecha, ele some suavemente */
     #menu.closing {
-        animation: slideUp 0.5s ease-in forwards;
+        animation: slideUp 0.7s ease-in forwards;
     }
     #menu a {
         transition: opacity 0.5s ease-out;
