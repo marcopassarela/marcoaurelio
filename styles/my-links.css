@@ -62,6 +62,7 @@
   left: 50%;
   transform: translateX(-50%);
   border: 2px solid var(--color-background);
+  pointer-events: none;
 }
 .box-description {
   width: 100%;
