@@ -5,6 +5,6 @@
     { "source": "/support", "destination": "/src/requests/support.html" },
     { "source": "/form", "destination": "/src/pages/form.html" },
     { "source": "/privacy", "destination": "/src/pages/privacy.html" },
-    { "source": "/", "destination": "/my-links.html" } 
+    { "source": "/my-links", "destination": "/my-links.html" }
   ]
 }
