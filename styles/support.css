@@ -453,7 +453,7 @@ body { overflow-x: hidden; }
 
     /* Esconder o menu por padrão em dispositivos móveis */
     #menu {
-        display: none;
+        display: flex;
         flex-direction: column;
         background-color: #1f1f1f;
         list-style: none;
