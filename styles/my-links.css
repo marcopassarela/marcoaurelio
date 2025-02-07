@@ -25,7 +25,7 @@
 
 .box-general {
   width: 500px;
-  height: 1184px;
+  height: 1190px;
   background-color: var(--color-background);
   border-radius: 30px;
   padding: 10px;
@@ -50,26 +50,28 @@
   border-radius: 20px;
   position: relative;
 }
+.photo-container {
+  position: relative;  /* O contêiner é o ponto de referência */
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;  /* Para centralizar o contêiner */
+}
 .my-photo {
   object-fit: cover;
   background-repeat: no-repeat;
   object-position: top;
-  width: 150px;
-  height: 150px;
+  width: 100%;  /* Preenche o contêiner */
+  height: 100%;
   border-radius: 50%;
-  position: absolute;
-  top: 16%;
-  left: 50%;
-  transform: translateX(-50%);
   border: 2px solid var(--color-background);
-  pointer-events: none;
-
+  pointer-events: none;  /* Impede interação com a imagem */
+  margin-top: -30px;
 }
 .box-description {
   width: 100%;
   height: auto;
   background-color: var(--color-background-box);
-  margin-top: 120px;
+  margin-top: -15px;
   display: flex;
   flex-direction: column;
   text-align: center;
