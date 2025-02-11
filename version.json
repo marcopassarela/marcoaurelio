@@ -1,5 +1,5 @@
 {
-    "updateMessage": "1.1",
-    "version": "1.2 Beta",
-    "importantNotes": "A versão 1.2 Beta inclui ajustes cruciais, como a correção de um bug no menu, tanto em dispositivos móveis quanto desktop. Além disso, otimizações foram implementadas para garantir animações mais suaves em dispositivos com recursos de hardware de menor desempenho. Esta atualização também melhora o desempenho geral do sistema.<br><br><p> Para uma experiência ideal, recomendamos que o idioma esteja configurado para inglês (EUA) por padrão. Algumas funcionalidades podem não estar disponíveis em todos os dispositivos enquanto ajustes finais são concluídos. Para obter mais informações, sobre o conteúdo de atualização, acesse: <br><a href='https://support-marcoaurelio.vercel.app/' target='_blank'>https://support-marcoaurelio.vercel.app/</a></p>"
+    "updateMessage": "1.2",
+    "version": "1.2.1 Beta",
+    "importantNotes": "A versão 1.2.1 Beta marca a liberação oficial da página <strong>Library</strong>, trazendo correções importantes para aprimorar a navegação. Essa atualização também inclui otimizações gerais para um desempenho mais fluido e eficiente do site.<br><br><p> Para uma experiência ideal, recomendamos que o idioma esteja configurado para inglês (EUA) por padrão. Algumas funcionalidades podem não estar disponíveis em todos os dispositivos enquanto ajustes finais são concluídos. Para obter mais informações, sobre o conteúdo de atualização, acesse: <br><a href='https://support-marcoaurelio.vercel.app/' target='_blank'>https://support-marcoaurelio.vercel.app/</a></p>"
 }
