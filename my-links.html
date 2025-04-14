@@ -158,30 +158,6 @@
         </div>
     </div>
 
-    <script>
-        window.addEventListener("load", () => {
-            const video = document.getElementById("myVideo");
-            // Garante que o vídeo não está silenciado
-            video.muted = false;
-            // Tenta reproduzir imediatamente
-            const playPromise = video.play();
-            if (playPromise !== undefined) {
-                playPromise.catch(error => {
-                    console.log("Autoplay com áudio bloqueado: ", error);
-                    // Fallback: toca silenciado para evitar pausa
-                    video.muted = true;
-                    video.play().then(() => {
-                        // Tenta ativar o áudio após um pequeno atraso
-                        setTimeout(() => {
-                            video.muted = false;
-                        }, 100);
-                    });
-                });
-            }
-        });
-    </script>
-
-    
 <script src="/scripts/script.js" defer></script>
 <script src="/scripts/essential.js" defer></script>
 </body>
