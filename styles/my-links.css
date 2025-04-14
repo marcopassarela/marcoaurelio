@@ -48,6 +48,7 @@
   height: 100%;
   border-radius: 20px;
   position: relative;
+  display: block !important;
 }
 .photo-container {
   position: relative;  /* O contêiner é o ponto de referência */

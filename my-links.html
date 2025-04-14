@@ -2,7 +2,8 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
         <!-- Open Graph Meta Tags -->
         <meta property="og:title" content="Marco Aurélio - My Link Bio" />
         <meta property="og:image" content="https://marcoaurelio.vercel.app/img/myImgDark.PNG" />
@@ -159,13 +160,17 @@
     </div>
 
     <script>
-            window.addEventListener("load", () => {
-                const video = document.getElementById("myVideo");
-                video.load(); // Força recarregamento do vídeo
-                video.play().catch(error => {
-                console.log("Erro no WebView: ", error);
-            });
+           window.addEventListener("load", () => {
+    const video = document.getElementById("myVideo");
+    setTimeout(() => {
+        video.load(); // Força recarregamento
+        video.play().then(() => {
+            console.log("Vídeo iniciado com sucesso");
+        }).catch(error => {
+            console.error("Erro no WebView: ", error.message);
         });
+    }, 200); // Atraso maior para WebView
+});
     </script>
 
 <script src="/scripts/script.js" defer></script>
