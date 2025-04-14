@@ -31,7 +31,7 @@
             <div class="box-general">
                 <div class="cover">
                     <video id="myVideo" class="myMovie" autoplay muted loop playsinline>
-                        <source src="/movie/rocket.mp4" type="video/mp4">
+                        <source src="https://marcoaurelio.vercel.app/movie/rocket.mp4" type="video/mp4">
                         Seu navegador não suporta vídeo HTML5.
                     </video>
                     <div class="photo-container">
@@ -157,6 +157,16 @@
             </div>
         </div>
     </div>
+
+    <script>
+            window.addEventListener("load", () => {
+                const video = document.getElementById("myVideo");
+                video.load(); // Força recarregamento do vídeo
+                video.play().catch(error => {
+                console.log("Erro no WebView: ", error);
+            });
+        });
+    </script>
 
 <script src="/scripts/script.js" defer></script>
 <script src="/scripts/essential.js" defer></script>
