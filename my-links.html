@@ -2,8 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Open Graph Meta Tags -->
         <meta property="og:title" content="Marco Aurélio - My Link Bio" />
         <meta property="og:image" content="https://marcoaurelio.vercel.app/img/myImgDark.PNG" />
@@ -31,10 +30,7 @@
         <div class="content">
             <div class="box-general">
                 <div class="cover">
-                    <video id="myVideo" class="myMovie" autoplay muted loop playsinline>
-                        <source src="https://marcoaurelio.vercel.app/movie/rocket.mp4" type="video/mp4">
-                        Seu navegador não suporta vídeo HTML5.
-                    </video>
+                    <img src="/img/cover.png" alt="my-photo" class="myPhoto">
                     <div class="photo-container">
                         <img class="my-photo" src="/img/my-photo3.JPEG" alt="Imagem">
                       </div>
@@ -159,33 +155,6 @@
         </div>
     </div>
 
-    <script>
-        window.addEventListener("load", () => {
-            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            const isInstagram = /Instagram/i.test(userAgent);
-            const container = document.getElementById("mediaContainer");
-
-            if (isInstagram) {
-                // Substitui o vídeo por uma imagem no Instagram WebView
-                container.innerHTML = `
-                    <img src="/img/cover.jpg"s 
-                         class="myMovie" 
-                         alt="Imagem alternativa">
-                `;
-            } else {
-                // Força o vídeo nos navegadores normais
-                const video = document.getElementById("myVideo");
-                setTimeout(() => {
-                    video.load();
-                    video.play().then(() => {
-                        console.log("Vídeo iniciado com sucesso");
-                    }).catch(error => {
-                        console.error("Erro ao iniciar vídeo: ", error.message);
-                    });
-                }, 200);
-            }
-        });
-    </script>
 
 <script src="/scripts/script.js" defer></script>
 <script src="/scripts/essential.js" defer></script>
