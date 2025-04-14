@@ -30,8 +30,8 @@
         <div class="content">
             <div class="box-general">
                 <div class="cover">
-                    <video class="myMovie" autoplay muted loop playsinline preload="auto">
-                        <source src="/movie/rocket.mp4" type="video/mp4">
+                    <video class="myMovie" autoplay loop playsinline preload="auto">
+                        <source src="/movie/rocket3.mp4" type="video/mp4">
                         Seu navegador não suporta vídeo HTML5.
                     </video>
                     <div class="photo-container">
@@ -157,6 +157,22 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const video = document.getElementById("myVideo");
+            video.muted = false; // Tenta ativar o áudio
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay bloqueado: ", error);
+                    // Tenta novamente após qualquer interação mínima
+                    document.addEventListener("click", () => video.play(), { once: true });
+                    document.addEventListener("touchstart", () => video.play(), { once: true });
+                });
+            }
+        });
+    </script>
 
 
 <script src="/scripts/script.js" defer></script>
