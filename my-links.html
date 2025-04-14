@@ -160,17 +160,31 @@
     </div>
 
     <script>
-           window.addEventListener("load", () => {
-    const video = document.getElementById("myVideo");
-    setTimeout(() => {
-        video.load(); // Força recarregamento
-        video.play().then(() => {
-            console.log("Vídeo iniciado com sucesso");
-        }).catch(error => {
-            console.error("Erro no WebView: ", error.message);
+        window.addEventListener("load", () => {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            const isInstagram = /Instagram/i.test(userAgent);
+            const container = document.getElementById("mediaContainer");
+
+            if (isInstagram) {
+                // Substitui o vídeo por uma imagem no Instagram WebView
+                container.innerHTML = `
+                    <img src="/img/cover.jpg"s 
+                         class="myMovie" 
+                         alt="Imagem alternativa">
+                `;
+            } else {
+                // Força o vídeo nos navegadores normais
+                const video = document.getElementById("myVideo");
+                setTimeout(() => {
+                    video.load();
+                    video.play().then(() => {
+                        console.log("Vídeo iniciado com sucesso");
+                    }).catch(error => {
+                        console.error("Erro ao iniciar vídeo: ", error.message);
+                    });
+                }, 200);
+            }
         });
-    }, 200); // Atraso maior para WebView
-});
     </script>
 
 <script src="/scripts/script.js" defer></script>
