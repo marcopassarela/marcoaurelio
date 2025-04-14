@@ -30,7 +30,7 @@
         <div class="content">
             <div class="box-general">
                 <div class="cover">
-                    <video class="myMovie" autoplay loop playsinline preload="auto">
+                    <video id="myVideo" class="myMovie" autoplay loop playsinline preload="auto">
                         <source src="/movie/rocket3.mp4" type="video/mp4">
                         Seu navegador não suporta vídeo HTML5.
                     </video>
@@ -159,22 +159,30 @@
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
+        window.addEventListener("load", () => {
             const video = document.getElementById("myVideo");
-            video.muted = false; // Tenta ativar o áudio
+            // Tenta iniciar o vídeo com áudio
+            video.muted = false;
             const playPromise = video.play();
             if (playPromise !== undefined) {
                 playPromise.catch(error => {
-                    console.log("Autoplay bloqueado: ", error);
-                    // Tenta novamente após qualquer interação mínima
-                    document.addEventListener("click", () => video.play(), { once: true });
-                    document.addEventListener("touchstart", () => video.play(), { once: true });
+                    console.log("Autoplay com áudio bloqueado: ", error);
+                    // Fallback: toca silenciado e tenta novamente após interação
+                    video.muted = true;
+                    video.play();
+                    // Monitora qualquer interação na página
+                    ["click", "touchstart", "mousemove"].forEach(event => {
+                        document.addEventListener(event, () => {
+                            video.muted = false;
+                            video.play();
+                        }, { once: true });
+                    });
                 });
             }
         });
     </script>
 
-
+    
 <script src="/scripts/script.js" defer></script>
 <script src="/scripts/essential.js" defer></script>
 </body>
